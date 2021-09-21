@@ -1,0 +1,57 @@
+@import "theme/colors";
+
+#nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #ececec;
+  border-right: 0.0625rem solid $lightGrey;
+  padding: 1rem;
+
+  .active {
+    a {
+      border-left: 0.25rem solid $blue;
+      margin-left: -0.25rem;
+    }
+  }
+
+  .topLevel {
+    margin-bottom: 0.35rem;
+
+    &.noSubMenu {
+      &::before {
+        content: "\00a0\00a0";
+      }
+    }
+
+    &.open {
+      &::before {
+        display: inline-block;
+        content: "\203a";
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &.closed {
+      &::before {
+        display: inline-block;
+        content: "\203a";
+        transform: rotate(90deg);
+        transition: transform 0.2s ease;
+      }
+    }
+  }
+
+  .subMenu {
+    margin-left: 1rem;
+
+    a {
+      font-weight: normal;
+      border-left: 0.25rem solid $blue;
+    }
+  }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 414px) {
+
+}

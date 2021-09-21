@@ -1,0 +1,53 @@
+@import 'theme/colors';
+
+ul.table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 0.0625rem solid $lightGrey;
+  border-radius: 0.35rem;
+  margin-bottom: 1rem;
+
+  li {
+    display: inline-grid;
+    gap: 0 1rem;
+    align-items: center;
+    grid-template-columns: 10rem 1fr 6rem;
+    padding: 0.5rem 1rem;
+    min-height: 3.5rem;
+    font-size: 0.85rem;
+
+    &:first-child {
+      border-radius: 0.35rem 0.35rem 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 0.35rem 0.35rem;
+    }
+
+    &:nth-child(odd) {
+      background-color: $offWhite;
+      // color: $offWhite;
+    }
+
+    &:nth-child(even) {
+      background-color: #ececec;
+    }
+
+    &.header {
+      font-weight: bold;
+      color: $offWhite;
+      background-color: $darkGrey;
+    }
+
+    .attrName,
+    .default {
+      font-weight: bold;
+    }
+  }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 414px) {
+
+}

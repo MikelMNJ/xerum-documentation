@@ -1,0 +1,36 @@
+@import 'theme/colors';
+
+#content {
+  #getting-started {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 1fr;
+    border-bottom: 0.0625rem solid $lightGrey;
+
+    h2 {
+      margin-bottom: 0.25rem;
+    }
+
+    h3 {
+      margin-top: 2rem;
+    }
+
+    pre {
+      width: fit-content;
+    }
+  }
+
+  section {
+    display: grid;
+    gap: 0 2rem;
+    grid-template-columns: 1fr 28rem;
+
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 414px) {
+
+}

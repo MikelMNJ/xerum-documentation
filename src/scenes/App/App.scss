@@ -1,0 +1,73 @@
+@import 'theme/colors.scss';
+
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+
+  padding: 0;
+  height: 100vh;
+
+  header {
+    grid-area: header;
+    width: 100%;
+
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 800;
+      cursor: pointer;
+      color: $deepBlue;
+      padding: 0 1rem;
+      margin: 0.75rem 0;
+
+      i {
+        margin-left: 1rem;
+      }
+    }
+
+    #headerBar {
+      color: $offWhite;
+      background-color: $deepBlue;
+      width: 100%;
+      padding: 1rem;
+
+      p {
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: normal;
+
+        &.subTitle{
+          font-weight: bold;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  #main {
+    display: grid;
+    gap: 1rem;
+    grid-area: main;
+    grid-template-columns: 15rem 1fr;
+  }
+
+  footer {
+    display: flex;
+    align-items: flex-end;
+    grid-area: footer;
+    padding: 1rem;
+    color: $offWhite;
+    background-color: $deepBlue;
+    min-height: 10rem;
+  }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 414px) {
+
+}

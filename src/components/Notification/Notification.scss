@@ -1,0 +1,62 @@
+@import 'theme/colors.scss';
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+
+  .notification {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 2rem 1fr 1rem;
+    margin: 0.5rem;
+    z-index: 1;
+
+    font-size: 0.9rem;
+    padding: 0.75rem;
+    width: 20rem;
+    height: fit-content;
+    min-height: 4.5rem;
+    border-radius: 0.35rem;
+    border-left: 0.5rem solid $blue;
+    background-color: $lighterGrey;
+    box-shadow: 0 0.1rem 0.25rem $grey;
+
+    &.noIcon {
+      grid-template-columns: 1fr 1rem;
+    }
+
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .message {
+      display: flex;
+      align-items: center;
+    }
+
+    .close {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      font-size: 1.15rem;
+
+      i {
+        padding: 0;
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 1440px) {
+
+}

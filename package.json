@@ -1,0 +1,40 @@
+{
+  "name": "xerum",
+  "version": "0.1.0",
+  "description": "A lightweight, customizable UI component library for React.",
+  "main": "index.js",
+  "author": "Mikel Jagan",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "lodash": "^4.17.21",
+    "luxon": "^2.0.2",
+    "react": "^18.0.0-alpha-ed6c091fe-20210701",
+    "react-code-blocks": "^0.0.9-0",
+    "react-dom": "^18.0.0-alpha-ed6c091fe-20210701",
+    "react-router-dom": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
+    "@babel/preset-react": "^7.14.5",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "sass": "^1.37.5",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^4.2.0"
+  },
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack"
+  }
+}
