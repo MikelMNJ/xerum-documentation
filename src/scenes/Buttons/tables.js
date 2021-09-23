@@ -35,7 +35,7 @@ export const buttonTable = [
   },
   {
     tData1: "url",
-    tData2: "Used explicitely for making external site calls.",
+    tData2: "Used explicitly for making external site calls.",
     tData3: "-",
   },
 ];

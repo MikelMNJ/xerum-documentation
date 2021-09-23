@@ -133,15 +133,16 @@ const navigation = {
     }
   },
 
-  content: {
-    name: "Layout",
-    path: "#layout",
+  containers: {
+    name: "Containers",
+    path: "#containers",
     icon: "",
     subMenu: {
-      slideout: { name: "Slideout", path: "#slideout", icon: "" },
+      slideover: { name: "Slideover", path: "#slideover", icon: "" },
       modal: { name: "Modal", path: "#modal", icon: "" },
       popover: { name: "Popover", path: "#popover", icon: "" },
       card: { name: "Card", path: "#card", icon: "" },
+      accordion: { name: "Accordion", path: "#accordion", icon: "" },
     }
   },
 
