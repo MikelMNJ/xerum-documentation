@@ -87,7 +87,7 @@ export const notFoundTable = [
 
 export const loadingTable = [
   {
-    tData1: "isLoading",
+    tData1: "isLoading*",
     tData2:
       <Fragment>
         <strong>true</strong> or <strong>false</strong> &mdash;
@@ -97,7 +97,7 @@ export const loadingTable = [
     tData3: "true"
   },
   {
-    tData1: "hasData",
+    tData1: "hasData*",
     tData2:
       <Fragment>
         <strong>true</strong> or <strong>false</strong> &mdash;
