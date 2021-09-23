@@ -1,5 +1,5 @@
 import React from "react";
-import { myCode } from 'helpers/utilityHelpers';
+import { codeSnippet } from 'helpers/utilityHelpers';
 
 const GettingStarted = props => {
   return (
@@ -8,8 +8,8 @@ const GettingStarted = props => {
       <h3>Installation and Use</h3>
 
       <div>
-        {myCode("npm i xerum")} &nbsp;&nbsp;or &nbsp;
-        {myCode("yarn add xerum")}
+        {codeSnippet("npm i xerum")} &nbsp;&nbsp;or &nbsp;
+        {codeSnippet("yarn add xerum")}
       </div>
 
       <br />
@@ -19,7 +19,7 @@ const GettingStarted = props => {
           Then destructure the component in the file using <i>import</i> &mdash; example:&nbsp;
         </p>
 
-        {myCode("import { Button } from 'xerum';")}
+        {codeSnippet("import { Button } from 'xerum';")}
       </div>
 
       <br />

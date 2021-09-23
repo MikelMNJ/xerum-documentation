@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { notFoundCode } from './codeSamples';
 import { notFoundTable } from './tables';
 import { buildRows } from 'helpers/tableHelpers';
-import { myCode } from 'helpers/utilityHelpers';
+import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import NotFound from 'components/NotFound/NotFound';
@@ -19,10 +19,10 @@ const SectionNotFound = props => {
 
         <strong>Note</strong>: Pass an <i>id</i> attribute if you need to override
         the width, height, display, flex direction, item alignment etc.
-        of the {myCode("<NotFound />")} component.
+        of the {codeSnippet("<NotFound />")} component.
 
         <p />
-        You can also target the {myCode("<h2>")} title and {myCode("<p>")} message tags,
+        You can also target the {codeSnippet("<h2>")} title and {codeSnippet("<p>")} message tags,
         specifically, by passing a custom <i>className</i> and using CSS chaining,
         respectively.
 

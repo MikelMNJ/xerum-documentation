@@ -6,7 +6,7 @@ import Table from 'components/Table/Table';
 import Button from 'components/Button/Button';
 import Messages from 'components/Notification/Messages';
 import SampleBox from 'components/SampleBox/SampleBox';
-import { myCode } from 'helpers/utilityHelpers';
+import { codeSnippet } from 'helpers/utilityHelpers';
 
 const newMessage = "You've been notified!";
 
@@ -30,7 +30,7 @@ const SectionMessages = props => {
         <strong>Note</strong>: You will first need to have an existing&nbsp;
         <strong>messages</strong> array selector and corresponding <strong>setMessages</strong>&nbsp;
         action set up in app state. Then, at the root of your app, place&nbsp;
-        {myCode("<Messages />")} with that action/selector pair passed in the props.
+        {codeSnippet("<Messages />")} with that action/selector pair passed in the props.
 
         <p>
           Now any component event or API callback that triggers your&nbsp;
