@@ -24,7 +24,7 @@ const SectionNotFound = props => {
         <p />
         You can also target the {myCode("<h2>")} title and {myCode("<p>")} message tags,
         specifically, by passing a custom <i>className</i> and using CSS chaining,
-        repsectively.
+        respectively.
 
         <p />
       </div>

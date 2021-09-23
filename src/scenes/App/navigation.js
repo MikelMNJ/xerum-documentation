@@ -31,6 +31,7 @@ const navigation = {
     subMenu: {
       copyright: { name: "Copyright", path: "#copyright", icon: "" },
       brand: { name: "Brand", path: "#brand", icon: "" },
+      social: { name: "Social", path: "#social", icon: "" },
       tooltip: { name: "Tooltip", path: "#tooltip", icon: "" },
     }
   },
