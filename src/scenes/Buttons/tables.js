@@ -5,7 +5,7 @@ export const buttonTable = [
     tData1: "btnType",
     tData2:
       <Fragment>
-        <strong>solid</strong>, <strong>ghost</strong> and <strong>transparent</strong>.
+        <strong>solid</strong>, <strong>ghost</strong> or <strong>transparent</strong>.
       </Fragment>,
     tData3: "solid"
   },

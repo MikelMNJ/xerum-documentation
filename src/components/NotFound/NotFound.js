@@ -38,7 +38,7 @@ const NotFound = props => {
     if (!noMessage) {
       return (
         <p>
-          {message || "Can't seem to find that page."}
+          {message || "Can't find that page."}
         </p>
       );
     }
