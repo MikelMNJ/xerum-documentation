@@ -76,7 +76,7 @@ export const notFoundTable = [
   {
     tData1: "message",
     tData2: "Sets a custom message.",
-    tData3: "Can't seem to find that page."
+    tData3: "Can't find that page."
   },
   {
     tData1: "noMessage",
@@ -87,17 +87,28 @@ export const notFoundTable = [
 
 export const loadingTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "isLoading",
+    tData2:
+      <Fragment>
+        <strong>true</strong> or <strong>false</strong> &mdash;
+        derived from loading selector managed in app state
+        on specific resource API call start/end.
+      </Fragment>,
+    tData3: "true"
   },
-];
-
-export const loadFailTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "hasData",
+    tData2:
+      <Fragment>
+        <strong>true</strong> or <strong>false</strong> &mdash;
+        derived from data returned (or not) after server response.
+      </Fragment>,
+    tData3: "false"
+  },
+  {
+    tData1: "onFail",
+    tData2: "Your message or component to display if loading/API call is complete and no data was returned/set in app state.",
+    tData3: "Failed to load resource."
   },
 ];
 

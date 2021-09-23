@@ -19,7 +19,6 @@ const navigation = {
       notification: { name: "Messages", path: "#messages", icon: "" },
       notFound: { name: "NotFound", path: "#not-found", icon: "" },
       loading: { name: "Loading", path: "#loading", icon: "" },
-      loadFail: { name: "LoadFail", path: "#load-fail", icon: "" },
       badge: { name: "Badge", path: "#badge", icon: "" },
       banner: { name: "Banner", path: "#banner", icon: "" },
     }

@@ -14,10 +14,6 @@ const SectionLoading = props => {
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
           {buildRows(loadingTable)}
         </Table>
-
-        <p>
-          Additional text...
-        </p>
       </div>
 
       <SampleBox name="Loading" code={loadingCode}>

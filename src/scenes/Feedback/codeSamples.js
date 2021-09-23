@@ -20,8 +20,7 @@ const [ messages, setMessages ] = useState([]);
   )}
 />`;
 
-export const notFoundCode = `
-// Default
+export const notFoundCode = `// Default
 <NotFound />
 
 // Custom
@@ -33,9 +32,19 @@ export const notFoundCode = `
 / >
 `;
 
-export const loadingCode = ``;
+export const loadingCode = `const customMsg = "Couldn't fetch resource :/";
 
-export const loadFailCode = ``;
+<Loading
+  isLoading={contentLoading}
+  hasData={contentData}
+  onFail={customMsg || <YourComponent />}
+>
+  {/*
+    Your content after loading has finished
+    and 200 response data set in app state.
+  */}
+</Loading>
+`;
 
 export const bannerCode = ``;
 
