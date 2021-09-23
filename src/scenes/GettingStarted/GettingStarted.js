@@ -1,4 +1,5 @@
 import React from "react";
+import { myCode } from 'helpers/utilityHelpers';
 
 const GettingStarted = props => {
   return (
@@ -6,24 +7,22 @@ const GettingStarted = props => {
       <h2>Getting Started</h2>
       <h3>Installation and Use</h3>
 
-      <div className="inline">
-        <pre>
-          <code lang="javascript">npm i xerum</code>
-        </pre> &nbsp;&nbsp;or &nbsp;
-
-        <pre>
-          <code lang="javacript">yarn add xerum</code>
-        </pre>
+      <div>
+        {myCode("npm i xerum")} &nbsp;&nbsp;or &nbsp;
+        {myCode("yarn add xerum")}
       </div>
 
       <br />
 
       <div>
-        Then destructure the component in the file using <i>import</i> &mdash; example:<br />
-        <pre>
-          <code lang="javascript">{`import { Button } from 'xerum';`}</code>
-        </pre>
+        <p>
+          Then destructure the component in the file using <i>import</i> &mdash; example:&nbsp;
+        </p>
+
+        {myCode("import { Button } from 'xerum';")}
       </div>
+
+      <br />
 
       <p>
         <strong>Note</strong>: Unless noted otherwise, you can pass standard attributes as you&nbsp;
@@ -31,7 +30,7 @@ const GettingStarted = props => {
         <i>style</i>, <i>className</i> etc.
       </p>
 
-      <p />
+      <br />
     </section>
   );
 };

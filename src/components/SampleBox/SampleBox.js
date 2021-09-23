@@ -1,4 +1,5 @@
 import React from 'react';
+import { myCode } from 'helpers/utilityHelpers';
 import './SampleBox.scss';
 
 const SampleBox = props => {
@@ -12,11 +13,7 @@ const SampleBox = props => {
           {children}
         </div>
 
-        <pre>
-          <code lang="javascript">
-            {code}
-          </code>
-        </pre>
+        {myCode(code, true)}
       </div>
   );
 };

@@ -6,7 +6,7 @@ import FieldReqs from "components/FieldReqs/FieldReqs";
 import ProgressBar from "components/ProgressBar/ProgressBar";
 import ToTop from "components/ToTop/ToTop";
 import Copyright from "components/Copyright/Copyright";
-import NotFound from 'scenes/NotFound/NotFound';
+import NotFound from 'components/NotFound/NotFound';
 import Nav from "components/Nav/Nav";
 import Social from 'components/Social/Social';
 import colors from 'theme/colors.scss';

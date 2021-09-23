@@ -46,9 +46,42 @@ export const messagesTable = [
 
 export const notFoundTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "icon",
+    tData2:
+      <Fragment>
+        Fontawesome i.e. "<strong>fa-solid fa-bug</strong>"&nbsp;
+        ("<strong>fas fa-bug</strong>" v5 and under).
+      </Fragment>,
+    tData3:
+      <Fragment>
+        fa-solid/fas <br />
+        fa-bug
+      </Fragment>
+  },
+  {
+    tData1: "noIcon",
+    tData2: "Disabled not found icon.",
+    tData3: "-"
+  },
+  {
+    tData1: "title",
+    tData2: "Sets a custom, heavily-weighted title.",
+    tData3: "404: Hrmm..."
+  },
+  {
+    tData1: "noTitle",
+    tData2: "Disables not found title.",
+    tData3: "-"
+  },
+  {
+    tData1: "message",
+    tData2: "Sets a custom message.",
+    tData3: "Can't seem to find that page."
+  },
+  {
+    tData1: "noMessage",
+    tData2: "Disables not found message.",
+    tData3: "-"
   },
 ];
 

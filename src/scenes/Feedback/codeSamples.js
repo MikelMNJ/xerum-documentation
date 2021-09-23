@@ -20,7 +20,18 @@ const [ messages, setMessages ] = useState([]);
   )}
 />`;
 
-export const notFoundCode = ``;
+export const notFoundCode = `
+// Default
+<NotFound />
+
+// Custom
+<NotFound
+  className="customNotFound"
+  icon="fa-solid fa-frown-open"
+  title="Well, shucks!"
+  message="Something's missing."
+/ >
+`;
 
 export const loadingCode = ``;
 
