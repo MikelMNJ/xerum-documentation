@@ -17,14 +17,9 @@ const SectionNotFound = props => {
           {buildRows(notFoundTable)}
         </Table>
 
-        <strong>Note</strong>: Pass an <i>id</i> attribute if you need to override
-        the width, height, display, flex direction, item alignment etc.
-        of the {codeSnippet("<NotFound />")} component.
-
-        <p />
-        You can also target the {codeSnippet("<h2>")} title and {codeSnippet("<p>")} message tags,
-        specifically, by passing a custom <i>className</i> and using CSS chaining,
-        respectively.
+        <strong>Note</strong>: You can target the {codeSnippet("<h2>")} title and
+        {codeSnippet("<p>")} message tags, with a custom <i>className</i> and CSS
+        chaining.
 
         <p />
       </div>

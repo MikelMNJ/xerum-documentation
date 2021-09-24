@@ -12,7 +12,7 @@ ul.table {
     display: inline-grid;
     gap: 0 1rem;
     align-items: center;
-    grid-template-columns: 10rem 1fr 6rem;
+    grid-template-columns: 10rem 1fr 7rem;
     padding: 0.5rem 1rem;
     min-height: 3.5rem;
     font-size: 0.85rem;
@@ -27,7 +27,6 @@ ul.table {
 
     &:nth-child(odd) {
       background-color: $offWhite;
-      // color: $offWhite;
     }
 
     &:nth-child(even) {

@@ -11,6 +11,7 @@ const NotFound = props => {
     message,
     noMessage,
     staticContext,
+    className,
     ...rest
   } = props;
 
@@ -45,7 +46,7 @@ const NotFound = props => {
   };
 
   return (
-    <div id="notFound" {...rest}>
+    <div className={`notFound ${className || ""}`} {...rest}>
       {renderIcon()}
       {renderTitle()}
       {renderMessage()}
