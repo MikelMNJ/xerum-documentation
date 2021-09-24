@@ -9,7 +9,7 @@ const Social = props => {
         <i className="fab fa-npm" />
       </Link>
 
-      <Link to={{ pathname: "https://github.com/mikelmnj" }} target="_blank">
+      <Link to={{ pathname: "https://github.com/mikelmnj/xerum" }} target="_blank">
         <i className="fab fa-github" />
       </Link>
     </div>

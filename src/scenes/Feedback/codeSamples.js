@@ -20,8 +20,7 @@ const [ messages, setMessages ] = useState([]);
   )}
 />`;
 
-export const notFoundCode = `
-// Default
+export const notFoundCode = `// Default
 <NotFound />
 
 // Custom
@@ -33,9 +32,20 @@ export const notFoundCode = `
 / >
 `;
 
-export const loadingCode = ``;
+export const loadingCode = `// General use
+<Loading
+  isLoading={contentLoading}
+  hasData={contentData}
+>
+  {/*
+    Your content after loading has finished
+    and 200 response data set in app state.
+  */}
 
-export const loadFailCode = ``;
+  <i className="fa-solid fa-thumbs-up" />
+  All good.
+</Loading>
+`;
 
 export const bannerCode = ``;
 

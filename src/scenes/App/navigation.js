@@ -19,7 +19,6 @@ const navigation = {
       notification: { name: "Messages", path: "#messages", icon: "" },
       notFound: { name: "NotFound", path: "#not-found", icon: "" },
       loading: { name: "Loading", path: "#loading", icon: "" },
-      loadFail: { name: "LoadFail", path: "#load-fail", icon: "" },
       badge: { name: "Badge", path: "#badge", icon: "" },
       banner: { name: "Banner", path: "#banner", icon: "" },
     }
@@ -32,6 +31,7 @@ const navigation = {
     subMenu: {
       copyright: { name: "Copyright", path: "#copyright", icon: "" },
       brand: { name: "Brand", path: "#brand", icon: "" },
+      social: { name: "Social", path: "#social", icon: "" },
       tooltip: { name: "Tooltip", path: "#tooltip", icon: "" },
     }
   },
@@ -134,15 +134,16 @@ const navigation = {
     }
   },
 
-  content: {
-    name: "Layout",
-    path: "#layout",
+  containers: {
+    name: "Containers",
+    path: "#containers",
     icon: "",
     subMenu: {
-      slideout: { name: "Slideout", path: "#slideout", icon: "" },
+      slideover: { name: "Slideover", path: "#slideover", icon: "" },
       modal: { name: "Modal", path: "#modal", icon: "" },
       popover: { name: "Popover", path: "#popover", icon: "" },
       card: { name: "Card", path: "#card", icon: "" },
+      accordion: { name: "Accordion", path: "#accordion", icon: "" },
     }
   },
 

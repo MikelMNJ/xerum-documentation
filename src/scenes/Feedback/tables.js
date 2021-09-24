@@ -31,11 +31,7 @@ export const messagesTable = [
         Fontawesome i.e. "<strong>fa-solid fa-check</strong>"&nbsp;
         ("<strong>fas fa-check</strong>" v5 and under).
       </Fragment>,
-    tData3:
-      <Fragment>
-        fa-solid/fas <br />
-        fa-info-circle
-      </Fragment>
+    tData3: <i className="fas fa-info-circle" />
   },
   {
     tData1: "noIcon",
@@ -52,11 +48,7 @@ export const notFoundTable = [
         Fontawesome i.e. "<strong>fa-solid fa-bug</strong>"&nbsp;
         ("<strong>fas fa-bug</strong>" v5 and under).
       </Fragment>,
-    tData3:
-      <Fragment>
-        fa-solid/fas <br />
-        fa-bug
-      </Fragment>
+    tData3: <i className="fas fa-bug" />
   },
   {
     tData1: "noIcon",
@@ -76,7 +68,7 @@ export const notFoundTable = [
   {
     tData1: "message",
     tData2: "Sets a custom message.",
-    tData3: "Can't seem to find that page."
+    tData3: "Can't find that page."
   },
   {
     tData1: "noMessage",
@@ -87,17 +79,61 @@ export const notFoundTable = [
 
 export const loadingTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "isLoading*",
+    tData2:
+      <Fragment>
+        <strong>true</strong> or <strong>false</strong> &mdash;
+        derived from loading selector managed in app state
+        on specific resource API call start/end.
+      </Fragment>,
+    tData3: "true"
   },
-];
-
-export const loadFailTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "hasData*",
+    tData2:
+      <Fragment>
+        <strong>true</strong> or <strong>false</strong> &mdash;
+        derived from data returned (or not) after server response.
+      </Fragment>,
+    tData3: "false"
+  },
+  {
+    tData1: "icon",
+    tData2:
+      <Fragment>
+        Fontawesome i.e. "<strong>fa-solid fa-spinner</strong>"&nbsp;
+        ("<strong>fas fa-spinner</strong>" v5 and under).
+      </Fragment>,
+    tData3: <i className="fas fa-spinner fa-spin" />
+  },
+  {
+    tData1: "text",
+    tData2: "Your text or component to display while API call is being made.",
+    tData3: "Loading..."
+  },
+  {
+    tData1: "failIcon",
+    tData2:
+      <Fragment>
+        Fontawesome i.e. "<strong>fa-solid fa-exclamation</strong>"&nbsp;
+        ("<strong>fas fa-exclamation</strong>" v5 and under).
+      </Fragment>,
+    tData3: <i className="fas fa-exclamation" />
+  },
+  {
+    tData1: "failText",
+    tData2: "Your text or component to display if loading/API call is complete and no data was returned or set in app state.",
+    tData3: "Load failed."
+  },
+  {
+    tData1: "noIcon",
+    tData2: "Disables load/fail icons.",
+    tData3: "-"
+  },
+  {
+    tData1: "noText",
+    tData2: "Disables load/fail text.",
+    tData3: "-"
   },
 ];
 
