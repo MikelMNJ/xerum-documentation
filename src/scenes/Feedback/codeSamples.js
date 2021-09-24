@@ -32,17 +32,18 @@ export const notFoundCode = `// Default
 / >
 `;
 
-export const loadingCode = `const customMsg = "Couldn't fetch resource :/";
-
+export const loadingCode = `// General use
 <Loading
   isLoading={contentLoading}
   hasData={contentData}
-  onFail={customMsg || <YourComponent />}
 >
   {/*
     Your content after loading has finished
     and 200 response data set in app state.
   */}
+
+  <i className="fa-solid fa-thumbs-up" />
+  All good.
 </Loading>
 `;
 

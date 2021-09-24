@@ -31,11 +31,7 @@ export const messagesTable = [
         Fontawesome i.e. "<strong>fa-solid fa-check</strong>"&nbsp;
         ("<strong>fas fa-check</strong>" v5 and under).
       </Fragment>,
-    tData3:
-      <Fragment>
-        fa-solid/fas <br />
-        fa-info-circle
-      </Fragment>
+    tData3: <i className="fas fa-info-circle" />
   },
   {
     tData1: "noIcon",
@@ -52,11 +48,7 @@ export const notFoundTable = [
         Fontawesome i.e. "<strong>fa-solid fa-bug</strong>"&nbsp;
         ("<strong>fas fa-bug</strong>" v5 and under).
       </Fragment>,
-    tData3:
-      <Fragment>
-        fa-solid/fas <br />
-        fa-bug
-      </Fragment>
+    tData3: <i className="fas fa-bug" />
   },
   {
     tData1: "noIcon",
@@ -106,9 +98,42 @@ export const loadingTable = [
     tData3: "false"
   },
   {
-    tData1: "onFail",
-    tData2: "Your message or component to display if loading/API call is complete and no data was returned/set in app state.",
-    tData3: "Failed to load resource."
+    tData1: "icon",
+    tData2:
+      <Fragment>
+        Fontawesome i.e. "<strong>fa-solid fa-spinner</strong>"&nbsp;
+        ("<strong>fas fa-spinner</strong>" v5 and under).
+      </Fragment>,
+    tData3: <i className="fas fa-spinner fa-spin" />
+  },
+  {
+    tData1: "text",
+    tData2: "Your text or component to display while API call is being made.",
+    tData3: "Loading..."
+  },
+  {
+    tData1: "failIcon",
+    tData2:
+      <Fragment>
+        Fontawesome i.e. "<strong>fa-solid fa-exclamation</strong>"&nbsp;
+        ("<strong>fas fa-exclamation</strong>" v5 and under).
+      </Fragment>,
+    tData3: <i className="fas fa-exclamation" />
+  },
+  {
+    tData1: "failText",
+    tData2: "Your text or component to display if loading/API call is complete and no data was returned or set in app state.",
+    tData3: "Load failed."
+  },
+  {
+    tData1: "noIcon",
+    tData2: "Disables load/fail icons.",
+    tData3: "-"
+  },
+  {
+    tData1: "noText",
+    tData2: "Disables load/fail text.",
+    tData3: "-"
   },
 ];
 

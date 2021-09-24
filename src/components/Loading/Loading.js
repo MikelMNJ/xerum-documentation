@@ -1,0 +1,59 @@
+import React, { Fragment } from 'react';
+import { iconValid } from 'helpers/validators';
+import './Loading.scss';
+
+const Loading = props => {
+  const {
+    isLoading,
+    hasData,
+    icon,
+    failIcon,
+    noIcon,
+    children,
+    className,
+    text,
+    failText,
+    noText,
+    ...rest
+  } = props;
+
+  const buildContent = () => {
+    if (isLoading) {
+      return (
+        <Fragment>
+          {!noIcon && (
+            <Fragment>
+              <i className={`${iconValid(icon) || "fas fa-spinner"} fa-spin`} /> &nbsp;
+            </Fragment>
+          )}
+
+          {!noText && (text || "Loading...")}
+        </Fragment>
+      );
+    } else if (!isLoading && !hasData) {
+      return (
+        <Fragment>
+          {!noIcon && (
+            <Fragment>
+              <i className={iconValid(failIcon) || "fas fa-exclamation"} /> &nbsp;
+            </Fragment>
+          )}
+
+          {!noText && (failText || "Load failed.")}
+        </Fragment>
+      );
+    }
+
+    return children;
+  };
+
+  return (
+    <div className={`loader ${className || ""}`} {...rest}>
+      <p>
+        {buildContent()}
+      </p>
+    </div>
+  );
+};
+
+export default Loading;
