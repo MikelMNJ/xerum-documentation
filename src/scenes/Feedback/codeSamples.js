@@ -47,6 +47,14 @@ export const loadingCode = `// General use
 </Loading>
 `;
 
-export const bannerCode = ``;
+export const badgeCode = `// Default
+<Button icon="fa-solid fa-bell">
+  <Badge className="pos" count={4} />
+</Button>
 
-export const badgeCode = ``;
+// Square
+<Button icon="fa-solid fa-envelope">
+  <Badge className="pos" count={1296} square />
+</Button>`;
+
+export const bannerCode = ``;

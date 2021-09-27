@@ -13,8 +13,9 @@ $blue: #0d97ff;
 $darkBlue: #005fa6;
 $deepBlue: #20232a;
 $slate: #4d5153;
-$red: #c54e4e;
+$red: #c93434;
 $yellow: #f0b800;
+$orange: #ec811d;
 $green: #50b990;
 
 :export {
@@ -35,5 +36,6 @@ $green: #50b990;
   slate: $slate;
   red: $red;
   yellow: $yellow;
+  orange: $orange;
   green: $green;
 }
