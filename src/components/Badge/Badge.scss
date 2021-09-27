@@ -1,0 +1,51 @@
+@import 'theme/colors';
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  color: $offWhite;
+  border-radius: 50%;
+  padding: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  height: 1.75rem;
+  width: fit-content;
+  min-width: 1.75rem;
+  background-color: $red;
+
+  &.square {
+    border-radius: 0.35rem;
+  }
+}
+
+.pos {
+  top: -3.35rem;
+  right: -2.35rem;
+}
+
+.badgeBtn {
+  width: 3rem;
+  height: 3rem;
+  color: $offWhite;
+  background-color: $blue;
+  border: none;
+  border-radius: 0.35rem;
+  transition: background-color 0.2s ease;
+  margin: 0 0.5rem !important;
+
+  &:hover {
+    background-color: $darkBlue;
+  }
+
+  i {
+    font-size: 1.25rem;
+  }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 414px) {
+
+}
