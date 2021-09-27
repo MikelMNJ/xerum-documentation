@@ -11,6 +11,7 @@ const Button = props => {
     btnType,
     icon,
     url,
+    children,
     ...rest
   } = props;
 
@@ -25,17 +26,21 @@ const Button = props => {
   };
 
   return (
-    <button
-      className={`${myClass} ${rest.className || ""}`}
-      style={rest.disabled ? {} : (mouseOver ? hoverStyle : style)}
-      onMouseOver={() => setMouseOver(true)}
-      onMouseOut={() => setMouseOver(false)}
-      onClick={handleClick}
-      {...rest}
-    >
-      {iconValid(icon) && <i className={icon} />}&nbsp;
-      {text && text}
-    </button>
+    <div>
+      <button
+        className={`${myClass} ${rest.className || ""}`}
+        style={rest.disabled ? {} : (mouseOver ? hoverStyle : style)}
+        onMouseOver={() => setMouseOver(true)}
+        onMouseOut={() => setMouseOver(false)}
+        onClick={handleClick}
+        {...rest}
+      >
+        {iconValid(icon) && <i className={icon} />}&nbsp;
+        {text && text}
+      </button>
+
+      {children}
+    </div>
   );
 };
 
