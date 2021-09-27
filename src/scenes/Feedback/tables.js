@@ -139,9 +139,14 @@ export const loadingTable = [
 
 export const badgeTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "count",
+    tData2: "Integer count to be displayed — will not display if falsey.",
+    tData3: "-"
+  },
+  {
+    tData1: "square",
+    tData2: "Overrides default circle styling with rounded quare corners.",
+    tData3: "-"
   },
 ];
 
