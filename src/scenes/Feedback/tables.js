@@ -145,15 +145,47 @@ export const badgeTable = [
   },
   {
     tData1: "square",
-    tData2: "Overrides default circle styling with rounded quare corners.",
+    tData2: "Overrides default circle styling with rounded square corners.",
     tData3: "-"
   },
 ];
 
 export const bannerTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "text",
+    tData2: "Text to show on banner — overrides children.",
+    tData3: "-"
+  },
+  {
+    tData1: "icon",
+    tData2:
+      <Fragment>
+        Fontawesome i.e. "<strong>fa-solid fa-times</strong>"&nbsp;
+        ("<strong>fas fa-times</strong>" v5 and under).
+      </Fragment>,
+    tData3:
+      <Fragment>
+        <i className="fas fa-times" />
+      </Fragment>
+  },
+  {
+    tData1: "noIcon",
+    tData2: "Disables banner callback icon.",
+    tData3: "-"
+  },
+  {
+    tData1: "callback",
+    tData2: "Generic click handler, typically for controlling banner state.",
+    tData3: "-"
+  },
+  {
+    tData1: "center",
+    tData2: "Center justifies banner text or children.",
+    tData3: "-"
+  },
+  {
+    tData1: "sharp",
+    tData2: "Overrides default rounded corner styling with sharp corners.",
+    tData3: "-"
   },
 ];
