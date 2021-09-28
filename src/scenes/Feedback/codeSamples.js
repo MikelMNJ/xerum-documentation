@@ -57,4 +57,19 @@ export const badgeCode = `// Default
   <Badge className="pos" count={1296} square />
 </Button>`;
 
-export const bannerCode = ``;
+export const bannerCode = `<Banner
+  text="The floggings will continue until
+    morale improves..."
+  callback={handleClose}
+/>
+
+<Banner
+  noIcon
+  center
+  className="customBanner"
+  callback={handleClose}
+>
+  <i className="fa-solid fa-exclamation" />
+  <strong>Reminder</strong>:
+  Servers will be down for a bit.
+</Banner>`;
