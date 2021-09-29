@@ -1,4 +1,5 @@
 import React from 'react';
+import { iconValid } from 'helpers/validators';
 import './Banner.scss';
 
 const Banner = props => {
@@ -32,7 +33,7 @@ const Banner = props => {
 
       {!noIcon && (
         <div className="close">
-          <i className={icon || "fas fa-times"} onClick={callback} />
+          <i className={iconValid(icon) || "fas fa-times"} onClick={callback} />
         </div>
       )}
     </div>

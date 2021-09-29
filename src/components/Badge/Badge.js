@@ -5,7 +5,12 @@ const Badge = props => {
   const { count, square, wide, className, ...rest } = props;
 
   const buildClasses = () => {
-    return `badge ${square ? "square" : ""} ${className || ""}`;
+    let classList = "badge";
+
+    if (className) classList += ` ${className}`;
+    if (square) classList += " square";
+
+    return classList;
   };
 
   const renderCount = () => {
