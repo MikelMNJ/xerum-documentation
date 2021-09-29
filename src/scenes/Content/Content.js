@@ -2,6 +2,7 @@ import React from 'react';
 import GettingStarted from 'scenes/GettingStarted/GettingStarted';
 import Buttons from 'scenes/Buttons/Buttons';
 import Feedback from 'scenes/Feedback/Feedback';
+import Information from 'scenes/Information/Information';
 import './Content.scss';
 
 const Content = props => {
@@ -10,6 +11,7 @@ const Content = props => {
       <GettingStarted />
       <Buttons />
       <Feedback />
+      <Information />
     </div>
   );
 };
