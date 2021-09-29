@@ -1,52 +1,61 @@
-import React, { useState } from "react";
-import { useLocation, useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
 import { iconValid } from 'helpers/validators';
-import { isEqual } from "lodash";
+import { isEmpty, isEqual } from "lodash";
 import './Nav.scss';
 
 const Nav = props => {
-  const { links, subClassName, ...rest } = props;
-  const [ activeMenu, setActiveMenu ] = useState(null);
-  const history = useHistory();
+  const { links, expand } = props;
+  const [ activeMenus, setActiveMenus ] = useState([]);
   const location = useLocation();
 
-  const changeRoute = (e, isSubMenu, subMenu) => {
-    if (subMenu) {
-      setActiveMenu(!isEqual(activeMenu, subMenu) ? subMenu : null);
+  const handleClick = (e, hasSubMenu, isSubMenu, name) => {
+    const index = activeMenus.findIndex(item => item === name);
+    if (hasSubMenu && !isSubMenu) e.preventDefault();
+
+    if (index === -1) {
+      setActiveMenus([ ...activeMenus, name ]);
     } else {
-      if (!isSubMenu && activeMenu !== null) setActiveMenu(null);
+      const workingArr = [ ...activeMenus ];
+      workingArr.splice(index, 1);
+      setActiveMenus(workingArr);
     }
   };
 
-  const configureClasses = (path, isSubMenu, subMenu) => {
-    const isActive = (location.hash || location.path) === path;
+  const buildClasses = (path, isSubMenu, subMenu, menuActive) => {
+    let classList = "";
+    const isActive = location.hash === path;
 
-    return `
-      ${isActive ? "active" : ""}
-      ${isSubMenu ? "subMenu" : "topLevel"}
-      ${subMenu ? (isEqual(activeMenu, subMenu) ? "closed" : "open") : "noSubMenu"}
-    `
+    if (isActive) classList += " active";
+    isSubMenu ? classList += " subMenuItem" : classList += " topLevel";
+
+    if (subMenu) {
+      menuActive ? classList += " open" : classList += " closed";
+    } else {
+      classList += " noSubMenu";
+    }
+
+    return classList;
   };
 
   const buildNav = (links, isSubMenu) => {
-    const menu = [];
+    if (links) {
+      return links.map(link => {
+        const { name, path, icon, subMenu } = link;
+        const menuOpen = expand || activeMenus.find(item => item === name);
 
-    for (const key in links) {
-      const { name, path, icon, subMenu } = links[key];
+        return (
+          <div key={name} className={buildClasses(path, isSubMenu, subMenu)}>
+            <a href={path} onClick={e => handleClick(e, subMenu, isSubMenu, name)}>
+              {iconValid(icon) && <i className={icon} />}&nbsp;
+              {name}
+            </a>
 
-      menu.push(
-        <div key={name} className={configureClasses(path, isSubMenu, subMenu)}>
-          <a href={path} onClick={e => changeRoute(e, isSubMenu, subMenu)}>
-            {iconValid(icon) && <i className={icon} />}&nbsp;
-            {name}
-          </a>
-
-          {isEqual(activeMenu, subMenu) && buildNav(subMenu, true)}
-        </div>
-      );
-    };
-
-    return menu;
+            {menuOpen && buildNav(subMenu, true)}
+          </div>
+        );
+      });
+    }
   };
 
   return (

@@ -8,7 +8,10 @@ import SampleBox from 'components/SampleBox/SampleBox';
 import Copyright from 'components/Copyright/Copyright';
 import colors from 'theme/colors.scss';
 
-const customStyle = { color: colors.blue };
+const customStyle = {
+  color: colors.blue,
+  marginBottom: "1rem"
+};
 
 const SectionCopyright = props => {
   return (
@@ -25,17 +28,9 @@ const SectionCopyright = props => {
       </div>
 
       <SampleBox name="Copyright" code={copyrightCode}>
-        <p>
           <Copyright style={customStyle} name="Your Name" />
-        </p>
-
-        <p>
           <Copyright style={customStyle} name="Company, LLC" rights trade />
-        </p>
-
-        <p>
           <Copyright style={customStyle} name="Organization" rights="made with love." />
-        </p>
       </SampleBox>
     </Fragment>
   );

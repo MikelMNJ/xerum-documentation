@@ -1,166 +1,167 @@
-const navigation = {
-  gettingStarted: {
+const navigation = [
+  {
     name: "Getting Started",
     path: "#getting-started",
     icon: "",
   },
 
-  buttons: {
+  {
     name: "Buttons",
     path: "#buttons",
     icon: "",
   },
 
-  feedback: {
+  {
     name: "Feedback",
-    path: "#feedback",
+    path: "",
     icon: "",
-    subMenu: {
-      notification: { name: "Messages", path: "#messages", icon: "" },
-      notFound: { name: "NotFound", path: "#not-found", icon: "" },
-      loading: { name: "Loading", path: "#loading", icon: "" },
-      badge: { name: "Badge", path: "#badge", icon: "" },
-      banner: { name: "Banner", path: "#banner", icon: "" },
-    }
+    subMenu: [
+      { name: "Messages", path: "#messages", icon: "" },
+      { name: "NotFound", path: "#not-found", icon: "" },
+      { name: "Loading", path: "#loading", icon: "" },
+      { name: "Badge", path: "#badge", icon: "" },
+      { name: "Banner", path: "#banner", icon: "" },
+    ]
   },
 
-  information: {
+  {
     name: "Information",
-    path: "#information",
+    path: "",
     icon: "",
-    subMenu: {
-      copyright: { name: "Copyright", path: "#copyright", icon: "" },
-      brand: { name: "Brand", path: "#brand", icon: "" },
-      social: { name: "Social", path: "#social", icon: "" },
-      tooltip: { name: "Tooltip", path: "#tooltip", icon: "" },
-    }
+    subMenu: [
+      { name: "Copyright", path: "#copyright", icon: "" },
+      { name: "Brand", path: "#brand", icon: "" },
+      { name: "Social", path: "#social", icon: "" },
+      { name: "Tooltip", path: "#tooltip", icon: "" },
+    ]
   },
 
-  utility: {
+  {
     name: "Utility",
-    path: "#utility",
+    path: "",
     icon: "",
-    subMenu: {
-      heartbeat: { name: "Heartbeat", path: "#heartbeat", icon: "" },
-      authRoute: { name: "AuthRoute", path: "#auth-route", icon: "" },
-      toTop: { name: "ToTop", path: "#to-top", icon: "" },
-      countdown: { name: "Countdown", path: "#countdown", icon: "" },
-      status: { name: "Status", path: "#status", icon: "" },
-    }
+    subMenu: [
+      { name: "Heartbeat", path: "#heartbeat", icon: "" },
+      { name: "AuthRoute", path: "#auth-route", icon: "" },
+      { name: "ToTop", path: "#to-top", icon: "" },
+      { name: "Countdown", path: "#countdown", icon: "" },
+      { name: "Status", path: "#status", icon: "" },
+    ]
   },
 
-  formElements: {
+  {
     name: "Form Elements",
-    path: "#form-elements",
+    path: "",
     icon: "",
-    subMenu: {
-      input: { name: "Input", path: "#input", icon: "" },
-      textarea: { name: "Textarea", path: "#textarea", icon: "" },
-      select: { name: "Select", path: "#select", icon: "" },
-      dateSelect: { name: "DateSelect", path: "#date-select", icon: "" },
-      radio: { name: "Radio", path: "#radio", icon: "" },
-      checkbox: { name: "Checkbox", path: "#checkbox", icon: "" },
-      toggle: { name: "Toggle", path: "#toggle", icon: "" },
-      fieldReqs: { name: "FieldReqs", path: "#field-reqs", icon: "" },
-      fieldError: { name: "FieldError", path: "#field-error", icon: "" },
-    }
+    subMenu: [
+      { name: "Input", path: "#input", icon: "" },
+      { name: "Textarea", path: "#textarea", icon: "" },
+      { name: "Select", path: "#select", icon: "" },
+      { name: "DateSelect", path: "#date-select", icon: "" },
+      { name: "Radio", path: "#radio", icon: "" },
+      { name: "Checkbox", path: "#checkbox", icon: "" },
+      { name: "Toggle", path: "#toggle", icon: "" },
+      { name: "FieldReqs", path: "#field-reqs", icon: "" },
+      { name: "FieldError", path: "#field-error", icon: "" },
+    ]
   },
 
-  forms: {
+  {
     name: "Forms",
-    path: "#forms",
+    path: "",
     icon: "",
-    subMenu: {
-      logIn: { name: "LogIn", path: "#log-in", icon: "" },
-      signup: { name: "SignUp", path: "#sign-up", icon: "" },
-      resetPassword: { name: "ResetPassword", path: "#reset-password", icon: "" },
-      contact: { name: "Contact", path: "#contact", icon: "" },
-    }
+    subMenu: [
+      { name: "LogIn", path: "#log-in", icon: "" },
+      { name: "SignUp", path: "#sign-up", icon: "" },
+      { name: "ResetPassword", path: "#reset-password", icon: "" },
+      { name: "Contact", path: "#contact", icon: "" },
+    ]
   },
 
-  search: {
+  {
     name: "Query",
-    path: "#query",
+    path: "",
     icon: "",
-    subMenu: {
-      search: { name: "Search", path: "#search", icon: "" },
-      filter: { name: "Filter", path: "#filter", icon: "" },
-    }
+    subMenu: [
+      { name: "Filter", path: "#filter", icon: "" },
+      { name: "Search", path: "#search", icon: "" },
+    ]
   },
 
-  tables: {
+  {
     name: "Tables",
-    path: "#tables",
+    path: "",
     icon: "",
-    subMenu: {
-      tHeader: { name: "THeader", path: "#t-header", icon: "" },
-      tRow: { name: "TRow", path: "#t-row", icon: "" },
-      tData: { name: "TData", path: "#t-data", icon: "" },
-    }
+    subMenu: [
+      { name: "Table", path: "#table", icon: "" },
+      { name: "THeader", path: "#t-header", icon: "" },
+      { name: "TRow", path: "#t-row", icon: "" },
+      { name: "TData", path: "#t-data", icon: "" },
+    ]
   },
 
-  navigation: {
+  {
     name: "Navigation",
-    path: "#navigation",
+    path: "",
     icon: "",
-    subMenu: {
-      menu: { name: "Menu", path: "#menu", icon: "" },
-      subMenu: { name: "SubMenu", path: "#sub-menu", icon: "" },
-      breadcrumb: { name: "Breadcrumb", path: "#breadcrumb", icon: "" },
-      pagination: { name: "Pagination", path: "#pagination", icon: "" },
-      tabs: { name: "Tabs", path: "#tabs", icon: "" },
-    }
+    subMenu: [
+      { name: "Menu", path: "#menu", icon: "" },
+      { name: "SubMenu", path: "#sub-menu", icon: "" },
+      { name: "Breadcrumb", path: "#breadcrumb", icon: "" },
+      { name: "Pagination", path: "#pagination", icon: "" },
+      { name: "Tabs", path: "#tabs", icon: "" },
+    ]
   },
 
-  data: {
+  {
     name: "Data",
-    path: "#data",
+    path: "",
     icon: "",
-    subMenu: {
-      progress: { name: "Progress", path: "#progress", icon: "" },
-      price: { name: "Price", path: "#price", icon: "" },
-      percent: { name: "Percent", path: "#percent", icon: "" },
-    },
+    subMenu: [
+      { name: "Progress", path: "#progress", icon: "" },
+      { name: "Price", path: "#price", icon: "" },
+      { name: "Percent", path: "#percent", icon: "" },
+    ]
   },
 
-  images: {
+  {
     name: "Images",
-    path: "#images",
+    path: "",
     icon: "",
-    subMenu: {
-      slider: { name: "Slider", path: "#slider", icon: "" },
-      carousel: { name: "Carousel", path: "#carousel", icon: "" },
-      lightbox: { name: "Lightbox", path: "#lightbox", icon: "" },
-    }
+    subMenu: [
+      { name: "Slider", path: "#slider", icon: "" },
+      { name: "Carousel", path: "#carousel", icon: "" },
+      { name: "Lightbox", path: "#lightbox", icon: "" },
+    ]
   },
 
-  containers: {
+  {
     name: "Containers",
-    path: "#containers",
+    path: "",
     icon: "",
-    subMenu: {
-      slideover: { name: "Slideover", path: "#slideover", icon: "" },
-      modal: { name: "Modal", path: "#modal", icon: "" },
-      popover: { name: "Popover", path: "#popover", icon: "" },
-      card: { name: "Card", path: "#card", icon: "" },
-      accordion: { name: "Accordion", path: "#accordion", icon: "" },
-    }
+    subMenu: [
+      { name: "Slideover", path: "#slideover", icon: "" },
+      { name: "Modal", path: "#modal", icon: "" },
+      { name: "Popover", path: "#popover", icon: "" },
+      { name: "Card", path: "#card", icon: "" },
+      { name: "Accordion", path: "#accordion", icon: "" },
+    ]
   },
 
-  charts: {
+  {
     name: "Charts",
-    path: "#charts",
+    path: "",
     icon: "",
-    subMenu: {
-      candles: { name: "Candles", path: "#candles", icon: "" },
-      macd: { name: "MACD", path: "#macd", icon: "" },
-      rsi: { name: "RSI", path: "#rsi", icon: "" },
-      stochRSI: { name: "StochRSI", path: "#stoch-rsi", icon: "" },
-      pie: { name: "Pie", path: "#pie", icon: "" },
-      line: { name: "Line", path: "#line", icon: "" },
-      bar: { name: "Bar", path: "#bar", icon: "" },
-    }
+    subMenu: [
+      { name: "Candles", path: "#candles", icon: "" },
+      { name: "MACD", path: "#macd", icon: "" },
+      { name: "RSI", path: "#rsi", icon: "" },
+      { name: "StochRSI", path: "#stoch-rsi", icon: "" },
+      { name: "Pie", path: "#pie", icon: "" },
+      { name: "Line", path: "#line", icon: "" },
+      { name: "Bar", path: "#bar", icon: "" },
+    ]
   },
-};
+];
 
 export default navigation;

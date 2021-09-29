@@ -27,6 +27,7 @@
       &::before {
         display: inline-block;
         content: "\203a";
+        transform: rotate(90deg);
         transition: transform 0.2s ease;
       }
     }
@@ -35,18 +36,16 @@
       &::before {
         display: inline-block;
         content: "\203a";
-        transform: rotate(90deg);
         transition: transform 0.2s ease;
       }
     }
   }
 
-  .subMenu {
+  .subMenuItem {
     margin-left: 1rem;
 
     a {
       font-weight: normal;
-      border-left: 0.25rem solid $blue;
     }
   }
 }
