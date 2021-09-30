@@ -5,7 +5,7 @@ import { isEmpty, isEqual } from "lodash";
 import './Nav.scss';
 
 const Nav = props => {
-  const { links, expand } = props;
+  const { links, expand, ...rest } = props;
   const [ activeMenus, setActiveMenus ] = useState([]);
   const location = useLocation();
 
@@ -59,7 +59,7 @@ const Nav = props => {
   };
 
   return (
-    <div id="nav">
+    <div id="nav" {...rest}>
       {buildNav(links)}
     </div>
   );
