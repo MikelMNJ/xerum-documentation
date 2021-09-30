@@ -33,7 +33,7 @@ const MyApp = props => {
         </header>
 
         <section id="main">
-          <Nav className="parent" links={navigation} />
+          <Nav className="customNav" links={navigation} />
 
           <div>
             <Switch>

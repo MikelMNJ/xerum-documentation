@@ -13,7 +13,10 @@
 
   header {
     grid-area: header;
+    position: fixed;
+    z-index: 1;
     width: 100%;
+    background-color: white;
 
     h1 {
       display: flex;
@@ -50,10 +53,11 @@
   }
 
   #main {
-    display: grid;
-    gap: 1rem;
-    grid-area: main;
-    grid-template-columns: 15rem 1fr;
+    margin: 9rem 0 0 17rem;
+
+    #content {
+      padding-bottom: 3.4rem;
+    }
   }
 
   footer {
@@ -63,7 +67,10 @@
     padding: 1rem;
     color: $offWhite;
     background-color: $deepBlue;
-    min-height: 10rem;
+    min-height: 3rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
 }
 
