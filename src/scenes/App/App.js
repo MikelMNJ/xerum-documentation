@@ -27,8 +27,12 @@ const MyApp = props => {
           </h1>
 
           <div id="headerBar">
-            <p className="subTitle">React component library</p>
-            <p>For React v16.8+</p>
+            <div>
+              <p className="subTitle">React component library</p>
+              <p>For React v16.8+</p>
+            </div>
+
+            <input type="text" placeholder="Filter components..." />
           </div>
         </header>
 

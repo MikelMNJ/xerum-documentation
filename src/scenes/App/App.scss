@@ -34,10 +34,18 @@
     }
 
     #headerBar {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 15rem 1fr;
       color: $offWhite;
       background-color: $deepBlue;
       width: 100%;
       padding: 1rem;
+
+      input {
+        margin: 0 auto;
+        max-width: 70rem;
+      }
 
       p {
         margin: 0;
@@ -53,7 +61,7 @@
   }
 
   #main {
-    margin: 9rem 0 0 17rem;
+    margin: 9.4rem 0 0 17rem;
 
     #content {
       padding-bottom: 3.4rem;
