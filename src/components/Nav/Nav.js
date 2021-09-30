@@ -22,14 +22,14 @@ const Nav = props => {
     }
   };
 
-  const buildClasses = (path, isSubMenu, subMenu, menuActive) => {
+  const buildClasses = (path, isSubMenu, hasSubMenu, menuActive) => {
     let classList = "";
-    const isActive = location.hash === path;
+    const isActive = path && (location.hash === path);
 
     if (isActive) classList += " active";
     isSubMenu ? classList += " subMenuItem" : classList += " topLevel";
 
-    if (subMenu) {
+    if (hasSubMenu) {
       menuActive ? classList += " open" : classList += " closed";
     } else {
       classList += " noSubMenu";
@@ -45,7 +45,7 @@ const Nav = props => {
         const menuOpen = expand || activeMenus.find(item => item === name);
 
         return (
-          <div key={name} className={buildClasses(path, isSubMenu, subMenu)}>
+          <div key={name} className={buildClasses(path, isSubMenu, subMenu, menuOpen)}>
             <a href={path} onClick={e => handleClick(e, subMenu, isSubMenu, name)}>
               {iconValid(icon) && <i className={icon} />}&nbsp;
               {name}
