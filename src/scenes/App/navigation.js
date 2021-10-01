@@ -30,7 +30,6 @@ const navigation = [
     icon: "",
     subMenu: [
       { name: "Copyright", path: "#copyright", icon: "" },
-      { name: "Brand", path: "#brand", icon: "" },
       { name: "Social", path: "#social", icon: "" },
       { name: "Tooltip", path: "#tooltip", icon: "" },
     ]
