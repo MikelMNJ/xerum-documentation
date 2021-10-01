@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Switch, Redirect, Route, Link, useHistory } from 'react-router-dom';
 import Content from 'scenes/Content/Content';
 import navigation from "./navigation";
@@ -15,6 +15,7 @@ import "./App.scss";
 const startPage = '/';
 
 const MyApp = props => {
+  const [ navOpen, setNavOpen ] = useState(false);
   const history = useHistory();
 
   const renderApp = () => {
@@ -27,17 +28,24 @@ const MyApp = props => {
           </h1>
 
           <div id="headerBar">
-            <div>
-              <p className="subTitle">React component library</p>
-              <p>For React v16.8+</p>
+            <div className="barText">
+              <i
+                className={`fas fa-${navOpen ? "times" : "bars"}`}
+                onClick={() => setNavOpen(!navOpen)}
+              />
+
+              <div>
+                <p className="subTitle">React component library</p>
+                <p>For React v16.8+</p>
+              </div>
             </div>
 
             <input type="text" placeholder="Filter components..." />
           </div>
         </header>
 
-        <section id="main">
-          <Nav className="customNav" links={navigation} />
+        <section id="main" className={navOpen ? "menuIsOpen" : ""}>
+          <Nav className={`customNav ${navOpen ? "open" : ""}`} links={navigation} />
 
           <div>
             <Switch>

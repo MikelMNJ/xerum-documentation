@@ -36,11 +36,23 @@
     #headerBar {
       display: grid;
       gap: 1rem;
-      grid-template-columns: 15rem 1fr;
+      grid-template-columns: 16rem 1fr;
       color: $offWhite;
       background-color: $deepBlue;
       width: 100%;
       padding: 1rem;
+
+      .barText {
+        display: flex;
+
+        i {
+          display: none;
+          margin-right: 1rem;
+          font-size: 2rem;
+          min-width: 2.25rem;
+          transition: all 0.2s ease;
+        }
+      }
 
       input {
         margin: 0 auto;
@@ -62,6 +74,7 @@
 
   #main {
     margin: 9.4rem 0 0 17rem;
+    transition: margin 0.2s ease;
 
     #content {
       padding-bottom: 3.4rem;
@@ -83,6 +96,45 @@
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 1600px) {
+  #headerBar input {
+    max-width: 60rem !important;
+  }
+}
 
+@media only screen and (max-width: 1280px) {
+  #headerBar input {
+    max-width: 50rem !important;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  #app #main {
+    margin: 13.011875rem 0 0 16rem;
+  }
+
+  #headerBar {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(2, auto);
+
+    input {
+      max-width: unset !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #headerBar .barText i {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #app #main {
+    margin-left: 0;
+
+    &.menuIsOpen {
+      margin-left: 16rem;
+    }
+  }
 }

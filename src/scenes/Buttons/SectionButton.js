@@ -19,12 +19,19 @@ const SectionButton = props => {
       </div>
 
       <SampleBox name="Button" code={buttonCode}>
-        <Button icon="fab fa-google" url="google.com" target="_blank" />
-        <Button text="Submit" type="submit" btnType="ghost" />
-        <Button icon="fas fa-pencil-alt" text="Edit Profile" btnType="transparent" />
-        <Button disabled icon="fab fa-google" url="google.com" target="_blank" />
-        <Button disabled text="Submit" type="submit" btnType="ghost" />
-        <Button disabled icon="fas fa-pencil-alt" text="Edit Profile" btnType="transparent" />
+        <div className="multiline">
+          <div >
+            <Button icon="fab fa-google" url="google.com" target="_blank" />
+            <Button text="Submit" type="submit" btnType="ghost" />
+            <Button icon="fas fa-pencil-alt" text="Edit Profile" btnType="transparent" />
+          </div>
+
+          <div>
+            <Button disabled icon="fab fa-google" url="google.com" target="_blank" />
+            <Button disabled text="Submit" type="submit" btnType="ghost" />
+            <Button disabled icon="fas fa-pencil-alt" text="Edit Profile" btnType="transparent" />
+          </div>
+        </div>
       </SampleBox>
     </Fragment>
   );

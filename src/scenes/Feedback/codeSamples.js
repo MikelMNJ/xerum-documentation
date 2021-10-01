@@ -71,5 +71,5 @@ export const bannerCode = `<Banner
 >
   <i className="fa-solid fa-exclamation" />
   <strong>Reminder</strong>:
-  Servers will be down for a bit.
+  Servers will be down.
 </Banner>`;
