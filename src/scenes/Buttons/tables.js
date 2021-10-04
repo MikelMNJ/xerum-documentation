@@ -34,6 +34,11 @@ export const buttonTable = [
     tData3: "-",
   },
   {
+    tData1: "passthrough",
+    tData2: "Stops event propagation and allows callback if parent click event overrides callback.",
+    tData3: "-",
+  },
+  {
     tData1: "url",
     tData2: "Used explicitly for making external site calls.",
     tData3: "-",
