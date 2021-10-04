@@ -47,6 +47,14 @@ ul.table {
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 520px) {
+  ul.table {
+    .header {
+      display: none;
+    }
 
+    li {
+      grid-template-columns: 1fr;
+    }
+  }
 }
