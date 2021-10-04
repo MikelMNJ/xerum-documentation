@@ -1,20 +1,33 @@
 import React from 'react';
 import TRow from 'components/Table/TRow';
 import TData from 'components/Table/TData';
+import colors from 'theme/colors.scss';
 
-export const buildRows = rows => {
+// TODO: Build TData dynamically and pass header name array.
+
+export const buildRows = (rows, isMobile) => {
   return rows.map((row, index) => (
     <TRow key={index}>
-      <TData className="attrName">
-        {row.tData1}
+      <TData>
+        <strong style={{ color: colors.deepBlue }}>
+          {row.tData1}
+        </strong>
       </TData>
 
-      <TData className="description">
-        {row.tData2}
+      <TData>
+        <p>
+          {row.tData2}
+        </p>
       </TData>
 
-      <TData className="default">
-        {row.tData3}
+      <TData>
+        <span className="mobileDefault">
+          <strong>Default</strong>: &nbsp;
+        </span>
+
+        <strong>
+          {row.tData3}
+        </strong>
       </TData>
     </TRow>
   ));
