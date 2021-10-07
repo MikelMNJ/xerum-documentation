@@ -28,6 +28,7 @@
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "npm-run-all": "^4.1.5",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
@@ -36,7 +37,11 @@
     "webpack-dev-server": "^4.2.0"
   },
   "scripts": {
-    "start": "webpack serve --open",
-    "build": "webpack"
+    "start": "run-p start:**",
+    "start:app": "webpack serve --open --port 3000",
+    "build": "run-s build:**",
+    "build:app": "webpack",
+    "test": "",
+    "deploy": "yarn build && netlify deploy --prod"
   }
 }

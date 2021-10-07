@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { buttonCode } from './codeSamples';
 import { buttonTable } from './tables';
 import { buildRows } from 'helpers/tableHelpers';
+import { codeSnippet } from 'helpers/utilityHelpers';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Button from 'components/Button/Button';
 import Table from 'components/Table/Table';
@@ -16,15 +17,27 @@ const SectionButton = props => {
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
           {buildRows(buttonTable)}
         </Table>
+
+        <strong>Tip</strong>: The <strong>passthrough</strong> prop is handy if your&nbsp;
+        {codeSnippet("<Button />")} component is a child of an element that already has a click
+        event &mdash; i.e. within a table data cell of a table row, where the table row
+        has a row click handler that overrides the button's click event.
       </div>
 
       <SampleBox name="Button" code={buttonCode}>
-        <Button icon="fab fa-google" url="google.com" target="_blank" />
-        <Button text="Submit" type="submit" btnType="ghost" />
-        <Button icon="fas fa-pencil-alt" text="Edit Profile" btnType="transparent" />
-        <Button disabled icon="fab fa-google" url="google.com" target="_blank" />
-        <Button disabled text="Submit" type="submit" btnType="ghost" />
-        <Button disabled icon="fas fa-pencil-alt" text="Edit Profile" btnType="transparent" />
+        <div className="multiline">
+          <div >
+            <Button icon="fab fa-google" url="google.com" target="_blank" />
+            <Button text="Submit" type="submit" btnType="ghost" />
+            <Button icon="fas fa-pencil-alt" text="Edit Profile" btnType="transparent" />
+          </div>
+
+          <div>
+            <Button disabled icon="fab fa-google" url="google.com" target="_blank" />
+            <Button disabled text="Submit" type="submit" btnType="ghost" />
+            <Button disabled icon="fas fa-pencil-alt" text="Edit Profile" btnType="transparent" />
+          </div>
+        </div>
       </SampleBox>
     </Fragment>
   );

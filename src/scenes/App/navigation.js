@@ -30,7 +30,6 @@ const navigation = [
     icon: "",
     subMenu: [
       { name: "Copyright", path: "#copyright", icon: "" },
-      { name: "Brand", path: "#brand", icon: "" },
       { name: "Social", path: "#social", icon: "" },
       { name: "Tooltip", path: "#tooltip", icon: "" },
     ]
@@ -125,17 +124,6 @@ const navigation = [
   },
 
   {
-    name: "Images",
-    path: "",
-    icon: "",
-    subMenu: [
-      { name: "Slider", path: "#slider", icon: "" },
-      { name: "Carousel", path: "#carousel", icon: "" },
-      { name: "Lightbox", path: "#lightbox", icon: "" },
-    ]
-  },
-
-  {
     name: "Containers",
     path: "",
     icon: "",
@@ -145,6 +133,7 @@ const navigation = [
       { name: "Popover", path: "#popover", icon: "" },
       { name: "Card", path: "#card", icon: "" },
       { name: "Accordion", path: "#accordion", icon: "" },
+      { name: "Slider", path: "#slider", icon: "" },
     ]
   },
 

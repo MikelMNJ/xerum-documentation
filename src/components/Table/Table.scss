@@ -9,7 +9,7 @@ ul.table {
   margin-bottom: 1rem;
 
   li {
-    display: inline-grid;
+    display: grid;
     gap: 0 1rem;
     align-items: center;
     grid-template-columns: 10rem 1fr 7rem;
@@ -39,14 +39,29 @@ ul.table {
       background-color: $darkGrey;
     }
 
-    .attrName,
-    .default {
-      font-weight: bold;
+    .mobileDefault {
+      display: none;
     }
   }
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 520px) {
+  ul.table {
+    li {
+      grid-template-columns: 1fr;
 
+      &.header {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        border-radius: 0.35rem 0.35rem 0 0;
+      }
+
+      .mobileDefault {
+        display: inline-block;
+      }
+    }
+  }
 }

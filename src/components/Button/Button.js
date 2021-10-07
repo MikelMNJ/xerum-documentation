@@ -12,6 +12,7 @@ const Button = props => {
     icon,
     url,
     children,
+    passthrough,
     ...rest
   } = props;
 
@@ -21,6 +22,7 @@ const Button = props => {
   const handleClick = e => {
     const validUrl = urlValid(url);
 
+    if (passthrough) e.stopPropagation();
     if (validUrl) window.open(validUrl, rest.target || "_blank");
     if (callback) callback();
   };

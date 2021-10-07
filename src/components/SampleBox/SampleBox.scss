@@ -20,14 +20,44 @@
       justify-content: center;
       flex-wrap: wrap;
 
+      .copyright {
+        text-align: center;
+      }
+
       button {
         margin: 0.25rem;
+      }
+    }
+
+    .multiline {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        display: inline-flex;
       }
     }
   }
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 1280px) {
+  #content .sampleBox {
+    box-shadow: unset;
+    padding-left: 0;
+  }
+}
 
+@media only screen and (max-width: 390px) {
+  #content .sampleBox .samples {
+    max-width: 19.875rem;
+
+    button {
+      margin: 0.15rem;
+    }
+
+    .copyright {
+      font-size: 0.85rem;
+    }
+  }
 }

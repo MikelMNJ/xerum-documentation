@@ -50,7 +50,23 @@
   }
 }
 
-/* ========== Media Queries ========== */
-@media only screen and (max-width: 414px) {
+#nav.customNav {
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  width: 16rem;
+  padding: 1rem 1rem 17rem 1rem;
+  transition: all 0.2s ease;
+}
 
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 1024px) {
+  #nav.customNav {
+    left: -16rem;
+
+    &.open {
+      left: 0;
+    }
+  }
 }

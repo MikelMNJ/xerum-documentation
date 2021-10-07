@@ -29,7 +29,7 @@ const SectionBanner = props => {
         <span>
           <Banner noIcon center className="customBanner">
             <i className="fas fa-exclamation" />&nbsp;&nbsp;
-            <strong>Reminder</strong>: Servers will be down for a bit.
+            <strong>Reminder</strong>: Servers will be down.
           </Banner>
         </span>
       </SampleBox>

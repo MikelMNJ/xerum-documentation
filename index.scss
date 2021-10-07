@@ -40,6 +40,20 @@ a:hover {
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 1600px) {
+  code {
+    font-size: 0.75rem;
+  }
+}
 
+@media only screen and (max-width: 400px) {
+  code {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  code {
+    font-size: 0.65rem;
+  }
 }

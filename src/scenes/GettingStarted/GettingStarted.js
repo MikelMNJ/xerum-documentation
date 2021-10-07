@@ -5,6 +5,12 @@ const GettingStarted = props => {
   return (
     <section id="getting-started">
       <h2>Getting Started</h2>
+
+      <p>
+        <i className="fas fa-exclamation-triangle" />&nbsp;
+        Package is still a work in progress and has not yet been published.
+      </p>
+
       <h3>Installation and Use</h3>
 
       <div>
