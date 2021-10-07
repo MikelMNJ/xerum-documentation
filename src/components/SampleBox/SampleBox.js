@@ -7,7 +7,7 @@ const SampleBox = props => {
 
   return (
     <div className="sampleBox">
-        <h4>{name ? `<${name} />` : "Example"}</h4>
+        <h4>{name ? `${name} Example` : "Example"}</h4>
 
         <div className="samples">
           {children}
