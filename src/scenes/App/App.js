@@ -13,6 +13,10 @@ import colors from 'theme/colors.scss';
 import "./App.scss";
 
 const startPage = '/';
+const socialNetworks = [
+  { path: "https://npmjs.org", icon: "fab fa-npm" },
+  { path: "https://github.com/mikelmnj/xerum", icon: "fab fa-github" },
+];
 
 const MyApp = props => {
   const [ navOpen, setNavOpen ] = useState(false);
@@ -24,7 +28,7 @@ const MyApp = props => {
         <header>
           <h1 onClick={() => history.push(startPage)}>
             Xerum
-            <Social />
+            <Social networks={socialNetworks} />
           </h1>
 
           <div id="headerBar">

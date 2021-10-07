@@ -7,8 +7,23 @@ export const copyrightCode = `<Copyright name="Your Name" />
   rights="made with love."
 />`;
 
-export const brandCode = ``;
+export const socialCode = `const socialNetworks = [
+  {
+    name: "Twitter",
+    path: "https://twitter.com",
+    icon: "fa-brand fa-twitter" },
+  {
+    name: "Facebook",
+    path: "https://facebook.com",
+    icon: "fa-brand fa-facebook" },
+  {
+    name: "Instagram",
+    path: "https://instagram.com",
+    icon: "fa-brand fa-instagram"
+  },
+];
 
-export const socialCode = ``;
+<Social networks={socialNetworks} noText />
+<Social networks={socialNetworks} />`;
 
 export const tooltipCode = ``;

@@ -6,6 +6,13 @@ import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Social from 'components/Social/Social';
+import colors from 'theme/colors.scss';
+
+const socialNetworks = [
+  { name: "Twitter", path: "https://twitter.com", icon: "fab fa-twitter" },
+  { name: "Facebook", path: "https://facebook.com", icon: "fab fa-facebook" },
+  { name: "Instagram", path: "https://instagram.com", icon: "fab fa-instagram" },
+];
 
 const SectionSocial = props => {
   return (
@@ -16,10 +23,33 @@ const SectionSocial = props => {
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
           {buildRows(socialTable)}
         </Table>
+
+        <p>
+          *Required prop.
+        </p>
+
+        <p>
+          <strong>Note</strong>: Not including or leaving an empty <i>name</i> key in your
+          networks array object will also have the same effect as passing the&nbsp;
+          <strong>noText</strong> prop.
+        </p>
+
+        Additionally, when passing a custom <i>className</i> to the {codeSnippet("<Social />")}&nbsp;
+        component, you are directly targeting it's {codeSnippet("<a />")} tags &mdash; you can use
+        CSS chaining and psuedo-selectors if you need finer control over {codeSnippet(":hover")} style
+        or targetting the child {codeSnippet("<i />")} tags &mdash; otherwise generic changes from the parent
+        {codeSnippet("<a />")} level, like <i>color</i> and <i>font-size</i>, will affect both icons
+        and text.
       </div>
 
       <SampleBox name="Social" code={socialCode}>
+        <p>
+          <Social networks={socialNetworks} noText />
+        </p>
 
+        <p>
+          <Social networks={socialNetworks} />
+        </p>
       </SampleBox>
     </Fragment>
   );

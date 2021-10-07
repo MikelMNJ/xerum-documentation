@@ -1,6 +1,26 @@
 @import 'theme/colors';
 
+.social {
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.35rem;
+    font-size: 0.9rem;
 
+    i {
+      font-size: 1.5rem;
+    }
+
+    &.column {
+      flex-direction: column;
+
+      i {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}
 
 /* ========== Media Queries ========== */
 @media only screen and (max-width: 414px) {
