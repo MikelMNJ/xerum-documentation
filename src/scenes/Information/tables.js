@@ -18,18 +18,27 @@ export const copyrightTable = [
   },
 ];
 
-export const brandTable = [
-  {
-    tData1: "",
-    tData2: "",
-    tData3: "-"
-  },
-];
-
 export const socialTable = [
   {
-    tData1: "",
-    tData2: "",
+    tData1: "networks*",
+    tData2:
+      <Fragment>
+        Array of objects with <strong>name</strong>,&nbsp;
+        <strong>path</strong> and <strong>icon</strong> keys.
+      </Fragment>,
+    tData3:
+      <Fragment>
+        icon: <i className="fas fa-question-circle" />
+      </Fragment>
+  },
+  {
+    tData1: "noText",
+    tData2: "Disables network name text, if it exists.",
+    tData3: "-"
+  },
+  {
+    tData1: "column",
+    tData2: "Stacks network icon and name.",
     tData3: "-"
   },
 ];
