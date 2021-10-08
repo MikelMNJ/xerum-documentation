@@ -66,7 +66,7 @@ const MyApp = props => {
 
         <footer>
           <Copyright name="Mikel Jagan" />
-          <ToTop />
+          <ToTop className="myTop" />
         </footer>
         {/* <h1>Components</h1>
 
