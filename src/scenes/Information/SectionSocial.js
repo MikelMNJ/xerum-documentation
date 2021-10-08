@@ -40,6 +40,10 @@ const SectionSocial = props => {
         or targetting the child {codeSnippet("<i />")} tags &mdash; otherwise generic changes from the parent
         {codeSnippet("<a />")} level, like <i>color</i> and <i>font-size</i>, will affect both icons
         and text.
+
+        <p>
+          Finally, icon colors and hover states will be your default link styling.
+        </p>
       </div>
 
       <SampleBox name="Social" code={socialCode}>
