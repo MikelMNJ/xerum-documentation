@@ -45,8 +45,29 @@ export const socialTable = [
 
 export const tooltipTable = [
   {
-    tData1: "",
-    tData2: "",
+    tData1: "icon",
+    tData2:
+      <Fragment>
+        Fontawesome i.e. "<strong>fa-solid fa-info-circle</strong>"
+        ("<strong>fas fa-info-circle</strong>" v5 and under).
+      </Fragment>,
+    tData3: <i className="fas fa-info-circle" />
+  },
+  {
+    tData1: "text",
+    tData2:
+      <Fragment>
+        Text to show on hover &mdash; overrides children.
+      </Fragment>,
     tData3: "-"
+  },
+  {
+    tData1: "position",
+    tData2:
+      <Fragment>
+        <strong>top</strong>, <strong>right</strong>,&nbsp;
+        <strong>bottom</strong> or <strong>left</strong>.
+      </Fragment>,
+    tData3: "Lower-right of cursor."
   },
 ];

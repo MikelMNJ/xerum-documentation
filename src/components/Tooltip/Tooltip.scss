@@ -1,6 +1,35 @@
 @import 'theme/colors';
 
+.tooltip {
+  .tip {
+    position: fixed;
+    z-index: 1;
+    background-color: $deepBlue;
+    padding: 0.5rem;
+    border-radius: 0.35rem;
+    color: $offWhite;
 
+    i {
+      color: $offWhite;
+    }
+  }
+
+  i {
+    color: $deepBlue;
+  }
+}
+
+
+.customTooltip .tip {
+  font-weight: bold;
+  text-align: center;
+  color: $white;
+  background-color: $blue;
+}
+
+.customTooltip i {
+  color: $blue;
+}
 
 /* ========== Media Queries ========== */
 @media only screen and (max-width: 414px) {

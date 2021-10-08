@@ -26,4 +26,19 @@ export const socialCode = `const socialNetworks = [
 <Social networks={socialNetworks} noText />
 <Social networks={socialNetworks} />`;
 
-export const tooltipCode = ``;
+export const tooltipCode = `Standard
+<Tooltip text="Standard tool tip." />
+
+Child
+<Tooltip position="top">
+  <i className="fa-solid fa-smile" />
+  Tool tip rendering children.
+</Tooltip>
+
+Custom
+<Tooltip
+  icon="fa-solid fa-question-circle"
+  text="Customized tool tip."
+  position="top"
+  className="customTooltip"
+/>`;

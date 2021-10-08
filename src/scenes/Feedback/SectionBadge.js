@@ -27,7 +27,7 @@ const SectionBadge = props => {
         insde the {codeSnippet("<Button />")} component.  You are also free to place
         it on any component you please &mdash; the important thing is that a custom <i>className</i>&nbsp;
         or <i>style</i> prop with position data should be passed to get proper placement.
-        The examples to the right uses the following CSS:
+        The associated examples use the following CSS:
 
         {codeSnippet(cssSnippet, true)}
       </div>
