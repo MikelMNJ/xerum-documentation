@@ -34,6 +34,15 @@ pre {
   align-items: center;
 }
 
+.center {
+  text-align: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .scrollbar {
   min-height: 18.75rem;
   overflow-y: scroll;

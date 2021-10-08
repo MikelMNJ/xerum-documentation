@@ -16,8 +16,9 @@ const Social = props => {
   };
 
   const buildSocial = () => {
-    return networks?.map(network => (
+    return networks?.map((network, index) => (
       <Link
+        key={index}
         to={{ pathname: network.path || "" }}
         target="_blank"
         className={buildClasses()}
