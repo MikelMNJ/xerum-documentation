@@ -7,3 +7,11 @@ export const codeSnippet = (code, block) => (
     </code>
   </pre>
 );
+
+export const addEvent = (name, func) => {
+  window.addEventListener(name, e => func(e));
+};
+
+export const removeEvent = (name, func) => {
+  window.removeEventListener(name, e => func(e));
+};

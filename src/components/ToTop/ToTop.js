@@ -1,7 +1,12 @@
 import React, { useEffect, useRef } from 'react';
+import { iconValid } from 'helpers/validators';
+import { addEvent, removeEvent } from 'helpers/utilityHelpers';
 import './ToTop.scss';
 
+const eName = "scroll";
+
 const ToTop = props => {
+  const { icon, className, ...rest } = props;
   const toTop = useRef();
 
   const scrollAction = () => {
@@ -9,6 +14,7 @@ const ToTop = props => {
 
     if (target) {
       const { style } = target;
+
       if (window.pageYOffset >= 145) {
         style.setProperty('opacity', 0.5);
         style.setProperty('transform', 'translateY(0)');
@@ -22,16 +28,24 @@ const ToTop = props => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollAction);
-    return () => window.removeEventListener('scroll', scrollAction);
+    addEvent(eName, scrollAction);
+    return () => removeEvent(eName, scrollAction);
   }, []);
+
+  const buildClasses = () => {
+    let classList = "toTop";
+    if (className) classList += ` ${className}`;
+    return classList;
+  };
 
   return (
     <div
       ref={toTop}
-      className="toTop"
-      onClick={() => window.scrollTo(0, 0)}>
-        <i className="fas fa-angle-up" />
+      className={buildClasses()}
+      onClick={() => window.scrollTo(0, 0)}
+      {...rest}
+    >
+      <i className={iconValid(icon) || "fas fa-angle-up"} />
     </div>
   );
 };
