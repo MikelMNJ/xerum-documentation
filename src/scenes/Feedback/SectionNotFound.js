@@ -24,7 +24,7 @@ const SectionNotFound = props => {
         <p />
       </div>
 
-      <SampleBox name="NotFound" code={notFoundCode}>
+      <SampleBox name="Not Found" code={notFoundCode}>
         <NotFound />
 
         <NotFound

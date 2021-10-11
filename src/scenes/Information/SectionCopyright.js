@@ -28,9 +28,9 @@ const SectionCopyright = props => {
       </div>
 
       <SampleBox name="Copyright" code={copyrightCode}>
-          <Copyright style={customStyle} name="Your Name" />
-          <Copyright style={customStyle} name="Company, LLC" rights trade />
-          <Copyright style={customStyle} name="Organization" rights="made with love." />
+        <Copyright style={customStyle} name="Your Name" />
+        <Copyright style={customStyle} name="Company, LLC" rights trade />
+        <Copyright style={customStyle} name="Organization" rights="made with love." />
       </SampleBox>
     </Fragment>
   );

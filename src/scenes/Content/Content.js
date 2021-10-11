@@ -3,6 +3,7 @@ import GettingStarted from 'scenes/GettingStarted/GettingStarted';
 import Buttons from 'scenes/Buttons/Buttons';
 import Feedback from 'scenes/Feedback/Feedback';
 import Information from 'scenes/Information/Information';
+import Utility from 'scenes/Utility/Utility';
 import './Content.scss';
 
 const Content = props => {
@@ -12,6 +13,7 @@ const Content = props => {
       <Buttons />
       <Feedback />
       <Information />
+      <Utility />
     </div>
   );
 };
