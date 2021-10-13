@@ -8,20 +8,6 @@ import SampleBox from 'components/SampleBox/SampleBox';
 import Status from 'components/Status/Status';
 import colors from 'theme/colors.scss';
 
-const getColor = status => {
-  switch(status) {
-    case "online":
-      return colors.green;
-    case "degraded":
-      return colors.yellow;
-    case "offline":
-      return colors.red;
-
-    default:
-      null;
-  };
-};
-
 const SectionStatus = props => {
   return (
     <Fragment>
@@ -34,15 +20,15 @@ const SectionStatus = props => {
 
         <p>
           <strong>Note</strong>: The examples provided are hard-coded for clarity,
-          but should ultimately receive their colors, dynamically, from app state.
+          but should receive their colors, dynamically, from app state.
         </p>
       </div>
 
       <SampleBox name="Status" code={statusCode}>
         <div>
-          <Status color={getColor("online")} text="App servers" />
-          <Status color={getColor("degraded")} text="Media servers" />
-          <Status color={getColor("offline")} text="Email sending" />
+          <Status color={colors.green} text="App servers" />
+          <Status color={colors.yellow} text="Media servers" />
+          <Status color={colors.red} text="Email sending" />
         </div>
       </SampleBox>
     </Fragment>
