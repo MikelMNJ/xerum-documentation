@@ -10,6 +10,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, "src"), "node_modules"],
+    fallback: { "process": require.resolve("process/browser") },
   },
   module: {
     rules: [
