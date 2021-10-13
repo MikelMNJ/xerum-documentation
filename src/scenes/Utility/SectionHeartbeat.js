@@ -79,7 +79,7 @@ const SectionHeartbeat = props => {
             callback={() => setOutage(!outage)}
           />
 
-          ... or disable your N.I.C.
+          ... or disable your N.I.C. for the real deal.
         </div>
       </SampleBox>
     </Fragment>

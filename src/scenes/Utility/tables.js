@@ -61,4 +61,9 @@ export const statusTable = [
     tData2: "Sets the color of the indicator using hex format, i.e. #000 or #000000",
     tData3: <Status color="#7e8489" text="#7e8489" />
   },
+  {
+    tData1: "text",
+    tData2: "Text to display next to service indicator.",
+    tData3: "-"
+  },
 ];
