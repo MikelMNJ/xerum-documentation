@@ -14,18 +14,10 @@ export const toTopCode = `<ToTop />`;
 
 export const countdownCode = ``;
 
-export const statusCode = `const color = serviceStatus => {
-  switch(serviceStatus) {
-    case "online":
-      return colors.green;
-    case "degraded":
-      return colors.yellow;
-    case "offline":
-      return colors.red;
+export const statusCode = `const green = "#50b990";
+const yellow = "#f0b800";
+const red = "#c93434";
 
-    default:
-      null;
-  };
-};
-
-<Status color={color(serviceStatus)} />`;
+<Status color={green} text="App servers" />
+<Status color={yellow} text="Media servers" />
+<Status color={red} text="Email sending" />`;

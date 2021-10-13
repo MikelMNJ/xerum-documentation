@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { hexValid } from 'helpers/validators';
 import colors from 'theme/colors.scss';
 import './Status.scss';
 
 const Status = props => {
-  const { color, className, ...rest } = props;
+  const { color, text, className, ...rest } = props;
 
   const statusStyle = {
-    color: color || colors.grey
+    color: hexValid(color) || colors.grey
   };
 
   const buildClasses = () => {
@@ -18,6 +19,12 @@ const Status = props => {
   return (
     <div className="status">
       <i className={buildClasses()} style={statusStyle}  {...rest} />
+
+      {text && (
+        <Fragment>
+          &nbsp;{text}
+        </Fragment>
+      )}
     </div>
   );
 };
