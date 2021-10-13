@@ -1,6 +1,12 @@
-export const heartbeatCode = `const { env: { NODE_ENV } } = process;
+export const heartbeatCode = `import process from 'process';
 
-<Heartbeat disabled={NODE_ENV !== "production"} />`;
+const { env: { NODE_ENV } } = process;
+const dev = NODE_ENV !== "production";
+
+// Wrap your main App with Heartbeat.
+<Heartbeat disabled={dev}>
+  <App />
+</Heartbeat>`;
 
 export const authRouteCode = ``;
 

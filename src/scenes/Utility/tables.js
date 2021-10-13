@@ -2,12 +2,31 @@ import React, { Fragment } from 'react';
 
 export const heartbeatTable = [
   {
+    tData1: "time",
+    tData2: "Time (milleseconds) between connection tests.",
+    tData3: "10 seconds"
+  },
+  {
+    tData1: "icon",
+    tData2:
+    <Fragment>
+      Fontawesome i.e. "<strong>fa-solid fa-ethernet</strong>"&nbsp;
+      ("<strong>fas fa-ethernet</strong>" v5 and under).
+    </Fragment>,
+    tData3: <i className="fas fa-ethernet" />
+  },
+  {
+    tData1: "text",
+    tData2: "Text to display on connection fail.",
+    tData3: "No connection detected."
+  },
+  {
     tData1: "disabled",
     tData2:
       <Fragment>
         <strong>true</strong> or <strong>false</strong>.
       </Fragment>,
-    tData3: "false"
+    tData3: "-"
   },
 ];
 
