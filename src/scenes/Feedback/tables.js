@@ -16,7 +16,7 @@ export const messagesTable = [
   },
   {
     tData1: "time",
-    tData2: "Time before notification self-closes.",
+    tData2: "Time (milleseconds) before notification self-closes.",
     tData3: "4 seconds"
   },
   {
