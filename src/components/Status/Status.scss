@@ -1,7 +1,14 @@
 @import 'theme/colors';
 
 .status {
+  display: flex;
+  align-items: center;
   margin: 0.25rem;
+
+  i {
+    font-size: 0.6rem;
+    transition: color 0.2s ease;
+  }
 }
 
 /* ========== Media Queries ========== */

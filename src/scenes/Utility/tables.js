@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Status from 'components/Status/Status';
 
 export const heartbeatTable = [
   {
@@ -56,8 +57,8 @@ export const countdownTable = [
 
 export const statusTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "color",
+    tData2: "Sets the color of the indicator using hex format, i.e. #000 or #000000",
+    tData3: <Status color="#7e8489" text="#7e8489" />
   },
 ];
