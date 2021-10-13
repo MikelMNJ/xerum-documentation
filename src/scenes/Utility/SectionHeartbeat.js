@@ -78,6 +78,8 @@ const SectionHeartbeat = props => {
             hoverStyle={style}
             callback={() => setOutage(!outage)}
           />
+
+          ... or disable your N.I.C.
         </div>
       </SampleBox>
     </Fragment>
