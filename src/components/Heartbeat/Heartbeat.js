@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Heartbeat = props => {
-  const { ...rest } = props;
+  const { disabled } = props;
 
   const heartbeatSample = {
     fontSize: "3rem"

@@ -6,6 +6,9 @@ import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Heartbeat from 'components/Heartbeat/Heartbeat';
+import process from 'process';
+
+const { env: { NODE_ENV } } = process;
 
 const SectionHeartbeat = props => {
   return (
@@ -17,10 +20,19 @@ const SectionHeartbeat = props => {
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
           {buildRows(heartbeatTable)}
         </Table>
+
+        <p>
+          <strong>Tip</strong>: It is strongly recommended to pass your
+          environment feature flag/conditional to <strong>disabled</strong> &mdash;
+          this component does not render a visible element to the DOM.
+        </p>
       </div>
 
       <SampleBox name="Heartbeat" code={heartbeatCode}>
-        <Heartbeat />
+        <div className="column center">
+          <Heartbeat disabled={NODE_ENV !== "production"} />
+          <p>(Not rendered to the DOM)</p>
+        </div>
       </SampleBox>
     </Fragment>
   );
