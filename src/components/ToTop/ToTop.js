@@ -6,7 +6,7 @@ import './ToTop.scss';
 const eName = "scroll";
 
 const ToTop = props => {
-  const { icon, className, ...rest } = props;
+  const { icon, circle, sharp, className, ...rest } = props;
   const toTop = useRef();
 
   const scrollAction = () => {
@@ -35,6 +35,8 @@ const ToTop = props => {
   const buildClasses = () => {
     let classList = "toTop";
     if (className) classList += ` ${className}`;
+    if (sharp) classList += " sharp";
+    if (circle) classList += " circle";
     return classList;
   };
 

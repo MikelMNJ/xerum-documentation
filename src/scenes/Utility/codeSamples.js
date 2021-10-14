@@ -10,7 +10,9 @@ const dev = NODE_ENV !== "production";
 
 export const authRouteCode = ``;
 
-export const toTopCode = `<ToTop />`;
+export const toTopCode = `<ToTop />
+<ToTop sharp />
+<ToTop circle />`;
 
 export const countdownCode = ``;
 

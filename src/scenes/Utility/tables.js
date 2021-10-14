@@ -41,9 +41,14 @@ export const authRouteTable = [
 
 export const toTopTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "sharp",
+    tData2: "Overrides default rounded corner styling with sharp corners.",
+    tData3: "-"
+  },
+  {
+    tData1: "circle",
+    tData2: "Changes default rounded square styling with circle styling.",
+    tData3: "-"
   },
 ];
 

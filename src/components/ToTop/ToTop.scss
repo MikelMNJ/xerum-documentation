@@ -26,4 +26,12 @@
   &.myTop {
     bottom: 3rem;
   }
+
+  &.sharp {
+    border-radius: unset;
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
 }

@@ -23,7 +23,11 @@ const SectionToTop = props => {
       </div>
 
       <SampleBox name="To-Top" code={toTopCode}>
-        <ToTop style={sampleTop} />
+        <div className="inline">
+          <ToTop style={sampleTop} />
+          <ToTop style={sampleTop} sharp />
+          <ToTop style={sampleTop} circle />
+        </div>
       </SampleBox>
     </Fragment>
   );
