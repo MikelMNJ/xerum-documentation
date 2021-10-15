@@ -51,15 +51,15 @@ const SectionHeartbeat = props => {
         </Table>
 
         <p>
-          <strong>Tip</strong>: It is recommended to pass your environment
-          feature flag/conditional to <strong>disabled</strong>.
+          <strong>Tip</strong>: It is recommended to pass your <i>NODE_ENV</i>&nbsp;
+          flag/conditional to the <strong>disabled</strong> prop.
         </p>
 
         <p>
           <strong>Note</strong>:
-          This component will not render an element to the DOM until the internet
-          connection goes out. Passing children will override the <strong>icon</strong>&nbsp;
-          and <strong>text</strong> props.
+          This component will not render to the DOM until the internet connection
+          goes out &mdash; your main {codeSnippet("<App />")} is rendered
+          by default.
         </p>
       </div>
 
