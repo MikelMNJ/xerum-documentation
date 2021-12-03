@@ -47,10 +47,8 @@ export const counter = args => {
 
   if (endDate) {
     count = "Fixed end time...";
-    return count;
   } else if (timeframe) {
     count = "Calculating time left...";
-    return;
   }
 
   return count;
