@@ -1,21 +1,18 @@
 import moment from 'moment';
-
-// if seconds, use start of minute
-// if minutes, use start of hour
-// if hours, use start of day
-// if day, use start of week
-// if week, use start of month
-// if months, use start of year
+import { timeframeValid } from 'helpers/validators';
 
 export const counter = args => {
   const { timeframe, local, endDate } = args
   const aggregate = args.aggregate || 1;
   const now = moment().utc();
-  const start = moment(now).startOf(parentTime());
-  const end = moment(start).add(aggregate, timeframe || "hours");
+  const prev = moment(now).startOf(parentTime());
+  const next = moment(prev).add(1, parentTime());
+  const units = next.diff(prev, timeframe);
+  const totalTimes = units / aggregate;
+  const times = [];
   let count = "00:00:00";
 
-  function parentTime () {
+  function parentTime() {
     switch(timeframe) {
       case "seconds":
         return "minute";
@@ -35,14 +32,28 @@ export const counter = args => {
     }
   };
 
-  console.log(`
-    Timeframe: ${timeframe}
-    Aggregate: ${aggregate}
-    Parent Time: ${parentTime()}
+  for (let i = 0; i < totalTimes; i++) {
+    const workingTime = moment(prev).add(i * aggregate, timeframe);
+    times.push(workingTime);
+  }
 
-    Start: ${start.format("LLL")}
-    Now: ${now.format("LLL")}
-    End: ${end.format("LLL")}
+  const diffArr = times.map(time => time.diff(now, timeframe));
+  console.log(diffArr)
+
+  // if 0 is present, use 0 -- otherwise use negative number's index just before first positive in array.
+  // TODO: Fix break on hour change (array ends) and break on time range end.
+  const index = diffArr.findIndex((val, index) => val <= 0 && diffArr[index + 1] > 0);
+  const mostRecent = times[index]
+  const end = moment(mostRecent).add(aggregate, timeframeValid(timeframe) || "hours");
+
+  console.log(`
+    Timeframe: ${aggregate} ${timeframe}
+    Units: ${units} ${timeframe}/${parentTime()} (${totalTimes} total)
+    Range: ${prev.format("lll")} - ${next.format("lll")}
+
+    Start: ${mostRecent?.format("lll")}
+    Now: ${now.format("lll")}
+    End: ${end.format("lll")}
   `);
 
   if (endDate) {
