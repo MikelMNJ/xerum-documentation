@@ -55,12 +55,10 @@ const SectionHeartbeat = props => {
           flag/conditional to the <strong>disabled</strong> prop.
         </p>
 
-        <p>
-          <strong>Note</strong>:
-          This component will not render to the DOM until the internet connection
-          goes out &mdash; your main {codeSnippet("<App />")} is rendered
-          by default.
-        </p>
+        <strong>Note</strong>:
+        This component will not render to the DOM until the internet connection
+        goes out &mdash; your main {codeSnippet("<App />")} is rendered
+        by default.
       </div>
 
       <SampleBox name="Heartbeat" code={heartbeatCode}>
