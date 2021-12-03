@@ -19,7 +19,7 @@ const SectionCountdown = props => {
       </div>
 
       <SampleBox name="Countdown" code={countdownCode}>
-        <Countdown />
+        <Countdown timeframe="hours" aggregate={4} />
       </SampleBox>
     </Fragment>
   );
