@@ -1,17 +1,21 @@
 import moment from 'moment';
 import { timeframeValid } from 'helpers/validators';
 
+const format = "lll HH:MM:SS";
+
 export const counter = args => {
-  const { timeframe, local, endDate } = args
-  const aggregate = args.aggregate || 1;
+  const { timeframe, aggregate, local, endDate } = args
+  const agg = aggregate || 1;
   const now = moment().utc();
   const prev = moment(now).startOf(parentTime());
   const next = moment(prev).add(1, parentTime());
   const units = next.diff(prev, timeframe);
-  const totalTimes = units / aggregate;
+  const totalTimes = units / agg;
   const times = [];
+  let mostRecent;
   let count = "00:00:00";
 
+  // Establish broader range to break-down time brackets.
   function parentTime() {
     switch(timeframe) {
       case "seconds":
@@ -32,34 +36,41 @@ export const counter = args => {
     }
   };
 
+  // Establish start/end times for time brackets using timeframe and aggregation.
   for (let i = 0; i < totalTimes; i++) {
-    const workingTime = moment(prev).add(i * aggregate, timeframe);
+    const workingTime = moment(prev).add(i * agg, timeframe);
     times.push(workingTime);
   }
 
-  const diffArr = times.map(time => time.diff(now, timeframe));
-  console.log(diffArr)
+  // Find time bracket we are currently in.
+  times.find((val, index) => {
+    if (now >= val && (index === times.length - 1)) {
+      // Last time period in array.
+      mostRecent = times[times.length - 1];
+      return times[times.length - 1];
+    } else if (now < val && (index !== 0 || index !== times.length - 1)) {
+      // First and every time period in between.
+      mostRecent = times[index - 1];
+      return times[index - 1];
+    }
+  });
 
-  // if 0 is present, use 0 -- otherwise use negative number's index just before first positive in array.
-  // TODO: Fix break on hour change (array ends) and break on time range end.
-  const index = diffArr.findIndex((val, index) => val <= 0 && diffArr[index + 1] > 0);
-  const mostRecent = times[index]
-  const end = moment(mostRecent).add(aggregate, timeframeValid(timeframe) || "hours");
-
-  console.log(`
-    Timeframe: ${aggregate} ${timeframe}
-    Units: ${units} ${timeframe}/${parentTime()} (${totalTimes} total)
-    Range: ${prev.format("lll")} - ${next.format("lll")}
-
-    Start: ${mostRecent?.format("lll")}
-    Now: ${now.format("lll")}
-    End: ${end.format("lll")}
-  `);
+  const end = mostRecent && moment(mostRecent).add(agg, timeframeValid(timeframe) || "hours");
 
   if (endDate) {
     count = "Fixed end time...";
   } else if (timeframe) {
-    count = "Calculating time left...";
+    count = `${end.diff(now, timeframe)} ${timeframe}`;
+
+    // console.log(`
+    //   Timeframe: ${agg} ${timeframe}
+    //   Units: ${units} ${timeframe}/${parentTime()} (${totalTimes} total)
+    //   Range: ${prev.format(format)} - ${next.format(format)}
+
+    //   Start: ${mostRecent?.format(format)}
+    //   Now: ${now.format(format)}
+    //   End: ${end?.format(format)}
+    // `);
   }
 
   return count;
