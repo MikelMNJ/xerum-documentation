@@ -54,9 +54,38 @@ export const toTopTable = [
 
 export const countdownTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "timeframe",
+    tData2:
+      <Fragment>
+        <strong>minutes</strong>,&nbsp;
+        <strong>hours</strong>,&nbsp;
+        <strong>days</strong>,&nbsp;
+        <strong>weeks</strong> or&nbsp;
+        <strong>months</strong>&nbsp;
+      </Fragment>,
+    tData3: "hours"
+  },
+  {
+    tData1: "aggregate",
+    tData2:
+      <Fragment>
+        Aggregation for <strong>timeframe</strong>, i.e. new time range interval every 3d in the week or 15m within the hour etc.
+      </Fragment>,
+    tData3: "1"
+  },
+  {
+    tData1: "end",
+    tData2:
+    <Fragment>
+      Fixed date object to count down to — overrides&nbsp;
+      <strong>timeframe</strong> and <strong>aggregate</strong>.
+    </Fragment>,
+    tData3: "-"
+  },
+  {
+    tData1: "local",
+    tData2: "Overrides UTC and uses local time.",
+    tData3: "UTC"
   },
 ];
 

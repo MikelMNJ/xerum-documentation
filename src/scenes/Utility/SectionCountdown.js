@@ -16,6 +16,11 @@ const SectionCountdown = props => {
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
           {buildRows(countdownTable)}
         </Table>
+
+        <strong>Note</strong>: If you need to countdown using a micro/macro timeframe,
+        such as seconds or years, pass a fixed <strong>end</strong> date object.
+        The <strong>seconds</strong> and <strong>years</strong> timeframes with&nbsp;
+        <strong>aggregate</strong>&nbsp;are not available at this time.
       </div>
 
       <SampleBox name="Countdown" code={countdownCode}>
