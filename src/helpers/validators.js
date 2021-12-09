@@ -32,7 +32,7 @@ export const urlValid = val => {
 };
 
 export const timeframeValid = val => {
-  const validTimeframes = [ "minutes", "hours", "days", "weeks", "months", "years" ];
+  const validTimeframes = [ "seconds", "minutes", "hours", "days", "weeks", "months", "years" ];
   const isValid = validTimeframes.find(time => val.toLowerCase() === time);
 
   if (isValid) return val.toLowerCase();

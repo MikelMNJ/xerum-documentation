@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { timeframeValid } from 'helpers/validators';
 
-const format = "lll HH:MM:SS";
+const format = "ll hh:mm:ss";
 
 export const counter = args => {
   const { timeframe, aggregate, local, endDate } = args

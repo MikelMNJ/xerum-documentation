@@ -6,6 +6,7 @@ import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Countdown from 'components/Countdown/Countdown';
+import moment from "moment";
 
 const SectionCountdown = props => {
   return (
@@ -17,10 +18,8 @@ const SectionCountdown = props => {
           {buildRows(countdownTable)}
         </Table>
 
-        <strong>Note</strong>: If you need to countdown using a micro/macro timeframe,
-        such as seconds or years, pass a fixed <strong>end</strong> date object.
-        The <strong>seconds</strong> and <strong>years</strong> timeframes with&nbsp;
-        <strong>aggregate</strong>&nbsp;are not available at this time.
+        <strong>Note</strong>: If you need to countdown using years,
+        pass a fixed <strong>end</strong> date object.
       </div>
 
       <SampleBox name="Countdown" code={countdownCode}>
