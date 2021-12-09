@@ -48,15 +48,15 @@ export const counter = args => {
 
   // Find time bracket we are currently in.
   times.find((val, index) => {
-    aggCount = index;
-
     if (now >= val && (index === times.length - 1)) {
       // Last time period in array.
       mostRecent = times[times.length - 1];
+      aggCount = index + 1;
       return times[times.length - 1];
     } else if (now < val && (index !== 0 || index !== times.length - 1)) {
       // First and every time period in between.
       mostRecent = times[index - 1];
+      aggCount = index;
       return times[index - 1];
     }
   });
