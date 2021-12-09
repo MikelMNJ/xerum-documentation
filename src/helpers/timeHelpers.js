@@ -1,10 +1,13 @@
+import React, { Fragment } from 'react';
 import moment from 'moment';
 import { timeframeValid } from 'helpers/validators';
+import { startCase } from 'lodash';
 
-const format = "ddd, ll, hh:mm:ss A";
+const format = "ddd, l, hh:mm:ss A";
 
 export const counter = args => {
-  const { timeframe, aggregate, local, end: endDate } = args
+  const { timeframe: frame, aggregate, local, end: endDate, details } = args
+  const timeframe = frame || "hours";
   const agg = aggregate || 1;
   const now = local ? moment() : moment().utc();
   const prev = moment(now).startOf(parentTime());
@@ -13,7 +16,8 @@ export const counter = args => {
   const totalTimes = units / agg;
   const times = [];
   let mostRecent;
-  let count = "00:00:00";
+  let aggCount;
+  let count = { remaining: "00:00:00" };
 
   // Establish broader range to break-down time brackets.
   function parentTime() {
@@ -32,7 +36,7 @@ export const counter = args => {
         return "year";
 
       default:
-        return "hour";
+        return "day";
     }
   };
 
@@ -44,6 +48,8 @@ export const counter = args => {
 
   // Find time bracket we are currently in.
   times.find((val, index) => {
+    aggCount = index;
+
     if (now >= val && (index === times.length - 1)) {
       // Last time period in array.
       mostRecent = times[times.length - 1];
@@ -58,19 +64,30 @@ export const counter = args => {
   const end = mostRecent && moment(mostRecent).add(agg, timeframeValid(timeframe) || "hours");
 
   if (endDate) {
-    count = "Fixed end time...";
+    count.remaining = "Fixed end time...";
   } else if (timeframe) {
-    count = `${end.diff(now, timeframe)} ${timeframe}`;
+    count.remaining = `${end.diff(now, timeframe)} ${timeframe} remaining`;
 
-    console.log(`
-      Timeframe: ${agg} ${timeframe}
-      Units: ${units} ${timeframe}/${parentTime()} (${totalTimes} total)
-      Range: ${prev.format(format)} - ${next.format(format)}
+    if (details) {
+      count.details =
+        <Fragment>
+          <h4>Overview</h4>
+          <div className="group">
+            <p><strong>Timeframe</strong>: {startCase(timeframe)} ({units} {timeframe}/{parentTime()})</p>
+            <p><strong>Aggregate</strong>: Every {agg} {timeframe} ({totalTimes} total)</p>
+            <p><strong>From</strong>: {prev.format(format)}</p>
+            <p><strong>To</strong>: {next.format(format)}</p>
+            <p><strong>Local</strong>: {local ? "true" : "false"}</p>
+          </div>
 
-      Start: ${mostRecent?.format(format)}
-      Now: ${now.format(format)}
-      End: ${end?.format(format)}
-    `);
+          <h4>Aggregate Range ({aggCount}/{totalTimes})</h4>
+          <div className="group">
+            <p><strong>Start</strong>: {mostRecent?.format(format)}</p>
+            <p><strong>Now</strong>: {now.format(format)}</p>
+            <p><strong>End</strong>: {end?.format(format)}</p>
+          </div>
+        </Fragment>;
+    }
   }
 
   return count;

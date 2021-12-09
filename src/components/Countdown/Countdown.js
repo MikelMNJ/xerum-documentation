@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { counter } from 'helpers/timeHelpers';
 import './Countdown.scss';
 
 const Countdown = props => {
-  const { timeframe, aggregate, local, end, ...rest } = props;
-  const args = { timeframe, aggregate, local, end };
+  const { timeframe, aggregate, local, end, details, ...rest } = props;
+  const args = { timeframe, aggregate, local, end, details };
+
+  const renderTime = () => {
+    const { remaining, details } = counter(args);
+
+    return (
+      <Fragment>
+        {remaining}
+
+        {details && (
+          <div className="details">
+            {details}
+          </div>
+        )}
+      </Fragment>
+    );
+  };
 
   return (
     <div className="countdown" {...rest} >
-      {counter(args)}
+      {renderTime()}
     </div>
   );
 };

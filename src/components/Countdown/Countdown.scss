@@ -1,8 +1,23 @@
 @import 'theme/colors';
 
 .countdown {
-  color: $blue;
   font-weight: bold;
+  color: $blue;
+}
+
+.details {
+  font-size: 0.9rem;
+  color: $grey;
+  font-weight: normal;
+
+  .group p {
+    margin: 0;
+  }
+
+  h4 {
+    margin: 1rem 0 0.25rem 0 !important;
+    color: $blue;
+  }
 }
 
 /* ========== Media Queries ========== */

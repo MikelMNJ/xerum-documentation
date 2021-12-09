@@ -57,6 +57,7 @@ export const countdownTable = [
     tData1: "timeframe",
     tData2:
       <Fragment>
+        <strong>seconds</strong>,&nbsp;
         <strong>minutes</strong>,&nbsp;
         <strong>hours</strong>,&nbsp;
         <strong>days</strong>,&nbsp;
@@ -69,7 +70,8 @@ export const countdownTable = [
     tData1: "aggregate",
     tData2:
       <Fragment>
-        Aggregation for <strong>timeframe</strong>, i.e. new time range interval every 3d in the week or 15m within the hour etc.
+        Aggregation for <strong>timeframe</strong>, i.e. new time range interval every
+        3rd day in the week or 15m in the hour etc.
       </Fragment>,
     tData3: "1"
   },

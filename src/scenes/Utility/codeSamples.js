@@ -14,7 +14,7 @@ export const toTopCode = `<ToTop />
 <ToTop sharp />
 <ToTop circle />`;
 
-export const countdownCode = ``;
+export const countdownCode = `<Countdown timeframe="minutes" aggregate={5} />`;
 
 export const statusCode = `const green = "#50b990";
 const yellow = "#f0b800";
