@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { timeframeValid } from 'helpers/validators';
 
-const format = "ll hh:mm:ss";
+const format = "ddd, ll, hh:mm:ss A";
 
 export const counter = args => {
   const { timeframe, aggregate, local, end: endDate } = args
@@ -62,15 +62,15 @@ export const counter = args => {
   } else if (timeframe) {
     count = `${end.diff(now, timeframe)} ${timeframe}`;
 
-    // console.log(`
-    //   Timeframe: ${agg} ${timeframe}
-    //   Units: ${units} ${timeframe}/${parentTime()} (${totalTimes} total)
-    //   Range: ${prev.format(format)} - ${next.format(format)}
+    console.log(`
+      Timeframe: ${agg} ${timeframe}
+      Units: ${units} ${timeframe}/${parentTime()} (${totalTimes} total)
+      Range: ${prev.format(format)} - ${next.format(format)}
 
-    //   Start: ${mostRecent?.format(format)}
-    //   Now: ${now.format(format)}
-    //   End: ${end?.format(format)}
-    // `);
+      Start: ${mostRecent?.format(format)}
+      Now: ${now.format(format)}
+      End: ${end?.format(format)}
+    `);
   }
 
   return count;
