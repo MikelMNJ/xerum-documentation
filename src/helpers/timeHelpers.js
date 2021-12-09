@@ -4,9 +4,9 @@ import { timeframeValid } from 'helpers/validators';
 const format = "ll hh:mm:ss";
 
 export const counter = args => {
-  const { timeframe, aggregate, local, endDate } = args
+  const { timeframe, aggregate, local, end: endDate } = args
   const agg = aggregate || 1;
-  const now = moment().utc();
+  const now = local ? moment() : moment().utc();
   const prev = moment(now).startOf(parentTime());
   const next = moment(prev).add(1, parentTime());
   const units = next.diff(prev, timeframe);
