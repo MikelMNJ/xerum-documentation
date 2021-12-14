@@ -26,8 +26,8 @@ const SectionCountdown = props => {
         <Countdown
           details
           local
-          timeframe="minutes"
-          aggregate={5}
+          timeframe="days"
+          aggregate={3}
           callback={() => console.log("End")}
         />
       </SampleBox>

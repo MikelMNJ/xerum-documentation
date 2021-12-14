@@ -3,9 +3,13 @@ import moment from 'moment';
 import { timeframeValid } from 'helpers/validators';
 import { startCase } from 'lodash';
 
+const validTimes = [ "seconds", "minutes", "hours", "days", "weeks", "months", "years" ];
 const format = "ddd, l, hh:mm:ss A";
 
 export const counter = args => {
+  // TODO: Implement callback function.
+  // TODO: Add prop for enabling/disabling full counter on macro timeframes
+  // i.e. MM:WW:DD:hh:mm:ss becomes MM:WW:DD
   const { timeframe: frame, aggregate, local, end: endDate, details, callback } = args
   const timeframe = frame || "hours";
   const agg = aggregate || 1;
@@ -40,28 +44,32 @@ export const counter = args => {
     }
   };
 
-  function childTime(micro) {
-    // Default requests units for the middle time: 00:xx:00
-    // Micro requests units for the smallest time 00:00:xx
+  function childTime(offset) {
+    const index = validTimes.findIndex(time => time === timeframe);
+    let time = timeframe;
 
-    switch (timeframe) {
+    if (index !== -1 && index + offset >= 0 && index + offset <= validTimes.length) {
+      time = validTimes[index + (offset || 0)];
+    }
+
+    switch (time) {
       case "years":
-        return micro ? "weeks" : "months";
+        return "months";
       case "months":
-        return micro ? "days" : "weeks";
+        return "weeks";
       case "weeks":
-        return micro ? "hours" : "days";
+        return "days";
       case "days":
-        return micro ? "minutes" : "hours";
+        return "hours";
       case "hours":
-        return micro ? "seconds" : "minutes";
+        return "minutes";
       case "minutes":
-        return micro ? "milliseconds" : "seconds";
+        return "seconds";
       case "seconds":
         return "milliseconds";
 
       default:
-        return micro ? "seconds" : "minutes";
+        return "minutes";
     }
   };
 
@@ -89,25 +97,27 @@ export const counter = args => {
     }
   }
 
-  function fixedUnits(micro) {
-    // Default requests units for the middle time: 00:xx:00
-    // Micro requests units for the smallest time 00:00:xx
+  function fixedUnits(offset) {
+    const index = validTimes.findIndex(time => time === timeframe);
+    let time = timeframe;
 
-    switch(timeframe) {
+    if (index !== -1 && index + offset >= 0 && index + offset <= validTimes.length) {
+      time = validTimes[index + (offset || 0)];
+    }
+
+    switch(time) {
       case "seconds":
         return 1000;
-      case "minutes":
-        return micro ? 1000 : 60;
-      case "hours":
-        return 60; // micro and standard the same: 60s/m vs 60m/hr
+      case "minutes" || "hours":
+        return 60;
       case "days":
-        return micro ? 60 : 24;
+        return 24;
       case "weeks":
-        return micro ? 24 : 7;
+        return 7;
       case "months":
-        return micro ? 7 : 4.34524; // TODO: Check the accuracy of this value.
+        return 4.34524; // TODO: Look into an accurate way to find this val.
       case "years":
-        return micro ? 4.34524 : 12;
+        return 12;
 
       default:
         return 60;
@@ -119,16 +129,36 @@ export const counter = args => {
     const floatIsolated = floatTime - Math.floor(floatTime);
     const subTime = fixedUnits() * floatIsolated;
     const subIsolated = subTime - Math.floor(subTime);
-    const microTime = fixedUnits(true) * subIsolated;
+    const microTime = fixedUnits(-1) * subIsolated;
+
+    // TODO: Look into why h:mm:ss breaks on monthly, only. See TODO in fixedUnits().
+    // TODO: Combine up childTime() and fixedUnits().
+    // TODO: Clean all this up and call results from one function.
+    const microTimeIsolated = microTime - Math.floor(microTime);
+    const extraTime1 = fixedUnits(-2) * microTimeIsolated;
+    const extraTime1Isolated = extraTime1 - Math.floor(extraTime1);
+    const extraTime2 = fixedUnits(-3) * extraTime1Isolated;
+    const extraTime2Isolated = extraTime2 - Math.floor(extraTime2);
+    const extraTime3 = fixedUnits(-4) * extraTime2Isolated;
+
     const first = end?.diff(now, timeframe) + abbreviatedTime(timeframe);
     const second = timeframe !== ("seconds") && (subTime | 0) + abbreviatedTime(childTime());
-    const third = timeframe !== ("minutes") && (microTime | 0) + abbreviatedTime(childTime(true));
+    const third = timeframe !== ("minutes") && (microTime | 0) + abbreviatedTime(childTime(-1));
+
+    const fourth = timeframe !== ("hours") && (extraTime1 | 0) + abbreviatedTime(childTime(-2));
+    const fifth = timeframe !== ("days") && (extraTime2 | 0) + abbreviatedTime(childTime(-3));
+    const sixth = timeframe !== ("weeks") && (extraTime3 | 0) + abbreviatedTime(childTime(-4));
+
+
 
     const time = () => {
       if (!second) return `${first}`;
       if (!third) return `${first} ${second}`;
+      if (!fourth) return `${first} ${second} ${third}`;
+      if (!fifth) return `${first} ${second} ${third} ${fourth}`;
+      if (!sixth) return `${first} ${second} ${third} ${fourth} ${fifth}`;
 
-      return `${first} ${second} ${third}`;
+      return `${first} ${second} ${third} ${fourth} ${fifth} ${sixth}`;
     };
 
     return time();
@@ -158,6 +188,7 @@ export const counter = args => {
   const end = mostRecent && moment(mostRecent).add(agg, timeframeValid(timeframe) || "hours");
 
   if (endDate) {
+    // TODO: Implement fixed date countdown.
     count.remaining = "Fixed end time...";
   } else if (timeframe) {
     count.remaining = remainingTime();
