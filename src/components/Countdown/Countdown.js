@@ -3,8 +3,8 @@ import { counter } from 'helpers/timeHelpers';
 import './Countdown.scss';
 
 const Countdown = props => {
-  const { timeframe, aggregate, local, end, details, ...rest } = props;
-  const args = { timeframe, aggregate, local, end, details };
+  const { timeframe, aggregate, local, end, details, callback, ...rest } = props;
+  const args = { timeframe, aggregate, local, end, callback, details };
 
   const renderTime = () => {
     const { remaining, details } = counter(args);
