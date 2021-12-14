@@ -85,6 +85,11 @@ export const countdownTable = [
     tData3: "-"
   },
   {
+    tData1: "callback",
+    tData2: "Callback to execute when counter reaches the end of it's time range.",
+    tData3: "-"
+  },
+  {
     tData1: "local",
     tData2: "Overrides UTC and uses local time.",
     tData3: "UTC"
