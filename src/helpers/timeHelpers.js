@@ -15,6 +15,7 @@ export const counter = args => {
     end: endDate,
     details,
     vague,
+    compact,
     callback
   } = args;
 
@@ -138,40 +139,43 @@ export const counter = args => {
   };
 
   const remainingTime = () => {
-    const floatTime = end?.diff(now, timeframe, true);
-    const floatIsolated = floatTime - Math.floor(floatTime);
-    const subTime = fixedUnits() * floatIsolated;
-    const subIsolated = subTime - Math.floor(subTime);
-    const microTime = fixedUnits(-1) * subIsolated;
+    const firstTime = end?.diff(now, timeframe, true);
+    const firstIsolated = firstTime - Math.floor(firstTime);
+    const secondTime = fixedUnits() * firstIsolated;
+    const secondIsolated = secondTime - Math.floor(secondTime);
+    const thirdTime = fixedUnits(-1) * secondIsolated;
+    const thirdIsolated = thirdTime - Math.floor(thirdTime);
 
     // TODO: Combine up childTime() and fixedUnits().
     // TODO: Clean all this up and call results from one function.
-    const microTimeIsolated = microTime - Math.floor(microTime);
-    const extraTime1 = fixedUnits(-2) * microTimeIsolated;
+    const extraTime1 = fixedUnits(-2) * thirdIsolated;
     const extraTime1Isolated = extraTime1 - Math.floor(extraTime1);
     const extraTime2 = fixedUnits(-3) * extraTime1Isolated;
     const extraTime2Isolated = extraTime2 - Math.floor(extraTime2);
     const extraTime3 = fixedUnits(-4) * extraTime2Isolated;
 
-    const first = end?.diff(now, timeframe) + abbreviatedTime(timeframe);
-    const second = timeframe !== ("seconds") && (subTime | 0) + abbreviatedTime(childTime());
-    const third = timeframe !== ("minutes") && (microTime | 0) + abbreviatedTime(childTime(-1));
-    const fourth = timeframe !== ("hours") && (extraTime1 | 0) + abbreviatedTime(childTime(-2));
-    const fifth = timeframe !== ("days") && (extraTime2 | 0) + abbreviatedTime(childTime(-3));
-    const sixth = timeframe !== ("weeks") && (extraTime3 | 0) + abbreviatedTime(childTime(-4));
+    const first = end?.diff(now, timeframe) + (!compact && abbreviatedTime(timeframe));
+    const second = timeframe !== ("seconds") && (secondTime | 0) + (!compact && abbreviatedTime(childTime()));
+    const third = timeframe !== ("minutes") && (thirdTime | 0) + (!compact && abbreviatedTime(childTime(-1)));
+    const fourth = timeframe !== ("hours") && (extraTime1 | 0) + (!compact && abbreviatedTime(childTime(-2)));
+    const fifth = timeframe !== ("days") && (extraTime2 | 0) + (!compact && abbreviatedTime(childTime(-3)));
+    const sixth = timeframe !== ("weeks") && (extraTime3 | 0) + (!compact && abbreviatedTime(childTime(-4)));
 
     const time = () => {
+      // TODO: Make formatting a single function, including space additions.
+      const space = compact ? ":" : " ";
+
       if (!second) return `${first}`;
-      if (!third) return `${first} ${second}`;
-      if (!fourth) return `${first} ${second} ${third}`;
-      if (!fifth) return `${first} ${second} ${third} ${fourth}`;
-      if (!sixth) return `${first} ${second} ${third} ${fourth} ${fifth}`;
+      if (!third) return `${first}${space}${second}`;
+      if (!fourth) return `${first}${space}${second}${space}${third}`;
+      if (!fifth) return `${first}${space}${second}${space}${third}${space}${fourth}`;
+      if (!sixth) return `${first}${space}${second}${space}${third}${space}${fourth}${space}${fifth}`;
 
       if (vague) {
-        return `${first} ${second} ${third}`;
+        return `${first}${space}${second}${space}${third}`;
       }
 
-      return `${first} ${second} ${third} ${fourth} ${fifth} ${sixth}`;
+      return `${first}${space}${second}${space}${third}${space}${fourth}${space}${fifth}${space}${sixth}`;
     };
 
     return time();

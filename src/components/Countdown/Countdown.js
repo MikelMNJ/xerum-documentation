@@ -3,7 +3,17 @@ import { counter } from 'helpers/timeHelpers';
 import './Countdown.scss';
 
 const Countdown = props => {
-  const { timeframe, aggregate, local, end, details, callback, vague, ...rest } = props;
+  const {
+    timeframe,
+    aggregate,
+    local,
+    end,
+    details,
+    callback,
+    vague,
+    compact,
+    ...rest
+  } = props;
 
   const renderTime = () => {
     const { remaining, details } = counter(props);

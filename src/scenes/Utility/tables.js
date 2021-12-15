@@ -91,7 +91,12 @@ export const countdownTable = [
         Limits daily timeframes and higher to three counter spots.
         i.e. Monthly as MM:WW:DD vs MM:WW:DD:hh:mm:ss"
       </Fragment>,
-    tData3: "false"
+    tData3: "-"
+  },
+  {
+    tData1: "compact",
+    tData2: "Removes friendly units and compresses space between counter spots, i.e. 00:00:00",
+    tData3: "-"
   },
   {
     tData1: "callback",
