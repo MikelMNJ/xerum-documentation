@@ -25,7 +25,7 @@ const SectionCountdown = props => {
       <SampleBox name="Countdown" code={countdownCode}>
         <Countdown
           details
-          timeframe="days"
+          timeframe="months"
           aggregate={3}
           callback={() => console.log("End")}
         />
