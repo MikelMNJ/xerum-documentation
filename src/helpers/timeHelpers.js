@@ -8,8 +8,8 @@ const format = "ddd, l, hh:mm:ss A";
 
 export const counter = args => {
   // TODO: Implement callback function.
-  // TODO: Add prop for enabling/disabling full counter on macro timeframes
-  // i.e. MM:WW:DD:hh:mm:ss becomes MM:WW:DD
+  const {
+    timeframe: frame,
     aggregate,
     local,
     end: endDate,
@@ -105,10 +105,16 @@ export const counter = args => {
   };
 
   function fixedUnits(offset) {
+    const monthStart = moment(now).startOf("month");
+    const monthEnd = moment(now).endOf("month");
+    const weeksInMonth = monthEnd?.diff(monthStart, "weeks", true);
     const index = validTimes.findIndex(time => time === timeframe);
     let time = timeframe;
 
-    if (index !== -1 && index + offset >= 0 && index + offset <= validTimes.length) {
+    if (index !== -1
+      && index + offset >= 0
+      && index + offset <= validTimes.length
+    ) {
       time = validTimes[index + (offset || 0)];
     }
 
@@ -122,7 +128,7 @@ export const counter = args => {
       case "weeks":
         return 7;
       case "months":
-        return 4.34524; // TODO: Look into an accurate way to find this val.
+        return weeksInMonth;
       case "years":
         return 12;
 
@@ -138,7 +144,6 @@ export const counter = args => {
     const subIsolated = subTime - Math.floor(subTime);
     const microTime = fixedUnits(-1) * subIsolated;
 
-    // TODO: Look into why h:mm:ss breaks on monthly, only. See TODO in fixedUnits().
     // TODO: Combine up childTime() and fixedUnits().
     // TODO: Clean all this up and call results from one function.
     const microTimeIsolated = microTime - Math.floor(microTime);
