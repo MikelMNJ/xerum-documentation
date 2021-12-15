@@ -10,7 +10,14 @@ export const counter = args => {
   // TODO: Implement callback function.
   // TODO: Add prop for enabling/disabling full counter on macro timeframes
   // i.e. MM:WW:DD:hh:mm:ss becomes MM:WW:DD
-  const { timeframe: frame, aggregate, local, end: endDate, details, callback } = args
+    aggregate,
+    local,
+    end: endDate,
+    details,
+    vague,
+    callback
+  } = args;
+
   const timeframe = frame || "hours";
   const agg = aggregate || 1;
   const now = local ? moment() : moment().utc();
@@ -95,7 +102,7 @@ export const counter = args => {
       default:
         return "h";
     }
-  }
+  };
 
   function fixedUnits(offset) {
     const index = validTimes.findIndex(time => time === timeframe);
@@ -122,7 +129,7 @@ export const counter = args => {
       default:
         return 60;
     }
-  }
+  };
 
   const remainingTime = () => {
     const floatTime = end?.diff(now, timeframe, true);
@@ -144,12 +151,9 @@ export const counter = args => {
     const first = end?.diff(now, timeframe) + abbreviatedTime(timeframe);
     const second = timeframe !== ("seconds") && (subTime | 0) + abbreviatedTime(childTime());
     const third = timeframe !== ("minutes") && (microTime | 0) + abbreviatedTime(childTime(-1));
-
     const fourth = timeframe !== ("hours") && (extraTime1 | 0) + abbreviatedTime(childTime(-2));
     const fifth = timeframe !== ("days") && (extraTime2 | 0) + abbreviatedTime(childTime(-3));
     const sixth = timeframe !== ("weeks") && (extraTime3 | 0) + abbreviatedTime(childTime(-4));
-
-
 
     const time = () => {
       if (!second) return `${first}`;
@@ -157,6 +161,10 @@ export const counter = args => {
       if (!fourth) return `${first} ${second} ${third}`;
       if (!fifth) return `${first} ${second} ${third} ${fourth}`;
       if (!sixth) return `${first} ${second} ${third} ${fourth} ${fifth}`;
+
+      if (vague) {
+        return `${first} ${second} ${third}`;
+      }
 
       return `${first} ${second} ${third} ${fourth} ${fifth} ${sixth}`;
     };

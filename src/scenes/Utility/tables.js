@@ -85,6 +85,15 @@ export const countdownTable = [
     tData3: "-"
   },
   {
+    tData1: "vague",
+    tData2:
+      <Fragment>
+        Limits daily timeframes and higher to three counter spots.
+        i.e. Monthly as MM:WW:DD vs MM:WW:DD:hh:mm:ss"
+      </Fragment>,
+    tData3: "false"
+  },
+  {
     tData1: "callback",
     tData2: "Callback to execute when counter reaches the end of it's time range.",
     tData3: "-"
