@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SectionHeartbeat from './SectionHeartbeat';
 import SectionAuthRoute from './SectionAuthRoute';
 import SectionToTop from './SectionToTop';
-import SectionCountdown from './SectionCountdown';
+import SectionAggTimer from './SectionAggTimer';
 import SectionStatus from './SectionStatus';
 
 const Information = props => {
@@ -11,7 +11,7 @@ const Information = props => {
       <SectionHeartbeat />
       <SectionAuthRoute />
       <SectionToTop />
-      <SectionCountdown />
+      <SectionAggTimer />
       <SectionStatus />
     </section>
   );

@@ -5,15 +5,16 @@ import { startCase } from 'lodash';
 
 const validTimes = [ "seconds", "minutes", "hours", "days", "weeks", "months", "years" ];
 const format = "ddd, l, hh:mm:ss A";
-const formatNum = (val, digits) => val.toLocaleString('en-US', { minimumIntegerDigits: digits || 2 });
+const formatNum = (val, digits) => (
+  val.toLocaleString('en-US', { minimumIntegerDigits: digits || 2 })
+);
 
-export const counter = args => {
+export const aggTime = args => {
   // TODO: Implement callback function.
   const {
     timeframe: frame,
     aggregate,
     local,
-    end: endDate,
     details,
     vague,
     compact,
@@ -207,10 +208,7 @@ export const counter = args => {
 
   const end = mostRecent && moment(mostRecent).add(agg, timeframeValid(timeframe) || "hours");
 
-  if (endDate) {
-    // TODO: Implement fixed date countdown.
-    count.remaining = "Fixed end time...";
-  } else if (timeframe) {
+  if (timeframe) {
     count.remaining = remainingTime();
 
     if (details) {

@@ -1,29 +1,25 @@
 import React, { Fragment } from "react";
-import { countdownCode } from './codeSamples';
-import { countdownTable } from './tables';
+import { aggTimerCode } from './codeSamples';
+import { aggTimerTable } from './tables';
 import { buildRows } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
-import Countdown from 'components/Countdown/Countdown';
-import moment from "moment";
+import AggTimer from 'components/AggTimer/AggTimer';
 
-const SectionCountdown = props => {
+const SectionAggTimer = props => {
   return (
     <Fragment>
       <div>
-        <h3 id="countdown">{`<Countdown />`}</h3>
+        <h3 id="agg-timer">{`<AggTimer />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(countdownTable)}
+          {buildRows(aggTimerTable)}
         </Table>
-
-        <strong>Note</strong>: If you need to countdown using years,
-        pass a fixed <strong>end</strong> date object.
       </div>
 
-      <SampleBox name="Countdown" code={countdownCode}>
-        <Countdown
+      <SampleBox name="AggTimer" code={aggTimerCode}>
+        <AggTimer
           details
           timeframe="months"
           aggregate={3}
@@ -34,4 +30,4 @@ const SectionCountdown = props => {
   );
 };
 
-export default SectionCountdown;
+export default SectionAggTimer;

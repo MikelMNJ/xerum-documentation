@@ -52,7 +52,7 @@ export const toTopTable = [
   },
 ];
 
-export const countdownTable = [
+export const aggTimerTable = [
   {
     tData1: "timeframe",
     tData2:
@@ -62,7 +62,7 @@ export const countdownTable = [
         <strong>hours</strong>,&nbsp;
         <strong>days</strong>,&nbsp;
         <strong>weeks</strong> or&nbsp;
-        <strong>months</strong>&nbsp;
+        <strong>months</strong>.
       </Fragment>,
     tData3: "hours"
   },
@@ -76,44 +76,36 @@ export const countdownTable = [
     tData3: "1"
   },
   {
-    tData1: "end",
-    tData2:
-    <Fragment>
-      Fixed date object to count down to — overrides&nbsp;
-      <strong>timeframe</strong> and <strong>aggregate</strong>.
-    </Fragment>,
-    tData3: "-"
+    tData1: "local",
+    tData2: "Overrides UTC and uses local time.",
+    tData3: "UTC"
   },
   {
     tData1: "vague",
     tData2:
       <Fragment>
-        Limits daily timeframes and higher to three counter spots.
-        i.e. Monthly as MM:WW:DD vs MM:WW:DD:hh:mm:ss"
+        Limits <strong>days</strong>, <strong>weeks</strong>,&nbsp;
+        <strong>months</strong> to three time spots.
+        i.e. <strong>months</strong> as MM:WW:DD vs MM:WW:DD:hh:mm:ss
       </Fragment>,
     tData3: "-"
   },
   {
     tData1: "compact",
-    tData2: "Removes friendly units and compresses space between counter spots, i.e. 00:00:00",
+    tData2: "Removes friendly units and compresses space between time spots, i.e. 00:00:00",
     tData3: "-"
   },
   {
     tData1: "callback",
-    tData2: "Callback to execute when counter reaches the end of it's time range.",
+    tData2: "Function to execute when timer reaches the end of it's range.",
     tData3: "-"
-  },
-  {
-    tData1: "local",
-    tData2: "Overrides UTC and uses local time.",
-    tData3: "UTC"
   },
 ];
 
 export const statusTable = [
   {
     tData1: "color",
-    tData2: "Sets the color of the indicator using hex format, i.e. #000 or #000000",
+    tData2: "Sets the color of the indicator using hex format, i.e. #000 or #000000.",
     tData3: <Status color="#7e8489" text="#7e8489" />
   },
   {
