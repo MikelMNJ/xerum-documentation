@@ -5,6 +5,7 @@ import { startCase } from 'lodash';
 
 const validTimes = [ "seconds", "minutes", "hours", "days", "weeks", "months", "years" ];
 const format = "ddd, l, hh:mm:ss A";
+const formatNum = (val, digits) => val.toLocaleString('en-US', { minimumIntegerDigits: digits || 2 });
 
 export const counter = args => {
   // TODO: Implement callback function.
@@ -154,12 +155,13 @@ export const counter = args => {
     const extraTime2Isolated = extraTime2 - Math.floor(extraTime2);
     const extraTime3 = fixedUnits(-4) * extraTime2Isolated;
 
-    const first = end?.diff(now, timeframe) + (!compact && abbreviatedTime(timeframe));
-    const second = timeframe !== ("seconds") && (secondTime | 0) + (!compact && abbreviatedTime(childTime()));
-    const third = timeframe !== ("minutes") && (thirdTime | 0) + (!compact && abbreviatedTime(childTime(-1)));
-    const fourth = timeframe !== ("hours") && (extraTime1 | 0) + (!compact && abbreviatedTime(childTime(-2)));
-    const fifth = timeframe !== ("days") && (extraTime2 | 0) + (!compact && abbreviatedTime(childTime(-3)));
-    const sixth = timeframe !== ("weeks") && (extraTime3 | 0) + (!compact && abbreviatedTime(childTime(-4)));
+    // TODO: Clean up compact tertiary statements.
+    const first = (compact ? formatNum(end?.diff(now, timeframe)) : end?.diff(now, timeframe)) + (!compact ? abbreviatedTime(timeframe) : "");
+    const second = timeframe !== ("seconds") && (compact ? formatNum(secondTime | 0) : secondTime | 0) + (!compact ? abbreviatedTime(childTime()) : "");
+    const third = timeframe !== ("minutes") && (compact ? formatNum(thirdTime | 0) : thirdTime | 0) + (!compact ? abbreviatedTime(childTime(-1)) : "");
+    const fourth = timeframe !== ("hours") && (compact ? formatNum(extraTime1 | 0) : extraTime1 | 0) + (!compact ? abbreviatedTime(childTime(-2)) : "");
+    const fifth = timeframe !== ("days") && (compact ? formatNum(extraTime2 | 0) : extraTime2 | 0) + (!compact ? abbreviatedTime(childTime(-3)) : "");
+    const sixth = timeframe !== ("weeks") && (compact ? formatNum(extraTime3 | 0) : extraTime3 | 0) + (!compact ? abbreviatedTime(childTime(-4)) : "");
 
     const time = () => {
       // TODO: Make formatting a single function, including space additions.
@@ -167,13 +169,14 @@ export const counter = args => {
 
       if (!second) return `${first}`;
       if (!third) return `${first}${space}${second}`;
-      if (!fourth) return `${first}${space}${second}${space}${third}`;
-      if (!fifth) return `${first}${space}${second}${space}${third}${space}${fourth}`;
-      if (!sixth) return `${first}${space}${second}${space}${third}${space}${fourth}${space}${fifth}`;
 
       if (vague) {
         return `${first}${space}${second}${space}${third}`;
       }
+
+      if (!fourth) return `${first}${space}${second}${space}${third}`;
+      if (!fifth) return `${first}${space}${second}${space}${third}${space}${fourth}`;
+      if (!sixth) return `${first}${space}${second}${space}${third}${space}${fourth}${space}${fifth}`;
 
       return `${first}${space}${second}${space}${third}${space}${fourth}${space}${fifth}${space}${sixth}`;
     };
