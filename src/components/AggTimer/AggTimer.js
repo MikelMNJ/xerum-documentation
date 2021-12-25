@@ -1,6 +1,7 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { aggTime } from 'helpers/timeHelpers';
 import './AggTimer.scss';
+import { addEvent, removeEvent } from '../../helpers/utilityHelpers';
 
 const AggTimer = props => {
   const {
@@ -14,12 +15,17 @@ const AggTimer = props => {
     ...rest
   } = props;
 
+  const [ time, setTime ] = useState(null);
+
   useEffect(() => {
-    // TODO: addEventListener() to renderTime() every second.
-    return () => {
-      // TODO: removeEventListener();
-    }
-  }, []);
+    const interval = setInterval(() => {
+      setTime(renderTime());
+    }, 1000);
+
+    if (!time) addEvent('onLoad', setInterval(interval));
+
+    return () => removeEvent('onLoad', clearInterval(interval));
+  }, [time]);
 
   const renderTime = () => {
     const { remaining, details } = aggTime(props);
