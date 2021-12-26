@@ -19,7 +19,7 @@ const AggTimer = props => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(renderTime());
+      setTime(aggTime(props));
     }, 1000);
 
     if (!time) addEvent('onLoad', setInterval(interval));
@@ -28,7 +28,7 @@ const AggTimer = props => {
   }, [time]);
 
   const renderTime = () => {
-    const { remaining, details } = aggTime(props);
+    const { remaining, details } = time;
 
     return (
       <Fragment>
@@ -45,7 +45,7 @@ const AggTimer = props => {
 
   return (
     <div className="aggTimer" {...rest} >
-      {renderTime()}
+      {time ? renderTime() : setTime(aggTime(props))}
     </div>
   );
 };
