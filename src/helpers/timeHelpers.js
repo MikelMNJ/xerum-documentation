@@ -79,6 +79,7 @@ export const aggTime = args => {
     const firstTimeFloat = end?.diff(now, timeframe, true);
     const floatingTimes = [];
 
+    // Add remainder values to array -- this will become individual time units.
     for (let i = 0; i < maxUnits(); i++) {
       if (i === 0) {
         floatingTimes.push(firstTimeFloat);
@@ -216,6 +217,7 @@ export const aggTime = args => {
     const time = () => {
       const separator = compact ? ":" : " ";
       const formattedTime = floatingTimes.map((val, index) => {
+        // Convert floatingTimes vals to final, friendly, time units.
         if (index === 0) {
           return unit(firstTime, null, true);
         } else {
