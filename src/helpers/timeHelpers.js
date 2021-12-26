@@ -91,9 +91,13 @@ export const aggTime = args => {
     };
 
     function maxUnits() {
-      if (limit && timeframe !== "minutes" && timeframe !== "seconds") {
+      if (limit) {
         const localMax = () => {
           switch(timeframe) {
+            case "seconds":
+              return 1;
+            case "minutes":
+              return 2;
             case "hours":
               return 3;
             case "days":
