@@ -13,7 +13,7 @@ export const aggTime = args => {
     aggregate,
     local,
     details,
-    vague,
+    limit,
     compact,
     callback
   } = args;
@@ -75,21 +75,66 @@ export const aggTime = args => {
   const end = mostRecent && moment(mostRecent).add(agg, timeframeValid(timeframe) || "hours");
 
   const remainingTime = () => {
-    // TODO: Iterate and store all of these in an array.
     const firstTime = end?.diff(now, timeframe);
     const firstTimeFloat = end?.diff(now, timeframe, true);
-    const secondTime = fixedUnits() * isolate(firstTimeFloat);
-    const thirdTime = fixedUnits(-1) * isolate(secondTime);
-    const extraTime1 = fixedUnits(-2) * isolate(thirdTime);
-    const extraTime2 = fixedUnits(-3) * isolate(extraTime1);
-    const extraTime3 = fixedUnits(-4) * isolate(extraTime2);
+    const floatingTimes = [];
 
-    const first = unit(firstTime, null, true);
-    const second = timeframe !== ("seconds") && unit(secondTime);
-    const third = timeframe !== ("minutes") && unit(thirdTime, -1);
-    const fourth = timeframe !== ("hours") && unit(extraTime1, -2);
-    const fifth = timeframe !== ("days") && unit(extraTime2, -3);
-    const sixth = timeframe !== ("weeks") && unit(extraTime3, -4);
+    for (let i = 0; i < maxUnits(); i++) {
+      if (i === 0) {
+        floatingTimes.push(firstTimeFloat);
+      } else {
+        const previousVal = isolate(floatingTimes[i - 1]);
+        const offset = i === 1 ? null : (i - 1) * -1;
+        const val = fixedUnits(offset) * previousVal;
+        floatingTimes.push(val);
+      }
+    };
+
+    function maxUnits() {
+      if (limit && timeframe !== "minutes" && timeframe !== "seconds") {
+        const localMax = () => {
+          switch(timeframe) {
+            case "hours":
+              return 3;
+            case "days":
+              return 4;
+            case "weeks":
+              return 5;
+            case "months":
+              return 6;
+            case "years":
+              return 7;
+
+            default:
+              return 3;
+          }
+        }
+        if (limit > localMax()) return localMax();
+        if (limit < 1) return 1;
+
+        return limit;
+      }
+
+      switch(timeframe) {
+        case "seconds":
+          return 1;
+        case "minutes":
+          return 2;
+        case "hours":
+          return 3;
+        case "days":
+          return 4;
+        case "weeks":
+          return 5;
+        case "months":
+          return 6;
+        case "years":
+          return 7;
+
+        default:
+          return 3;
+      }
+    };
 
     function fixedUnits(offset, child) {
       const monthStart = moment(now).startOf("month");
@@ -165,21 +210,17 @@ export const aggTime = args => {
     };
 
     const time = () => {
-      // TODO: format by joining values from array.
-      const space = compact ? ":" : " ";
+      const separator = compact ? ":" : " ";
+      const formattedTime = floatingTimes.map((val, index) => {
+        if (index === 0) {
+          return unit(firstTime, null, true);
+        } else {
+          const offset = index !== 1 && (index - 1) * -1;
+          return unit(val, offset);
+        }
+      });
 
-      if (!second) return `${first}`;
-      if (!third) return `${first}${space}${second}`;
-
-      if (vague) {
-        return `${first}${space}${second}${space}${third}`;
-      }
-
-      if (!fourth) return `${first}${space}${second}${space}${third}`;
-      if (!fifth) return `${first}${space}${second}${space}${third}${space}${fourth}`;
-      if (!sixth) return `${first}${space}${second}${space}${third}${space}${fourth}${space}${fifth}`;
-
-      return `${first}${space}${second}${space}${third}${space}${fourth}${space}${fifth}${space}${sixth}`;
+      return formattedTime.join(separator);
     };
 
     return time();

@@ -81,12 +81,12 @@ export const aggTimerTable = [
     tData3: "UTC"
   },
   {
-    tData1: "vague",
+    tData1: "limit",
     tData2:
       <Fragment>
         Limits <strong>days</strong>, <strong>weeks</strong>,&nbsp;
-        <strong>months</strong> to three time spots.
-        i.e. <strong>months</strong> as MM:WW:DD vs MM:WW:DD:hh:mm:ss
+        <strong>months</strong> display lengths.
+        i.e. <strong>months</strong> with a limit of 3 as MM:WW:DD vs MM:WW:DD:hh:mm:ss
       </Fragment>,
     tData3: "-"
   },

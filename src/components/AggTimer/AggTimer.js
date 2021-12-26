@@ -10,7 +10,7 @@ const AggTimer = props => {
     local,
     details,
     callback,
-    vague,
+    limit,
     compact,
     ...rest
   } = props;

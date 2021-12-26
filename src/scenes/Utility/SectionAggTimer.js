@@ -23,7 +23,6 @@ const SectionAggTimer = props => {
           details
           timeframe="months"
           aggregate={3}
-          callback={() => console.log("End")}
         />
       </SampleBox>
     </Fragment>
