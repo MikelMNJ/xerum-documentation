@@ -53,89 +53,96 @@ export const aggTime = args => {
     }
   };
 
-  function abbreviatedTime(time) {
-    switch(time) {
-      case "milliseconds":
-        return "ms";
-      case "seconds":
-        return "s";
-      case "minutes":
-        return "m";
-      case "hours":
-        return "h";
-      case "days":
-        return "D";
-      case "weeks":
-        return "W";
-      case "months":
-        return "M";
-      case "years":
-        return "Y";
-
-      default:
-        return "h";
-    }
-  };
-
-  function fixedUnits(offset, child) {
-    const monthStart = moment(now).startOf("month");
-    const monthEnd = moment(now).endOf("month");
-    const weeksInMonth = monthEnd?.diff(monthStart, "weeks", true);
-    const index = validTimes.findIndex(time => time === timeframe);
-    let time = timeframe;
-
-    if (index !== -1
-      && index + offset >= 0
-      && index + offset <= validTimes.length
-    ) {
-      time = validTimes[index + (offset || 0)];
-    }
-
-    switch(time) {
-      case "seconds":
-        return child ? "milliseconds" : 1000;
-      case "minutes":
-        return child ? "seconds" : 60;
-      case "hours":
-        return child ? "minutes" : 60;
-      case "days":
-        return child ? "hours" :  24;
-      case "weeks":
-        return child ? "days" : 7;
-      case "months":
-        return child ? "weeks" : weeksInMonth;
-      case "years":
-        return child ? "months" : 12;
-
-      default:
-        return child ? "minutes" : 60;
-    }
-  };
-
   const remainingTime = () => {
-    const firstTime = end?.diff(now, timeframe, true);
-    const firstIsolated = firstTime - Math.floor(firstTime);
-    const secondTime = fixedUnits() * firstIsolated;
-    const secondIsolated = secondTime - Math.floor(secondTime);
-    const thirdTime = fixedUnits(-1) * secondIsolated;
-    const thirdIsolated = thirdTime - Math.floor(thirdTime);
+    const firstTime = end?.diff(now, timeframe);
+    const firstTimeFloat = end?.diff(now, timeframe, true);
+    const secondTime = fixedUnits() * isolate(firstTimeFloat);
+    const thirdTime = fixedUnits(-1) * isolate(secondTime);
+    const extraTime1 = fixedUnits(-2) * isolate(thirdTime);
+    const extraTime2 = fixedUnits(-3) * isolate(extraTime1);
+    const extraTime3 = fixedUnits(-4) * isolate(extraTime2);
 
-    // TODO: Clean all this up and call results from one function.
-    const extraTime1 = fixedUnits(-2) * thirdIsolated;
-    const extraTime1Isolated = extraTime1 - Math.floor(extraTime1);
-    const extraTime2 = fixedUnits(-3) * extraTime1Isolated;
-    const extraTime2Isolated = extraTime2 - Math.floor(extraTime2);
-    const extraTime3 = fixedUnits(-4) * extraTime2Isolated;
+    const first = unit(firstTime, null, true);
+    const second = timeframe !== ("seconds") && unit(secondTime);
+    const third = timeframe !== ("minutes") && unit(thirdTime, -1);
+    const fourth = timeframe !== ("hours") && unit(extraTime1, -2);
+    const fifth = timeframe !== ("days") && unit(extraTime2, -3);
+    const sixth = timeframe !== ("weeks") && unit(extraTime3, -4);
 
-    // TODO: Clean up compact tertiary statements.
-    const first = (compact ? formatNum(end?.diff(now, timeframe)) : end?.diff(now, timeframe)) + (!compact ? abbreviatedTime(timeframe) : "");
-    const second = timeframe !== ("seconds") && (compact ? formatNum(secondTime | 0) : secondTime | 0) + (!compact ? abbreviatedTime(fixedUnits(null, true)) : "");
-    const third = timeframe !== ("minutes") && (compact ? formatNum(thirdTime | 0) : thirdTime | 0) + (!compact ? abbreviatedTime(fixedUnits(-1, true)) : "");
-    const fourth = timeframe !== ("hours") && (compact ? formatNum(extraTime1 | 0) : extraTime1 | 0) + (!compact ? abbreviatedTime(fixedUnits(-2, true)) : "");
-    const fifth = timeframe !== ("days") && (compact ? formatNum(extraTime2 | 0) : extraTime2 | 0) + (!compact ? abbreviatedTime(fixedUnits(-3, true)) : "");
-    const sixth = timeframe !== ("weeks") && (compact ? formatNum(extraTime3 | 0) : extraTime3 | 0) + (!compact ? abbreviatedTime(fixedUnits(-4, true)) : "");
+    function fixedUnits(offset, child) {
+      const monthStart = moment(now).startOf("month");
+      const monthEnd = moment(now).endOf("month");
+      const weeksInMonth = monthEnd?.diff(monthStart, "weeks", true);
+      const index = validTimes.findIndex(time => time === timeframe);
+      let time = timeframe;
 
-    const time = () => {
+      if (index !== -1
+        && index + offset >= 0
+        && index + offset <= validTimes.length
+      ) {
+        time = validTimes[index + (offset || 0)];
+      }
+
+      switch(time) {
+        case "seconds":
+          return child ? "milliseconds" : 1000;
+        case "minutes":
+          return child ? "seconds" : 60;
+        case "hours":
+          return child ? "minutes" : 60;
+        case "days":
+          return child ? "hours" :  24;
+        case "weeks":
+          return child ? "days" : 7;
+        case "months":
+          return child ? "weeks" : weeksInMonth;
+        case "years":
+          return child ? "months" : 12;
+
+        default:
+          return child ? "minutes" : 60;
+      }
+    };
+
+    function unit (val, offset, useTimeframe) {
+      const time = val | 0;
+      const unit = abbreviatedTime(useTimeframe ? timeframe : fixedUnits(offset, true));
+
+      function abbreviatedTime(time) {
+        switch(time) {
+          case "milliseconds":
+            return "ms";
+          case "seconds":
+            return "s";
+          case "minutes":
+            return "m";
+          case "hours":
+            return "h";
+          case "days":
+            return "D";
+          case "weeks":
+            return "W";
+          case "months":
+            return "M";
+          case "years":
+            return "Y";
+
+          default:
+            return "h";
+        }
+      };
+
+      if (compact) return formatNum(time);
+
+      return time + unit;
+    };
+
+    function isolate(val) {
+      const isolated = val - Math.floor(val);
+      return isolated;
+    };
+
+    function time() {
       // TODO: Make formatting a single function, including space additions.
       const space = compact ? ":" : " ";
 
