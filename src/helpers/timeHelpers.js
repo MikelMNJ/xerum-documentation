@@ -2,12 +2,10 @@ import React, { Fragment } from 'react';
 import moment from 'moment';
 import { timeframeValid } from 'helpers/validators';
 import { startCase } from 'lodash';
+import { formatNum } from 'helpers/utilityHelpers';
 
 const validTimes = [ "seconds", "minutes", "hours", "days", "weeks", "months", "years" ];
 const format = "ddd, l, hh:mm:ss A";
-const formatNum = (val, digits) => (
-  val.toLocaleString('en-US', { minimumIntegerDigits: digits || 2 })
-);
 
 export const aggTime = args => {
   const {
@@ -77,6 +75,7 @@ export const aggTime = args => {
   const end = mostRecent && moment(mostRecent).add(agg, timeframeValid(timeframe) || "hours");
 
   const remainingTime = () => {
+    // TODO: Iterate and store all of these in an array.
     const firstTime = end?.diff(now, timeframe);
     const firstTimeFloat = end?.diff(now, timeframe, true);
     const secondTime = fixedUnits() * isolate(firstTimeFloat);
@@ -166,7 +165,7 @@ export const aggTime = args => {
     };
 
     const time = () => {
-      // TODO: Make formatting a single function, including space additions.
+      // TODO: format by joining values from array.
       const space = compact ? ":" : " ";
 
       if (!second) return `${first}`;
