@@ -43,7 +43,7 @@ const navigation = [
       { name: "Heartbeat", path: "#heartbeat", icon: "" },
       { name: "AuthRoute", path: "#auth-route", icon: "" },
       { name: "ToTop", path: "#to-top", icon: "" },
-      { name: "Countdown", path: "#countdown", icon: "" },
+      { name: "AggTimer", path: "#agg-timer", icon: "" },
       { name: "Status", path: "#status", icon: "" },
     ]
   },

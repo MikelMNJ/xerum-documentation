@@ -15,3 +15,7 @@ export const addEvent = (name, func) => {
 export const removeEvent = (name, func) => {
   window.removeEventListener(name, e => func(e));
 };
+
+export const formatNum = (val, digits) => (
+  val.toLocaleString('en-US', { minimumIntegerDigits: digits || 2 })
+);

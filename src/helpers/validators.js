@@ -18,9 +18,7 @@ export const btnValid = val => {
   const types = [ "solid", "ghost", "transparent" ];
   const isValid = val && types.find(type => val === type);
 
-  if (isValid) {
-    return val;
-  }
+  if (isValid) return val;
 };
 
 export const urlValid = val => {
@@ -31,4 +29,11 @@ export const urlValid = val => {
   if (isValid) {
     return hasProtocol ? val : `https://${val}`;
   };
+};
+
+export const timeframeValid = val => {
+  const validTimeframes = [ "seconds", "minutes", "hours", "days", "weeks", "months", "years" ];
+  const isValid = validTimeframes.find(time => val?.toLowerCase() === time);
+
+  if (isValid) return val.toLowerCase();
 };
