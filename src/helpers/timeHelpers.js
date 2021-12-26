@@ -10,7 +10,6 @@ const formatNum = (val, digits) => (
 );
 
 export const aggTime = args => {
-  // TODO: Implement callback function.
   const {
     timeframe: frame,
     aggregate,
@@ -148,7 +147,7 @@ export const aggTime = args => {
     const thirdTime = fixedUnits(-1) * secondIsolated;
     const thirdIsolated = thirdTime - Math.floor(thirdTime);
 
-    // TODO: Combine up childTime() and fixedUnits().
+    // TODO: Combine childTime() and fixedUnits().
     // TODO: Clean all this up and call results from one function.
     const extraTime1 = fixedUnits(-2) * thirdIsolated;
     const extraTime1Isolated = extraTime1 - Math.floor(extraTime1);
@@ -209,7 +208,10 @@ export const aggTime = args => {
   const end = mostRecent && moment(mostRecent).add(agg, timeframeValid(timeframe) || "hours");
 
   if (timeframe) {
+    const newRange = now.diff(mostRecent, "seconds") === 0;
     count.remaining = remainingTime();
+
+    if (newRange && callback) callback();
 
     if (details) {
       count.details =
