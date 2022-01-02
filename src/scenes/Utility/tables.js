@@ -32,7 +32,7 @@ export const heartbeatTable = [
 
 export const authRouteTable = [
   {
-    tData1: "authed",
+    tData1: "auth",
     tData2:
       <Fragment>
         <strong>true</strong> or <strong>false</strong>.

@@ -36,8 +36,8 @@ const SectionAuthRoute = props => {
           (Sample auth form below)
         </p>
 
-        <input type="text" placeholder="Username" value="sampleUsername" disabled />
-        <input type="password" placeholder = "Password" value="samplePassword" disabled />
+        <input type="text" placeholder="Username" value="Username" disabled />
+        <input type="password" placeholder = "Password" value="Password" disabled />
       </Fragment>
     );
   };
@@ -59,9 +59,8 @@ const SectionAuthRoute = props => {
 
         <p>
           <strong>Note</strong>:&nbsp;
-          The value of the <strong>authed</strong> prop should come from the
-          result of your token validation process in app state.  Also, if your default authentication
-          page is "/login", you will not need to specify the <strong>redirect</strong> prop.
+          The value of the <strong>auth</strong> prop should come from the
+          result of your token validation process in app state.
         </p>
       </div>
 

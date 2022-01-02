@@ -8,13 +8,9 @@ const dev = NODE_ENV !== "production";
   <App />
 </Heartbeat>`;
 
-export const authRouteCode = `const myPath = "/";
-
-<Routes>
-  <Route path={myPath} element={
-    <AuthRoute authed={tokenValid} />
-  }>
-    <Route path={myPath} element={<Content />} />
+export const authRouteCode = `<Routes>
+  <Route element={<AuthRoute auth={token} />}>
+    <Route path="/" element={<Content />} />
   </Route>
 </Routes>`;
 

@@ -18,7 +18,7 @@ const style = { minWidth: "9rem" };
 const SectionHeartbeat = props => {
   const [ outage, setOutage ] = useState(false);
   const iconStyle = {
-    color: (outage && colors.red) || (dev ? colors.yellow : colors.green),
+    color: (outage && colors.red) || (dev ? colors.yellow : colors.blue),
   };
 
   const demoChildren = () => {

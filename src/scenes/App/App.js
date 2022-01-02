@@ -56,7 +56,7 @@ const MyApp = props => {
             <Routes>
               <Route path="/login" element={<p>Log in</p>} />
 
-              <Route path={startPage} element={<AuthRoute authed={true} />}>
+              <Route element={<AuthRoute auth={true} />}>
                 <Route path={startPage} element={<Content />} />
               </Route>
 
