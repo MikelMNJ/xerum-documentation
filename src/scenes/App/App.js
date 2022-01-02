@@ -21,7 +21,7 @@ const socialNetworks = [
 const MyApp = props => {
   const [ navOpen, setNavOpen ] = useState(false);
   const navigate = useNavigate();
-  const { pathname, hash } = useLocation();
+  const { hash } = useLocation();
 
   const renderApp = () => {
     return (
