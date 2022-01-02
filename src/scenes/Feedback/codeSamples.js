@@ -26,7 +26,7 @@ export const notFoundCode = `// Default
 // Custom
 <NotFound
   className="customNotFound"
-  icon="fa-solid fa-frown-open"
+  icon="fa-solid fa-face-frown-open"
   title="Well, shucks!"
   message="Something's missing."
 / >

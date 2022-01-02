@@ -4,7 +4,7 @@ export const hexValid = val => {
 };
 
 export const iconValid = val => {
-  const legacy = true; // Fontawesome version < 6.0.0
+  const legacy = false; // Fontawesome version < 6.0.0
   const legacyTypes = [ "fab", "fas", "far", "fal", "fad" ];
   const types = [ "solid", "regular", "light", "thin", "duotone", "brands" ];
   const isValid =  (legacy ? legacyTypes : types).find(type => (

@@ -2,7 +2,7 @@ import React from "react";
 import { iconValid } from 'helpers/validators';
 import './Notification.scss';
 
-const defaultIcon = "fas fa-info-circle";
+const defaultIcon = "fa-solid fa-info-circle";
 
 const Notification = props => {
   const { message, icon, noIcon, close, index, className, ...rest } = props;
@@ -24,7 +24,7 @@ const Notification = props => {
       </div>
 
       <div className="close" onClick={() => close(index)}>
-        <i className="fas fa-times" />
+        <i className="fa-solid fa-times" />
       </div>
     </div>
   );

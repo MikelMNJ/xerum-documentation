@@ -11,10 +11,9 @@ export const heartbeatTable = [
     tData1: "icon",
     tData2:
     <Fragment>
-      Fontawesome i.e. "<strong>fa-solid fa-ethernet</strong>"&nbsp;
-      ("<strong>fas fa-ethernet</strong>" v5 and under).
+      Fontawesome i.e. "<strong>fa-solid fa-ethernet</strong>".
     </Fragment>,
-    tData3: <i className="fas fa-ethernet" />
+    tData3: <i className="fa-solid fa-ethernet" />
   },
   {
     tData1: "text",

@@ -11,15 +11,15 @@ export const socialCode = `const socialNetworks = [
   {
     name: "Twitter",
     path: "https://twitter.com",
-    icon: "fa-brand fa-twitter" },
+    icon: "fa-brands fa-twitter" },
   {
     name: "Facebook",
     path: "https://facebook.com",
-    icon: "fa-brand fa-facebook" },
+    icon: "fa-brands fa-facebook" },
   {
     name: "Instagram",
     path: "https://instagram.com",
-    icon: "fa-brand fa-instagram"
+    icon: "fa-brands fa-instagram"
   },
 ];
 

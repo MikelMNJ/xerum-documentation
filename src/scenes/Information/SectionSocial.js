@@ -9,9 +9,9 @@ import Social from 'components/Social/Social';
 import colors from 'theme/colors.scss';
 
 const socialNetworks = [
-  { name: "Twitter", path: "https://twitter.com", icon: "fab fa-twitter" },
-  { name: "Facebook", path: "https://facebook.com", icon: "fab fa-facebook" },
-  { name: "Instagram", path: "https://instagram.com", icon: "fab fa-instagram" },
+  { name: "Twitter", path: "https://twitter.com", icon: "fa-brands fa-twitter" },
+  { name: "Facebook", path: "https://facebook.com", icon: "fa-brands fa-facebook" },
+  { name: "Instagram", path: "https://instagram.com", icon: "fa-brands fa-instagram" },
 ];
 
 const SectionSocial = props => {

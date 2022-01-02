@@ -47,7 +47,7 @@ const ToTop = props => {
       onClick={() => window.scrollTo(0, 0)}
       {...rest}
     >
-      <i className={iconValid(icon) || "fas fa-angle-up"} />
+      <i className={iconValid(icon) || "fa-solid fa-angle-up"} />
     </div>
   );
 };

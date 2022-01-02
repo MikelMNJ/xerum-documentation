@@ -25,7 +25,7 @@ const FieldReqs = props => {
     };
 
     return (
-      <i className={`fas fa-check-circle`} style={style} />
+      <i className={`fa-solid fa-check-circle`} style={style} />
     );
   };
 

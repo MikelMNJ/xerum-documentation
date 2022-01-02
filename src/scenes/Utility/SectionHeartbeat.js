@@ -65,7 +65,7 @@ const SectionHeartbeat = props => {
         <div className="column center">
           <Heartbeat disabled={dev}>
             <div className="flatline">
-              <i className={`fas fa-${outage ? "ethernet" : "heartbeat"}`} style={iconStyle} />
+              <i className={`fa-solid fa-${outage ? "ethernet" : "heartbeat"}`} style={iconStyle} />
               {demoChildren()}
             </div>
           </Heartbeat>
