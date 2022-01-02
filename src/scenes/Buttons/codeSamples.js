@@ -1,5 +1,5 @@
 export const buttonCode = `<Button
-  icon="fab fa-google"
+  icon="fa-brands fa-google"
   style={{ backgroundColor: blue }}
   hoverStyle={{ backgroundColor: darkBlue }}
   url="google.com"
@@ -14,7 +14,7 @@ export const buttonCode = `<Button
 />
 
 <Button
-  icon="fas fa-pencil-alt"
+  icon="fa-solid fa-pencil-alt"
   text="Edit Profile"
   btnType="transparent"
   callback={editProfile}

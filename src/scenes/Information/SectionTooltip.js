@@ -46,7 +46,7 @@ const SectionTooltip = props => {
           <div className="inline">
             Child&nbsp;
             <Tooltip position="top">
-              <i className="fas fa-smile" />&nbsp;
+              <i className="fa-solid fa-smile" />&nbsp;
               Tool tip rendering children.
             </Tooltip>
           </div>
@@ -54,7 +54,7 @@ const SectionTooltip = props => {
           <div className="inline">
             Custom&nbsp;
             <Tooltip
-              icon="fas fa-question-circle"
+              icon="fa-solid fa-question-circle"
               text="Customized tool tip."
               position="top"
               className="customTooltip"

@@ -25,7 +25,7 @@ const Social = props => {
       >
         <i className={iconValid(network.icon)
           ? network.icon
-          : "fas fa-question-circle"
+          : "fa-solid fa-question-circle"
         } />&nbsp;
         {(!noText && network.name) && network.name}
       </a>

@@ -28,10 +28,9 @@ export const messagesTable = [
     tData1: "icon",
     tData2:
       <Fragment>
-        Fontawesome i.e. "<strong>fa-solid fa-check</strong>"&nbsp;
-        ("<strong>fas fa-check</strong>" v5 and under).
+        Fontawesome i.e. "<strong>fa-solid fa-check</strong>".
       </Fragment>,
-    tData3: <i className="fas fa-info-circle" />
+    tData3: <i className="fa-solid fa-info-circle" />
   },
   {
     tData1: "noIcon",
@@ -45,10 +44,9 @@ export const notFoundTable = [
     tData1: "icon",
     tData2:
       <Fragment>
-        Fontawesome i.e. "<strong>fa-solid fa-bug</strong>"&nbsp;
-        ("<strong>fas fa-bug</strong>" v5 and under).
+        Fontawesome i.e. "<strong>fa-solid fa-bug</strong>".
       </Fragment>,
-    tData3: <i className="fas fa-bug" />
+    tData3: <i className="fa-solid fa-bug" />
   },
   {
     tData1: "noIcon",
@@ -101,10 +99,9 @@ export const loadingTable = [
     tData1: "icon",
     tData2:
       <Fragment>
-        Fontawesome i.e. "<strong>fa-solid fa-spinner</strong>"&nbsp;
-        ("<strong>fas fa-spinner</strong>" v5 and under).
+        Fontawesome i.e. "<strong>fa-solid fa-spinner</strong>".
       </Fragment>,
-    tData3: <i className="fas fa-spinner fa-spin" />
+    tData3: <i className="fa-solid fa-spinner fa-spin" />
   },
   {
     tData1: "text",
@@ -115,10 +112,9 @@ export const loadingTable = [
     tData1: "failIcon",
     tData2:
       <Fragment>
-        Fontawesome i.e. "<strong>fa-solid fa-exclamation</strong>"&nbsp;
-        ("<strong>fas fa-exclamation</strong>" v5 and under).
+        Fontawesome i.e. "<strong>fa-solid fa-exclamation</strong>".
       </Fragment>,
-    tData3: <i className="fas fa-exclamation" />
+    tData3: <i className="fa-solid fa-exclamation" />
   },
   {
     tData1: "failText",
@@ -160,12 +156,11 @@ export const bannerTable = [
     tData1: "icon",
     tData2:
       <Fragment>
-        Fontawesome i.e. "<strong>fa-solid fa-times</strong>"&nbsp;
-        ("<strong>fas fa-times</strong>" v5 and under).
+        Fontawesome i.e. "<strong>fa-solid fa-times</strong>".
       </Fragment>,
     tData3:
       <Fragment>
-        <i className="fas fa-times" />
+        <i className="fa-solid fa-times" />
       </Fragment>
   },
   {

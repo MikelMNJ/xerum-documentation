@@ -14,8 +14,8 @@ import "./App.scss";
 
 const startPage = '/';
 const socialNetworks = [
-  { path: "https://npmjs.org", icon: "fab fa-npm" },
-  { path: "https://github.com/mikelmnj/xerum", icon: "fab fa-github" },
+  { path: "https://npmjs.org", icon: "fa-brands fa-npm" },
+  { path: "https://github.com/mikelmnj/xerum", icon: "fa-brands fa-github" },
 ];
 
 const MyApp = props => {
@@ -38,7 +38,7 @@ const MyApp = props => {
           <div id="headerBar">
             <div className="barText">
               <i
-                className={`fas fa-${navOpen ? "times" : "bars"}`}
+                className={`fa-solid fa-${navOpen ? "times" : "bars"}`}
                 onClick={() => setNavOpen(!navOpen)}
               />
 

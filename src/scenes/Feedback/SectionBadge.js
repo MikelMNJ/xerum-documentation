@@ -33,11 +33,11 @@ const SectionBadge = props => {
       </div>
 
       <SampleBox name="Badge" code={badgeCode}>
-          <Button className="badgeBtn" icon="fas fa-bell">
+          <Button className="badgeBtn" icon="fa-solid fa-bell">
             <Badge className="pos" count={4} />
           </Button>
 
-          <Button className="badgeBtn" icon="fas fa-envelope">
+          <Button className="badgeBtn" icon="fa-solid fa-envelope">
             <Badge className="pos" count={1296} square />
           </Button>
       </SampleBox>

@@ -75,7 +75,7 @@ const SectionLoading = props => {
                 <p>Load ready</p>
               </div>
             : <Loading isLoading={successLoading} hasData={data}>
-                <i className="fas fa-thumbs-up successIcon" />&nbsp;
+                <i className="fa-solid fa-thumbs-up successIcon" />&nbsp;
                 All good.
               </Loading>
           }

@@ -28,7 +28,7 @@ export const socialTable = [
       </Fragment>,
     tData3:
       <Fragment>
-        icon: <i className="fas fa-question-circle" />
+        icon: <i className="fa-solid fa-question-circle" />
       </Fragment>
   },
   {
@@ -48,10 +48,9 @@ export const tooltipTable = [
     tData1: "icon",
     tData2:
       <Fragment>
-        Fontawesome i.e. "<strong>fa-solid fa-info-circle</strong>"
-        ("<strong>fas fa-info-circle</strong>" v5 and under).
+        Fontawesome i.e. "<strong>fa-solid fa-info-circle</strong>".
       </Fragment>,
-    tData3: <i className="fas fa-info-circle" />
+    tData3: <i className="fa-solid fa-info-circle" />
   },
   {
     tData1: "text",

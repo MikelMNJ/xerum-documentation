@@ -33,7 +33,7 @@ const Banner = props => {
 
       {!noIcon && (
         <div className="close">
-          <i className={iconValid(icon) || "fas fa-times"} onClick={callback} />
+          <i className={iconValid(icon) || "fa-solid fa-times"} onClick={callback} />
         </div>
       )}
     </div>

@@ -11,7 +11,7 @@ const Status = props => {
   };
 
   const buildClasses = () => {
-    let classList = "fas fa-circle";
+    let classList = "fa-solid fa-circle";
     if (className) classList += ` ${className}`;
     return classList;
   };

@@ -100,7 +100,7 @@ const Tooltip = props => {
       onMouseOut={() => setShowTip(false)}
       {...rest}
     >
-      <i className={iconValid(icon) || "fas fa-info-circle"} />
+      <i className={iconValid(icon) || "fa-solid fa-info-circle"} />
       {renderTip()}
     </div>
   );

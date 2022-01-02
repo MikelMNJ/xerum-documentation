@@ -9,7 +9,7 @@ const AuthRoute = props => {
 
   return (
     <div>
-      <i className="fas fa-lock" style={sampleStyle} />
+      <i className="fa-solid fa-lock" style={sampleStyle} />
     </div>
   );
 };

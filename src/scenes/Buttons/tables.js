@@ -13,8 +13,7 @@ export const buttonTable = [
     tData1: "icon",
     tData2:
       <Fragment>
-        Fontawesome i.e. "<strong>fa-solid fa-check</strong>"&nbsp;
-        ("<strong>fas fa-check</strong>" v5 and under).
+        Fontawesome i.e. "<strong>fa-solid fa-check</strong>".
       </Fragment>,
     tData3: "-"
   },

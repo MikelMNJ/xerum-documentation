@@ -29,7 +29,7 @@ const SectionNotFound = props => {
 
         <NotFound
           className="customNotFound"
-          icon="fas fa-frown-open"
+          icon="fa-solid fa-face-frown-open"
           title="Well, shucks!"
           message="Something's missing."
         />

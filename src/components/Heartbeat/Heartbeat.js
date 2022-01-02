@@ -34,7 +34,7 @@ const Heartbeat = props => {
   const offlineContent = () => {
     return (
       <div className={buildClasses()} {...rest}>
-        <i className={iconValid(icon) || "fas fa-ethernet"} />
+        <i className={iconValid(icon) || "fa-solid fa-ethernet"} />
         <p>{text || "No connection detected."}</p>
       </div>
     );
