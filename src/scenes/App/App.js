@@ -2,14 +2,12 @@ import React, { Fragment, useState } from "react";
 import { Routes, Navigate, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import Content from 'scenes/Content/Content';
 import navigation from "./navigation";
-import FieldReqs from "components/FieldReqs/FieldReqs";
-import ProgressBar from "components/ProgressBar/ProgressBar";
 import ToTop from "components/ToTop/ToTop";
 import Copyright from "components/Copyright/Copyright";
 import NotFound from 'components/NotFound/NotFound';
 import Nav from "components/Nav/Nav";
 import Social from 'components/Social/Social';
-import colors from 'theme/colors.scss';
+import AuthRoute from 'components/AuthRoute/AuthRoute';
 import "./App.scss";
 
 const startPage = '/';
@@ -21,7 +19,6 @@ const socialNetworks = [
 const MyApp = props => {
   const [ navOpen, setNavOpen ] = useState(false);
   const navigate = useNavigate();
-  const { hash } = useLocation();
 
   const renderApp = () => {
     return (
@@ -29,7 +26,7 @@ const MyApp = props => {
         <header>
           <h1 onClick={() => {
             navigate(startPage);
-            if (hash !== '') window.scrollTo(0, 0);
+            window.scrollTo(0, 0);
           }}>
             Xerum
             <Social networks={socialNetworks} />
@@ -57,7 +54,11 @@ const MyApp = props => {
 
           <div>
             <Routes>
-              <Route path={startPage} element={<Content />} />
+              <Route path="/login" element={<p>Log in</p>} />
+
+              <Route path={startPage} element={<AuthRoute authed={true} />}>
+                <Route path={startPage} element={<Content />} />
+              </Route>
 
               {/* 404 -- Unknown Routes */}
               <Route element={<NotFound />} />

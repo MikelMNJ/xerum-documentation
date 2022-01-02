@@ -1,17 +1,9 @@
 import React from 'react';
+import { Outlet, Navigate } from 'react-router-dom';
 
 const AuthRoute = props => {
-  const { ...rest } = props;
-
-  const sampleStyle = {
-    fontSize: "3rem",
-  };
-
-  return (
-    <div>
-      <i className="fa-solid fa-lock" style={sampleStyle} />
-    </div>
-  );
+  const { authed, redirect } = props;
+  return authed ? <Outlet /> : <Navigate to={redirect || "/login"} />;
 };
 
 export default AuthRoute;
