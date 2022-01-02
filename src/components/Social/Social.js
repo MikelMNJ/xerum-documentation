@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { iconValid } from 'helpers/validators';
 import './Social.scss';
 
@@ -17,9 +16,9 @@ const Social = props => {
 
   const buildSocial = () => {
     return networks?.map((network, index) => (
-      <Link
+      <a
         key={index}
-        to={{ pathname: network.path || "" }}
+        href={network.path || "" }
         target="_blank"
         className={buildClasses()}
         {...rest}
@@ -29,7 +28,7 @@ const Social = props => {
           : "fas fa-question-circle"
         } />&nbsp;
         {(!noText && network.name) && network.name}
-      </Link>
+      </a>
     ));
   };
 

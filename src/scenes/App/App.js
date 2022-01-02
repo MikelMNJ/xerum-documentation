@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Switch, Redirect, Route, Link, useHistory } from 'react-router-dom';
+import { Routes, Navigate, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import Content from 'scenes/Content/Content';
 import navigation from "./navigation";
 import FieldReqs from "components/FieldReqs/FieldReqs";
@@ -20,13 +20,17 @@ const socialNetworks = [
 
 const MyApp = props => {
   const [ navOpen, setNavOpen ] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
+  const { pathname, hash } = useLocation();
 
   const renderApp = () => {
     return (
       <Fragment>
         <header>
-          <h1 onClick={() => history.push(startPage)}>
+          <h1 onClick={() => {
+            navigate(startPage);
+            if (hash !== '') window.scrollTo(0, 0);
+          }}>
             Xerum
             <Social networks={socialNetworks} />
           </h1>
@@ -52,15 +56,12 @@ const MyApp = props => {
           <Nav className={`customNav ${navOpen ? "open" : ""}`} links={navigation} />
 
           <div>
-            <Switch>
-              <Route exact path={startPage} component={Content} />
-
-              {/* Redirect */}
-              {/* <Redirect exact path='/' to={startPage} /> */}
+            <Routes>
+              <Route path={startPage} element={<Content />} />
 
               {/* 404 -- Unknown Routes */}
-              <Route component={NotFound} />
-            </Switch>
+              <Route element={<NotFound />} />
+            </Routes>
           </div>
         </section>
 
