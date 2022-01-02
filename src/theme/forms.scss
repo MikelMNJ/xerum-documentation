@@ -45,6 +45,7 @@ textarea:disabled {
   background-color: $offWhite;
   border: none;
   cursor: not-allowed;
+  color: $grey;
 }
 
 input::placeholder {

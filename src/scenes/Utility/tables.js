@@ -32,9 +32,17 @@ export const heartbeatTable = [
 
 export const authRouteTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "authed",
+    tData2:
+      <Fragment>
+        <strong>true</strong> or <strong>false</strong>.
+      </Fragment>,
+    tData3: "-"
+  },
+  {
+    tData1: "redirect",
+    tData2: "Path of authentication page to redirect to if token is invalid.",
+    tData3: "/login"
   },
 ];
 

@@ -8,7 +8,15 @@ const dev = NODE_ENV !== "production";
   <App />
 </Heartbeat>`;
 
-export const authRouteCode = ``;
+export const authRouteCode = `const myPath = "/";
+
+<Routes>
+  <Route path={myPath} element={
+    <AuthRoute authed={tokenValid} />
+  }>
+    <Route path={myPath} element={<Content />} />
+  </Route>
+</Routes>`;
 
 export const toTopCode = `<ToTop />
 <ToTop sharp />

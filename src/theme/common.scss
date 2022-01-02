@@ -38,6 +38,10 @@ pre {
   text-align: center;
 }
 
+.fullWidth {
+  width: 100%;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -63,6 +67,18 @@ pre {
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 0.35rem;
   background-color: $lightGrey;
+}
+
+.green {
+  color: $green;
+}
+
+.red {
+  color: $red;
+}
+
+.blue {
+  color: $blue;
 }
 
 code {
