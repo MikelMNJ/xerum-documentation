@@ -14,7 +14,7 @@
     "react": "^18.0.0-alpha-ed6c091fe-20210701",
     "react-code-blocks": "^0.0.9-0",
     "react-dom": "^18.0.0-alpha-ed6c091fe-20210701",
-    "react-router-dom": "^5.3.0"
+    "react-router-dom": "^6.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
