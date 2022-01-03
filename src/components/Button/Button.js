@@ -38,7 +38,7 @@ const Button = props => {
         {...rest}
       >
         {iconValid(icon) && <i className={icon} />}&nbsp;
-        {text && text}
+        {text || (rest.type === "submit" && "Submit")}
       </button>
 
       {children}
