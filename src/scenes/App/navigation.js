@@ -53,27 +53,7 @@ const navigation = [
     path: "",
     icon: "",
     subMenu: [
-      { name: "Input", path: "#input", icon: "" },
-      { name: "Textarea", path: "#textarea", icon: "" },
-      { name: "Select", path: "#select", icon: "" },
-      { name: "DateSelect", path: "#date-select", icon: "" },
-      { name: "Radio", path: "#radio", icon: "" },
-      { name: "Checkbox", path: "#checkbox", icon: "" },
-      { name: "Toggle", path: "#toggle", icon: "" },
-      { name: "FieldReqs", path: "#field-reqs", icon: "" },
-      { name: "FieldError", path: "#field-error", icon: "" },
-    ]
-  },
-
-  {
-    name: "Forms",
-    path: "",
-    icon: "",
-    subMenu: [
-      { name: "LogIn", path: "#log-in", icon: "" },
-      { name: "SignUp", path: "#sign-up", icon: "" },
-      { name: "ResetPassword", path: "#reset-password", icon: "" },
-      { name: "Contact", path: "#contact", icon: "" },
+      { name: "Form", path: "#form", icon: "" },
     ]
   },
 
