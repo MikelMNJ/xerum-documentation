@@ -1,17 +1,23 @@
-export const fieldReqsCode = `
-const fName = "Bob";
-const lName = "Belcher";
+export const fieldReqsCode = `const [ inputVal, setInputVal ] = useState("");
+
+<input
+  type="password"
+  placeholder="Type password to test..."
+  onChange={e => {
+    setInputVal(e.currentTarget.value);
+  }}
+/>
 
 <FieldReqs
-  value={inputVal} // From state.
+  value={inputVal}
   upper
   lower
   number
   min
   special
   exclude={[
-    { display: "first name", value: fName },
-    { display: "last name", value: lName },
+    { display: "First name", value: "Bob" },
+    { display: "Last name", value: "Belcher" },
   ]}
 />
 `;

@@ -45,8 +45,8 @@ const SectionFieldReqs = props => {
           min
           special
           exclude={[
-            { display: "first name", value: "Bob" },
-            { display: "last name", value: "Belcher" },
+            { display: "First name", value: "Bob" },
+            { display: "Last name", value: "Belcher" },
           ]}
         />
       </SampleBox>
