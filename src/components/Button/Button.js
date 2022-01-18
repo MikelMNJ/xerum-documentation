@@ -22,6 +22,7 @@ const Button = props => {
   const handleClick = e => {
     const validUrl = urlValid(url);
 
+    if (rest.type === "submit") e.preventDefault();
     if (passthrough) e.stopPropagation();
     if (validUrl) window.open(validUrl, rest.target || "_blank");
     if (callback) callback();
@@ -38,7 +39,7 @@ const Button = props => {
         {...rest}
       >
         {iconValid(icon) && <i className={icon} />}&nbsp;
-        {text && text}
+        {text || (rest.type === "submit" && "Submit")}
       </button>
 
       {children}
