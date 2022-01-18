@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SectionFieldReqs from './SectionFieldReqs';
 
-const FormElements = props => {
+const FormUtility = props => {
   return (
     <section id="form-elements">
       <SectionFieldReqs />
@@ -9,4 +9,4 @@ const FormElements = props => {
   );
 };
 
-export default FormElements;
+export default FormUtility;

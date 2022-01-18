@@ -49,7 +49,7 @@ const navigation = [
   },
 
   {
-    name: "Form Elements",
+    name: "Form Utility",
     path: "",
     icon: "",
     subMenu: [

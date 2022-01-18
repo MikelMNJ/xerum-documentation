@@ -4,7 +4,7 @@ import Buttons from 'scenes/Buttons/Buttons';
 import Feedback from 'scenes/Feedback/Feedback';
 import Information from 'scenes/Information/Information';
 import Utility from 'scenes/Utility/Utility';
-import FormElements from 'scenes/FormElements/FormElements';
+import FormUtility from 'scenes/FormUtility/FormUtility';
 import './Content.scss';
 
 const Content = props => {
@@ -15,7 +15,7 @@ const Content = props => {
       <Feedback />
       <Information />
       <Utility />
-      <FormElements />
+      <FormUtility />
     </div>
   );
 };

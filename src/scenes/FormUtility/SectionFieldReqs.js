@@ -14,7 +14,7 @@ const SectionFieldReqs = props => {
   return (
     <Fragment>
       <div>
-        <h2>Form Elements</h2>
+        <h2>Form Utility</h2>
         <h3 id="field-reqs">{`<FieldReqs />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
