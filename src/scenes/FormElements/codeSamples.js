@@ -1,5 +1,8 @@
 export const fieldReqsCode = `const [ inputVal, setInputVal ] = useState("");
 
+const fName = "Bob";
+const lName = "Belcher";
+
 <input
   type="password"
   placeholder="Type password to test..."
@@ -16,8 +19,8 @@ export const fieldReqsCode = `const [ inputVal, setInputVal ] = useState("");
   min
   special
   exclude={[
-    { display: "First name", value: "Bob" },
-    { display: "Last name", value: "Belcher" },
+    { display: "First name", value: fName },
+    { display: "Last name", value: lName },
   ]}
 />
 `;
