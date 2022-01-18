@@ -13,6 +13,9 @@ const FieldReqs = props => {
     min,
     special,
     exclude,
+    color,
+    exColor,
+    bgColor,
   } = props;
 
   const length = Number.isInteger(min) ? min : 8;
@@ -37,12 +40,16 @@ const FieldReqs = props => {
     ) valid = true;
 
     style = {
-      color: valid ? colors.blue : colors.lightGrey,
+      color: valid
+        ? hexValid(color) || colors.blue
+        : hexValid(bgColor) || colors.lightGrey,
     };
 
     exStyle = {
-      color: valid ? colors.lightGrey : colors.red,
-    }
+      color: valid
+        ? hexValid(bgColor) || colors.lightGrey
+        : hexValid(exColor) || colors.red,
+    };
 
     return (
       <i

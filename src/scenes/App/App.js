@@ -70,14 +70,6 @@ const MyApp = props => {
           <Copyright name="Mikel Jagan" />
           <ToTop className="myTop" />
         </footer>
-        {/* <h1>Components</h1>
-
-        <h3>Field Requirements</h3>
-        <FieldReqs value="bench32Knife" />
-
-        <h3>Progress Bar</h3>
-        <ProgressBar progress={33} styles={{ width: "20rem" }} />
-        */}
       </Fragment>
     );
   };

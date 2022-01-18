@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import Status from 'components/Status/Status';
 
 export const fieldReqsTable = [
   {
@@ -42,6 +43,31 @@ export const fieldReqsTable = [
       </Fragment>,
     tData3: "-"
   },
+  {
+    tData1: "color",
+    tData2: "Sets the active color of a valid icon using hex format, i.e. #000 or #000000.",
+    tData3:
+      <Fragment>
+        <i className="fa-solid fa-check-circle" style={{ color: "#0d97ff" }} /> #0d97ff
+      </Fragment>
+  },
+  {
+    tData1: "exColor",
+    tData2: "Sets the active color of an exclusion icon using hex format, i.e. #000 or #000000.",
+    tData3:
+      <Fragment>
+        <i className="fa-solid fa-exclamation-circle" style={{ color: "#c93434" }} /> #c93434
+      </Fragment>
+  },
+  {
+    tData1: "bgColor",
+    tData2: "Sets the inactive color of all icons using hex format, i.e. #000 or #000000.",
+    tData3:
+      <Fragment>
+        <i className="fa-solid fa-check-circle" style={{ color: "#aab2b8" }} />&nbsp;
+        <i className="fa-solid fa-exclamation-circle" style={{ color: "#aab2b8" }} /> #aab2b8
+      </Fragment>
+  }
 ];
 
 export const fieldErrorTable = [
