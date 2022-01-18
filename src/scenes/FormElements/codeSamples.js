@@ -7,8 +7,8 @@ const lName = "Belcher";
   upper
   lower
   number
-  min={8}
-  special="@#$%^&+=!"
+  min
+  special
   exclude={[
     { display: "first name", value: fName },
     { display: "last name", value: lName },

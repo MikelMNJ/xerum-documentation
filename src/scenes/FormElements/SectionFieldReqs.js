@@ -21,7 +21,7 @@ const SectionFieldReqs = props => {
           {buildRows(fieldReqsTable)}
         </Table>
 
-        <strong>Note</strong>: The {codeSnippet("<FieldReq />")} component is not
+        <strong>Note</strong>: The {codeSnippet("<FieldReqs />")} component is not
         responsible for field validation on submit &mdash; it is simply visual
         feedback so the user can correct any validation issues prior to submitting.
       </div>

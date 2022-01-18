@@ -66,8 +66,13 @@ const FieldReqs = props => {
     if (number) addContent('number', 'Number');
     if (min) addContent('min', `${length} Minimum`);
     if (special) addContent('special', `Special: ${specialChars.split('').join(' ')}`);
+
     if (!isEmpty(exclude)) {
-      exclude.forEach(ex => addContent('exclude', ex.display, ex.value));
+      exclude.forEach(ex => {
+        if (ex.display && ex.value) {
+          addContent('exclude', ex.display, ex.value);
+        }
+      });
     }
 
     return (
