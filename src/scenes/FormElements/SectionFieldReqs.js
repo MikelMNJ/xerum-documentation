@@ -20,13 +20,17 @@ const SectionFieldReqs = props => {
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
           {buildRows(fieldReqsTable)}
         </Table>
+
+        <strong>Note</strong>: The {codeSnippet("<FieldReq />")} component is not
+        responsible for field validation on submit &mdash; it is simply visual
+        feedback so the user can correct any validation issues prior to submitting.
       </div>
 
       <SampleBox name="FieldReqs" code={fieldReqsCode}>
       <input
         type="password"
         value={inputVal}
-        placeholder="Password"
+        placeholder="Type password to test..."
         onChange={e => {
           const newVal = e.currentTarget.value;
           setInputVal(newVal);
@@ -38,9 +42,12 @@ const SectionFieldReqs = props => {
           upper
           lower
           number
-          min={8}
-          special={"@#$%^&+=!"}
-          exclude={["Mikel", "Jagan"]}
+          min
+          special
+          exclude={[
+            { display: "first name", value: "Bob" },
+            { display: "last name", value: "Belcher" },
+          ]}
         />
       </SampleBox>
     </Fragment>
