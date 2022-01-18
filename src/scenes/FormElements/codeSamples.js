@@ -1,15 +1,18 @@
 export const fieldReqsCode = `
-const fName = Bob;
-const lName = Belcher;
+const fName = "Bob";
+const lName = "Belcher";
 
 <FieldReqs
-  value={inputVal}
+  value={inputVal} // From state.
   upper
   lower
   number
   min={8}
-  special={@#$%^&+=!}
-  exclude={[fName, lName]}
+  special="@#$%^&+=!"
+  exclude={[
+    { display: "first name", value: fName },
+    { display: "last name", value: lName },
+  ]}
 />
 `;
 
