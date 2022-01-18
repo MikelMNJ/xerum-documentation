@@ -6,7 +6,18 @@ import './FieldReqs.scss';
 const min = 8;
 
 const FieldReqs = props => {
-  const { value, color, bgColor } = props;
+  const {
+    value,
+    upper,
+    lower,
+    number,
+    min,
+    special,
+    excludes,
+    color,
+    bgColor
+  } = props;
+
   const validColor = hexValid(color) ? color : colors.blue;
   const validBGColor = hexValid(bgColor) ? bgColor : colors.lightGrey;
 

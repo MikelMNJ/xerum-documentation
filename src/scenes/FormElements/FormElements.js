@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import SectionForm from './SectionForm';
+import SectionFieldReqs from './SectionFieldReqs';
 
 const FormElements = props => {
   return (
     <section id="form-elements">
-      <SectionForm />
+      <SectionFieldReqs />
     </section>
   );
 };

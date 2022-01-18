@@ -53,7 +53,9 @@ const navigation = [
     path: "",
     icon: "",
     subMenu: [
-      { name: "Form", path: "#form", icon: "" },
+      { name: "Field Reqs", path: "#field-reqs", icon: "" },
+      { name: "Field Error", path: "#field-error", icon: "" },
+      { name: "Toggle", path: "#toggle", icon: "" },
     ]
   },
 
