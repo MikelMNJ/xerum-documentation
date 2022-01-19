@@ -23,10 +23,6 @@ body {
   background-color: $offWhite;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 a:link,
 a:visited,
 a:active {
@@ -41,19 +37,5 @@ a:hover {
 
 /* ========== Media Queries ========== */
 @media only screen and (max-width: 1600px) {
-  code {
-    font-size: 0.75rem;
-  }
-}
 
-@media only screen and (max-width: 400px) {
-  code {
-    font-size: 0.7rem;
-  }
-}
-
-@media only screen and (max-width: 374px) {
-  code {
-    font-size: 0.65rem;
-  }
 }
