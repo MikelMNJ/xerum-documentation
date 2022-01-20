@@ -72,9 +72,9 @@ export const fieldReqsTable = [
 
 export const fieldErrorTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "name*",
+    tData2: "Name of field to validate — must match reference field name, exactly.",
+    tData3: "-"
   },
 ];
 
