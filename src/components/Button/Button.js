@@ -35,7 +35,11 @@ const Button = props => {
         style={rest.disabled ? {} : (mouseOver ? hoverStyle : style)}
         onMouseOver={() => setMouseOver(true)}
         onMouseOut={() => setMouseOver(false)}
-        onClick={handleClick}
+        onClick={e => {
+          if (rest.type !== "submit") {
+            handleClick(e);
+          }
+        }}
         {...rest}
       >
         {iconValid(icon) && <i className={icon} />}&nbsp;
