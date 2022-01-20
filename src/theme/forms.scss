@@ -1,5 +1,13 @@
 @import 'theme/colors.scss';
 
+form {
+  width: 100%;
+}
+
+form button {
+  width: 100% !important;
+}
+
 fieldset {
   border: none;
 }
