@@ -77,11 +77,3 @@ export const fieldErrorTable = [
     tData3: "-"
   },
 ];
-
-export const toggleTable = [
-  {
-    tData1: "",
-    tData2: "",
-    tData3: ""
-  },
-];

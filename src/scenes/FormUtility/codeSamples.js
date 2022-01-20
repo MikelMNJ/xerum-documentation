@@ -57,5 +57,3 @@ const handleSubmit = args => {
       </Form>
     )}
 </Formik>`;
-
-export const ToggleCode = `<Toggle />`;
