@@ -21,6 +21,8 @@ const navigation = [
       { name: "Loading", path: "#loading", icon: "" },
       { name: "Badge", path: "#badge", icon: "" },
       { name: "Banner", path: "#banner", icon: "" },
+      { name: "Field Reqs", path: "#field-reqs", icon: "" },
+      { name: "Field Error", path: "#field-error", icon: "" },
     ]
   },
 
@@ -49,22 +51,12 @@ const navigation = [
   },
 
   {
-    name: "Form Utility",
-    path: "",
-    icon: "",
-    subMenu: [
-      { name: "Field Reqs", path: "#field-reqs", icon: "" },
-      { name: "Field Error", path: "#field-error", icon: "" },
-    ]
-  },
-
-  {
     name: "Query",
     path: "",
     icon: "",
     subMenu: [
-      { name: "Filter", path: "#filter", icon: "" },
       { name: "Search", path: "#search", icon: "" },
+      { name: "Filter", path: "#filter", icon: "" },
     ]
   },
 

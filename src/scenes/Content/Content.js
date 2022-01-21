@@ -15,7 +15,7 @@ const Content = props => {
       <Feedback />
       <Information />
       <Utility />
-      <FormUtility />
+      <Query />
     </div>
   );
 };
