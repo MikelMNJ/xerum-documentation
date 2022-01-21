@@ -38,15 +38,17 @@
 }
 
 @media only screen and (max-width: 365px) {
-  .filter input {
-    padding: 0 5rem 0 2.75rem;
-  }
+  .filter {
+    input {
+      padding: 0 5rem 0 2.75rem;
+    }
 
-  .filter button {
-    width: 5rem;
-  }
+    button {
+      width: 5rem;
+    }
 
-  .filter .btnContainer {
-    margin-left: -5.1rem;
+    .btnContainer {
+      margin-left: -5.1rem;
+    }
   }
 }
