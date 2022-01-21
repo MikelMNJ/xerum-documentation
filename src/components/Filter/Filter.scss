@@ -1,55 +1,33 @@
 @import 'theme/colors.scss';
 
 .filter {
-  width: 100%;
-}
-
-.filter label {
-  position: relative;
-  left: 0;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
-}
-
-.filter input {
-  width: 100%;
   max-width: 40rem;
-  padding: 0 3rem 0 2.75rem;
-  margin-bottom: 0;
-  background-color: transparent;
-  border: 0.125rem solid $darkGrey;
-}
 
-.filter input:focus {
-  box-shadow: none;
-}
+  label {
+    align-items: center;
+    width: 100%;
+  }
 
-.filter input::placeholder {
-  color: $grey;
-}
+  input {
+    width: 100%;
+    padding: 0.5rem 0.75rem 0.5rem 3rem;
+    margin-bottom: 0;
+    background-color: transparent;
+    border: 0.125rem solid $darkGrey;
 
-.filter i {
-  position: relative;
-  left: 2.1rem;
-  font-size: 1.25rem;
-}
+    &.noIcon {
+      padding-left: 0.75rem;
+    }
+  }
 
-.filter .btnContainer {
-  margin-left: -3.05rem;
-  transition: opacity 0.15s ease;
-}
-
-.filter button {
-  width: 2.9rem;
-  height: 2.7rem;
-  margin-top: -0.05rem;
-  border-radius: 0 0.25rem 0.25rem 0;
-}
-
-.filter button i {
-  left: 0;
+  i {
+    position: absolute;
+    font-size: 1.25rem;
+    padding-left: 0.8rem;
+  }
 }
 
 /* ========== Media Queries ========== */

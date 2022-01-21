@@ -3,27 +3,32 @@
 
 import React, { useState, useEffect } from 'react';
 import { stringToArray } from 'helpers/utilityHelpers';
-import Button from 'components/Button/Button';
+import { iconValid } from 'helpers/validators';
 import colors from 'theme/colors.scss';
 import './Filter.scss';
 
 const Filter = props => {
-  const { data, match, callback, placeholder, reset } = props;
+  const {
+    data,
+    match,
+    callback,
+    placeholder,
+    reset,
+    icon,
+    noIcon,
+    className,
+    ...rest
+  } = props;
+
   const [ filterValue, setFilterValue ] = useState('');
 
-  const buttonStyle = {
-    opacity: (filterValue !== '' && !reset) ? 1 : 0,
-  };
-
   const matchVal = item => {
-    const keyVals = [];
-
-    match.forEach(value => {
+    const keyVals = match.map(value => {
       if (value.includes('.')) {
         const keyPath = value.split('.');
-        keyVals.push(keyPath.reduce((o, i) => o[i], item).toLowerCase());
-      } else {
-        item[value] && keyVals.push(item[value].toLowerCase());
+        return keyPath.reduce((o, i) => o[i], item).toLowerCase();
+      } else if (item[value]) {
+        return item[value].toLowerCase();
       }
     });
 
@@ -36,6 +41,8 @@ const Filter = props => {
       const filterResults = data.filter(item => {
         const keyVals = matchVal(item);
 
+        console.log(keyVals);
+
         for (let i = 0; i < asArray.length; i++) {
           for (let n = 0; n < keyVals.length; n++) {
             if (keyVals[n].includes(asArray[i].toLowerCase())) {
@@ -47,26 +54,37 @@ const Filter = props => {
         return null;
       });
 
-      callback && callback(filterResults.length !== data.length ? filterResults : []);
+      if (callback) {
+        callback(filterResults.length !== data.length ? filterResults : []);
+      }
     };
   }, [filterValue]);
 
+  const buildClasses = () => {
+    let classList = "";
+
+    if (className) classList += ` ${className}`;
+    if (noIcon) classList += " noIcon";
+
+    return classList;
+  };
+
   return (
     <div className="filter">
-      <label htmlFor="userFilter">
-        <i className="fal fa-filter" />
+      {!noIcon && (
+        <i className={iconValid(icon) || "fa-solid fa-filter"} />
+      )}
+
+      <label>
         <input
           type="text"
           name="userFilter"
-          placeholder={placeholder}
+          className={buildClasses()}
+          placeholder={placeholder || "Filter"}
           value={reset ? '' : filterValue}
-          onChange={e => setFilterValue(e.currentTarget.value)} />
-
-        <div className="btnContainer" style={buttonStyle}>
-          <Button
-            icon="fa-solid fa-times"
-            callback={() => setFilterValue('')} />
-        </div>
+          onChange={e => setFilterValue(e.currentTarget.value)}
+          {...rest}
+        />
       </label>
     </div>
   );
