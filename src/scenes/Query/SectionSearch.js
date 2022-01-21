@@ -17,11 +17,18 @@ const SectionSearch = props => {
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
           {buildRows(searchTable)}
         </Table>
+
+        <strong>Note</strong>: Passing a standard <i>className</i> prop
+        will affect the input field by default.  Use <i>btnClassName</i>&nbsp;
+        to style the button element within the {codeSnippet("<Search />")}&nbsp;
+        component.
+
+        <p />
       </div>
 
       <SampleBox name="Search" code={searchCode}>
         <Search
-          btnText="Go"
+          btnText="Find it"
           placeholder="Find something..."
           callback={val => console.log(val)} />
       </SampleBox>

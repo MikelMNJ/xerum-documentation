@@ -10,9 +10,19 @@ export const searchTable = [
     tData3: <i className="fa-solid fa-magnifying-glass" />
   },
   {
+    tData1: "noIcon",
+    tData2: "Disables the search field icon.",
+    tData3: "-"
+  },
+  {
     tData1: "btnText",
     tData2: "Text to display on search button.",
     tData3: "Search",
+  },
+  {
+    tData1: "btnClassName",
+    tData2: "Your className string to forward to the button element.",
+    tData3: "-"
   },
   {
     tData1: "callback",

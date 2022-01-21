@@ -1,6 +1,6 @@
 
 export const searchCode = `<Search
-  btnText="Go"
+  btnText="Find it"
   placeholder="Find something..."
   callback={val => {
     const payload = { yourQueryKey: val };
