@@ -17,6 +17,13 @@ const SectionFilter = props => {
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
           {buildRows(filterTable)}
         </Table>
+
+        <strong>Note</strong>: Unlike the {codeSnippet("<Search />")}&nbsp;
+        component, the {codeSnippet("<Filter />")} component only filters
+        existing DOM elements in real-time &mdash; it does not use any
+        external API callbacks.
+
+        <p />
       </div>
 
       <SampleBox name="Filter" code={filterCode}>

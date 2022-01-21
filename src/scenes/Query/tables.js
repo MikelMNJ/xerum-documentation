@@ -40,4 +40,29 @@ export const filterTable = [
       </Fragment>,
     tData3: <i className="fa-solid fa-filter" />
   },
+  {
+    tData1: "noIcon",
+    tData2: "Disables the filter field icon.",
+    tData3: "-"
+  },
+  {
+    tData1: "data",
+    tData2: "",
+    tData3: "-"
+  },
+  {
+    tData1: "match",
+    tData2: "",
+    tData3: "-"
+  },
+  {
+    tData1: "reset",
+    tData2: "",
+    tData3: "-"
+  },
+  {
+    tData1: "callback",
+    tData2: "",
+    tData3: "-"
+  },
 ];
