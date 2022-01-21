@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { cloneElement, useState } from 'react';
 import { iconValid } from 'helpers/validators';
 import Button from 'components/Button/Button';
 import './Search.scss';
 
 const Search = props => {
-  const { callback, placeholder, icon, btnText, ...rest } = props;
+  const {
+    callback,
+    placeholder,
+    icon,
+    btnText,
+    noIcon,
+    className,
+    btnClassName,
+    ...rest
+  } = props;
+
   const [ inputVal, setInputVal ] = useState("");
 
   const handleSubmit = e => {
@@ -16,21 +26,37 @@ const Search = props => {
     }
   };
 
+  const buildClasses = () => {
+    let classList = "";
+
+    if (className) classList += ` ${className}`;
+    if (noIcon) classList += " noIcon";
+
+    return classList;
+  };
+
   return (
-    <div className="search">
-      <form onSubmit={handleSubmit} {...rest}>
+    <div className="searchContainer">
+      <form onSubmit={handleSubmit}>
         <label>
-        <i className={iconValid(icon) || "fa-solid fa-magnifying-glass"} />
+        {!noIcon && (
+          <i className={iconValid(icon) || "fa-solid fa-magnifying-glass"} />
+        )}
 
           <input
             type="text"
+            className={buildClasses()}
             placeholder={placeholder || "Search"}
             value={inputVal}
             onChange={e => setInputVal(e.currentTarget.value)}
+            {...rest}
           />
         </label>
 
-        <Button type="submit" text={btnText || "Search"} />
+        {cloneElement(
+          <Button type="submit" text={btnText || "Search"} />,
+          btnClassName ? { className: btnClassName } : {}
+        )}
       </form>
     </div>
   );
