@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useState, useEffect } from 'react';
-import { stringToArray } from 'helpers/utilityFunctions';
+import { stringToArray } from 'helpers/utilityHelpers';
 import Button from 'components/Button/Button';
 import colors from 'theme/colors.scss';
 import './Filter.scss';
@@ -64,10 +64,7 @@ const Filter = props => {
 
         <div className="btnContainer" style={buttonStyle}>
           <Button
-            icon="close"
-            iconColor={colors.lightGrey}
-            btnStyle="solid"
-            bgColor={colors.darkerGrey}
+            icon="fa-solid fa-times"
             callback={() => setFilterValue('')} />
         </div>
       </label>

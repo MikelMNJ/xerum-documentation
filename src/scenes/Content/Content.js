@@ -4,7 +4,7 @@ import Buttons from 'scenes/Buttons/Buttons';
 import Feedback from 'scenes/Feedback/Feedback';
 import Information from 'scenes/Information/Information';
 import Utility from 'scenes/Utility/Utility';
-import FormUtility from 'scenes/FormUtility/FormUtility';
+import Query from 'scenes/Query/Query';
 import './Content.scss';
 
 const Content = props => {

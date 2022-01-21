@@ -19,3 +19,10 @@ export const removeEvent = (name, func) => {
 export const formatNum = (val, digits) => (
   val.toLocaleString('en-US', { minimumIntegerDigits: digits || 2 })
 );
+
+export const stringToArray = string => {
+  const prep = string.replace(/[\\W_,-]/g, "");
+  const words = prep.split(' ');
+
+  return words;
+}
