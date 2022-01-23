@@ -4,10 +4,19 @@ import { isEmpty } from 'lodash';
 import './FieldError.scss';
 
 const FieldError = props => {
-  const { name } = props;
+  const { name, className, ...rest } = props;
 
   const buildFieldError = () => {
     if (name) {
+
+      const buildClasses = () => {
+        let classList = "fieldError";
+
+        if (className) classList += ` ${className}`;
+
+        return classList;
+      };
+
       return (
         <Field name={name}>
           {({ form }) => {
@@ -18,7 +27,7 @@ const FieldError = props => {
 
             if (showError) {
               return (
-                <div className="fieldError">
+                <div className={buildClasses()} {...rest}>
                   {msg}
                 </div>
               );
