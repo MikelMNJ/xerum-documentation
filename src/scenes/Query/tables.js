@@ -47,22 +47,22 @@ export const filterTable = [
   },
   {
     tData1: "data",
-    tData2: "",
+    tData2: "Main data object with at least one { key: value } pair.",
     tData3: "-"
   },
   {
-    tData1: "match",
-    tData2: "",
-    tData3: "-"
-  },
-  {
-    tData1: "reset",
-    tData2: "",
+    tData1: "include",
+    tData2:
+      <Fragment>
+        Array of key names from your <strong>data</strong> object to
+        include in filter results — use dot notation to
+        access nested keys, i.e. "key.subKey.subKey2" etc.
+      </Fragment>,
     tData3: "-"
   },
   {
     tData1: "callback",
-    tData2: "",
+    tData2: "Generic handler that receives filtered array results.",
     tData3: "-"
   },
 ];
