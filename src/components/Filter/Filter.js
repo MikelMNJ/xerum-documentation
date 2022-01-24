@@ -2,61 +2,70 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useState, useEffect } from 'react';
-import { stringToArray } from 'helpers/utilityHelpers';
+import { stringToArray, lowercaseArray } from 'helpers/utilityHelpers';
 import { iconValid } from 'helpers/validators';
+import { isEmpty } from 'lodash';
 import colors from 'theme/colors.scss';
 import './Filter.scss';
 
 const Filter = props => {
   const {
     data,
-    match,
+    include,
     callback,
     placeholder,
-    reset,
     icon,
     noIcon,
     className,
     ...rest
   } = props;
 
-  const [ filterValue, setFilterValue ] = useState('');
-
-  const matchVal = item => {
-    const keyVals = match.map(value => {
-      if (value.includes('.')) {
-        const keyPath = value.split('.');
-        return keyPath.reduce((o, i) => o[i], item).toLowerCase();
-      } else if (item[value]) {
-        return item[value].toLowerCase();
-      }
-    });
-
-    return keyVals;
-  };
+  const [ filterValue, setFilterValue ] = useState("");
 
   useEffect(() => {
     if (data) {
-      const asArray = stringToArray(filterValue);
-      const filterResults = data.filter(item => {
-        const keyVals = matchVal(item);
+      const allDataFromLocations = include.map(location => {
+        if (location.includes('.')) {
+          const keyPath = location.split('.');
+          let value = { ...data[keyPath[0]] };
 
-        console.log(keyVals);
+          // Gets final value from nested keys.
+          for (let i = 0; i < keyPath.length; i++) {
+            if (i !== 0) value = value[keyPath[i]];
+          };
 
-        for (let i = 0; i < asArray.length; i++) {
-          for (let n = 0; n < keyVals.length; n++) {
-            if (keyVals[n].includes(asArray[i].toLowerCase())) {
-              return item;
-            };
-          }
+          return value;
         }
 
-        return null;
+        return data[location];
+      });
+
+      const userValues = lowercaseArray(stringToArray(filterValue)
+        .filter((item, index) => {
+          // If user hasn't typed in field yet, return all results
+          // Otherwise filter out empty space while typing so results
+          //  aren't defaulting to everything every time no include is found.
+          if (index === 0 && item === "") return " ";
+          return item;
+        })
+      );
+
+      const combinedDataToFilter = [...new Set(lowercaseArray([].concat(...allDataFromLocations)))];
+      const filteredResults = combinedDataToFilter.filter(item => {
+        for (let i = 0; i < userValues.length; i++) {
+          const workingItem = typeof item === "number"
+            ? item.toString()
+            : item;
+
+          if (workingItem.includes(userValues[i])) {
+            return item;
+          }
+        }
       });
 
       if (callback) {
-        callback(filterResults.length !== data.length ? filterResults : []);
-      }
+        callback(filteredResults);
+      };
     };
   }, [filterValue]);
 
@@ -81,7 +90,6 @@ const Filter = props => {
           name="userFilter"
           className={buildClasses()}
           placeholder={placeholder || "Filter"}
-          value={reset ? '' : filterValue}
           onChange={e => setFilterValue(e.currentTarget.value)}
           {...rest}
         />
@@ -91,27 +99,3 @@ const Filter = props => {
 }
 
 export default Filter;
-
-// Create a hook to receive the newly filtered array.
-// const [ filteredData, setFilteredData ] = useState([]);
-
-// Add this component:
-// <Filter
-//  data={[
-//    {info: {name: 'John Doe'}, address: {street: '123 foo st'}},
-//    {info: {name: 'Jane Doe'}, address: {street: '456 bar st'}}
-//  ]}
-//  placeholder="Your placeholder"
-//  reset={filteredData === null}
-//  match={["info.name", "address.street"]}
-//  callback={newData => setFilteredData(newData)} />
-
-// Example filter input: "John", "John, 123" and "123" etc. returns first obj only.
-// Example filter input: "Doe", "123, 456 bar st", "jane, 123 foo st" etc. returns both entries.
-// Example filter input: "456", "Jane", "Jane, 456" etc. returns second only.
-
-// Notes: data should be an array of objects.
-// match should be an array of key name(s) who's value(s) you want to query against from data.
-// Dot notation can be used in match to target nested data keys.
-// If no matches are found, the default data will be returned as a fallback.
-// setFilteredData(null) in parent component hook to trigger field reset.

@@ -25,4 +25,11 @@ export const stringToArray = string => {
   const words = prep.split(' ');
 
   return words;
-}
+};
+
+export const lowercaseArray = arr => {
+  return arr.map(item => {
+    if (typeof item === "string") return item.toLowerCase();
+    return item;
+  });
+};
