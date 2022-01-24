@@ -10,7 +10,13 @@ import Filter from 'components/Filter/Filter';
 import colors from 'theme/colors.scss';
 
 const data = {
-  animalOfWeek: "Cat",
+  assets: [
+    { rawData: { symbol: "BTC" } },
+    { rawData: { symbol: "ETH" } },
+    { rawData: { symbol: "XRP" } },
+    { rawData: { symbol: "ADA" } },
+    { rawData: { symbol: "DOT" } },
+  ],
   animals: {
     mammals: {
       land: ["Cat", "Dog"],
@@ -92,7 +98,7 @@ const SectionFilter = props => {
           data={data}
           placeholder="Partial or multiple word(s)..."
           include={[
-            "animalOfWeek",
+            "assets>rawData.symbol",
             "animals.mammals.land",
             "animals.mammals.sea",
             "animals.mammals.air",

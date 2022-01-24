@@ -22,50 +22,70 @@ const Filter = props => {
 
   const [ filterValue, setFilterValue ] = useState("");
 
+  const getValues = (objPath, array) => {
+    const firstKey = objPath[0];
+    let value = { ...data[firstKey] };
+
+    const digDeep = () => {
+      // Gets final value from nested keys.
+      for (let i = 0; i < objPath.length; i++) {
+        if (i !== 0) value = value[objPath[i]];
+      };
+    };
+
+    if (array) {
+      return array.map(obj => {
+        value = { ...obj[firstKey] };
+        digDeep();
+        return value;
+      });
+    }
+
+    digDeep();
+    return value;
+  };
+
   useEffect(() => {
     if (data) {
       const allDataFromLocations = include.map(location => {
-        if (location.includes('.')) {
-          const keyPath = location.split('.');
-          let value = { ...data[keyPath[0]] };
+        if (location.includes('>')) {
+          // Array of objects...
+          const arrObjPath = location.split('>');
+          const objPath = arrObjPath[1].split('.');
+          const workingArr = data[arrObjPath[0]];
 
-          // Gets final value from nested keys.
-          for (let i = 0; i < keyPath.length; i++) {
-            if (i !== 0) value = value[keyPath[i]];
-          };
-
-          return value;
+          return getValues(objPath, workingArr);
+        } else if (location.includes('.')) {
+          // Regular objects...
+          const objPath = location.split('.');
+          return getValues(objPath);
         }
 
+        // Plain strings or numbers.
         return data[location];
       });
 
       const userValues = lowercaseArray(stringToArray(filterValue)
         .filter((item, index) => {
-          // If user hasn't typed in field yet, return all results
-          // Otherwise filter out empty space while typing so results
-          //  aren't defaulting to everything every time no include is found.
           if (index === 0 && item === "") return " ";
           return item;
         })
       );
 
-      const combinedDataToFilter = [...new Set(lowercaseArray([].concat(...allDataFromLocations)))];
+      const combinedDataToFilter = [...new Set([].concat(...allDataFromLocations))];
+
       const filteredResults = combinedDataToFilter.filter(item => {
         for (let i = 0; i < userValues.length; i++) {
-          const workingItem = typeof item === "number"
-            ? item.toString()
-            : item;
+          const isObject = typeof item === "object";
+          const workingItem = typeof item === "number" ? item.toString() : item;
 
-          if (workingItem.includes(userValues[i])) {
+          if (!isObject && workingItem?.toLowerCase().includes(userValues[i])) {
             return item;
           }
         }
       });
 
-      if (callback) {
-        callback(filteredResults);
-      };
+      if (callback) callback(filteredResults);
     };
   }, [filterValue]);
 
