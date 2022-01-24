@@ -1,0 +1,45 @@
+@import 'theme/colors.scss';
+
+.searchContainer {
+  width: 100%;
+  max-width: 70rem;
+
+  form {
+    display: inline-flex;
+
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      padding-right: 0.5rem;
+
+      i {
+        position: absolute;
+        font-size: 1.25rem;
+        padding-left: 0.8rem;
+      }
+
+      input {
+        padding-left: 3rem;
+        margin: 0;
+
+        &.noIcon {
+          padding-left: 0.75rem;
+        }
+      }
+    }
+
+    button {
+      margin: 0 !important;
+      min-width: 7rem;
+    }
+  }
+}
+
+
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 1440px) {
+
+}
