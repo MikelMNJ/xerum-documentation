@@ -55,8 +55,8 @@ export const filterTable = [
     tData2:
       <Fragment>
         Array of key names from your <strong>data</strong> object to
-        include in filter results — use dot notation to
-        access nested keys, i.e. "key.subKey.subKey2" etc.
+        include in filter results — use a &gt; to access array of objects
+        and dot notation to access nested keys, i.e. "key&gt;arrayOfObjs.key.subKey" etc.
       </Fragment>,
     tData3: "-"
   },
