@@ -12,6 +12,7 @@ import colors from 'theme/colors.scss';
 const data = {
   default: "BTC-USD",
   currencies: {
+    pairs: [ "USD", "GBP", "EUR" ],
     crypto: [
       { rawData: { symbol: "BTC" } },
       { rawData: { symbol: "ETH" } },
@@ -19,7 +20,6 @@ const data = {
       { rawData: { symbol: "ADA" } },
       { rawData: { symbol: "DOT" } },
     ],
-    pairs: [ "USD", "GBP", "EUR" ],
   },
 };
 
@@ -69,7 +69,7 @@ const SectionFilter = props => {
         </Table>
 
         <strong>Note</strong>: Unlike the {codeSnippet("<Search />")}&nbsp;
-        component, the {codeSnippet("<Filter />")} component only filters
+        component, the {codeSnippet("<Filter />")} component filters
         existing DOM elements in real-time &mdash; it does not use any
         external API callbacks.
 
@@ -80,12 +80,7 @@ const SectionFilter = props => {
         a single letter or multiple words in the same field to see all
         query results at once.
 
-        <p>
-          Please note the empty area, in the example, when no results are
-          returned is a separate fallback message in the parent component&nbsp;
-          &mdash; it is not built into the component itself.  This is intentional
-          to allow for your own custom fallback message.
-        </p>
+        <p />
       </div>
 
       <SampleBox name="Filter" code={filterCode}>
@@ -94,13 +89,13 @@ const SectionFilter = props => {
           placeholder="Partial or multiple words..."
           include={[
             "default",
-            "currencies.crypto>rawData.symbol",
             "currencies.pairs",
+            "currencies.crypto>rawData.symbol",
           ]}
           callback={newData => setFilteredData(newData)}
         />
 
-        <p className="fullWidth">Results:</p>
+        <p className="fullWidth">Results ({filteredData.length}):</p>
         <div style={boxStyle}>
           {buildData()}
         </div>

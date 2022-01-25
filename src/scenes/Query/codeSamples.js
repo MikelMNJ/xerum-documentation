@@ -32,8 +32,8 @@ const data = {
   placeholder="Partial or multiple words..."
   include={[
     "default",
-    "currencies.crypto>rawData.symbol",
     "currencies.pairs",
+    "currencies.crypto>rawData.symbol",
   ]}
 
   // 2. set filtered data to use for
