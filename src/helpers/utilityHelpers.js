@@ -21,7 +21,7 @@ export const formatNum = (val, digits) => (
 );
 
 export const stringToArray = string => {
-  const prep = string.replace(/[\\W_,-]/g, "");
+  const prep = string.replace(/[\\W_,]/g, "");
   const words = prep.split(' ');
 
   return words;
