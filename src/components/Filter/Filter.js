@@ -51,8 +51,15 @@ const Filter = props => {
         if (location.includes('>')) {
           // Array of objects...
           const arrObjPath = location.split('>');
-          const objPath = arrObjPath[1].split('.');
-          const workingArr = data[arrObjPath[0]];
+          const prePath = arrObjPath[0];
+          const postPath = arrObjPath[1];
+          const objPath = postPath.split('.');
+          let workingArr = data[prePath];
+
+          if (prePath.includes('.')) {
+            const preSplit = prePath.split('.');
+            workingArr = getValues(preSplit);
+          }
 
           return getValues(objPath, workingArr);
         } else if (location.includes('.')) {
