@@ -10,21 +10,16 @@ import Filter from 'components/Filter/Filter';
 import colors from 'theme/colors.scss';
 
 const data = {
-  assets: [
-    { rawData: { symbol: "BTC" } },
-    { rawData: { symbol: "ETH" } },
-    { rawData: { symbol: "XRP" } },
-    { rawData: { symbol: "ADA" } },
-    { rawData: { symbol: "DOT" } },
-  ],
-  animals: {
-    mammals: {
-      land: ["Cat", "Dog"],
-      sea: ["Dolphin", "Otter"],
-      air: ["Bat"],
-    },
-    reptiles: ["Iguana", "Turtle", "Snake"],
-    amphibians: ["Frog", "Axolotl"],
+  default: "BTC-USD",
+  currencies: {
+    crypto: [
+      { rawData: { symbol: "BTC" } },
+      { rawData: { symbol: "ETH" } },
+      { rawData: { symbol: "XRP" } },
+      { rawData: { symbol: "ADA" } },
+      { rawData: { symbol: "DOT" } },
+    ],
+    pairs: [ "USD", "GBP", "EUR" ],
   },
 };
 
@@ -96,14 +91,11 @@ const SectionFilter = props => {
       <SampleBox name="Filter" code={filterCode}>
         <Filter
           data={data}
-          placeholder="Partial or multiple word(s)..."
+          placeholder="Partial or multiple words..."
           include={[
-            "assets>rawData.symbol",
-            "animals.mammals.land",
-            "animals.mammals.sea",
-            "animals.mammals.air",
-            "animals.reptiles",
-            "animals.amphibians",
+            "default",
+            "currencies.crypto>rawData.symbol",
+            "currencies.pairs",
           ]}
           callback={newData => setFilteredData(newData)}
         />
