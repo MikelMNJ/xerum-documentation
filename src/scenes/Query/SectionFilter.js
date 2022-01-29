@@ -80,7 +80,12 @@ const SectionFilter = props => {
         a single letter or multiple words in the same field to see all
         query results at once.
 
-        <p />
+        <p>
+          When accessing an array of objects, keep the dot notation going to
+          drill into the final key you want to use as a filter value. It is
+          assumed that all objects in your array of objects have identical
+          structure &mdash; see associated example.
+        </p>
       </div>
 
       <SampleBox name="Filter" code={filterCode}>
@@ -90,7 +95,7 @@ const SectionFilter = props => {
           include={[
             "default",
             "currencies.pairs",
-            "currencies.crypto>rawData.symbol",
+            "currencies.crypto.rawData.symbol",
           ]}
           callback={newData => setFilteredData(newData)}
         />
