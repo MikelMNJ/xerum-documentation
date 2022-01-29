@@ -33,7 +33,7 @@ const data = {
   include={[
     "default",
     "currencies.pairs",
-    "currencies.crypto>rawData.symbol",
+    "currencies.crypto.rawData.symbol",
   ]}
 
   // 2. set filtered data to use for
