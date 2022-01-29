@@ -78,8 +78,6 @@ const navigation = [
     icon: "",
     subMenu: [
       { name: "Menu", path: "#menu", icon: "" },
-      { name: "SubMenu", path: "#sub-menu", icon: "" },
-      { name: "Breadcrumb", path: "#breadcrumb", icon: "" },
       { name: "Pagination", path: "#pagination", icon: "" },
       { name: "Tabs", path: "#tabs", icon: "" },
     ]
@@ -105,8 +103,6 @@ const navigation = [
       { name: "Modal", path: "#modal", icon: "" },
       { name: "Popover", path: "#popover", icon: "" },
       { name: "Card", path: "#card", icon: "" },
-      { name: "Accordion", path: "#accordion", icon: "" },
-      { name: "Slider", path: "#slider", icon: "" },
     ]
   },
 
