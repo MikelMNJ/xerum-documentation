@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { stringToArray, lowercaseArray } from 'helpers/utilityHelpers';
 import { iconValid } from 'helpers/validators';
-import { isEmpty } from 'lodash';
+import { every, isArray, isObject } from 'lodash';
 import colors from 'theme/colors.scss';
 import './Filter.scss';
 
@@ -22,53 +22,52 @@ const Filter = props => {
 
   const [ filterValue, setFilterValue ] = useState("");
 
-  const getValues = (objPath, array) => {
-    const firstKey = objPath[0];
-    let value = { ...data[firstKey] };
+  const digDeep = (path, value) => {
+    let workingVal = value;
 
-    const digDeep = () => {
-      // Gets final value from nested keys.
-      for (let i = 0; i < objPath.length; i++) {
-        if (i !== 0) value = value[objPath[i]];
-      };
+    // Gets final value from nested keys.
+    for (let i = 1; i < path.length; i++) {
+      const currentPath = path[i];
+      const currentData = workingVal[currentPath];
+
+      if (currentData) {
+        workingVal = currentData;
+      }
     };
 
-    if (array) {
-      return array.map(obj => {
-        value = { ...obj[firstKey] };
-        digDeep();
-        return value;
+    return workingVal;
+  };
+
+  const getValues = objPath => {
+    const firstKey = objPath[0];
+    const originalVal = { ...data[firstKey] };
+    const finalArr = digDeep(objPath, originalVal);
+    const isComplex = every(finalArr, isObject);
+
+    if (isComplex && isArray(finalArr)) {
+      // From array of objects...
+      const simplifiedArr = finalArr?.map(obj => {
+        const subPath = objPath.slice(1);
+        return digDeep(subPath, obj);
       });
+
+      return simplifiedArr;
     }
 
-    digDeep();
-    return value;
+    // From simple object...
+    return finalArr || [];
   };
 
   useEffect(() => {
     if (data) {
       const allDataFromLocations = include.map(location => {
-        if (location.includes('>')) {
-          // Array of objects...
-          const arrObjPath = location.split('>');
-          const prePath = arrObjPath[0];
-          const postPath = arrObjPath[1];
-          const objPath = postPath.split('.');
-          let workingArr = data[prePath];
-
-          if (prePath.includes('.')) {
-            const preSplit = prePath.split('.');
-            workingArr = getValues(preSplit);
-          }
-
-          return getValues(objPath, workingArr);
-        } else if (location.includes('.')) {
-          // Regular objects...
+        if (location.includes('.')) {
+          // Objects...
           const objPath = location.split('.');
           return getValues(objPath);
         }
 
-        // Plain strings or numbers.
+        // Plain strings, numbers or arrays.
         return data[location];
       });
 
