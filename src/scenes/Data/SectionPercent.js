@@ -18,6 +18,10 @@ const SectionPercent = props => {
           {buildRows(percentTable)}
         </Table>
 
+        <strong>Tip</strong>: Try putting the {codeSnippet("<Progress />")}&nbsp;
+        and {codeSnippet("<Percent />")} components together in different ways
+        and placements.
+
         <p />
       </div>
 

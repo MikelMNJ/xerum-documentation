@@ -18,11 +18,18 @@ const SectionProgress = props => {
           {buildRows(progressTable)}
         </Table>
 
+        <strong>Note</strong>: Use the <i>color</i> and <i>bgColor</i> props
+        if you need custom colors. A custom className can still be used if desired, but&nbsp;
+        <i>!important</i> tags may be required to override some styles.
+        Use "<i>yourClassName .progress</i>" to style the progress bar itself &mdash;
+        custom className's only affect the parent container by default.
+
         <p />
       </div>
 
       <SampleBox name="Progress" code={progressCode}>
-        <Progress />
+        <Progress current={4354.432} total={7200} />
+        <p />
       </SampleBox>
     </Fragment>
   );
