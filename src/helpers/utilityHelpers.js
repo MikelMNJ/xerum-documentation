@@ -16,8 +16,11 @@ export const removeEvent = (name, func) => {
   window.removeEventListener(name, e => func(e));
 };
 
-export const formatNum = (val, digits) => (
-  val.toLocaleString('en-US', { minimumIntegerDigits: digits || 2 })
+export const formatNum = (val, maxFraction, minFraction) => (
+  val.toLocaleString('en-US', {
+    maximumFractionDigits: maxFraction || 2,
+    minimumFractionDigits: minFraction || 2,
+  })
 );
 
 export const stringToArray = string => {
