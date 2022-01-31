@@ -13,6 +13,11 @@ export const progressTable = [
     tData3: "-"
   },
   {
+    tData1: "noPct",
+    tData2: "Disables percent value.",
+    tData3: "false"
+  },
+  {
     tData1: "color",
     tData2: "Sets the color of the progress bar using hex format, i.e. #000 or #000000.",
     tData3: <Status color="#0d97ff" text="#0d97ff" />
@@ -21,6 +26,11 @@ export const progressTable = [
     tData1: "bgColor",
     tData2: "Sets the color of the indicator using hex format, i.e. #000 or #000000.",
     tData3: <Status color="#4d5153" text="#4d5153" />
+  },
+  {
+    tData1: "pctColor",
+    tData2: "Sets the color of the percent value using hex format, i.e. #000 or #000000.",
+    tData3: <Status color="#999999" text="rgba(0,0,0,0.5)" />
   },
 ];
 

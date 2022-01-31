@@ -2,6 +2,7 @@
 export const progressCode = `<Progress
   current={4354.432}
   total={7200}
+  pctColor="#ffffff"
 />`;
 
 export const priceCode = `<Price />`;

@@ -13,7 +13,7 @@ const Percent = props => {
   };
 
   return (
-    <div {...rest}>
+    <div ref={rest.ref} {...rest}>
       {buildPercent()} %
     </div>
   );
