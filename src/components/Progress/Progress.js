@@ -18,7 +18,7 @@ const Progress = props => {
   } = props;
 
   const [ pctStyle, setPctStyle ] = useState({
-    color: hexValid(pctColor) || "rgba(0, 0, 0, 0.5)"
+    color: hexValid(pctColor) || "#00000080"
   });
 
   const progress = +(current) / +(total) * 100;

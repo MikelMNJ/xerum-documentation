@@ -30,7 +30,7 @@ export const progressTable = [
   {
     tData1: "pctColor",
     tData2: "Sets the color of the percent value using hex format, i.e. #000 or #000000.",
-    tData3: <Status color="#999999" text="rgba(0,0,0,0.5)" />
+    tData3: <Status color="#00000080" text="#00000080" />
   },
 ];
 

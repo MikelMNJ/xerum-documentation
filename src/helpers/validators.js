@@ -1,5 +1,10 @@
 export const hexValid = val => {
-  const isValid = val?.startsWith("#") && (val?.length === 7 || val?.length === 4);
+  const isValid = val?.startsWith("#") && (
+    val?.length === 4
+    || val?.length === 7
+    || val?.length === 9
+  );
+
   if (isValid) return val;
 };
 
