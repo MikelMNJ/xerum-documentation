@@ -53,10 +53,11 @@ code {
   flex-direction: column;
 }
 
-.scrollbar {
+.scrollbar::-webkit-scrollbar {
   min-height: 18.75rem;
   overflow-y: scroll;
   overflow-x: hidden;
+  width: 0.625rem;
 }
 
 .scrollbar::-webkit-scrollbar-track {
@@ -72,7 +73,12 @@ code {
 
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 0.35rem;
-  background-color: $lightGrey;
+  background-color: $slate;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  border-radius: 0.35rem;
+  background-color: $deepBlue;
 }
 
 .green {

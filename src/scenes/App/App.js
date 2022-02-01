@@ -50,7 +50,7 @@ const MyApp = props => {
         </header>
 
         <section id="main" className={navOpen ? "menuIsOpen" : ""}>
-          <Nav className={`customNav ${navOpen ? "open" : ""}`} links={navigation} />
+          <Nav className={`customNav scrollbar ${navOpen ? "open" : ""}`} links={navigation} />
 
           <div>
             <Routes>
