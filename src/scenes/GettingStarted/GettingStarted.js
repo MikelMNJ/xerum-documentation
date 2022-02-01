@@ -28,7 +28,28 @@ const GettingStarted = props => {
         {codeSnippet("import { Button } from 'xerum';")}
       </div>
 
-      <br />
+      <p />
+
+      <p>
+        This library has the following peer dependencies:
+        <ul style={{ listStyle: "unset", margin: "revert", padding: "revert" }}>
+          <li>
+            <strong>@fortawesome/fontawesome-free (v6+)</strong>
+          </li>
+          <li>
+            <strong>formik (v2+)</strong>
+          </li>
+          <li>
+            <strong>lodash (v4+)</strong>
+          </li>
+          <li>
+            <strong>moment (v2+)</strong>
+          </li>
+          <li>
+            <strong>axios</strong>
+          </li>
+        </ul>
+      </p>
 
       <p>
         <strong>Note</strong>: Unless noted otherwise, you can pass standard attributes as you&nbsp;

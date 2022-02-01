@@ -41,7 +41,7 @@ const MyApp = props => {
 
               <div>
                 <p className="subTitle">React component library</p>
-                <p>For React v16.8+ and Formik 2.0+</p>
+                <p>For React v16.8+</p>
               </div>
             </div>
 
