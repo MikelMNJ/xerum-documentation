@@ -13,6 +13,11 @@ export const progressTable = [
     tData3: "-"
   },
   {
+    tData1: "fixedPct",
+    tData2: "Keeps percent value fixed instead of following the progress bar.",
+    tData3: "false"
+  },
+  {
     tData1: "noPct",
     tData2: "Disables percent value.",
     tData3: "false"

@@ -10,6 +10,7 @@ const Progress = props => {
     bgColor,
     pctColor,
     noPct,
+    fixedPct,
     current,
     total,
     className,
@@ -41,7 +42,7 @@ const Progress = props => {
 
       setPctStyle({
         ...pctStyle,
-        transform: `translateX(${posX}px)`,
+        transform: `translateX(${fixedPct ? 0 : posX}px)`,
       });
     }
   }, [widthRef, pctRef]);
