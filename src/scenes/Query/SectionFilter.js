@@ -62,6 +62,7 @@ const SectionFilter = props => {
   return (
     <Fragment>
       <div>
+        <h2>Query</h2>
         <h3 id="filter">{`<Filter />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>

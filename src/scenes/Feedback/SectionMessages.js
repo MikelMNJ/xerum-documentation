@@ -16,7 +16,6 @@ const SectionMessages = props => {
   return (
     <Fragment>
       <div>
-        <h2>Feedback</h2>
         <h3 id="messages">{`<Messages />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>

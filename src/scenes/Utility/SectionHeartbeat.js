@@ -43,7 +43,6 @@ const SectionHeartbeat = props => {
   return (
     <Fragment>
       <div>
-        <h2>Utility</h2>
         <h3 id="heartbeat">{`<Heartbeat />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>

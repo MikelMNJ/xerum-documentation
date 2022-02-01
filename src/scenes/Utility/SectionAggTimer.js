@@ -11,6 +11,7 @@ const SectionAggTimer = props => {
   return (
     <Fragment>
       <div>
+        <h2>Utility</h2>
         <h3 id="agg-timer">{`<AggTimer />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>

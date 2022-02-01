@@ -14,7 +14,6 @@ const SectionFieldReqs = props => {
   return (
     <Fragment>
       <div>
-        <h2>Form Utility</h2>
         <h3 id="field-reqs">{`<FieldReqs />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
@@ -26,6 +25,8 @@ const SectionFieldReqs = props => {
         <strong>Note</strong>: The {codeSnippet("<FieldReqs />")} component is not
         responsible for field validation on submit &mdash; it is simply visual
         feedback so the user can correct any validation issues prior to submitting.
+
+        <p />
       </div>
 
       <SampleBox name="FieldReqs" code={fieldReqsCode}>

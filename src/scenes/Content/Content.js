@@ -13,12 +13,11 @@ const Content = props => {
     <div id="content">
       <GettingStarted />
       <Buttons />
+      <Data />
       <Feedback />
       <Information />
-      <Utility />
       <Query />
-
-      <Data />
+      <Utility />
     </div>
   );
 };

@@ -6,9 +6,9 @@ import SectionPercent from './SectionPercent';
 const Data = props => {
   return (
     <section id="data">
-      <SectionProgress />
-      <SectionPrice />
       <SectionPercent />
+      <SectionPrice />
+      <SectionProgress />
     </section>
   );
 };

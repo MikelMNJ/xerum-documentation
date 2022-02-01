@@ -5,8 +5,8 @@ import SectionSearch from './SectionSearch';
 const Query = props => {
   return (
     <section id="query">
-      <SectionSearch />
       <SectionFilter />
+      <SectionSearch />
     </section>
   );
 };

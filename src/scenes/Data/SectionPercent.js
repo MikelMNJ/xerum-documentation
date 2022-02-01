@@ -12,6 +12,7 @@ const SectionPercent = props => {
   return (
     <Fragment>
       <div>
+        <h2>Data</h2>
         <h3 id="percent">{`<Percent />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
