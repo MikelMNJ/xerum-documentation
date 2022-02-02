@@ -10,13 +10,13 @@ import SectionFieldError from './SectionFieldError';
 const Feedback = props => {
   return (
     <section id="feedback">
-      <Messages />
-      <NotFound />
-      <Loading />
       <Badge />
       <Banner />
-      <SectionFieldReqs />
       <SectionFieldError />
+      <SectionFieldReqs />
+      <Loading />
+      <Messages />
+      <NotFound />
     </section>
   );
 };

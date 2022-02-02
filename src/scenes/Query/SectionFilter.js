@@ -10,7 +10,7 @@ import Filter from 'components/Filter/Filter';
 import colors from 'theme/colors.scss';
 
 const data = {
-  default: "BTC-USD",
+  stableCoin: "USDC",
   currencies: {
     pairs: [ "USD", "GBP", "EUR" ],
     crypto: [
@@ -62,6 +62,7 @@ const SectionFilter = props => {
   return (
     <Fragment>
       <div>
+        <h2>Query</h2>
         <h3 id="filter">{`<Filter />`}</h3>
 
         <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
@@ -93,7 +94,7 @@ const SectionFilter = props => {
           data={data}
           placeholder="Partial or multiple words..."
           include={[
-            "default",
+            "stableCoin",
             "currencies.pairs",
             "currencies.crypto.rawData.symbol",
           ]}

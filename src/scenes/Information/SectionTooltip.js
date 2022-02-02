@@ -29,8 +29,8 @@ const SectionTooltip = props => {
           {buildRows(tooltipTable)}
         </Table>
 
-        <strong>Note</strong>: When passing a custom <i>className</i> to the
-        {codeSnippet("<Tooltip />")} component, you will need to target the
+        <strong>Note</strong>: When passing a custom <i>className</i> to the&nbsp;
+        {codeSnippet("<Tooltip />")} component, you will need to target the&nbsp;
         {codeSnippet(".tip")} and {codeSnippet("i")} selectors with CSS chaining:
 
         {codeSnippet(css, true)}

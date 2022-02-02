@@ -1,0 +1,41 @@
+@import 'theme/colors.scss';
+
+.progressBar {
+  display: flex;
+  align-items: center;
+  background-color: $slate;
+  height: auto;
+  width: 100%;
+  border-radius: 0.35rem;
+
+  &.noPct {
+    height: 0.5rem;
+  }
+
+  .progress {
+    display: flex;
+    align-items: center;
+    border-radius: inherit;
+    height: 100%;
+    transition: all 0.75s cubic-bezier(.75,-0.5,0,1.75);
+  }
+
+  .pct {
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: max-content;
+    transition: transform 0.5s ease;
+    padding: 0 0.5rem;
+    animation: fadeIn ease 0.5s;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 414px) {
+
+}

@@ -14,7 +14,7 @@ export const filterCode = `// 1. Set hook to receive filtered data.
 const [ filtered, setFiltered ] = useState([]);
 
 const data = {
-  default: "BTC-USD",
+  stableCoin: "USDC",
   currencies: {
     pairs: [ "USD", "GBP", "EUR" ],
     crypto: [
@@ -31,7 +31,7 @@ const data = {
   data={data}
   placeholder="Partial or multiple words..."
   include={[
-    "default",
+    "stableCoin",
     "currencies.pairs",
     "currencies.crypto.rawData.symbol",
   ]}

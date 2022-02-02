@@ -5,6 +5,7 @@ import Feedback from 'scenes/Feedback/Feedback';
 import Information from 'scenes/Information/Information';
 import Utility from 'scenes/Utility/Utility';
 import Query from 'scenes/Query/Query';
+import Data from 'scenes/Data/Data';
 import './Content.scss';
 
 const Content = props => {
@@ -12,10 +13,11 @@ const Content = props => {
     <div id="content">
       <GettingStarted />
       <Buttons />
+      <Data />
       <Feedback />
       <Information />
-      <Utility />
       <Query />
+      <Utility />
     </div>
   );
 };

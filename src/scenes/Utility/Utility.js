@@ -8,11 +8,11 @@ import SectionStatus from './SectionStatus';
 const Information = props => {
   return (
     <section id="utility">
-      <SectionHeartbeat />
-      <SectionAuthRoute />
-      <SectionToTop />
       <SectionAggTimer />
+      <SectionAuthRoute />
+      <SectionHeartbeat />
       <SectionStatus />
+      <SectionToTop />
     </section>
   );
 };
