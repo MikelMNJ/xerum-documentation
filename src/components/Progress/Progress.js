@@ -38,7 +38,7 @@ const Progress = props => {
     if (widthRef && pctRef) {
       const barWidth = widthRef.current?.offsetWidth;
       const pctWidth = pctRef.current?.offsetWidth;
-      const posX = barWidth >= pctWidth + 8 ? barWidth - pctWidth - 8 : 0;
+      const posX = barWidth >= pctWidth + 4 ? barWidth - pctWidth - 4 : 0;
 
       setPctStyle({
         ...pctStyle,
