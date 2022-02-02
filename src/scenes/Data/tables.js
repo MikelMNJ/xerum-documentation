@@ -41,9 +41,31 @@ export const progressTable = [
 
 export const priceTable = [
   {
-    tData1: "",
-    tData2: "",
-    tData3: ""
+    tData1: "value",
+    tData2: "Amount to be rendered.",
+    tData3: "0"
+  },
+  {
+    tData1: "limit",
+    tData2: "Limits the decimal placement count.",
+    tData3: "2",
+  },
+  {
+    tData1: "symbol",
+    tData2:
+    <Fragment>
+      Symbol of currency that precedes <strong>value</strong>.
+      Takes a string or more custom solution within React tags.
+    </Fragment>,
+    tData3: "$"
+  },
+  {
+    tData1: "currency",
+    tData2:
+    <Fragment>
+      Three to four letter abbreviated currency, i.e. <i>USD</i>, <i>GBP</i>, <i>YUAN</i> etc.
+    </Fragment>,
+    tData3: "-"
   },
 ];
 

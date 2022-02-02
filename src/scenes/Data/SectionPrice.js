@@ -23,7 +23,16 @@ const SectionPrice = props => {
 
       <SampleBox name="Price" code={priceCode}>
         <strong style={{ color: colors.blue }}>
-          <Price />
+          <Price
+            value={1024.76623496782}
+            symbol={
+              <Fragment>
+                <i className="fa-brands fa-ethereum" />
+              </Fragment>
+            }
+            currency="ETH"
+            limit={8}
+          />
         </strong>
       </SampleBox>
     </Fragment>

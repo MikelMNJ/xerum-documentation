@@ -5,7 +5,16 @@ export const progressCode = `<Progress
   pctColor="#ffffff"
 />`;
 
-export const priceCode = `<Price />`;
+export const priceCode = `<Price
+  value={1024.76623496782}
+  symbol={
+    <Fragment>
+      <i className="fa-brands fa-ethereum" />
+    </Fragment>
+  }
+  currency="ETH"
+  limit={8}
+/>`;
 
 export const percentCode = `<Percent
   current={4354.432}
