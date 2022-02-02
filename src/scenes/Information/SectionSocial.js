@@ -37,7 +37,7 @@ const SectionSocial = props => {
         Additionally, when passing a custom <i>className</i> to the {codeSnippet("<Social />")}&nbsp;
         component, you are directly targeting it's {codeSnippet("<a />")} tags &mdash; you can use
         CSS chaining and psuedo-selectors if you need finer control over {codeSnippet(":hover")} style
-        or targetting the child {codeSnippet("<i />")} tags &mdash; otherwise generic changes from the parent
+        or targetting the child {codeSnippet("<i />")} tags &mdash; otherwise generic changes from the parent&nbsp;
         {codeSnippet("<a />")} level, like <i>color</i> and <i>font-size</i>, will affect both icons
         and text.
 

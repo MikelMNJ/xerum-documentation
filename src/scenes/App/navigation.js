@@ -11,20 +11,20 @@ const navigation = [
     icon: "",
   },
 
-  {
-    name: "Charts",
-    path: "",
-    icon: "",
-    subMenu: [
-      { name: "Bar", path: "#bar", icon: "" },
-      { name: "Candles", path: "#candles", icon: "" },
-      { name: "Line", path: "#line", icon: "" },
-      { name: "MACD", path: "#macd", icon: "" },
-      { name: "Pie", path: "#pie", icon: "" },
-      { name: "RSI", path: "#rsi", icon: "" },
-      { name: "StochRSI", path: "#stoch-rsi", icon: "" },
-    ]
-  },
+  // {
+  //   name: "Charts",
+  //   path: "",
+  //   icon: "",
+  //   subMenu: [
+  //     { name: "Bar", path: "#bar", icon: "" },
+  //     { name: "Candles", path: "#candles", icon: "" },
+  //     { name: "Line", path: "#line", icon: "" },
+  //     { name: "MACD", path: "#macd", icon: "" },
+  //     { name: "Pie", path: "#pie", icon: "" },
+  //     { name: "RSI", path: "#rsi", icon: "" },
+  //     { name: "StochRSI", path: "#stoch-rsi", icon: "" },
+  //   ]
+  // },
 
   {
     name: "Containers",
@@ -33,7 +33,7 @@ const navigation = [
     subMenu: [
       { name: "Card", path: "#card", icon: "" },
       { name: "Modal", path: "#modal", icon: "" },
-      { name: "Popover", path: "#popover", icon: "" },
+      // { name: "Popover", path: "#popover", icon: "" },
       { name: "Slideover", path: "#slideover", icon: "" },
       { name: "Table", path: "#table", icon: "" },
     ]

@@ -19,9 +19,10 @@ li {
 }
 
 pre {
-  border: 0.0625rem solid $lighterGrey;
+  border: none; // 0.0625rem solid $lighterGrey;
   border-radius: 0.35rem;
   padding: 0.1rem 0.5rem;
+  background-color: $slate;
 
   &.inline {
     width: fit-content;
@@ -33,6 +34,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: 0.85rem;
   -webkit-text-size-adjust: none;
+  color: $offWhite;
 }
 
 .inline {

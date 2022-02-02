@@ -17,7 +17,7 @@ const SectionNotFound = props => {
           {buildRows(notFoundTable)}
         </Table>
 
-        <strong>Note</strong>: You can target the {codeSnippet("<h2>")} title and
+        <strong>Note</strong>: You can target the {codeSnippet("<h2>")} title and&nbsp;
         {codeSnippet("<p>")} message tags, with a custom <i>className</i> and CSS
         chaining.
 
