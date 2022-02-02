@@ -24,7 +24,7 @@ const SectionPercent = props => {
 
       <SampleBox name="Percent" code={percentCode}>
         <strong style={{ color: colors.blue }}>
-          <Percent current={4354.432} total={7200} />
+          <Percent current={3483.432} total={60} usePlus />
         </strong>
       </SampleBox>
     </Fragment>

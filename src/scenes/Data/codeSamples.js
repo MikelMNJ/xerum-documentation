@@ -17,6 +17,7 @@ export const priceCode = `<Price
 />`;
 
 export const percentCode = `<Percent
-  current={4354.432}
-  total={7200}
+  current={3483.432}
+  total={60}
+  usePlus
 />`;

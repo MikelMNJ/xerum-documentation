@@ -1,15 +1,19 @@
 import React, { Fragment } from 'react';
-import { formatNum } from 'helpers/utilityHelpers';
+import { truncate } from 'helpers/utilityHelpers';
 import './Percent.scss';
 
 const Percent = props => {
-  const { current, total, limit, ...rest } = props;
+  const { current, total, limit, usePlus, ...rest } = props;
 
   const buildPercent = () => {
     const is = +(current);
     const of = +(total);
+    const val = isNaN(is/of) ? truncate(0, limit) : truncate(is/of * 100, limit);
+    const final = usePlus
+      ? `${(is/of * 100) >=0 ? "+" : ""}${val}`
+      : val;
 
-    return isNaN(is/of) ? formatNum(0, limit) : formatNum(is/of * 100, limit);
+    return final;
   };
 
   return (

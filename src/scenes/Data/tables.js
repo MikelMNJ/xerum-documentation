@@ -85,4 +85,13 @@ export const percentTable = [
     tData2: "Limits the decimal placement count.",
     tData3: "2"
   },
+  {
+    tData1: "usePlus",
+    tData2:
+      <Fragment>
+        <strong>true</strong> or <strong>false</strong>.
+        Enables the "+" symbol preceding positive percent values.
+      </Fragment>,
+    tData3: "false"
+  }
 ];
