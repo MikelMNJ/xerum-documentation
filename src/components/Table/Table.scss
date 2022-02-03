@@ -27,6 +27,11 @@ ul.table {
     min-height: 3.5rem;
     font-size: 0.85rem;
 
+    .respHeader {
+      display: none;
+      margin: 1rem 0 0 0;
+    }
+
     &:first-child {
       border-radius: 0.35rem 0.35rem 0 0;
     }
@@ -52,7 +57,7 @@ ul.table {
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 640px) {
   ul.table {
     &.xTable {
       li {
@@ -63,9 +68,12 @@ ul.table {
     li {
       grid-template-columns: 1fr !important;
 
-
       &.header {
         display: none;
+      }
+
+      .respHeader {
+        display: block;
       }
 
       &:nth-child(2) {
