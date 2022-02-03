@@ -13,9 +13,7 @@ const SectionBanner = props => {
       <div>
         <h3 id="banner">{`<Banner />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(bannerTable)}
-        </Table>
+        <Table content={bannerTable} className="xTable" />
 
         <strong>Note</strong>: The {codeSnippet("<Banner />")} component will take up
         all of the available width in its parent container by default.

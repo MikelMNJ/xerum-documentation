@@ -14,9 +14,7 @@ const SectionButton = props => {
         <h2>Buttons</h2>
         <h3 id="button">{`<Button />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(buttonTable)}
-        </Table>
+        <Table content={buttonTable} className="xTable" />
 
         <strong>Tip</strong>: The <strong>passthrough</strong> prop is handy if your&nbsp;
         {codeSnippet("<Button />")} component is a child of an element that already has a click

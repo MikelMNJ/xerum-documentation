@@ -20,9 +20,7 @@ const SectionSocial = props => {
       <div>
         <h3 id="social">{`<Social />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(socialTable)}
-        </Table>
+        <Table content={socialTable} className="xTable" />
 
         <p>
           *Required prop.

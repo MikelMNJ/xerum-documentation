@@ -1,5 +1,7 @@
 import React from 'react';
 
+export const swatchStyle = color => ({ color, fontSize: "0.6rem" });
+
 export const codeSnippet = (code, block) => (
   <pre className={block ? "block" : "inline"}>
     <code lang="javascript">

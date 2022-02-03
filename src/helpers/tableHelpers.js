@@ -1,34 +1,26 @@
 import React from 'react';
+import { startCase } from 'lodash';
 import TRow from 'components/Table/TRow';
 import TData from 'components/Table/TData';
 import colors from 'theme/colors.scss';
 
-// TODO: Build TData dynamically and pass header name array.
+export const headers = [ "NAME", "DESCRIPTION", "DEFAULT" ];
 
-export const buildRows = (rows, isMobile) => {
-  return rows.map((row, index) => (
-    <TRow key={index}>
-      <TData>
-        <strong style={{ color: colors.deepBlue }}>
-          {row.tData1}
-        </strong>
-      </TData>
+const buildCells = (obj, headers) => {
+  return Object.values(obj).map((val, index) => (
+    <TData key={index}>
+      <strong>
+        {startCase(headers[index].toLowerCase())}
+      </strong>: &nbsp;
+      {val}
+    </TData>
+  ));
+};
 
-      <TData>
-        <p>
-          {row.tData2}
-        </p>
-      </TData>
-
-      <TData>
-        <span className="mobileDefault">
-          <strong>Default</strong>: &nbsp;
-        </span>
-
-        <strong>
-          {row.tData3}
-        </strong>
-      </TData>
+export const buildRows = (rows, headers, columnStyle) => {
+  return rows?.map((row, index) => (
+    <TRow key={index} style={columnStyle}>
+      {buildCells(row, headers)}
     </TRow>
   ));
 };

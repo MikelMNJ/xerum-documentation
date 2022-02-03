@@ -18,9 +18,7 @@ const SectionMessages = props => {
       <div>
         <h3 id="messages">{`<Messages />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(messagesTable)}
-        </Table>
+        <Table content={messagesTable} className="xTable" />
 
         <p>
           *Required prop.

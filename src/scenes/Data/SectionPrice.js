@@ -14,9 +14,7 @@ const SectionPrice = props => {
       <div>
         <h3 id="price">{`<Price />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(priceTable)}
-        </Table>
+        <Table content={priceTable} className="xTable" />
 
         <p />
       </div>

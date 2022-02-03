@@ -1,41 +1,57 @@
 import React, { Fragment } from 'react';
+import { headers } from 'helpers/tableHelpers';
 
-export const cardTable = [
-  {
-    tData1: "",
-    tData2: "",
-    tData3: ""
-  },
-];
+export const cardTable = {
+  headers,
+  rows: [
+    {
+      tData1: "",
+      tData2: "",
+      tData3: ""
+    },
+  ],
+};
 
-export const modalTable = [
-  {
-    tData1: "",
-    tData2: "",
-    tData3: ""
-  },
-];
+export const modalTable = {
+  headers,
+  rows: [
+    {
+      tData1: "",
+      tData2: "",
+      tData3: ""
+    },
+  ],
+};
 
-export const popOverTable = [
-  {
-    tData1: "",
-    tData2: "",
-    tData3: ""
-  },
-];
+export const popOverTable = {
+  headers,
+  rows: [
+    {
+      tData1: "",
+      tData2: "",
+      tData3: ""
+    },
+  ],
+};
 
-export const slideOverTable = [
-  {
-    tData1: "",
-    tData2: "",
-    tData3: ""
-  },
-];
+export const slideOverTable = {
+  headers,
+  rows: [
+    {
+      tData1: "",
+      tData2: "",
+      tData3: ""
+    },
+  ],
+};
 
-export const tableTable = [
-  {
-    tData1: "",
-    tData2: "",
-    tData3: ""
-  },
-];
+export const tableTable = {
+  headers,
+  rows: [
+    {
+      tData1: "content*",
+      tData2: "Object description of headers, rows etc.",
+      tData3: "-"
+    },
+  ],
+};

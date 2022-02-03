@@ -19,10 +19,10 @@ li {
 }
 
 pre {
-  border: none; // 0.0625rem solid $lighterGrey;
+  border: none;
   border-radius: 0.35rem;
   padding: 0.1rem 0.5rem;
-  background-color: $slate;
+  background-color: $deepBlue;
 
   &.inline {
     width: fit-content;
@@ -48,6 +48,10 @@ code {
 
 .fullWidth {
   width: 100%;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .column {

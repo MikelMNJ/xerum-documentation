@@ -45,9 +45,7 @@ const SectionHeartbeat = props => {
       <div>
         <h3 id="heartbeat">{`<Heartbeat />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(heartbeatTable)}
-        </Table>
+        <Table content={heartbeatTable} className="xTable" />
 
         <p>
           <strong>Tip</strong>: It is recommended to pass your <i>NODE_ENV</i>&nbsp;

@@ -9,10 +9,11 @@ const TRow = props => {
     dragDuring,
     dragEnd,
     callback,
+    columnStyle,
     ...rest
   } = props;
 
-  const rowStyle = {
+  const style = {
     cursor: callback && "pointer",
   }
 
@@ -21,7 +22,11 @@ const TRow = props => {
   }
 
   return (
-    <li onClick={handleClick} style={rowStyle} {...rest}>
+    <li
+      onClick={handleClick}
+      style={{ ...style, ...columnStyle }}
+      {...rest}
+    >
       {children}
     </li>
   );

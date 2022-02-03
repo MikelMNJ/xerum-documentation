@@ -14,9 +14,7 @@ const SectionStatus = props => {
       <div>
         <h3 id="status">{`<Status />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(statusTable)}
-        </Table>
+        <Table content={statusTable} className="xTable" />
 
         <p>
           <strong>Note</strong>: The examples provided are hard-coded for clarity,

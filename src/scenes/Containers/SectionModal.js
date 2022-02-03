@@ -13,9 +13,7 @@ const SectionModal = props => {
       <div>
         <h3 id="modal">{`<Modal />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(modalTable)}
-        </Table>
+        <Table content={modalTable} className="xTable" />
       </div>
 
       <SampleBox name="Modal" code={modalCode}>

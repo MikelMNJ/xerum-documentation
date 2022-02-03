@@ -14,9 +14,7 @@ const SectionCard = props => {
         <h2>Containers</h2>
         <h3 id="card">{`<Card />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(cardTable)}
-        </Table>
+        <Table content={cardTable} className="xTable" />
       </div>
 
       <SampleBox name="Card" code={cardCode}>

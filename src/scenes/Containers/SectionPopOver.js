@@ -13,9 +13,7 @@ const SectionPopOver = props => {
       <div>
         <h3 id="pop-over">{`<PopOver />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(popOverTable)}
-        </Table>
+        <Table content={popOverTable} className="xTable" />
       </div>
 
       <SampleBox name="Pop-Over" code={popOverCode}>

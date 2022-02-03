@@ -17,9 +17,7 @@ const SectionToTop = props => {
       <div>
         <h3 id="to-top">{`<ToTop />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(toTopTable)}
-        </Table>
+      <Table content={toTopTable} className="xTable" />
       </div>
 
       <SampleBox name="To-Top" code={toTopCode}>

@@ -13,9 +13,7 @@ const SectionSlideOver = props => {
       <div>
         <h3 id="slide-over">{`<SlideOver />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(slideOverTable)}
-        </Table>
+        <Table content={slideOverTable} className="xTable" />
       </div>
 
       <SampleBox name="Slide-Over" code={slideOverCode}>
