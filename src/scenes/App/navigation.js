@@ -33,8 +33,8 @@ const navigation = [
     subMenu: [
       { name: "Card", path: "#card", icon: "" },
       { name: "Modal", path: "#modal", icon: "" },
-      // { name: "Popover", path: "#popover", icon: "" },
-      { name: "Slideover", path: "#slideover", icon: "" },
+      { name: "Pop-Over", path: "#pop-over", icon: "" },
+      { name: "Slide-Over", path: "#slide-over", icon: "" },
       { name: "Table", path: "#table", icon: "" },
     ]
   },
