@@ -18,13 +18,6 @@ export const removeEvent = (name, func) => {
   window.removeEventListener(name, e => func(e));
 };
 
-export const formatNum = (val, maxFraction, minFraction) => (
-  val.toLocaleString('en-US', {
-    maximumFractionDigits: maxFraction || 2,
-    minimumFractionDigits: minFraction || 2,
-  })
-);
-
 export const truncate = (num, limit) => {
   num = num === 0 || !num ? "0.00000000" : num.toString();
   const hasFloatVal = num?.includes('.');
