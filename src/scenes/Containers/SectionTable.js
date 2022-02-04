@@ -22,27 +22,26 @@ const defaultCallback = "Click a header to sort, or a row for it's callback.";
 
 const SectionTable = props => {
   const [ rowClicked, setRowClicked ] = useState(defaultCallback);
-
-  const content = {
+  const [ content, setContent ] = useState({
     headers: [ "Bird Name", "Flight Speed (MPH)" ],
     rows: [
       {
         td1: "Raven",
         td2: "50",
-        onClick: () => setRowClicked("Row 1 clicked.")
+        onClick: () => setRowClicked("Raven row clicked.")
       },
       {
         td1: "Sparrow",
         td2: "28",
-        onClick: () => setRowClicked("Row 2 clicked.")
+        onClick: () => setRowClicked("Sparrow row clicked.")
       },
       {
         td1: "Quail",
         td2: null,
-        onClick: () => setRowClicked("Row 3 clicked.")
+        onClick: () => setRowClicked("Quail row clicked.")
       },
-    ],
-  };
+    ]
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -85,7 +84,13 @@ const SectionTable = props => {
       </div>
 
       <SampleBox name="Table" code={tableCode}>
-        <Table content={content} />
+        <Table
+          content={content}
+          sortable={sortedArr => setContent(
+            { ...content, rows: sortedArr }
+          )}
+        />
+
         <strong style={{ color: colors.blue }}>
           {rowClicked}
         </strong>

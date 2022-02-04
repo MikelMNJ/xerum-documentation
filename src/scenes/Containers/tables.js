@@ -58,8 +58,7 @@ export const tableTable = {
       tData2:
         <Fragment>
           Enables headers to sort table by ascending/descending column results when clicked.
-          Handler receives newly sorted array &mdash; serialization is likely required
-          prior to storing in state or sending to your API.
+          Handler receives newly sorted array.
         </Fragment>,
       tData3: "-"
     },
@@ -68,8 +67,7 @@ export const tableTable = {
       tData2:
         <Fragment>
           Enables manual sort order manipulation of table rows via drag and drop.
-          Handler receives newly sorted array &mdash; serialization is likely required
-          prior to storing in state or sending to your API.
+          Handler receives newly sorted array.
         </Fragment>,
       tData3: "-"
     },

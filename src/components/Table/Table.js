@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { buildRows, buildHeaders } from 'helpers/tableHelpers';
 import './Table.scss';
 
 const Table = props => {
-  const { content, style, className, rest } = props;
+  const { content, style, className, sortable, draggable, rest } = props;
+  const [ ascending, setAscending ] = useState(true);
+  const [ sortedColumn, setSortedColumn ] = useState(null);
 
-  const columns = () => {
+  const headerArgs = {
+    headers: content?.headers,
+    rows: content?.rows,
+    sortable,
+    sortedColumn,
+    setSortedColumn,
+    ascending,
+    setAscending,
+  };
+
+  const columnStyle = {
+    gridTemplateColumns: `repeat(${columns()}, 1fr)`,
+    ...style,
+  };
+
+  function columns() {
     const rowKeys = Object.keys(content?.rows?.[0] || {});
     const clickIndex = arr => arr.indexOf("onClick");
 
@@ -17,10 +34,6 @@ const Table = props => {
     return rowKeys.length || content?.headers?.length || 1;
   };
 
-  const columnStyle = {
-    gridTemplateColumns: `repeat(${columns()}, 1fr)`,
-    ...style,
-  };
 
   const buildClasses = () => {
     let classList = "table";
@@ -31,7 +44,7 @@ const Table = props => {
   return (
     <ul className={buildClasses()} {...rest}>
       <li className="header" style={columnStyle}>
-        {buildHeaders(content?.headers)}
+        {buildHeaders(headerArgs)}
       </li>
 
       {buildRows(content?.rows, content?.headers, columnStyle)}
