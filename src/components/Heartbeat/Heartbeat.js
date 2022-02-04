@@ -1,6 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { iconValid } from 'helpers/validators';
-import axios from 'axios';
 
 const Heartbeat = props => {
   const { time, icon, text, disabled, children, className, ...rest } = props;
@@ -10,11 +9,10 @@ const Heartbeat = props => {
     const heartbeat = setInterval(async () => {
       if (!disabled) {
         try {
-          const res = await axios.get('https://icanhazip.com');
+          const res = await fetch('https://icanhazip.com');
           const data = await res.data;
 
           if (offline) setOffline(false);
-
           return data;
         } catch (e) {
           if (!offline) setOffline(true);

@@ -44,9 +44,6 @@ const GettingStarted = props => {
         <li>
           <strong>moment (v2+)</strong>
         </li>
-        <li>
-          <strong>axios</strong>
-        </li>
       </ul>
 
       <p>
