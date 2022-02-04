@@ -11,15 +11,16 @@ const Nav = props => {
 
   const handleClick = (e, hasSubMenu, isSubMenu, name) => {
     const index = activeMenus.findIndex(item => item === name);
+    const workingArr = [ ...activeMenus ];
+
     if (hasSubMenu && !isSubMenu) e.preventDefault();
 
     if (index === -1) {
-      setActiveMenus([ ...activeMenus, name ]);
-    } else {
-      const workingArr = [ ...activeMenus ];
-      workingArr.splice(index, 1);
-      setActiveMenus(workingArr);
+      return setActiveMenus([ ...activeMenus, name ]);
     }
+
+    workingArr.splice(index, 1);
+    setActiveMenus(workingArr);
   };
 
   const buildClasses = (path, isSubMenu, hasSubMenu, menuActive) => {
@@ -31,10 +32,10 @@ const Nav = props => {
 
     if (hasSubMenu) {
       menuActive ? classList += " open" : classList += " closed";
-    } else {
-      classList += " noSubMenu";
+      return classList;
     }
 
+    classList += " noSubMenu";
     return classList;
   };
 
