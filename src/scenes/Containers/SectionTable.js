@@ -1,25 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { tableCode } from './codeSamples';
 import { tableTable } from './tables';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Table from 'components/Table/Table';
+import colors from 'theme/colors.scss';
 
-const content = {
-  headers: [ "Header 1", "Header 2", "Header 3" ],
-  rows: [
-    {
-      td1: "Row 1, Col 1",
-      td2: "Row 1, Col 2",
-      td3: "Row 1, Col 3",
-    },
-    {
-      td1: "Row 2, Col 1",
-      td2: "Row 2, Col 2",
-      td3: "Row 2, Col 3",
-    },
-  ],
-};
 
 const customGrid = `.yourClassName li {
   grid-template-columns: 10rem 1fr 7rem !important;
@@ -32,7 +18,37 @@ const customGrid = `.yourClassName li {
   }
 }`;
 
+const defaultCallback = "Click a row for callback.";
+
 const SectionTable = props => {
+  const [ rowClicked, setRowClicked ] = useState(defaultCallback);
+
+  const content = {
+    headers: [ "Header 1", "Header 2", "Header 3" ],
+    rows: [
+      {
+        td1: "Row 1, Col 1",
+        td2: "Row 1, Col 2",
+        td3: "Row 1, Col 3",
+        onClick: () => setRowClicked("Row 1 callback executed.")
+      },
+      {
+        td1: "Row 2, Col 1",
+        td2: "Row 2, Col 2",
+        td3: "Row 2, Col 3",
+        onClick: () => setRowClicked("Row 2 callback executed.")
+      },
+    ],
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setRowClicked(defaultCallback);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [rowClicked]);
+
   return (
     <Fragment>
       <div>
@@ -42,11 +58,12 @@ const SectionTable = props => {
 
         <p>*Required Prop.</p>
 
-        When you pass a custom <i>className</i>, you can target the <i>header</i>&nbsp;
-        and <i>row</i> element styling with {codeSnippet(".yourClassName header {}")}&nbsp;
-        and {codeSnippet(".yourClassName li {}")}.
+        <strong>Note</strong>: Row click behavior can be added directly to your row object
+        with {codeSnippet("rows: [{ ...tData, onClick: () => yourCallback() }]")} &mdash; the
+        key name must be <strong>onClick</strong>.
 
         <p />
+
 
         <strong>Tip</strong>: The {codeSnippet("<Table />")} component uses CSS grid
         for the layout.  For precise control over cell widths, you can pass your own
@@ -55,6 +72,12 @@ const SectionTable = props => {
         set this in your media query breakpoint as well with another&nbsp;
         {codeSnippet("!important")} flag.
 
+        <p />
+
+        Also, when you pass a custom <i>className</i>, you can target the <i>header</i>&nbsp;
+        and <i>row</i> element styling with {codeSnippet(".yourClassName header {}")}&nbsp;
+        and {codeSnippet(".yourClassName li {}")}.
+
         {codeSnippet(customGrid, true)}
 
         <p />
@@ -62,6 +85,9 @@ const SectionTable = props => {
 
       <SampleBox name="Table" code={tableCode}>
         <Table content={content} />
+        <strong style={{ color: colors.blue }}>
+          {rowClicked}
+        </strong>
       </SampleBox>
     </Fragment>
   );

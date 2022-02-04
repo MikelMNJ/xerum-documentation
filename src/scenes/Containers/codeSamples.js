@@ -13,11 +13,13 @@ export const tableCode = `const content = {
       td1: "Row 1, Col 1",
       td2: "Row 1, Col 2",
       td3: "Row 1, Col 3",
+      onClick: () => callback("1"),
     },
     {
       td1: "Row 2, Col 1",
       td2: "Row 2, Col 2",
       td3: "Row 2, Col 3",
+      onClick: () => callback("2"),
     },
   ],
 };
