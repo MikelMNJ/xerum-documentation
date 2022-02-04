@@ -18,25 +18,28 @@ const customGrid = `.yourClassName li {
   }
 }`;
 
-const defaultCallback = "Click a row for callback.";
+const defaultCallback = "Click a header to sort, or a row for it's callback.";
 
 const SectionTable = props => {
   const [ rowClicked, setRowClicked ] = useState(defaultCallback);
 
   const content = {
-    headers: [ "Header 1", "Header 2", "Header 3" ],
+    headers: [ "Bird Name", "Flight Speed (MPH)" ],
     rows: [
       {
-        td1: "Row 1, Col 1",
-        td2: "Row 1, Col 2",
-        td3: "Row 1, Col 3",
-        onClick: () => setRowClicked("Row 1 callback executed.")
+        td1: "Raven",
+        td2: "50",
+        onClick: () => setRowClicked("Row 1 clicked.")
       },
       {
-        td1: "Row 2, Col 1",
-        td2: "Row 2, Col 2",
-        td3: "Row 2, Col 3",
-        onClick: () => setRowClicked("Row 2 callback executed.")
+        td1: "Sparrow",
+        td2: "28",
+        onClick: () => setRowClicked("Row 2 clicked.")
+      },
+      {
+        td1: "Quail",
+        td2: null,
+        onClick: () => setRowClicked("Row 3 clicked.")
       },
     ],
   };
@@ -60,12 +63,14 @@ const SectionTable = props => {
 
         <strong>Note</strong>: Row click behavior can be added directly to your row object
         with {codeSnippet("rows: [{ ...tData, onClick: () => yourCallback() }]")} &mdash; the
-        key name must be <strong>onClick</strong>.
+        key name must be <strong>onClick</strong> and value a function.
 
         <p />
 
 
-        <strong>Tip</strong>: The {codeSnippet("<Table />")} component uses CSS grid
+        <strong>Tip</strong>: When you pass a custom <i>className</i>, you can target the <i>header</i>&nbsp;
+        and <i>row</i> element styling with {codeSnippet(".yourClassName header {}")}&nbsp;
+        and {codeSnippet(".yourClassName li {}")}. The {codeSnippet("<Table />")} component uses CSS grid
         for the layout.  For precise control over cell widths, you can pass your own
         grid parameters &mdash; you will need an {codeSnippet("!important")} flag
         to override the dynamic columns created by the table.  Also remember to
@@ -73,10 +78,6 @@ const SectionTable = props => {
         {codeSnippet("!important")} flag.
 
         <p />
-
-        Also, when you pass a custom <i>className</i>, you can target the <i>header</i>&nbsp;
-        and <i>row</i> element styling with {codeSnippet(".yourClassName header {}")}&nbsp;
-        and {codeSnippet(".yourClassName li {}")}.
 
         {codeSnippet(customGrid, true)}
 

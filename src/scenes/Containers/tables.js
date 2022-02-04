@@ -53,5 +53,25 @@ export const tableTable = {
       tData2: "Object description of headers, rows etc.",
       tData3: "-"
     },
+    {
+      tData1: "sortable",
+      tData2:
+        <Fragment>
+          Enables headers to sort table by ascending/descending column results when clicked.
+          Handler receives newly sorted array &mdash; serialization is likely required
+          prior to storing in state or sending to your API.
+        </Fragment>,
+      tData3: "-"
+    },
+    {
+      tData1: "draggable",
+      tData2:
+        <Fragment>
+          Enables manual sort order manipulation of table rows via drag and drop.
+          Handler receives newly sorted array &mdash; serialization is likely required
+          prior to storing in state or sending to your API.
+        </Fragment>,
+      tData3: "-"
+    },
   ],
 };

@@ -17,7 +17,7 @@ const buildCells = (obj, headers) => {
         </strong>: &nbsp;
       </p>
 
-      {val}
+      {val || "—"}
     </TData>
   ));
 };
