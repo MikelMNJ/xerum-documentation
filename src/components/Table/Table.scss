@@ -60,6 +60,7 @@ ul.table {
       font-weight: bold;
       color: $offWhite;
       background-color: $darkGrey;
+      user-select: none;
     }
   }
 }

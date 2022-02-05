@@ -36,12 +36,12 @@ const SectionTable = props => {
       },
       {
         td1: "Sparrow",
-        td2: "28",
+        td2: null,
         onClick: () => setRowClicked("Sparrow row clicked.")
       },
       {
         td1: "Quail",
-        td2: null,
+        td2: 35,
         onClick: () => setRowClicked("Quail row clicked.")
       },
     ]

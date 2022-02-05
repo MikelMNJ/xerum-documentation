@@ -79,7 +79,20 @@ export const buildHeaders = args => {
 };
 
 export const buildRows = args => {
-  const { rows, headers, columnStyle, draggable } = args;
+  const {
+    rows,
+    headers,
+    columnStyle,
+    ascending,
+    sortedColumn,
+    sortable,
+    draggable
+  } = args;
+
+  if (sortable) {
+    const index = headers.indexOf(sortedColumn);
+    sort(rows, index, !ascending);
+  }
 
   return rows?.map((obj, index) => (
     <TRow
