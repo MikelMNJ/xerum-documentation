@@ -13,7 +13,7 @@ ul.table {
     li {
       grid-template-columns: 10rem 1fr 7rem !important;
 
-      :first-child {
+      .inline:first-of-type {
         font-weight: bold;
       }
     }
