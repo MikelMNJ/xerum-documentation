@@ -9,13 +9,21 @@ ul.table {
   border-radius: 0.35rem;
   margin-bottom: 1rem;
 
-  &.xTable {
-    li {
-      grid-template-columns: 10rem 1fr 7rem !important;
+  .tdContainer {
+    .td {
+      margin: 0.5rem 0;
+    }
+  }
 
-      .inline:first-of-type {
+  &.xTable {
+    .tdContainer {
+      &:first-of-type {
         font-weight: bold;
       }
+    }
+
+    li {
+      grid-template-columns: 10rem 1fr 7rem !important;
     }
   }
 
@@ -29,7 +37,7 @@ ul.table {
 
     .respHeader {
       display: none;
-      margin: 1rem 0 0 0;
+      margin: 0;
     }
 
 
@@ -80,6 +88,10 @@ ul.table {
     &.xTable {
       li {
         grid-template-columns: 1fr !important;
+
+        .inline:first-of-type {
+          font-weight: normal;
+        }
       }
     }
 

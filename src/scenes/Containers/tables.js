@@ -63,6 +63,15 @@ export const tableTable = {
       tData3: "-"
     },
     {
+      tData1: "defaultSort",
+      tData2:
+        <Fragment>
+          Default column to sort &mdash; must be an
+          existing header string from your headers array.
+        </Fragment>,
+      tData3: "headers[0]"
+    },
+    {
       tData1: "draggable",
       tData2:
         <Fragment>

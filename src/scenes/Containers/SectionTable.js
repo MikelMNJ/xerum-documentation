@@ -31,7 +31,7 @@ const SectionTable = props => {
     rows: [
       {
         td1: "Raven",
-        td2: "50",
+        td2: 50,
         onClick: () => setRowClicked("Raven row clicked.")
       },
       {
@@ -94,6 +94,7 @@ const SectionTable = props => {
       <SampleBox name="Table" code={tableCode}>
         <Table
           content={content}
+          defaultSort={content.headers[1]}
           sortable={receivedArr}
           draggable={receivedArr}
         />

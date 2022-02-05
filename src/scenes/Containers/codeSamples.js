@@ -11,12 +11,12 @@ export const tableCode = `const [ content, setContent ] = useState({
   rows: [
     {
       td1: "Raven",
-      td2: "50",
+      td2: 50,
       onClick: () => rowHandler("Raven"),
     },
     {
       td1: "Sparrow",
-      td2: "28",
+      td2: 28,
       onClick: () => rowHandler("Sparrow"),
     },
     {

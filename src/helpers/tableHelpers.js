@@ -10,8 +10,8 @@ const buildData = (obj, headers, draggable) => {
   const { onClick, ...rest } = obj;
 
   return Object.values(rest).map((val, index) => (
-    <div key={index} className="inline">
-      <TData>
+    <div key={index} className="inline tdContainer">
+      <TData className="fullWidth td">
         <p className="respHeader">
           <strong>
             {startCase(headers?.[index]?.toLowerCase())}
