@@ -10,18 +10,18 @@ export const tableCode = `const [ content, setContent ] = useState({
   headers: [ "Bird Name", "Flight Speed (MPH)" ],
   rows: [
     {
-      td1: "Raven",
-      td2: 50,
-      onClick: () => rowHandler("Raven"),
-    },
-    {
       td1: "Sparrow",
-      td2: 28,
+      td2: null,
       onClick: () => rowHandler("Sparrow"),
     },
     {
+      td1: "Golden Eagle",
+      td2: 200,
+      onClick: () => rowHandler("Raven"),
+    },
+    {
       td1: "Quail",
-      td2: null,
+      td2: 30,
       onClick: () => rowHandler("Quail"),
     },
   ],
@@ -34,6 +34,7 @@ const receivedArr = sortedArr => {
 
 <Table
   content={content}
+  defaultSort={headers[1]}
   sortable={receivedArr}
   draggable={receivedArr}
 />`;

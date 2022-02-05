@@ -30,18 +30,18 @@ const SectionTable = props => {
     headers: [ "Bird Name", "Flight Speed (MPH)" ],
     rows: [
       {
-        td1: "Raven",
-        td2: 50,
-        onClick: () => setRowClicked("Raven row clicked.")
-      },
-      {
         td1: "Sparrow",
         td2: null,
         onClick: () => setRowClicked("Sparrow row clicked.")
       },
       {
+        td1: "Golden Eagle",
+        td2: 200,
+        onClick: () => setRowClicked("Raven row clicked.")
+      },
+      {
         td1: "Quail",
-        td2: 35,
+        td2: 30,
         onClick: () => setRowClicked("Quail row clicked.")
       },
     ]
