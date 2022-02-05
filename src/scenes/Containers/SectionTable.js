@@ -18,7 +18,11 @@ const customGrid = `.yourClassName li {
   }
 }`;
 
-const defaultCallback = "Click a header to sort, or a row for it's callback.";
+const defaultCallback =
+  <Fragment>
+    <span className="headerInstructions">Use headers or drag rows to sort &mdash;</span>
+    <span className="dragInstructions">Drag row to sort or</span> click row for callback.
+  </Fragment>;
 
 const SectionTable = props => {
   const [ rowClicked, setRowClicked ] = useState(defaultCallback);
@@ -42,6 +46,10 @@ const SectionTable = props => {
       },
     ]
   });
+
+  const receivedArr = sortedArr => {
+    setContent({ ...content, rows: sortedArr });
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -86,12 +94,11 @@ const SectionTable = props => {
       <SampleBox name="Table" code={tableCode}>
         <Table
           content={content}
-          sortable={sortedArr => setContent(
-            { ...content, rows: sortedArr }
-          )}
+          sortable={receivedArr}
+          draggable={receivedArr}
         />
 
-        <strong style={{ color: colors.blue }}>
+        <strong style={{ color: colors.blue }} className="fullWidth center">
           {rowClicked}
         </strong>
       </SampleBox>

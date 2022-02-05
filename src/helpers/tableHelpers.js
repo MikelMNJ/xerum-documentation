@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { startCase } from 'lodash';
 import TRow from 'components/Table/TRow';
 import TData from 'components/Table/TData';
@@ -6,19 +6,27 @@ import colors from 'theme/colors.scss';
 
 export const headers = [ "PROP NAME", "DESCRIPTION", "DEFAULT" ];
 
-const buildCells = (obj, headers) => {
+const buildData = (obj, headers, draggable) => {
   const { onClick, ...rest } = obj;
 
   return Object.values(rest).map((val, index) => (
-    <TData key={index}>
-      <p className="respHeader">
-        <strong>
-          {startCase(headers[index]?.toLowerCase())}
-        </strong>: &nbsp;
-      </p>
+    <div key={index} className="inline">
+      <TData>
+        <p className="respHeader">
+          <strong>
+            {startCase(headers?.[index]?.toLowerCase())}
+          </strong>: &nbsp;
+        </p>
 
-      {val || "—"}
-    </TData>
+        {val || "—"}
+      </TData>
+
+      {draggable && index === Object.values(rest).length - 1 && (
+        <Fragment>
+          <i className="fa-solid fa-grip-vertical grip" />&nbsp;
+        </Fragment>
+      )}
+    </div>
   ));
 };
 
@@ -70,14 +78,17 @@ export const buildHeaders = args => {
   ));
 };
 
-export const buildRows = (rows, headers, columnStyle) => {
-  return rows?.map((row, index) => (
+export const buildRows = args => {
+  const { rows, headers, columnStyle, draggable } = args;
+
+  return rows?.map((obj, index) => (
     <TRow
       key={index}
-      style={{ ...columnStyle, cursor: `${row.onClick ? "pointer" : ""}` }}
-      onClick={e => row.onClick && row.onClick(e)}
+      style={{ ...columnStyle, cursor: `${obj.onClick ? "pointer" : "default"}` }}
+      onClick={e => obj.onClick && obj.onClick(e)}
     >
-      {buildCells(row, headers)}
+
+      {buildData(obj, headers, draggable)}
     </TRow>
   ));
 };

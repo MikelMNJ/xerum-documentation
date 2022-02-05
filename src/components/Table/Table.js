@@ -4,22 +4,25 @@ import './Table.scss';
 
 const Table = props => {
   const { content, style, className, sortable, draggable, rest } = props;
-  const [ ascending, setAscending ] = useState(true);
-  const [ sortedColumn, setSortedColumn ] = useState(null);
+  const [ ascending, setAscending ] = useState(sortable ? false : null);
+  const [ sortedColumn, setSortedColumn ] = useState(sortable && content?.headers?.[0]);
 
-  const headerArgs = {
+
+  const columnStyle = {
+    gridTemplateColumns: `repeat(${columns()}, 1fr)`,
+    ...style,
+  };
+
+  const args = {
     headers: content?.headers,
     rows: content?.rows,
     sortable,
     sortedColumn,
     setSortedColumn,
+    draggable,
     ascending,
     setAscending,
-  };
-
-  const columnStyle = {
-    gridTemplateColumns: `repeat(${columns()}, 1fr)`,
-    ...style,
+    columnStyle,
   };
 
   function columns() {
@@ -44,10 +47,10 @@ const Table = props => {
   return (
     <ul className={buildClasses()} {...rest}>
       <li className="header" style={columnStyle}>
-        {buildHeaders(headerArgs)}
+        {buildHeaders(args)}
       </li>
 
-      {buildRows(content?.rows, content?.headers, columnStyle)}
+      {buildRows(args)}
     </ul>
   );
 };
