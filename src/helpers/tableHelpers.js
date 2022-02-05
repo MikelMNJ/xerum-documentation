@@ -95,7 +95,10 @@ export const buildRows = args => {
   return rows?.map((obj, index) => (
     <TRow
       key={index}
-      style={{ ...columnStyle, cursor: `${obj.onClick ? "pointer" : "default"}` }}
+      style={{
+        ...columnStyle,
+        cursor: `${obj.onClick || draggable ? "pointer" : "default"}`
+      }}
       onClick={e => obj.onClick && obj.onClick(e)}
     >
 
