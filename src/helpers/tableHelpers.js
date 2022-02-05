@@ -89,10 +89,8 @@ export const buildRows = args => {
     draggable
   } = args;
 
-  if (sortable) {
-    const index = headers.indexOf(sortedColumn);
-    sort(rows, index, !ascending);
-  }
+  const index = headers?.indexOf(sortedColumn);
+  if (sortable && index !== -1) sort(rows, index, !ascending);
 
   return rows?.map((obj, index) => (
     <TRow

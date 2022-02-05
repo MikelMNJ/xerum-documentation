@@ -50,7 +50,7 @@ const Table = props => {
         {buildHeaders(args)}
       </li>
 
-      {buildRows(args)}
+      {content && buildRows(args)}
     </ul>
   );
 };
