@@ -13,20 +13,24 @@ export const tableCode = `const [ content, setContent ] = useState({
       td1: "Sparrow",
       td2: null,
       onClick: () => rowHandler("Sparrow"),
+      label: "Tiny",
     },
     {
       td1: "Golden Eagle",
       td2: 200,
       onClick: () => rowHandler("Raven"),
+      label: "Large",
     },
     {
       td1: "Quail",
       td2: 30,
       onClick: () => rowHandler("Quail"),
+      label: "Small",
     },
   ],
 });
 
+const flightSpeed = content.headers[1];
 const receivedArr = sortedArr => {
   // Normalize or send to state directly.
   setContent({ ...content, rows: sortedArr })
@@ -34,7 +38,7 @@ const receivedArr = sortedArr => {
 
 <Table
   content={content}
-  defaultSort={headers[1]}
+  defaultSort={flightSpeed}
   sortable={receivedArr}
   draggable={receivedArr}
 />`;

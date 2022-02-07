@@ -32,17 +32,20 @@ const SectionTable = props => {
       {
         td1: "Sparrow",
         td2: null,
-        onClick: () => setRowClicked("Sparrow row clicked.")
+        onClick: () => setRowClicked("Sparrow row clicked."),
+        label: "Tiny",
       },
       {
         td1: "Golden Eagle",
         td2: 200,
-        onClick: () => setRowClicked("Raven row clicked.")
+        onClick: () => setRowClicked("Raven row clicked."),
+        label: "Large",
       },
       {
         td1: "Quail",
         td2: 30,
-        onClick: () => setRowClicked("Quail row clicked.")
+        onClick: () => setRowClicked("Quail row clicked."),
+        label: "Small",
       },
     ]
   });
@@ -68,12 +71,12 @@ const SectionTable = props => {
 
         <p>*Required Prop.</p>
 
-        <strong>Note</strong>: Row click behavior can be added directly to your row object
-        with {codeSnippet("rows: [{ ...tData, onClick: () => yourCallback() }]")} &mdash; the
-        key name must be <strong>onClick</strong> and value a function.
+        <strong>Note</strong>: Add an <strong>onClick</strong> function to
+        your row object; {codeSnippet("rows: [{ ...tData, onClick }]")} or a&nbsp;
+        <strong>label</strong> key/value for labels; {codeSnippet('rows: [{ ...tData, label }]')}&nbsp;
+        &mdash; ideal labels are under six characters.
 
         <p />
-
 
         <strong>Tip</strong>: When you pass a custom <i>className</i>, you can target the <i>header</i>&nbsp;
         and <i>row</i> element styling with {codeSnippet(".yourClassName header {}")}&nbsp;
@@ -94,7 +97,7 @@ const SectionTable = props => {
       <SampleBox name="Table" code={tableCode}>
         <Table
           content={content}
-          defaultSort={content.headers[1]}
+          defaultSort={content.headers?.[1]}
           sortable={receivedArr}
           draggable={receivedArr}
         />

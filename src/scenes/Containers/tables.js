@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { headers } from 'helpers/tableHelpers';
+import Status from 'components/Status/Status';
 
 export const cardTable = {
   headers,
@@ -65,7 +66,7 @@ export const tableTable = {
     {
       tData1: "defaultSort",
       tData2:
-        <Fragment>
+      <Fragment>
           Default column to sort &mdash; must be an
           existing header string from your headers array.
         </Fragment>,
@@ -74,11 +75,21 @@ export const tableTable = {
     {
       tData1: "draggable",
       tData2:
-        <Fragment>
+      <Fragment>
           Enables manual sort order manipulation of table rows via drag and drop.
           Handler receives newly sorted array.
         </Fragment>,
       tData3: "-"
+    },
+    {
+      tData1: "labelBG",
+      tData2: "Sets the color of the label background using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#20232a" text="#20232a" />
+    },
+    {
+      tData1: "labelColor",
+      tData2: "Sets the color of the label text using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#f5f5f5" text="#f5f5f5" />
     },
   ],
 };

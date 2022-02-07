@@ -7,7 +7,7 @@ import colors from 'theme/colors.scss';
 export const headers = [ "PROP NAME", "DESCRIPTION", "DEFAULT" ];
 
 const buildData = (obj, headers, draggable) => {
-  const { onClick, ...rest } = obj;
+  const { onClick, label, ...rest } = obj;
 
   return Object.values(rest).map((val, index) => (
     <div key={index} className="inline tdContainer">
@@ -31,7 +31,7 @@ const buildData = (obj, headers, draggable) => {
 };
 
 const sort = (rows, headerIndex, ascending) => {
-  const sorted = rows.sort((a, b) => {
+  const sorted = rows?.sort((a, b) => {
     const key = Object.keys(a)[headerIndex];
     const val1 = a[key];
     const val2 = b[key];
@@ -43,7 +43,7 @@ const sort = (rows, headerIndex, ascending) => {
     return 0;
   });
 
-  return sorted;
+  return sorted || rows;
 };
 
 export const buildHeaders = args => {
@@ -55,8 +55,12 @@ export const buildHeaders = args => {
     setSortedColumn,
     ascending,
     setAscending,
+    columnStyle,
+    labelStyle,
   } = args;
-  const cursorStyle = { cursor: `${sortable ? "pointer" : "default"}` };
+
+  const headerStyle = { cursor: `${sortable ? "pointer" : "default"}` };
+  const mainStyle = { ...columnStyle, ...labelStyle };
 
   const handleSort = (header, index) => {
     // TODO: on dragEnd setSortedColumn(null);
@@ -69,13 +73,19 @@ export const buildHeaders = args => {
     }
   };
 
-  return headers?.map((header, index) => (
-    <div key={index} style={cursorStyle} onClick={() => handleSort(header, index)}>
+  const headings = headers?.map((header, index) => (
+    <div key={index} style={headerStyle} onClick={() => handleSort(header, index)}>
       {sortable && header === sortedColumn && (
         <i className={`fa-solid fa-arrow-${ascending ? "up" : "down"}`} />
       )} {header}
     </div>
   ));
+
+  return (
+    <li className="header" style={mainStyle}>
+      {headings}
+    </li>
+  );
 };
 
 export const buildRows = args => {
@@ -86,7 +96,8 @@ export const buildRows = args => {
     ascending,
     sortedColumn,
     sortable,
-    draggable
+    draggable,
+    labelStyle,
   } = args;
 
   const index = headers?.indexOf(sortedColumn);
@@ -97,11 +108,12 @@ export const buildRows = args => {
       key={index}
       style={{
         ...columnStyle,
-        cursor: `${obj.onClick || draggable ? "pointer" : "default"}`
+        ...labelStyle,
+        cursor: `${obj.onClick || draggable ? "pointer" : "default"}`,
       }}
       onClick={e => obj.onClick && obj.onClick(e)}
     >
-
+      {obj.label && <div className="label">{obj.label}</div>}
       {buildData(obj, headers, draggable)}
     </TRow>
   ));

@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { buildRows, buildHeaders } from 'helpers/tableHelpers';
+import colors from 'theme/colors.scss';
 import './Table.scss';
+
+const labelPresent = rows => {
+  const hasLabel = rows => rows?.find(obj => (
+    Object.keys(obj).includes("label")
+  ));
+
+  if (hasLabel(rows)) return `1.5rem solid ${colors.deepBlue}`;
+  return "inherit";
+};
 
 const Table = props => {
   const { content, style, className, sortable, defaultSort, draggable, rest } = props;
   const [ ascending, setAscending ] = useState(sortable ? false : null);
   const [ sortedColumn, setSortedColumn ] = useState(sortable && defaultSort || null);
 
+  const labelStyle = { borderLeft: labelPresent(content?.rows) };
   const columnStyle = {
     gridTemplateColumns: `repeat(${columns()}, 1fr)`,
     ...style,
@@ -22,16 +33,20 @@ const Table = props => {
     ascending,
     setAscending,
     columnStyle,
+    labelStyle,
   };
 
   function columns() {
+    const ignoredKeys = [ "onClick", "label" ];
     const rowKeys = Object.keys(content?.rows?.[0] || {});
-    const clickIndex = arr => arr.indexOf("onClick");
+    const index = key => rowKeys.indexOf(key);
 
-    if (clickIndex(rowKeys) !== -1) {
-      // Remove onClick function for column calculation.
-      rowKeys.splice(clickIndex(rowKeys), 1);
-    }
+    ignoredKeys.forEach(key => {
+      if (index(key) !== -1) {
+        // Remove key for column calculation.
+        rowKeys.splice(index(key), 1);
+      }
+    });
 
     return rowKeys.length || content?.headers?.length || 1;
   };
@@ -45,10 +60,7 @@ const Table = props => {
 
   return (
     <ul className={buildClasses()} {...rest}>
-      <li className="header" style={columnStyle}>
-        {buildHeaders(args)}
-      </li>
-
+      {buildHeaders(args)}
       {content && buildRows(args)}
     </ul>
   );
