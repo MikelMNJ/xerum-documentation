@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react';
 import { startCase } from 'lodash';
+import { iconValid } from 'helpers/validators';
 import TRow from 'components/Table/TRow';
 import TData from 'components/Table/TData';
 import colors from 'theme/colors.scss';
 
-export const headers = [ "PROP NAME", "DESCRIPTION", "DEFAULT" ];
+export const headers = [ "NAME", "DESCRIPTION", "DEFAULT" ];
 
-const buildData = (obj, headers, draggable) => {
+const buildData = (obj, headers, draggable, dragIcon) => {
   const { onClick, label, ...rest } = obj;
 
   return Object.values(rest).map((val, index) => (
@@ -23,7 +24,7 @@ const buildData = (obj, headers, draggable) => {
 
       {draggable && index === Object.values(rest).length - 1 && (
         <Fragment>
-          <i className="fa-solid fa-grip-vertical grip" />&nbsp;
+          <i className={iconValid(dragIcon) || "fa-solid fa-grip-vertical"} />&nbsp;
         </Fragment>
       )}
     </div>
@@ -56,11 +57,12 @@ export const buildHeaders = args => {
     ascending,
     setAscending,
     columnStyle,
+    borderStyle,
     labelStyle,
   } = args;
 
   const headerStyle = { cursor: `${sortable ? "pointer" : "default"}` };
-  const mainStyle = { ...columnStyle, ...labelStyle };
+  const mainStyle = { ...columnStyle, ...borderStyle };
 
   const handleSort = (header, index) => {
     // TODO: on dragEnd setSortedColumn(null);
@@ -97,7 +99,9 @@ export const buildRows = args => {
     sortedColumn,
     sortable,
     draggable,
+    borderStyle,
     labelStyle,
+    dragIcon,
   } = args;
 
   const index = headers?.indexOf(sortedColumn);
@@ -108,13 +112,18 @@ export const buildRows = args => {
       key={index}
       style={{
         ...columnStyle,
-        ...labelStyle,
+        ...borderStyle,
         cursor: `${obj.onClick || draggable ? "pointer" : "default"}`,
       }}
       onClick={e => obj.onClick && obj.onClick(e)}
     >
-      {obj.label && <div className="label">{obj.label}</div>}
-      {buildData(obj, headers, draggable)}
+      {obj.label && (
+        <div className="label" style={labelStyle}>
+          {obj.label}
+        </div>
+      )}
+
+      {buildData(obj, headers, draggable, dragIcon)}
     </TRow>
   ));
 };

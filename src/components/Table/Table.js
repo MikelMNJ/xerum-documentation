@@ -1,28 +1,41 @@
 import React, { useState } from 'react';
+import { hexValid } from 'helpers/validators';
 import { buildRows, buildHeaders } from 'helpers/tableHelpers';
 import colors from 'theme/colors.scss';
 import './Table.scss';
 
-const labelPresent = rows => {
+const labelPresent = (rows, labelBG) => {
   const hasLabel = rows => rows?.find(obj => (
     Object.keys(obj).includes("label")
   ));
 
-  if (hasLabel(rows)) return `1.5rem solid ${colors.deepBlue}`;
+  if (hasLabel(rows)) {
+    return `1.5rem solid ${labelBG || colors.deepBlue}`;
+  }
+
   return "inherit";
 };
 
 const Table = props => {
-  const { content, style, className, sortable, defaultSort, draggable, rest } = props;
+  const {
+    content,
+    style,
+    className,
+    sortable,
+    defaultSort,
+    draggable,
+    labelColor,
+    labelBG,
+    dragIcon,
+    rest
+  } = props;
+
   const [ ascending, setAscending ] = useState(sortable ? false : null);
   const [ sortedColumn, setSortedColumn ] = useState(sortable && defaultSort || null);
 
-  const labelStyle = { borderLeft: labelPresent(content?.rows) };
-  const columnStyle = {
-    gridTemplateColumns: `repeat(${columns()}, 1fr)`,
-    ...style,
-  };
-
+  const borderStyle = { borderLeft: labelPresent(content?.rows, hexValid(labelBG)) };
+  const columnStyle = { gridTemplateColumns: `repeat(${columns()}, 1fr)`, ...style };
+  const labelStyle = { color: hexValid(labelColor) };
   const args = {
     headers: content?.headers,
     rows: content?.rows,
@@ -33,7 +46,9 @@ const Table = props => {
     ascending,
     setAscending,
     columnStyle,
+    borderStyle,
     labelStyle,
+    dragIcon,
   };
 
   function columns() {
@@ -50,7 +65,6 @@ const Table = props => {
 
     return rowKeys.length || content?.headers?.length || 1;
   };
-
 
   const buildClasses = () => {
     let classList = "table";

@@ -82,14 +82,22 @@ export const tableTable = {
       tData3: "-"
     },
     {
-      tData1: "labelBG",
-      tData2: "Sets the color of the label background using hex format, i.e. #000 or #000000.",
-      tData3: <Status color="#20232a" text="#20232a" />
+      tData1: "dragIcon",
+      tData2:
+        <Fragment>
+          Fontawesome i.e. "<strong>fa-solid fa-grip-vertical</strong>".
+        </Fragment>,
+      tDAta3: <i className="fa-solid fa-grip-vertical" />
     },
     {
       tData1: "labelColor",
       tData2: "Sets the color of the label text using hex format, i.e. #000 or #000000.",
       tData3: <Status color="#f5f5f5" text="#f5f5f5" />
+    },
+    {
+      tData1: "labelBG",
+      tData2: "Sets the color of the label background using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#20232a" text="#20232a" />
     },
   ],
 };
