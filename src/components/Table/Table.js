@@ -5,8 +5,7 @@ import './Table.scss';
 const Table = props => {
   const { content, style, className, sortable, defaultSort, draggable, rest } = props;
   const [ ascending, setAscending ] = useState(sortable ? false : null);
-  const [ sortedColumn, setSortedColumn ] = useState(sortable ? defaultSort || content?.headers?.[0] : null);
-
+  const [ sortedColumn, setSortedColumn ] = useState(sortable && defaultSort || null);
 
   const columnStyle = {
     gridTemplateColumns: `repeat(${columns()}, 1fr)`,
