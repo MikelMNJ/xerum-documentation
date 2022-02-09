@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { hexValid } from 'helpers/validators';
 import { buildRows, buildHeaders } from 'helpers/tableHelpers';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import colors from 'theme/colors.scss';
 import './Table.scss';
 
@@ -72,11 +73,38 @@ const Table = props => {
     return classList;
   };
 
+  const handleDragEnd = result => {
+    if (result.source && result.destination) {
+      const { source: { index: fromIndex }, destination: { index: toIndex } } = result;
+
+      if (fromIndex !== toIndex) {
+        const workingArr = [ ...content?.rows ];
+        const [ reordered ] = workingArr.splice(fromIndex, 1);
+        workingArr.splice(toIndex, 0, reordered);
+
+        if (sortedColumn) setSortedColumn(null);
+        draggable(workingArr);
+      }
+    }
+  };
+
   return (
-    <ul className={buildClasses()} {...rest}>
-      {buildHeaders(args)}
-      {content && buildRows(args)}
-    </ul>
+    <DragDropContext onDragEnd={handleDragEnd}>
+      <Droppable droppableId="rows">
+        {provided => (
+          <ul
+            className={buildClasses()}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+            {...rest}
+          >
+            {buildHeaders(args)}
+            {content && buildRows(args)}
+            {provided.placeholder}
+          </ul>
+        )}
+      </Droppable>
+    </DragDropContext>
   );
 };
 

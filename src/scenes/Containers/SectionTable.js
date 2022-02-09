@@ -25,7 +25,7 @@ const tableContent = setRowClicked => ({
       td1: "Sparrow",
       td2: null,
       onClick: () => setRowClicked("Sparrow row clicked."),
-      label: "Tiny",
+      label: "Small",
     },
     {
       td1: "Golden Eagle",

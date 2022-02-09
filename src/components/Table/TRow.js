@@ -2,16 +2,7 @@ import React from 'react';
 import './Table.scss';
 
 const TRow = props => {
-  const {
-    children,
-    draggable,
-    dragStart,
-    dragDuring,
-    dragEnd,
-    callback,
-    columnStyle,
-    ...rest
-  } = props;
+  const { children, callback, columnStyle, provided, ...rest } = props;
 
   const style = {
     cursor: callback && "pointer",
@@ -25,6 +16,9 @@ const TRow = props => {
     <li
       onClick={handleClick}
       style={{ ...style, ...columnStyle }}
+      ref={provided.innerRef}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}
       {...rest}
     >
       {children}

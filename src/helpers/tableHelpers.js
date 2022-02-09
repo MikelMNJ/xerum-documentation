@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import { startCase } from 'lodash';
 import { iconValid } from 'helpers/validators';
+import { Draggable } from 'react-beautiful-dnd';
 import TRow from 'components/Table/TRow';
 import TData from 'components/Table/TData';
+import colors from 'theme/colors.scss';
 
 export const headers = [ "NAME", "DESCRIPTION", "DEFAULT" ];
 
@@ -39,7 +41,6 @@ export const buildHeaders = args => {
   const mainStyle = { ...columnStyle, ...borderStyle };
 
   const handleSort = (header, index) => {
-    // TODO: on dragEnd setSortedColumn(null);
     if (sortedColumn !== header) setSortedColumn(header);
 
     if (sortable) {
@@ -50,7 +51,7 @@ export const buildHeaders = args => {
   };
 
   const headings = headers?.map((header, index) => (
-    <div key={index} style={headerStyle} onClick={() => handleSort(header, index)}>
+    <div key={index} style={headerStyle} onClick={() => handleSort(header, index)} draggable={false}>
       {sortable && header === sortedColumn && (
         <i className={`fa-solid fa-arrow-${ascending ? "up" : "down"}`} />
         )} {header}
@@ -79,24 +80,40 @@ export const buildRows = args => {
   } = args;
 
   const index = headers?.indexOf(sortedColumn);
-  const style = obj => ({
+  const style = (obj, draggableProps, isDragging) => ({
     ...columnStyle,
     ...borderStyle,
+    ...draggableProps.style,
     cursor: `${obj.onClick || draggable ? "pointer" : "default"}`,
+    boxShadow: isDragging && `0 0.1rem 0.2rem black`,
   });
 
   if (sortable && index !== -1) sort(rows, index, !ascending);
 
   return rows?.map((obj, index) => (
-    <TRow key={index} style={style(obj)} onClick={e => obj.onClick && obj.onClick(e)}>
-      {obj.label && (
-        <div className="label" style={labelStyle}>
-          {obj.label}
-        </div>
-      )}
+    <Draggable
+      key={index}
+      draggableId={index.toString()}
+      index={index}
+      isDragDisabled={!draggable}
+    >
+      {(provided, snapshot) => (
+        <TRow
+          style={style(obj, provided.draggableProps, snapshot.isDragging)}
+          onClick={e => obj.onClick && obj.onClick(e)}
+          provided={provided}
+          draggable={draggable && true}
+        >
+          {obj.label && (
+            <div className="label" style={labelStyle}>
+              {obj.label}
+            </div>
+          )}
 
-      {buildData(obj, headers, draggable, dragIcon)}
-    </TRow>
+          {buildData(obj, headers, draggable, dragIcon)}
+        </TRow>
+      )}
+    </Draggable>
   ));
 };
 
