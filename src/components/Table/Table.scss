@@ -45,10 +45,10 @@ ul.table {
       display: flex;
       align-items: center;
       justify-content: center;
-      position: absolute;
-      margin: 0.75rem -3.45rem;
-      min-width: 1.6rem;
-      width: 3.5rem;
+      position: relative;
+      top: 0;
+      left: -1.7rem;
+      width: 0;
       font-weight: bold;
       font-size: 0.8rem;
       color: $offWhite;

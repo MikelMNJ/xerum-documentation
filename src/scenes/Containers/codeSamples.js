@@ -13,7 +13,7 @@ export const tableCode = `const [ content, setContent ] = useState({
       td1: "Sparrow",
       td2: null,
       onClick: () => rowHandler("Sparrow"),
-      label: "Tiny",
+      label: "Small",
     },
     {
       td1: "Golden Eagle",

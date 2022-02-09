@@ -4,7 +4,6 @@ import { iconValid } from 'helpers/validators';
 import { Draggable } from 'react-beautiful-dnd';
 import TRow from 'components/Table/TRow';
 import TData from 'components/Table/TData';
-import colors from 'theme/colors.scss';
 
 export const headers = [ "NAME", "DESCRIPTION", "DEFAULT" ];
 
@@ -104,24 +103,31 @@ export const buildRows = args => {
           provided={provided}
           draggable={draggable && true}
         >
-          {obj.label && (
+          {/* {obj.label && (
             <div className="label" style={labelStyle}>
               {obj.label}
             </div>
-          )}
+          )} */}
 
-          {buildData(obj, headers, draggable, dragIcon)}
+          {buildData(obj, args)}
         </TRow>
       )}
     </Draggable>
   ));
 };
 
-const buildData = (obj, headers, draggable, dragIcon) => {
+const buildData = (obj, args) => {
+  const { headers, draggable, dragIcon, labelStyle } = args;
   const { onClick, label, ...rest } = obj;
 
   return Object.values(rest).map((val, index) => (
     <div key={index} className="inline tdContainer">
+      {label && index === 0 && (
+        <div className="label" style={labelStyle}>
+          {label}
+        </div>
+      )}
+
       <TData className="fullWidth td">
         <p className="respHeader">
           <strong>
