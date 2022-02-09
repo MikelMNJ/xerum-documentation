@@ -15,4 +15,8 @@ const MyApp = (
 
 const target = document.querySelector('#root');
 
-ReactDOM.createRoot(target).render(MyApp);
+// React 18
+// ReactDOM.createRoot(target).render(MyApp);
+
+// React 17
+ReactDOM.render(MyApp, target);
