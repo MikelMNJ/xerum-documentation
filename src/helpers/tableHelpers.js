@@ -3,7 +3,6 @@ import { startCase } from 'lodash';
 import { iconValid } from 'helpers/validators';
 import TRow from 'components/Table/TRow';
 import TData from 'components/Table/TData';
-import colors from 'theme/colors.scss';
 
 export const headers = [ "NAME", "DESCRIPTION", "DEFAULT" ];
 
@@ -80,18 +79,16 @@ export const buildRows = args => {
   } = args;
 
   const index = headers?.indexOf(sortedColumn);
+  const style = obj => ({
+    ...columnStyle,
+    ...borderStyle,
+    cursor: `${obj.onClick || draggable ? "pointer" : "default"}`,
+  });
+
   if (sortable && index !== -1) sort(rows, index, !ascending);
 
   return rows?.map((obj, index) => (
-    <TRow
-    key={index}
-    style={{
-        ...columnStyle,
-        ...borderStyle,
-        cursor: `${obj.onClick || draggable ? "pointer" : "default"}`,
-      }}
-      onClick={e => obj.onClick && obj.onClick(e)}
-    >
+    <TRow key={index} style={style(obj)} onClick={e => obj.onClick && obj.onClick(e)}>
       {obj.label && (
         <div className="label" style={labelStyle}>
           {obj.label}
