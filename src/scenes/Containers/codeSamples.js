@@ -18,7 +18,7 @@ export const tableCode = `const [ content, setContent ] = useState({
     {
       td1: "Golden Eagle",
       td2: 200,
-      onClick: () => rowHandler("Raven"),
+      onClick: () => rowHandler("Eagle"),
       label: "Large",
     },
     {

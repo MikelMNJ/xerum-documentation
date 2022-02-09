@@ -18,6 +18,30 @@ const customGrid = `.yourClassName li {
   }
 }`;
 
+const tableContent = setRowClicked => ({
+  headers: [ "Bird Name", "Flight Speed (MPH)" ],
+  rows: [
+    {
+      td1: "Sparrow",
+      td2: null,
+      onClick: () => setRowClicked("Sparrow row clicked."),
+      label: "Tiny",
+    },
+    {
+      td1: "Golden Eagle",
+      td2: 200,
+      onClick: () => setRowClicked("Eagle row clicked."),
+      label: "Large",
+    },
+    {
+      td1: "Quail",
+      td2: 30,
+      onClick: () => setRowClicked("Quail row clicked."),
+      label: "Small",
+    },
+  ]
+});
+
 const defaultCallback =
   <Fragment>
     <span className="headerInstructions">Use headers or drag rows to sort &mdash;</span>
@@ -26,29 +50,7 @@ const defaultCallback =
 
 const SectionTable = props => {
   const [ rowClicked, setRowClicked ] = useState(defaultCallback);
-  const [ content, setContent ] = useState({
-    headers: [ "Bird Name", "Flight Speed (MPH)" ],
-    rows: [
-      {
-        td1: "Sparrow",
-        td2: null,
-        onClick: () => setRowClicked("Sparrow row clicked."),
-        label: "Tiny",
-      },
-      {
-        td1: "Golden Eagle",
-        td2: 200,
-        onClick: () => setRowClicked("Raven row clicked."),
-        label: "Large",
-      },
-      {
-        td1: "Quail",
-        td2: 30,
-        onClick: () => setRowClicked("Quail row clicked."),
-        label: "Small",
-      },
-    ]
-  });
+  const [ content, setContent ] = useState(tableContent(setRowClicked));
 
   const receivedArr = sortedArr => {
     setContent({ ...content, rows: sortedArr });

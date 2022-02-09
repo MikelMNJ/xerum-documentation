@@ -7,30 +7,6 @@ import colors from 'theme/colors.scss';
 
 export const headers = [ "NAME", "DESCRIPTION", "DEFAULT" ];
 
-const buildData = (obj, headers, draggable, dragIcon) => {
-  const { onClick, label, ...rest } = obj;
-
-  return Object.values(rest).map((val, index) => (
-    <div key={index} className="inline tdContainer">
-      <TData className="fullWidth td">
-        <p className="respHeader">
-          <strong>
-            {startCase(headers?.[index]?.toLowerCase())}
-          </strong>: &nbsp;
-        </p>
-
-        {val || "—"}
-      </TData>
-
-      {draggable && index === Object.values(rest).length - 1 && (
-        <Fragment>
-          <i className={iconValid(dragIcon) || "fa-solid fa-grip-vertical"} />&nbsp;
-        </Fragment>
-      )}
-    </div>
-  ));
-};
-
 const sort = (rows, headerIndex, ascending) => {
   const sorted = rows?.sort((a, b) => {
     const key = Object.keys(a)[headerIndex];
@@ -58,7 +34,6 @@ export const buildHeaders = args => {
     setAscending,
     columnStyle,
     borderStyle,
-    labelStyle,
   } = args;
 
   const headerStyle = { cursor: `${sortable ? "pointer" : "default"}` };
@@ -79,7 +54,7 @@ export const buildHeaders = args => {
     <div key={index} style={headerStyle} onClick={() => handleSort(header, index)}>
       {sortable && header === sortedColumn && (
         <i className={`fa-solid fa-arrow-${ascending ? "up" : "down"}`} />
-      )} {header}
+        )} {header}
     </div>
   ));
 
@@ -109,8 +84,8 @@ export const buildRows = args => {
 
   return rows?.map((obj, index) => (
     <TRow
-      key={index}
-      style={{
+    key={index}
+    style={{
         ...columnStyle,
         ...borderStyle,
         cursor: `${obj.onClick || draggable ? "pointer" : "default"}`,
@@ -125,5 +100,29 @@ export const buildRows = args => {
 
       {buildData(obj, headers, draggable, dragIcon)}
     </TRow>
+  ));
+};
+
+const buildData = (obj, headers, draggable, dragIcon) => {
+  const { onClick, label, ...rest } = obj;
+
+  return Object.values(rest).map((val, index) => (
+    <div key={index} className="inline tdContainer">
+      <TData className="fullWidth td">
+        <p className="respHeader">
+          <strong>
+            {startCase(headers?.[index]?.toLowerCase())}
+          </strong>: &nbsp;
+        </p>
+
+        {val || "—"}
+      </TData>
+
+      {draggable && index === Object.values(rest).length - 1 && (
+        <Fragment>
+          <i className={iconValid(dragIcon) || "fa-solid fa-grip-vertical"} />&nbsp;
+        </Fragment>
+      )}
+    </div>
   ));
 };
