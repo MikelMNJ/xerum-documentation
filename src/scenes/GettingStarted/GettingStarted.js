@@ -44,6 +44,9 @@ const GettingStarted = props => {
         <li>
           <strong>moment (v2+)</strong>
         </li>
+        <li>
+          <strong>react-beautiful-dnd (v13+)</strong>
+        </li>
       </ul>
 
       <p>
