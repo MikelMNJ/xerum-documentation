@@ -22,10 +22,10 @@ export const tableCode = `const [ content, setContent ] = useState({
       label: "Large",
     },
     {
-      td1: "Quail",
-      td2: 30,
-      onClick: () => rowHandler("Quail"),
-      label: "Small",
+      td1: "Raven",
+      td2: 50,
+      onClick: () => rowHandler("Raven"),
+      label: "Medium",
     },
   ],
 });

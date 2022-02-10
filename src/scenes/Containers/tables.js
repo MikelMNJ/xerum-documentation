@@ -51,15 +51,15 @@ export const tableTable = {
   rows: [
     {
       tData1: "content*",
-      tData2: "Object description of headers, rows etc.",
+      tData2: "Object description of headers and rows.",
       tData3: "-"
     },
     {
       tData1: "sortable",
       tData2:
         <Fragment>
-          Enables headers to sort table by ascending/descending column results when clicked.
-          Handler receives newly sorted array.
+          Enables headers to sort table by ascending/descending column results when clicked&nbsp;
+          &mdash; receives newly sorted array.
         </Fragment>,
       tData3: "-"
     },
@@ -76,8 +76,8 @@ export const tableTable = {
       tData1: "draggable",
       tData2:
       <Fragment>
-          Enables manual sort order manipulation of table rows via drag and drop.
-          Handler receives newly sorted array.
+          Enables manual sort order manipulation of table rows via drag and drop&nbsp;
+          &mdash; receives newly sorted array.
         </Fragment>,
       tData3: "-"
     },
