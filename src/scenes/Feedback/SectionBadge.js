@@ -20,9 +20,7 @@ const SectionBadge = props => {
         <h2>Feedback</h2>
         <h3 id="badge">{`<Badge />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(badgeTable)}
-        </Table>
+        <Table content={badgeTable} className="xTable" />
 
         The {codeSnippet("<Badge />")} component works well when placed as a child
         insde the {codeSnippet("<Button />")} component.  You are also free to place

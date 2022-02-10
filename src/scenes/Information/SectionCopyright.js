@@ -20,9 +20,7 @@ const SectionCopyright = props => {
         <h2>Information</h2>
         <h3 id="copyright">{`<Copyright />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(copyrightTable)}
-        </Table>
+        <Table content={copyrightTable} className="xTable" />
 
         * Required prop.
       </div>

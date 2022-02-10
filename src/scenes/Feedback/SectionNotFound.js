@@ -13,9 +13,7 @@ const SectionNotFound = props => {
       <div>
         <h3 id="not-found">{`<NotFound />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(notFoundTable)}
-        </Table>
+        <Table content={notFoundTable} className="xTable" />
 
         <strong>Note</strong>: You can target the {codeSnippet("<h2>")} title and&nbsp;
         {codeSnippet("<p>")} message tags, with a custom <i>className</i> and CSS

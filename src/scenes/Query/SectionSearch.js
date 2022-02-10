@@ -14,9 +14,7 @@ const SectionSearch = props => {
       <div>
         <h3 id="search">{`<Search />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(searchTable)}
-        </Table>
+        <Table content={searchTable} className="xTable" />
 
         <strong>Note</strong>: Passing a standard <i>className</i> prop
         will affect the input field by default.  Use <i>btnClassName</i>&nbsp;

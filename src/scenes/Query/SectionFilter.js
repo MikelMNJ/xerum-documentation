@@ -65,9 +65,7 @@ const SectionFilter = props => {
         <h2>Query</h2>
         <h3 id="filter">{`<Filter />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(filterTable)}
-        </Table>
+        <Table content={filterTable} className="xTable" />
 
         <strong>Note</strong>: Unlike the {codeSnippet("<Search />")}&nbsp;
         component, the {codeSnippet("<Filter />")} component filters

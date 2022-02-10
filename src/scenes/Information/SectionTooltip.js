@@ -25,9 +25,7 @@ const SectionTooltip = props => {
       <div>
         <h3 id="tooltip">{`<Tooltip />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(tooltipTable)}
-        </Table>
+        <Table content={tooltipTable} className="xTable" />
 
         <strong>Note</strong>: When passing a custom <i>className</i> to the&nbsp;
         {codeSnippet("<Tooltip />")} component, you will need to target the&nbsp;

@@ -15,9 +15,7 @@ const SectionPercent = props => {
         <h2>Data</h2>
         <h3 id="percent">{`<Percent />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(percentTable)}
-        </Table>
+        <Table content={percentTable} className="xTable" />
 
         <p />
       </div>

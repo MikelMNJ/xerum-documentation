@@ -14,14 +14,12 @@ const SectionProgress = props => {
       <div>
         <h3 id="progress">{`<Progress />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(progressTable)}
-        </Table>
+        <Table content={progressTable} className="xTable" />
 
         <strong>Note</strong>: Use the <strong>color</strong>, <strong>bgColor</strong>&nbsp;
         and <strong>pctColor</strong> props if you need custom colors. A custom className
         can still be used if desired, but {codeSnippet("!important")} tags may be required
-        to override some styles. Use {codeSnippet(".yourClassName .progress { }")} in your
+        to override some styles. Use {codeSnippet(".yourClassName .progress {}")} in your
         style sheet to style the progress bar itself &mdash; custom className's only affect
         the parent container by default.
 

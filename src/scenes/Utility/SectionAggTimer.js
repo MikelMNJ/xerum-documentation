@@ -14,9 +14,7 @@ const SectionAggTimer = props => {
         <h2>Utility</h2>
         <h3 id="agg-timer">{`<AggTimer />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(aggTimerTable)}
-        </Table>
+        <Table content={aggTimerTable} className="xTable" />
       </div>
 
       <SampleBox name="AggTimer" code={aggTimerCode}>

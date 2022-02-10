@@ -32,9 +32,7 @@ const SectionFieldError = props => {
       <div>
         <h3 id="field-error">{`<FieldError />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(fieldErrorTable)}
-        </Table>
+        <Table content={fieldErrorTable} className="xTable" />
 
         <p>*Required Prop.</p>
 

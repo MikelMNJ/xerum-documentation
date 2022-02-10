@@ -32,6 +32,8 @@ const FieldError = props => {
                 </div>
               );
             }
+
+            return null;
           }}
         </Field>
       );

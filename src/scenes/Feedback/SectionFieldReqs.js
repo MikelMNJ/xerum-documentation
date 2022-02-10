@@ -16,9 +16,7 @@ const SectionFieldReqs = props => {
       <div>
         <h3 id="field-reqs">{`<FieldReqs />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(fieldReqsTable)}
-        </Table>
+        <Table content={fieldReqsTable} className="xTable" />
 
         <p>*Required Prop.</p>
 

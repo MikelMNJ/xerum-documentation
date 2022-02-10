@@ -1,5 +1,7 @@
 import React from 'react';
 
+export const swatchStyle = color => ({ color, fontSize: "0.6rem" });
+
 export const codeSnippet = (code, block) => (
   <pre className={block ? "block" : "inline"}>
     <code lang="javascript">
@@ -15,13 +17,6 @@ export const addEvent = (name, func) => {
 export const removeEvent = (name, func) => {
   window.removeEventListener(name, e => func(e));
 };
-
-export const formatNum = (val, maxFraction, minFraction) => (
-  val.toLocaleString('en-US', {
-    maximumFractionDigits: maxFraction || 2,
-    minimumFractionDigits: minFraction || 2,
-  })
-);
 
 export const truncate = (num, limit) => {
   num = num === 0 || !num ? "0.00000000" : num.toString();

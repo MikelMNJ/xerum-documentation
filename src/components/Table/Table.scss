@@ -4,18 +4,64 @@ ul.table {
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 0.0625rem solid $lightGrey;
+  outline-offset: 0rem;
   border-radius: 0.35rem;
   margin-bottom: 1rem;
+
+
+  .tdContainer {
+    .td {
+      margin: 0.5rem 0;
+    }
+  }
+
+  &.xTable {
+    .tdContainer {
+      &:first-of-type {
+        font-weight: bold;
+        color: $deepBlue;
+      }
+    }
+
+    li {
+      grid-template-columns: 10rem 1fr 7rem !important;
+    }
+  }
 
   li {
     display: grid;
     gap: 0 1rem;
     align-items: center;
-    grid-template-columns: 10rem 1fr 7rem;
     padding: 0.5rem 1rem;
-    min-height: 3.5rem;
+    min-height: 3.75rem;
     font-size: 0.85rem;
+
+    .respHeader {
+      display: none;
+      margin: 0;
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 0;
+      left: -1.7rem;
+      width: 0;
+      font-weight: bold;
+      font-size: 0.8rem;
+      color: $offWhite;
+      transform: rotate(-90deg);
+    }
+
+    .grip {
+      margin-left: 0.75rem;
+      opacity: 0.75;
+      text-align: right;
+      width: 100%;
+    }
+
 
     &:first-child {
       border-radius: 0.35rem 0.35rem 0 0;
@@ -26,42 +72,71 @@ ul.table {
     }
 
     &:nth-child(odd) {
-      background-color: $offWhite;
+      background-color: #e1e1e1;
     }
 
     &:nth-child(even) {
       background-color: #ececec;
     }
 
+    &.hover:hover {
+      background-color: #00000020;
+    }
+
     &.header {
       font-weight: bold;
       color: $offWhite;
       background-color: $darkGrey;
-    }
-
-    .mobileDefault {
-      display: none;
+      user-select: none;
     }
   }
 }
 
+.headerInstructions,
+.dragInstructions {
+  margin: 0 !important;
+}
+
+.dragInstructions {
+  display: none;
+}
+
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 640px) {
   ul.table {
+    &.xTable {
+      li {
+        grid-template-columns: 1fr !important;
+
+        .inline:first-of-type {
+          font-weight: normal;
+        }
+      }
+    }
+
     li {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
 
       &.header {
         display: none;
       }
 
+      .respHeader {
+        display: block;
+      }
+
+
       &:nth-child(2) {
         border-radius: 0.35rem 0.35rem 0 0;
       }
-
-      .mobileDefault {
-        display: inline-block;
-      }
     }
+  }
+
+  .headerInstructions {
+    display: none;
+  }
+
+  .dragInstructions {
+    display: block;
   }
 }

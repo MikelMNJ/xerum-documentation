@@ -52,9 +52,7 @@ const SectionLoading = props => {
       <div>
         <h3 id="loading">{`<Loading />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(loadingTable)}
-        </Table>
+        <Table content={loadingTable} className="xTable" />
 
         <p>
           *Required prop.

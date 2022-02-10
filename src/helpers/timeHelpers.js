@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import moment from 'moment';
 import { timeframeValid } from 'helpers/validators';
 import { startCase } from 'lodash';
-import { formatNum } from 'helpers/utilityHelpers';
+import { truncate } from 'helpers/utilityHelpers';
 
 const validTimes = [ "seconds", "minutes", "hours", "days", "weeks", "months", "years" ];
 const format = "ddd, l, hh:mm:ss A";
@@ -80,15 +80,17 @@ export const aggTime = args => {
     const floatingTimes = [];
 
     // Add remainder values to array -- this will become individual time units.
-    for (let i = 0; i < maxUnits(); i++) {
+    addRemainders: for (let i = 0; i < maxUnits(); i++) {
+      const previousVal = isolate(floatingTimes[i - 1]);
+      const offset = i === 1 ? null : (i - 1) * -1;
+      const val = fixedUnits(offset) * previousVal;
+
       if (i === 0) {
         floatingTimes.push(firstTimeFloat);
-      } else {
-        const previousVal = isolate(floatingTimes[i - 1]);
-        const offset = i === 1 ? null : (i - 1) * -1;
-        const val = fixedUnits(offset) * previousVal;
-        floatingTimes.push(val);
+        continue addRemainders;
       }
+
+      floatingTimes.push(val);
     };
 
     function maxUnits() {
@@ -204,7 +206,7 @@ export const aggTime = args => {
         }
       };
 
-      if (compact) return formatNum(time);
+      if (compact) return truncate(time);
 
       return time + unit;
     };
@@ -217,13 +219,14 @@ export const aggTime = args => {
     const time = () => {
       const separator = compact ? ":" : " ";
       const formattedTime = floatingTimes.map((val, index) => {
+        const offset = index !== 1 && (index - 1) * -1;
+
         // Convert floatingTimes vals to final, friendly, time units.
         if (index === 0) {
           return unit(firstTime, null, true);
-        } else {
-          const offset = index !== 1 && (index - 1) * -1;
-          return unit(val, offset);
         }
+
+        return unit(val, offset);
       });
 
       return formattedTime.join(separator);

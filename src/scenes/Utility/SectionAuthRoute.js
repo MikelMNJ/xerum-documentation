@@ -47,9 +47,7 @@ const SectionAuthRoute = props => {
       <div>
         <h3 id="auth-route">{`<AuthRoute />`}</h3>
 
-        <Table headers={[ "NAME", "DESCRIPTION", "DEFAULT" ]}>
-          {buildRows(authRouteTable)}
-        </Table>
+        <Table content={authRouteTable} className="xTable" />
 
         {codeSnippet("<AuthRoute />")} should be placed in React Router's&nbsp;
         <em>element</em> prop, with the actual {codeSnippet("<Route />")} you
