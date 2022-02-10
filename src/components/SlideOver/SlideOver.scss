@@ -1,8 +1,70 @@
 @import 'theme/colors';
 
+.slideOver {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  height: calc(100% - 2rem);
+  min-width: 21rem;
+  max-width: 21rem;
+  padding: 1rem;
+  border-radius: 0.35rem;
+  background-color: $offWhite;
+  box-shadow: 0 0.1rem 0.25rem black;
 
+  .header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+
+    h3 {
+      margin: 0;
+    }
+
+    .closeBtn {
+      display: flex;
+      align-items: center;
+      height: auto;
+      width: fit-content;
+      border: inherit;
+      color: inherit;
+      font-size: 1.5rem;
+      background-color: inherit;
+      margin: 0 !important;
+      padding: 0;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &.slideIn {
+    animation: slideIn ease 0.35s;
+  }
+
+  &.slideOut {
+    animation: slideOut ease 0.35s;
+  }
+}
+
+@keyframes slideIn {
+  0% { right: -23rem; }
+  100% { right: 0.95rem; }
+}
+
+@keyframes slideOut {
+  0% { right: 0.95rem; }
+  100% { right: -23rem; }
+}
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 414px) {
-
+@media only screen and (max-width: 360px) {
+  .slideOver {
+    min-width: 20rem;
+    max-width: 20rem;
+  }
 }
