@@ -62,6 +62,7 @@ ul.table {
       width: 100%;
     }
 
+
     &:first-child {
       border-radius: 0.35rem 0.35rem 0 0;
     }
@@ -76,6 +77,10 @@ ul.table {
 
     &:nth-child(even) {
       background-color: #ececec;
+    }
+
+    &.hover:hover {
+      background-color: #00000020;
     }
 
     &.header {

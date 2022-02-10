@@ -98,17 +98,12 @@ export const buildRows = args => {
     >
       {(provided, snapshot) => (
         <TRow
+          className={draggable || obj.onClick ? "hover" : ""}
           style={style(obj, provided.draggableProps, snapshot.isDragging)}
           onClick={e => obj.onClick && obj.onClick(e)}
           provided={provided}
           draggable={draggable && true}
         >
-          {/* {obj.label && (
-            <div className="label" style={labelStyle}>
-              {obj.label}
-            </div>
-          )} */}
-
           {buildData(obj, args)}
         </TRow>
       )}
