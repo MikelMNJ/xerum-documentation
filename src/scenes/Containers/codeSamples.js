@@ -4,7 +4,26 @@ export const modalCode = `<Modal />`;
 
 export const popOverCode = `<PopOver />`;
 
-export const slideOverCode = `<SlideOver />`;
+export const slideOverCode = `// 1. Set hook to receive visible state.
+const [ visible, setVisible ] = useState(false);
+
+const title = (
+  <Fragment>
+    <i className="fa-solid fa-sliders" />&nbsp;
+    Settings
+  </Fragment>
+);
+
+// 2. Conditionally render based on hook.
+{visible && (
+  <SlideOver
+    title={title}
+    // 3. Pass state action to hide panel.
+    onClose={() => setVisible(!visible)}
+  >
+    <p>Panel content...</p>
+  </SlideOver>
+)}`;
 
 export const tableCode = `const [ content, setContent ] = useState({
   headers: [ "Bird Name", "Flight Speed (MPH)" ],

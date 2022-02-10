@@ -1,13 +1,23 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { slideOverCode } from './codeSamples';
 import { slideOverTable } from './tables';
 import { buildRows } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
+import Button from 'components/Button/Button';
 import SampleBox from 'components/SampleBox/SampleBox';
 import SlideOver from 'components/SlideOver/SlideOver';
 import Table from 'components/Table/Table';
+import colors from 'theme/colors.scss';
+
+const title = (
+  <Fragment>
+    <i className="fa-solid fa-sliders" /> Settings
+  </Fragment>
+);
 
 const SectionSlideOver = props => {
+  const [ visible, setVisible ] = useState(false);
+
   return (
     <Fragment>
       <div>
@@ -17,7 +27,21 @@ const SectionSlideOver = props => {
       </div>
 
       <SampleBox name="Slide-Over" code={slideOverCode}>
-        <SlideOver />
+        <Button
+          icon={`fa-solid fa-arrow-${visible ? "right" : "left"}-long`}
+          text={`${visible ? "Hide" : "Show"}`}
+          callback={() => setVisible(!visible)}
+        />
+
+        {visible && (
+          <SlideOver
+            className="test"
+            title={title}
+            onClose={() => setVisible(!visible)}
+          >
+            <p>Panel content...</p>
+          </SlideOver>
+        )}
       </SampleBox>
     </Fragment>
   );

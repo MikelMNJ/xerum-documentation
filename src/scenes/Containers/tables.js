@@ -39,9 +39,33 @@ export const slideOverTable = {
   headers,
   rows: [
     {
-      tData1: "",
-      tData2: "",
-      tData3: ""
+      tData1: "title",
+      tData2: "Title to display in the Slide-Over panel.",
+      tData3: "-"
+    },
+    {
+      tData1: "titleColor",
+      tData2: "Sets the color of the title text using hex format, i.e. #000 or #000000.",
+      tData3: "-"
+    },
+    {
+      tData1: "closeIcon",
+      tData2:
+        <Fragment>
+          Fontawesome i.e. "<strong>fa-solid fa-arrow-right-long</strong>".
+          If <strong>titleColor</strong> is present, icon hover color will share&nbsp;
+          <strong>title</strong> color.
+        </Fragment>,
+      tData3: <i className="fa-solid fa-arrow-right-long" />
+    },
+    {
+      tData1: "onClose",
+      tData2:
+        <Fragment>
+          Generic event handler when close button is clicked &mdash; your
+          state action for controlling visibility should be passed here.
+        </Fragment>,
+      tData3: "-"
     },
   ],
 };
