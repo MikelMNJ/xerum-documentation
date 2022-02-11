@@ -1,8 +1,112 @@
 @import 'theme/colors';
 
+$topPos: 1rem;
+
+.modalBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+
+  &.fadeIn {
+    animation: modalBGIn ease 0.2s;
+  }
+
+  &.fadeOut {
+    animation: modalBGOut ease 0.2s;
+  }
+
+  @keyframes modalBGIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes modalBGOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: $topPos;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  max-height: calc(100% - 2rem);
+  max-width: calc(100% - 2rem);
+  min-width: 23rem;
+  min-height: 23rem;
+  width: max-content;
+  height: max-content;
+  padding: 1rem;
+  border-radius: 0.35rem;
+  background-color: $offWhite;
+  box-shadow: 0 0.1rem 0.25rem black;
+
+  .header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+
+    h3 {
+      margin: 0;
+    }
+
+    .closeBtn {
+      display: flex;
+      align-items: center;
+      height: auto;
+      width: fit-content;
+      border: inherit;
+      color: inherit;
+      font-size: 1.5rem;
+      background-color: inherit;
+      margin: 0 !important;
+      padding: 0;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  &.slideIn {
+    animation: modalIn ease 0.35s;
+  }
+
+  &.slideOut {
+    animation: modalOut cubic-bezier(.75,-0.5,0,1.75) 0.35s;
+  }
+
+  @keyframes modalIn {
+    0% { top: -23rem; opacity: 0 }
+    100% { top: $topPos; opacity: 1 }
+  }
+
+  @keyframes modalOut {
+    0% { top: $topPos; opacity: 1 }
+    100% { top: -23rem; opacity: 0 }
+  }
+}
 
 
 /* ========== Media Queries ========== */
 @media only screen and (max-width: 414px) {
+  .modal {
+    min-width: 21rem;
+  }
+}
 
+@media only screen and (max-width: 360px) {
+  .modal {
+    min-width: 20rem;
+  }
 }
