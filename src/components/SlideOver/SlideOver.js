@@ -1,29 +1,17 @@
 import React, { useRef } from 'react';
 import { iconValid, hexValid } from 'helpers/validators';
+import { dismiss, slideIn } from 'helpers/animations';
 import Button from 'components/Button/Button';
 import './SlideOver.scss';
 
 const SlideOver = props => {
   const { title, titleColor, closeIcon, onClose, className, children, rest } = props;
-  const titleStyle = { color: hexValid(titleColor) || "inherit" };
+  const titleStyle = { color: hexValid(titleColor) };
   const ref = useRef();
-
-  const handleClose = () => {
-    if (ref.current) {
-      const classes = ref.current.classList;
-
-      classes.remove("slideIn");
-      classes.add("slideOut");
-
-      setTimeout(() => {
-        // Time matches animations in SlideOver.scss
-        if (onClose) onClose();
-      }, 350);
-    }
-  };
+  const args = { onClose, targets: [ ref ] };
 
   const buildClasses = () => {
-    let classList = "slideOver slideIn";
+    let classList = `slideOver ${slideIn}`;
     if (className) classList += ` ${className}`;
     return classList;
   };
@@ -38,7 +26,7 @@ const SlideOver = props => {
           icon={closeIcon || iconValid("fa-solid fa-arrow-right-long")}
           btnType="transparent"
           hoverStyle={titleStyle}
-          callback={handleClose}
+          callback={() => dismiss(args)}
         />
       </div>
 

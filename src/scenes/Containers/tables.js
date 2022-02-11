@@ -17,9 +17,40 @@ export const modalTable = {
   headers,
   rows: [
     {
-      tData1: "",
-      tData2: "",
-      tData3: ""
+      tData1: "title",
+      tData2: "Title to display in the Modal window.",
+      tData3: "-"
+    },
+    {
+      tData1: "titleColor",
+      tData2: "Sets the color of the title text and close icon hover state using hex format, i.e. #000 or #000000.",
+      tData3: "-"
+    },
+    {
+      tData1: "closeIcon",
+      tData2:
+        <Fragment>
+          Fontawesome i.e. "<strong>fa-solid fa-xmark</strong>".
+        </Fragment>,
+      tData3: <i className="fa-solid fa-xmark" />
+    },
+    {
+      tData1: "onClose",
+      tData2:
+        <Fragment>
+          Generic event handler when close button is clicked &mdash; your
+          state action for controlling visibility should be passed here.
+        </Fragment>,
+      tData3: "-"
+    },
+    {
+      tData1: "bgClose",
+      tData2:
+        <Fragment>
+          Allows click event on the modal background to trigger the&nbsp;
+          <strong>onClose</strong> handler.
+        </Fragment>,
+      tData3: "false"
     },
   ],
 };
@@ -45,7 +76,7 @@ export const slideOverTable = {
     },
     {
       tData1: "titleColor",
-      tData2: "Sets the color of the title text using hex format, i.e. #000 or #000000.",
+      tData2: "Sets the color of the title text and close icon hover state using hex format, i.e. #000 or #000000.",
       tData3: "-"
     },
     {
@@ -53,8 +84,6 @@ export const slideOverTable = {
       tData2:
         <Fragment>
           Fontawesome i.e. "<strong>fa-solid fa-arrow-right-long</strong>".
-          If <strong>titleColor</strong> is present, icon hover color will share&nbsp;
-          <strong>title</strong> color.
         </Fragment>,
       tData3: <i className="fa-solid fa-arrow-right-long" />
     },

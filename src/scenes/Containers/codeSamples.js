@@ -1,27 +1,27 @@
 export const cardCode = `<Card />`;
 
-export const modalCode = `<Modal />`;
+export const modalCode = `const [ visible, setVisible ] = useState(false);
+
+{visible && (
+  <Modal
+    title="Modal title..."
+    onClose={() => setVisible(!visible)}
+    bgClose
+  >
+    <p>Modal content...</p>
+  </Modal>
+)}`;
 
 export const popOverCode = `<PopOver />`;
 
-export const slideOverCode = `// 1. Set hook to receive visible state.
-const [ visible, setVisible ] = useState(false);
+export const slideOverCode = `const [ visible, setVisible ] = useState(false);
 
-const title = (
-  <Fragment>
-    <i className="fa-solid fa-sliders" />&nbsp;
-    Settings
-  </Fragment>
-);
-
-// 2. Conditionally render based on hook.
 {visible && (
   <SlideOver
-    title={title}
-    // 3. Pass state action to hide panel.
+    title="Slide-Over title..."
     onClose={() => setVisible(!visible)}
   >
-    <p>Panel content...</p>
+    <p>Slide-Over content...</p>
   </SlideOver>
 )}`;
 
