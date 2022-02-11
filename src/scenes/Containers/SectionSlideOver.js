@@ -3,6 +3,7 @@ import { slideOverCode } from './codeSamples';
 import { slideOverTable } from './tables';
 import { buildRows } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
+import { dismiss } from 'helpers/animations';
 import Button from 'components/Button/Button';
 import SampleBox from 'components/SampleBox/SampleBox';
 import SlideOver from 'components/SlideOver/SlideOver';
@@ -30,15 +31,21 @@ const SectionSlideOver = props => {
         <Button
           icon={`fa-solid fa-arrow-${visible ? "right" : "left"}-long`}
           text={`${visible ? "Hide" : "Show"}`}
-          callback={() => setVisible(!visible)}
+          callback={() => {
+            const args = {
+              target: document.querySelector(".slideOver"),
+              classIn: "slideIn",
+              classOut: "slideOut",
+              onClose: () => setVisible(!visible)
+            };
+
+            if (visible) return dismiss(args);
+            setVisible(!visible);
+          }}
         />
 
         {visible && (
-          <SlideOver
-            className="test"
-            title={title}
-            onClose={() => setVisible(!visible)}
-          >
+          <SlideOver title={title} onClose={() => setVisible(!visible)}>
             <p>Panel content...</p>
           </SlideOver>
         )}
