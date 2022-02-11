@@ -1,14 +1,35 @@
+
+export const slideIn = "slideIn";
+export const slideOut = "slideOut";
+export const fadeIn = "fadeIn";
+export const fadeOut = "fadeOut";
+export const popIn = "popIn";
+export const popOut = "popOut";
+
 export const dismiss = args => {
-  const { target, ref, classIn, classOut, onClose, time } = args;
+  const { targets, onClose, time } = args;
 
-  if (target || ref.current) {
-    const classes = (target || ref.current).classList;
+  targets?.forEach(target => {
+    const element = target.current || target;
+    const classes = element?.classList || [];
 
-    classes?.remove(classIn);
-    classes?.add(classOut);
+    if (classes.contains(slideIn)) {
+      classes.remove(slideIn);
+      classes.add(slideOut);
+    }
 
-    setTimeout(() => {
-      if (onClose) onClose();
-    }, time || 350);
-  }
+    if (classes.contains(fadeIn)) {
+      classes.remove(fadeIn);
+      classes.add(fadeOut);
+    }
+
+    if (classes.contains(popIn)) {
+      classes.remove(popIn);
+      classes.add(popOut);
+    }
+  });
+
+  setTimeout(() => {
+    if (onClose) onClose();
+  }, time || 350);
 };

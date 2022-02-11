@@ -1,19 +1,17 @@
 import React, { useRef } from 'react';
 import { iconValid, hexValid } from 'helpers/validators';
-import { dismiss } from 'helpers/animations';
+import { dismiss, slideIn } from 'helpers/animations';
 import Button from 'components/Button/Button';
 import './SlideOver.scss';
 
 const SlideOver = props => {
   const { title, titleColor, closeIcon, onClose, className, children, rest } = props;
-  const titleStyle = { color: hexValid(titleColor) || "inherit" };
+  const titleStyle = { color: hexValid(titleColor) };
   const ref = useRef();
-  const classIn = "slideIn";
-  const classOut = "slideOut";
-  const args = { ref, classIn, classOut, onClose };
+  const args = { onClose, targets: [ ref ] };
 
   const buildClasses = () => {
-    let classList = "slideOver slideIn";
+    let classList = `slideOver ${slideIn}`;
     if (className) classList += ` ${className}`;
     return classList;
   };

@@ -10,14 +10,18 @@ import SlideOver from 'components/SlideOver/SlideOver';
 import Table from 'components/Table/Table';
 import colors from 'theme/colors.scss';
 
-const title = (
-  <Fragment>
-    <i className="fa-solid fa-sliders" /> Settings
-  </Fragment>
-);
-
 const SectionSlideOver = props => {
   const [ visible, setVisible ] = useState(false);
+
+  const toggle = () => {
+    const args = {
+      onClose: () => setVisible(!visible),
+      targets: [ document.querySelector(".slideOver") ],
+    };
+
+    if (visible) return dismiss(args);
+    setVisible(!visible);
+  };
 
   return (
     <Fragment>
@@ -29,24 +33,13 @@ const SectionSlideOver = props => {
 
       <SampleBox name="Slide-Over" code={slideOverCode}>
         <Button
-          icon={`fa-solid fa-arrow-${visible ? "right" : "left"}-long`}
-          text={`${visible ? "Hide" : "Show"}`}
-          callback={() => {
-            const args = {
-              target: document.querySelector(".slideOver"),
-              classIn: "slideIn",
-              classOut: "slideOut",
-              onClose: () => setVisible(!visible)
-            };
-
-            if (visible) return dismiss(args);
-            setVisible(!visible);
-          }}
+          text={`Slide ${visible ? "in" : "out"}`}
+          callback={toggle}
         />
 
         {visible && (
-          <SlideOver title={title} onClose={() => setVisible(!visible)}>
-            <p>Panel content...</p>
+          <SlideOver title="Slide-Over title..." onClose={() => setVisible(!visible)}>
+            <p>Slide-Over content...</p>
           </SlideOver>
         )}
       </SampleBox>
