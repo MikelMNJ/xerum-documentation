@@ -48,6 +48,7 @@ $topPos: 1rem;
   border-radius: 0.35rem;
   background-color: $offWhite;
   box-shadow: 0 0.1rem 0.25rem black;
+  overflow-y: auto;
 
   .header {
     display: inline-flex;
