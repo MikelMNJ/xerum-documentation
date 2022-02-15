@@ -33,7 +33,6 @@ const Messages = props => {
       return (
         <Notification
           key={i}
-          targets={targets.current}
           ref={targets.current[i]}
           message={msg}
           args={{ targets: [ targets.current[i] ], onClose: () => removeMessage(i) }}

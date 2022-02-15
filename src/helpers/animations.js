@@ -16,18 +16,13 @@ export const dismiss = args => {
   });
 
   if (onClose) {
-    setTimeout(() => {
-      onClose()
-    }, time || 350);
+    setTimeout(() => onClose(), time || 350);
   }
 };
 
 function manageClass(target, classIn, classOut) {
   const element = target?.current || target;
   const classes = element?.classList || [];
-
-  if (classes.contains?.(classIn)) {
-    classes.remove(classIn);
-    classes.add(classOut);
-  }
+  classes.remove?.(classIn);
+  classes.add?.(classOut);
 };
