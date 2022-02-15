@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef } from "react";
 import { iconValid } from 'helpers/validators';
 import { dismiss, slideIn } from 'helpers/animations';
 import './Notification.scss';
