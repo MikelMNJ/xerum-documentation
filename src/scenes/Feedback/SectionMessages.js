@@ -8,10 +8,12 @@ import Messages from 'components/Notification/Messages';
 import SampleBox from 'components/SampleBox/SampleBox';
 import { codeSnippet } from 'helpers/utilityHelpers';
 
-const newMessage = "You've been notified!";
 
 const SectionMessages = props => {
   const [ messages, setMessages ] = useState([]);
+  const length = messages.length;
+  const newMessage = `You've been notified${length === 0 ? "!" : ", "}`;
+  const again = `again! (${length})`;
 
   return (
     <Fragment>
@@ -38,7 +40,10 @@ const SectionMessages = props => {
 
       <SampleBox name="Messages" code={messagesCode}>
         <Button text="Click to Notify"
-          callback={() => setMessages([ ...messages, newMessage ])}
+          callback={() => setMessages([
+            ...messages,
+            `${newMessage}${length > 0 ? again : ""}`
+          ])}
         />
 
         <Messages time={3000} messages={messages} setMessages={setMessages} />
