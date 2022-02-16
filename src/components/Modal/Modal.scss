@@ -88,13 +88,13 @@ $topPos: 1rem;
   }
 
   @keyframes modalIn {
-    0% { top: -23rem; opacity: 0 }
+    0% { top: -5rem; opacity: 0 }
     100% { top: $topPos; opacity: 1 }
   }
 
   @keyframes modalOut {
     0% { top: $topPos; opacity: 1 }
-    100% { top: -23rem; opacity: 0 }
+    100% { top: -5rem; opacity: 0 }
   }
 }
 
