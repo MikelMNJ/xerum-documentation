@@ -84,7 +84,6 @@ const navigation = [
     subMenu: [
       { name: "Menu", path: "#menu", icon: "" },
       { name: "Pagination", path: "#pagination", icon: "" },
-      // { name: "Breadcrumb", path: "#breadcrumb", icon: "" },
     ]
   },
 
