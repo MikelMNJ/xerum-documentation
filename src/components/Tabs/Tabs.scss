@@ -1,0 +1,72 @@
+@import 'theme/colors';
+
+.tabContainer {
+  $offset: 1.55rem;
+
+  display: flex;
+  flex-direction: column;
+  border: 0.125rem solid $grey;
+  border-radius: 0.35rem;
+  width: 100%;
+  min-height: 4.710625rem;
+  margin-top: $offset;
+
+  .tabNames {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: -$offset;
+    width: 100%;
+    min-height: 2.901875rem;
+    text-align: center;
+
+    .name {
+      $borderSize: 0.125rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      background-color: $slate;
+      color: $offWhite;
+      width: 7rem;
+      max-width: 7rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: filter ease 0.2s;
+      border-left: $borderSize solid transparent;
+      border-right: $borderSize solid $deepBlue;
+      user-select: none;
+
+      &.active {
+        background-color: $blue;
+      }
+
+      &:hover {
+        filter: brightness(1.15);
+      }
+
+      &:first-of-type {
+        border-radius: 0.35rem 0 0 0.35rem;
+      }
+
+      &:last-of-type {
+        border-radius: 0 0.35rem 0.35rem 0;
+        border-right: $borderSize solid transparent !important;
+      }
+    }
+  }
+
+  .tabContent {
+    width: 100%;
+    height: 100%;
+
+    .content {
+      padding: 1rem;
+    }
+  }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 414px) {
+
+}

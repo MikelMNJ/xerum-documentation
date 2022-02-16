@@ -4,6 +4,7 @@ import SectionModal from './SectionModal';
 import SectionPopOver from './SectionPopOver';
 import SectionSlideOver from './SectionSlideOver';
 import SectionTable from './SectionTable';
+import SectionTabs from './SectionTabs';
 
 const Containers = props => {
   return (
@@ -13,6 +14,7 @@ const Containers = props => {
       <SectionPopOver />
       <SectionSlideOver />
       <SectionTable />
+      <SectionTabs />
     </section>
   );
 };
