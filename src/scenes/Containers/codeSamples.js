@@ -61,3 +61,11 @@ const receivedArr = sortedArr => {
   sortable={receivedArr}
   draggable={receivedArr}
 />`;
+
+export const tabsCode = `const content = [
+  { name: "Tab 1", content: "Content 1" },
+  { name: "Tab 2", content: "Content 2" },
+  { name: "Tab 3", content: "Content 3" },
+];
+
+<Tabs content={content} />`;
