@@ -5,7 +5,7 @@ import Button from 'components/Button/Button';
 import './SlideOver.scss';
 
 const SlideOver = props => {
-  const { title, titleColor, closeIcon, onClose, className, children, rest } = props;
+  const { title, titleColor, closeIcon, onClose, className, children, ...rest } = props;
   const titleStyle = { color: hexValid(titleColor) };
   const ref = useRef();
   const args = { onClose, targets: [ ref ] };

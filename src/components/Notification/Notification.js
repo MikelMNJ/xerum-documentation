@@ -1,18 +1,23 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { iconValid } from 'helpers/validators';
+import { dismiss, slideIn } from 'helpers/animations';
 import './Notification.scss';
 
 const defaultIcon = "fa-solid fa-info-circle";
 
-const Notification = props => {
-  const { message, icon, noIcon, close, index, className, ...rest } = props;
+const Notification = forwardRef((props, ref) => {
+  const { message, icon, noIcon, className, args, ...rest } = props;
   const useIcon = noIcon ? "noIcon" : "";
 
+  const buildClasses = () => {
+    let classList = `notification ${slideIn}`;
+    if (className) classList += ` ${className}`;
+    if (useIcon) classList += ` ${useIcon}`;
+    return classList;
+  };
+
   return (
-    <div
-      className={`notification ${useIcon} ${className || ""}`}
-      {...rest}
-    >
+    <div ref={ref} className={buildClasses()} {...rest}>
       {!noIcon && (
         <div className="icon">
           <i className={iconValid(icon) || defaultIcon} />
@@ -23,11 +28,11 @@ const Notification = props => {
         {message}
       </div>
 
-      <div className="close" onClick={() => close(index)}>
+      <div className="close" onClick={() => dismiss(args)}>
         <i className="fa-solid fa-times" />
       </div>
     </div>
   );
-};
+});
 
 export default Notification;
