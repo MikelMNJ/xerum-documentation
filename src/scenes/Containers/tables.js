@@ -154,3 +154,35 @@ export const tableTable = {
     },
   ],
 };
+
+export const tabsTable = {
+  headers,
+  rows: [
+    {
+      tData1: "content*",
+      tData2:
+        <Fragment>
+          Array of objects containing &#123; <strong>name</strong>,&nbsp;
+          <strong>content</strong> &#125; keys, where&nbsp;
+          <strong>name</strong> is the friendly name shown on the tab and&nbsp;
+          <strong>content</strong> is the content to be rendered.
+        </Fragment>,
+      tData3: "-"
+    },
+    {
+      tData1: "activeColor",
+      tData2: "Sets the color of the active tab background using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#0d97ff" text="#0d97ff" />
+    },
+    {
+      tData1: "inactiveColor",
+      tData2: "Sets the color of the inactive tab background using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#4d5153" text="#4d5153" />
+    },
+    {
+      tData1: "separatorColor",
+      tData2: "Sets the color of the spacing between tabs using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#20232a" text="#20232a" />
+    },
+  ],
+};

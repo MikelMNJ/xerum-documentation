@@ -36,6 +36,7 @@ const navigation = [
       { name: "Pop-Over", path: "#pop-over", icon: "" },
       { name: "Slide-Over", path: "#slide-over", icon: "" },
       { name: "Table", path: "#table", icon: "" },
+      { name: "Tabs", path: "#tabs", icon: "" },
     ]
   },
 
@@ -83,7 +84,7 @@ const navigation = [
     subMenu: [
       { name: "Menu", path: "#menu", icon: "" },
       { name: "Pagination", path: "#pagination", icon: "" },
-      { name: "Tabs", path: "#tabs", icon: "" },
+      // { name: "Breadcrumb", path: "#breadcrumb", icon: "" },
     ]
   },
 
