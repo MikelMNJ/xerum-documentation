@@ -34,6 +34,13 @@ export const truncate = (num, limit) => {
   return (+(num)).toLocaleString('en-US');
 };
 
+export const trimText = (text, limit, characterTrim) => {
+  let trimText = text.substr(0, limit || 115);
+  trimText = trimText.substr(0, Math.min(trimText.length, trimText.lastIndexOf(characterTrim ? '' : ' ')));
+
+  return trimText;
+};
+
 export const stringToArray = string => {
   const prep = string.replace(/[\\W_,]/g, "");
   const words = prep.split(' ');
