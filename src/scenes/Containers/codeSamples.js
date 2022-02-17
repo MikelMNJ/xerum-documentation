@@ -24,8 +24,6 @@ export const modalCode = `const [ visible, setVisible ] = useState(false);
   </Modal>
 )}`;
 
-export const popOverCode = `<PopOver />`;
-
 export const slideOverCode = `const [ visible, setVisible ] = useState(false);
 
 {visible && (

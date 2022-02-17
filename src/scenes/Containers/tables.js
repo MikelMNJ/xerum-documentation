@@ -114,17 +114,6 @@ export const modalTable = {
   ],
 };
 
-export const popOverTable = {
-  headers,
-  rows: [
-    {
-      tData1: "",
-      tData2: "",
-      tData3: ""
-    },
-  ],
-};
-
 export const slideOverTable = {
   headers,
   rows: [
