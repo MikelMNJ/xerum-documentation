@@ -34,6 +34,8 @@ export const urlValid = val => {
   if (isValid) {
     return hasProtocol ? val : `https://${val}`;
   };
+
+  return val?.includes("localhost") ? val : "";
 };
 
 export const timeframeValid = val => {
