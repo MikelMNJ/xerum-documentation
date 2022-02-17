@@ -17,8 +17,8 @@ const SectionBadge = props => {
   return (
     <Fragment>
       <div>
-        <h2>Feedback</h2>
-        <h3 id="badge">{`<Badge />`}</h3>
+        <h2 id="badge">Feedback</h2>
+        <h3>{`<Badge />`}</h3>
 
         <Table content={badgeTable} className="xTable" />
 

@@ -11,8 +11,8 @@ const SectionAggTimer = props => {
   return (
     <Fragment>
       <div>
-        <h2>Utility</h2>
-        <h3 id="agg-timer">{`<AggTimer />`}</h3>
+        <h2 id="agg-timer">Utility</h2>
+        <h3>{`<AggTimer />`}</h3>
 
         <Table content={aggTimerTable} className="xTable" />
       </div>

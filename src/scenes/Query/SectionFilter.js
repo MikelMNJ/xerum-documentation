@@ -62,8 +62,8 @@ const SectionFilter = props => {
   return (
     <Fragment>
       <div>
-        <h2>Query</h2>
-        <h3 id="filter">{`<Filter />`}</h3>
+        <h2 id="filter">Query</h2>
+        <h3>{`<Filter />`}</h3>
 
         <Table content={filterTable} className="xTable" />
 

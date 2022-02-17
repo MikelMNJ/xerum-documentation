@@ -17,8 +17,8 @@ const SectionCopyright = props => {
   return (
     <Fragment>
       <div>
-        <h2>Information</h2>
-        <h3 id="copyright">{`<Copyright />`}</h3>
+        <h2 id="copyright">Information</h2>
+        <h3>{`<Copyright />`}</h3>
 
         <Table content={copyrightTable} className="xTable" />
 

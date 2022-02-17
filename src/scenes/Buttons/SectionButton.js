@@ -11,8 +11,8 @@ const SectionButton = props => {
   return (
     <Fragment>
       <div>
-        <h2>Buttons</h2>
-        <h3 id="button">{`<Button />`}</h3>
+        <h2 id="button">Buttons</h2>
+        <h3>{`<Button />`}</h3>
 
         <Table content={buttonTable} className="xTable" />
 

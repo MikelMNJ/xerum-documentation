@@ -11,8 +11,8 @@ const SectionCard = props => {
   return (
     <Fragment>
       <div>
-        <h2>Containers</h2>
-        <h3 id="card">{`<Card />`}</h3>
+        <h2 id="card">Containers</h2>
+        <h3>{`<Card />`}</h3>
 
         <Table content={cardTable} className="xTable" />
       </div>
