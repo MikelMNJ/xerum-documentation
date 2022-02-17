@@ -13,7 +13,7 @@ $rightPos: 0.95rem;
   padding: 1rem;
   border-radius: 0.35rem;
   background-color: $offWhite;
-  box-shadow: 0 0.1rem 0.25rem black;
+  filter: drop-shadow(0 0rem 0.1rem $deepBlue);
   overflow-y: auto;
 
   .header {
