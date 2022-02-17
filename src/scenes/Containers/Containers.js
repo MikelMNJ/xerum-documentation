@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionCard from './SectionCard';
+import SectionConfirm from './SectionConfirm';
 import SectionModal from './SectionModal';
 import SectionPopOver from './SectionPopOver';
 import SectionSlideOver from './SectionSlideOver';
@@ -10,6 +11,7 @@ const Containers = props => {
   return (
     <section id="containers">
       <SectionCard />
+      <SectionConfirm />
       <SectionModal />
       <SectionPopOver />
       <SectionSlideOver />

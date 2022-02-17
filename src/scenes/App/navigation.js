@@ -32,6 +32,7 @@ const navigation = [
     icon: "",
     subMenu: [
       { name: "Card", path: "#card", icon: "" },
+      { name: "Confirm", path: "#confirm", icon: "" },
       { name: "Modal", path: "#modal", icon: "" },
       { name: "Pop-Over", path: "#pop-over", icon: "" },
       { name: "Slide-Over", path: "#slide-over", icon: "" },

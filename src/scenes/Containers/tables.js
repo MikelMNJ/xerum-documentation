@@ -13,6 +13,65 @@ export const cardTable = {
   ],
 };
 
+export const confirmTable = {
+  headers,
+  rows: [
+    {
+      tData1: "title",
+      tData2: "Title to display in confirm dialogue.",
+      tData3: "-"
+    },
+    {
+      tData1: "titleColor",
+      tData2: "Sets the color of the title text using hex format, i.e. #000 or #000000.",
+      tData3: "-"
+    },
+    {
+      tData1: "message",
+      tData2: "Primary message to display in confirm dialogue.",
+      tData3: "-"
+    },
+    {
+      tData1: "confirmText",
+      tData2: "Text to display on the confirm button.",
+      tData3: "Okay"
+    },
+    {
+      tData1: "cancelText",
+      tData2: "Text to display on the cancel button.",
+      tData3: "Cancel"
+    },
+    {
+      tData1: "onConfirm",
+      tData2:
+        <Fragment>
+          Generic event handler when confirm button is clicked. This should&nbsp;
+          <strong>not</strong> toggle state visibility and is reserved only for
+          your API call or other action.
+        </Fragment>,
+      tData3: "-"
+    },
+    {
+      tData1: "onCancel",
+      tData2:
+        <Fragment>
+          Generic event handler when cancel button is clicked. This&nbsp;
+          <strong>should</strong> toggle state visibility.
+        </Fragment>,
+      tData3: "-"
+    },
+    {
+      tData1: "bgClose",
+      tData2:
+        <Fragment>
+          Allows click event on the confirm background to trigger the&nbsp;
+          <strong>onCancel</strong> handler.
+        </Fragment>,
+      tData3: "false"
+    },
+  ],
+};
+
 export const modalTable = {
   headers,
   rows: [

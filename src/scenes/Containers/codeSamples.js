@@ -1,5 +1,17 @@
 export const cardCode = `<Card />`;
 
+export const confirmCode = `const [ visible, setVisible ] = useState(false);
+
+(visible && (
+  <Confirm
+    title="Confirm Title..."
+    message="You have asked the user to respond."
+    onConfirm={yourAPICall}
+    onCancel={() => setVisible(!visible)}
+    bgClose
+  />
+)}`;
+
 export const modalCode = `const [ visible, setVisible ] = useState(false);
 
 {visible && (
