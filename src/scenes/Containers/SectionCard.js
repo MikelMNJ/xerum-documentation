@@ -40,7 +40,6 @@ const SectionCard = props => {
         <Card
           image={thumb}
           title="Card Title..."
-          titleColor={colors.blue}
           text={text}
           limit={96}
           footer="Image credit: iStock Photo"
@@ -54,7 +53,6 @@ const SectionCard = props => {
         <Card
           image={thumb}
           title="Card Title..."
-          titleColor={colors.blue}
           text={text}
           limit={96}
           footer="Image credit: iStock Photo"
