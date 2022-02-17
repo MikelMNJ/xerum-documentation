@@ -1,4 +1,13 @@
-export const cardCode = `<Card />`;
+export const cardCode = `<Card
+  image="your-thumb-url.[ext]"
+  title="Card Title..."
+  titleColor="#0d97ff"
+  text={yourPreviewText}
+  limit={96}
+  footer="Image credit: iStock Photo"
+  url="https://google.com"
+  vertical
+/>`;
 
 export const confirmCode = `const [ visible, setVisible ] = useState(false);
 
