@@ -1,6 +1,90 @@
 @import 'theme/colors';
 
+$radius: 0.35rem;
 
+.cardContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "image text"
+    "footer footer";
+
+  background-color: $offWhite;
+  border-radius: $radius;
+  filter: drop-shadow(0 0rem 0.1rem $deepBlue);
+  width: 100%;
+  min-height: 2rem;
+
+  &.vertical {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "image"
+      "text"
+      "footer";
+
+    max-width: 21rem;
+
+    .image {
+      height: 12rem;
+      width: auto;
+      border-radius: $radius $radius 0 0;
+    }
+  }
+
+  .image {
+    grid-area: image;
+    width: 8rem;
+    height: auto;
+    min-height: 8rem;
+    cursor: pointer;
+    border-radius: $radius 0 0;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+
+    &.noVertical {
+      border-radius: $radius 0 0 $radius;
+    }
+  }
+
+  .text {
+    grid-area: text;
+    height: fit-content;
+    padding: 1rem;
+
+    p {
+      margin: 0.75rem 0 0;
+    }
+
+    .title {
+      margin: 0;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    grid-area: footer;
+    height: fit-content;
+    padding: 0.75rem 1rem;
+    background-color: $slate;
+    color: $offWhite;
+    border-radius: 0 0 $radius $radius;
+    font-size: 0.9rem;
+
+    p {
+      margin: 0;
+    }
+
+    &.noVertical {
+      border-radius: $radius;
+    }
+  }
+}
 
 /* ========== Media Queries ========== */
 @media only screen and (max-width: 414px) {
