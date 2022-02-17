@@ -6,9 +6,44 @@ export const cardTable = {
   headers,
   rows: [
     {
-      tData1: "",
-      tData2: "",
-      tData3: ""
+      tData1: "image",
+      tData2: "Thumbnail image to render on card.",
+      tData3: "-"
+    },
+    {
+      tData1: "title",
+      tData2: "Title text to display on card.",
+      tData3: "-"
+    },
+    {
+      tData1: "titleColor",
+      tData2: "Sets the color of the title text using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#0d97ff" text="#0d97ff" />
+    },
+    {
+      tData1: "text",
+      tData2: "Preview text to display on card.",
+      tData3: "-"
+    },
+    {
+      tData1: "limit",
+      tData2: "Limits the length of the preview text by character -- will stop at the nearest whole word closest to given character limit.",
+      tData3: "96"
+    },
+    {
+      tData1: "footer",
+      tData2: "Enables the card footer for additional information. Takes a string or element.",
+      tData3: "true"
+    },
+    {
+      tData1: "url",
+      tData2: "External url to open if image or title is clicked.",
+      tData3: "-"
+    },
+    {
+      tData1: "vertical",
+      tData2: "Changes the default horizontal layout of the Card to vertical.",
+      tData3: "-"
     },
   ],
 };
