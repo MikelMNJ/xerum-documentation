@@ -13,7 +13,7 @@ export const iconValid = val => {
   const legacyTypes = [ "fab", "fas", "far", "fal", "fad" ];
   const types = [ "solid", "regular", "light", "thin", "duotone", "brands" ];
   const isValid =  (legacy ? legacyTypes : types).find(type => (
-    val?.startsWith(legacy ? type : `fa-${type}`)
+    val?.startsWith?.(legacy ? type : `fa-${type}`)
   ));
 
   if (isValid) return val;

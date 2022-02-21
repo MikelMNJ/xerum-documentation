@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { startCase } from 'lodash';
+import { isEmpty, startCase } from 'lodash';
 import { iconValid } from 'helpers/validators';
 import { Draggable } from 'react-beautiful-dnd';
 import TRow from 'components/Table/TRow';
@@ -130,7 +130,7 @@ const buildData = (obj, args) => {
           </strong>: &nbsp;
         </p>
 
-        {val || "—"}
+        {!isEmpty(val) ? val : "—"}
       </TData>
 
       {draggable && index === Object.values(rest).length - 1 && (

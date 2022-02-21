@@ -8,12 +8,12 @@ export const progressTable = {
     {
       tData1: "current",
       tData2: "Current value to divide with.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "total",
       tData2: "Total value to divide by.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "fixedPct",
@@ -71,7 +71,7 @@ export const priceTable = {
       <Fragment>
         Three to four letter abbreviated currency, i.e. <i>USD</i>, <i>GBP</i>, <i>YUAN</i> etc.
       </Fragment>,
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -82,12 +82,12 @@ export const percentTable = {
     {
       tData1: "current",
       tData2: "Current value to divide with.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "total",
       tData2: "Total value to divide by.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "limit",

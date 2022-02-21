@@ -3,6 +3,7 @@ import GettingStarted from 'scenes/GettingStarted/GettingStarted';
 import Buttons from 'scenes/Buttons/Buttons';
 import Feedback from 'scenes/Feedback/Feedback';
 import Information from 'scenes/Information/Information';
+import Navigation from 'scenes/Navigation/Navigation';
 import Utility from 'scenes/Utility/Utility';
 import Query from 'scenes/Query/Query';
 import Data from 'scenes/Data/Data';
@@ -18,6 +19,7 @@ const Content = props => {
       <Data />
       <Feedback />
       <Information />
+      <Navigation />
       <Query />
       <Utility />
     </div>

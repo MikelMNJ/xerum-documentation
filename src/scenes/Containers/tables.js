@@ -8,12 +8,12 @@ export const cardTable = {
     {
       tData1: "image",
       tData2: "Thumbnail image to render on card.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "title",
       tData2: "Title text to display on card.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "titleColor",
@@ -23,7 +23,7 @@ export const cardTable = {
     {
       tData1: "text",
       tData2: "Preview text to display on card.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "limit",
@@ -38,12 +38,12 @@ export const cardTable = {
     {
       tData1: "url",
       tData2: "External url to open if image or title is clicked.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "vertical",
       tData2: "Changes the default horizontal layout of the Card to vertical.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -54,17 +54,17 @@ export const confirmTable = {
     {
       tData1: "title",
       tData2: "Title to display in confirm dialogue.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "titleColor",
       tData2: "Sets the color of the title text using hex format, i.e. #000 or #000000.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "message",
       tData2: "Primary message to display in confirm dialogue.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "confirmText",
@@ -84,7 +84,7 @@ export const confirmTable = {
           <strong>not</strong> toggle state visibility and is reserved only for
           your API call or other action.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "onCancel",
@@ -93,7 +93,7 @@ export const confirmTable = {
           Generic event handler when cancel button is clicked. This&nbsp;
           <strong>should</strong> toggle state visibility.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "bgClose",
@@ -113,12 +113,12 @@ export const modalTable = {
     {
       tData1: "title",
       tData2: "Title to display in the Modal window.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "titleColor",
       tData2: "Sets the color of the title text and close icon hover state using hex format, i.e. #000 or #000000.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "closeIcon",
@@ -135,7 +135,7 @@ export const modalTable = {
           Generic event handler when close button is clicked &mdash; your
           state action for controlling visibility should be passed here.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "bgClose",
@@ -155,12 +155,12 @@ export const slideOverTable = {
     {
       tData1: "title",
       tData2: "Title to display in the Slide-Over panel.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "titleColor",
       tData2: "Sets the color of the title text and close icon hover state using hex format, i.e. #000 or #000000.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "closeIcon",
@@ -177,7 +177,7 @@ export const slideOverTable = {
           Generic event handler when close button is clicked &mdash; your
           state action for controlling visibility should be passed here.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -188,7 +188,7 @@ export const tableTable = {
     {
       tData1: "content*",
       tData2: "Object description of headers and rows.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "sortable",
@@ -197,7 +197,7 @@ export const tableTable = {
           Enables headers to sort table by ascending/descending column results when clicked&nbsp;
           &mdash; receives newly sorted array.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "defaultSort",
@@ -215,7 +215,7 @@ export const tableTable = {
           Enables manual sort order manipulation of table rows via drag and drop&nbsp;
           &mdash; receives newly sorted array.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "dragIcon",
@@ -250,7 +250,7 @@ export const tabsTable = {
           <strong>name</strong> is the friendly name shown on the tab and&nbsp;
           <strong>content</strong> is the content to be rendered.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "activeColor",
