@@ -7,7 +7,7 @@ export const menuTable = {
     {
       tData1: "",
       tData2: "",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -32,7 +32,7 @@ export const paginationTable = {
           Generic event handler when page number/icons or prev/next buttons
           are clicked. Receives new page number for your API page data request.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "prevIcon",

@@ -7,7 +7,7 @@ export const messagesTable = {
     {
       tData1: "messages*",
       tData2: "Array of messages from app state.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "setMessages*",
@@ -15,7 +15,7 @@ export const messagesTable = {
         <Fragment>
           Action from app state responsible for altering your <strong>messages</strong> selector.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "time",
@@ -25,7 +25,7 @@ export const messagesTable = {
     {
       tData1: "noTime",
       tData2: "Disables self-closing timer, user must manually close notification.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "icon",
@@ -38,7 +38,7 @@ export const messagesTable = {
     {
       tData1: "noIcon",
       tData2: "Disables notification icon.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -57,7 +57,7 @@ export const notFoundTable = {
     {
       tData1: "noIcon",
       tData2: "Disabled not found icon.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "title",
@@ -67,7 +67,7 @@ export const notFoundTable = {
     {
       tData1: "noTitle",
       tData2: "Disables not found title.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "message",
@@ -77,7 +77,7 @@ export const notFoundTable = {
     {
       tData1: "noMessage",
       tData2: "Disables not found message.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -133,12 +133,12 @@ export const loadingTable = {
     {
       tData1: "noIcon",
       tData2: "Disables load/fail icons.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "noText",
       tData2: "Disables load/fail text.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -149,12 +149,12 @@ export const badgeTable = {
     {
       tData1: "count",
       tData2: "Integer count to be displayed — will not display if falsey.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "square",
       tData2: "Overrides default circle styling with rounded square corners.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -165,7 +165,7 @@ export const bannerTable = {
     {
       tData1: "text",
       tData2: "Text to show on banner — overrides children.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "icon",
@@ -181,22 +181,22 @@ export const bannerTable = {
     {
       tData1: "noIcon",
       tData2: "Disables banner callback icon.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "callback",
       tData2: "Generic click handler, typically for controlling banner state.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "center",
       tData2: "Center justifies banner text or children.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "sharp",
       tData2: "Overrides default rounded corner styling with sharp corners.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -207,22 +207,22 @@ export const fieldReqsTable = {
     {
       tData1: "value*",
       tData2: "Current value of the associated field to check against.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "upper",
       tData2: "Adds an uppercase requirement.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "lower",
       tData2: "Adds a lowercase requirement.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "number",
       tData2: "Adds a number requirement.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "min",
@@ -243,7 +243,7 @@ export const fieldReqsTable = {
           Where <strong>display</strong> is the friendly name shown and&nbsp;
           <strong>value</strong> is the exclusion.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "color",
@@ -279,7 +279,7 @@ export const fieldErrorTable = {
     {
       tData1: "name*",
       tData2: "Name of field to validate — must match reference field name, exactly.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };

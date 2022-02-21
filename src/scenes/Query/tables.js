@@ -15,7 +15,7 @@ export const searchTable = {
     {
       tData1: "noIcon",
       tData2: "Disables the search field icon.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "btnText",
@@ -25,12 +25,12 @@ export const searchTable = {
     {
       tData1: "btnClassName",
       tData2: "Your className string to forward to the button element.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "callback",
       tData2: "Generic event handler when search button is clicked.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -49,12 +49,12 @@ export const filterTable = {
     {
       tData1: "noIcon",
       tData2: "Disables the filter field icon.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "data",
       tData2: "Main data object with at least one { key: value } pair.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "include",
@@ -64,12 +64,12 @@ export const filterTable = {
           include in filter results — use dot notation to access nested
           keys, i.e. "key.subKey.anotherKey"
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "callback",
       tData2: "Generic handler that receives filtered array results.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };

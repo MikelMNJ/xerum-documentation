@@ -7,12 +7,12 @@ export const copyrightTable = {
     {
       tData1: "name*",
       tData2: "Your name, company/organization etc. the copyright belongs to.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "trade",
       tData2: "Displays a registered trademark symbol in addition to the copyright.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "rights",
@@ -40,12 +40,12 @@ export const socialTable = {
     {
       tData1: "noText",
       tData2: "Disables network name text, if it exists.",
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "column",
       tData2: "Stacks network icon and name.",
-      tData3: "-"
+      tData3: null
     },
   ],
 };
@@ -67,7 +67,7 @@ export const tooltipTable = {
         <Fragment>
           Text to show on hover &mdash; overrides children.
         </Fragment>,
-      tData3: "-"
+      tData3: null
     },
     {
       tData1: "position",
