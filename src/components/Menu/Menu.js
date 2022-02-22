@@ -62,40 +62,41 @@ const Menu = props => {
   };
 
   const buildMenu = (items, isSubItem) => {
-    return items?.map((item, index) => {
-      const { name, path, icon, subMenu } = item;
-      const isActive = path && (pathname.includes(path) || hash.includes(path));
-      const isOpen = openMenus.includes(name);
+    if (items) {
+      return items?.map((item, index) => {
+        const { name, path, icon, subMenu } = item;
+        const isActive = path && (pathname.includes(path) || hash.includes(path));
+        const isOpen = openMenus.find(openItem => openItem === name);
 
-      return (
-        <div key={index} style={{ paddingLeft: `${isSubItem ? 1.5 : 0}rem` }} {...rest}>
-          <a
-            href={path}
-            target="_self"
-            className={buildTopLevelClasses(isActive, isSubItem)}
-            onClick={e => handleClick(e, name, path, subMenu)}
-          >
-            {!isEmpty(subMenu) && (
-              <span className="subMenuIcon">
-                {subMenuIcon(name)}
-              </span>
+        return (
+          <div key={index} style={{ paddingLeft: `${isSubItem ? 1.5 : 0}rem` }} {...rest}>
+            <a
+              href={path}
+              className={buildTopLevelClasses(isActive, isSubItem)}
+              onClick={e => handleClick(e, name, path, subMenu)}
+            >
+              {!isEmpty(subMenu) && (
+                <span className="subMenuIcon">
+                  {subMenuIcon(name)}
+                </span>
+              )}
+
+              {iconValid(icon) && (
+                <span className="icon">
+                  <i className={icon} />
+                </span>
+              )}
+
+              {name}
+            </a>
+
+            {isOpen && !isEmpty(subMenu) && (
+              buildMenu(subMenu, true)
             )}
-
-            {iconValid(icon) && (
-              <span className="icon">
-                <i className={icon} />
-              </span>
-            )}
-
-            {name}
-          </a>
-
-          {isOpen && !isEmpty(subMenu) && (
-            buildMenu(subMenu, true)
-          )}
-        </div>
-      );
-    });
+          </div>
+        );
+      });
+    }
   };
 
   return (
