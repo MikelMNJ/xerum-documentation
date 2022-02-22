@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Routes, Navigate, Route, Link, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Navigate, Route, Link, useNavigate } from 'react-router-dom';
 import Content from 'scenes/Content/Content';
 import navigation from "./navigation";
 import ToTop from "components/ToTop/ToTop";
@@ -23,6 +23,7 @@ const MyApp = props => {
   const [ filtered, setFiltered ] = useState([]);
   const navigate = useNavigate();
   const mobileNavClasses = `fa-solid fa-${navOpen ? "times" : "bars"}`;
+
   const resetPage = () => {
     navigate(startPage);
     window.scrollTo(0, 0);
