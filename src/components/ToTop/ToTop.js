@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { iconValid } from 'helpers/validators';
 import { addEvent, removeEvent } from 'helpers/utilityHelpers';
 import './ToTop.scss';
@@ -8,6 +9,8 @@ const eName = "scroll";
 const ToTop = props => {
   const { icon, circle, sharp, className, ...rest } = props;
   const toTop = useRef();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const scrollAction = () => {
     const target = toTop.current;
@@ -32,6 +35,11 @@ const ToTop = props => {
     return () => removeEvent(eName, scrollAction);
   }, []);
 
+  const resetPage = () => {
+    navigate(pathname);
+    window.scrollTo(0, 0);
+  };
+
   const buildClasses = () => {
     let classList = "toTop";
     if (className) classList += ` ${className}`;
@@ -44,7 +52,7 @@ const ToTop = props => {
     <div
       ref={toTop}
       className={buildClasses()}
-      onClick={() => window.scrollTo(0, 0)}
+      onClick={resetPage}
       {...rest}
     >
       <i className={iconValid(icon) || "fa-solid fa-angle-up"} />
