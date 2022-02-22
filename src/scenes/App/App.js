@@ -8,6 +8,7 @@ import NotFound from 'components/NotFound/NotFound';
 import Menu from "components/Menu/Menu";
 import Social from 'components/Social/Social';
 import AuthRoute from 'components/AuthRoute/AuthRoute';
+import Filter from 'components/Filter/Filter';
 import "./App.scss";
 
 const startPage = '/';
@@ -15,29 +16,30 @@ const socialNetworks = [
   { path: "https://npmjs.org", icon: "fa-brands fa-npm" },
   { path: "https://github.com/mikelmnj/xerum", icon: "fa-brands fa-github" },
 ];
+const data = { components: navigation };
 
 const MyApp = props => {
   const [ navOpen, setNavOpen ] = useState(false);
+  const [ filtered, setFiltered ] = useState([]);
   const navigate = useNavigate();
+  const mobileNavClasses = `fa-solid fa-${navOpen ? "times" : "bars"}`;
+  const resetPage = () => {
+    navigate(startPage);
+    window.scrollTo(0, 0);
+  };
 
   const renderApp = () => {
     return (
       <Fragment>
         <header>
-          <h1 onClick={() => {
-            navigate(startPage);
-            window.scrollTo(0, 0);
-          }}>
+          <h1 onClick={resetPage}>
             Xerum
             <Social networks={socialNetworks} />
           </h1>
 
           <div id="headerBar">
             <div className="barText">
-              <i
-                className={`fa-solid fa-${navOpen ? "times" : "bars"}`}
-                onClick={() => setNavOpen(!navOpen)}
-              />
+              <i className={mobileNavClasses} onClick={() => setNavOpen(!navOpen)} />
 
               <div>
                 <p className="subTitle">React component library</p>
@@ -45,7 +47,13 @@ const MyApp = props => {
               </div>
             </div>
 
-            <input type="text" placeholder="Filter components..." />
+            <Filter
+              className="filterCustom"
+              data={data}
+              placeholder="Filter components..."
+              include={[ "components.name", "components.subMenu.name" ]}
+              callback={newData => setFiltered(newData)}
+            />
           </div>
         </header>
 
