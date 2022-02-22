@@ -16,7 +16,15 @@ const SectionMenu = props => {
 
         <Table content={menuTable} className="xTable" />
 
-        <p />
+        <strong>Tip</strong>: You can target the following CSS heirarchy for custom
+        styling: <br />
+        {codeSnippet(".yourClassName .topLevel {}")}<br />
+        {codeSnippet(".yourClassName .topLevel .subMenuIcon {}")}<br />
+        {codeSnippet(".yourClassName .topLevel .icon {}")}<br />
+
+        <p>
+          Your custom <i>className</i> will apply to the menu container by default.
+        </p>
       </div>
 
       <SampleBox name="Menu" code={menuCode}>

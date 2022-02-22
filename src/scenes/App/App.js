@@ -5,7 +5,7 @@ import navigation from "./navigation";
 import ToTop from "components/ToTop/ToTop";
 import Copyright from "components/Copyright/Copyright";
 import NotFound from 'components/NotFound/NotFound';
-import Nav from "components/Nav/Nav";
+import Menu from "components/Menu/Menu";
 import Social from 'components/Social/Social';
 import AuthRoute from 'components/AuthRoute/AuthRoute';
 import "./App.scss";
@@ -50,7 +50,7 @@ const MyApp = props => {
         </header>
 
         <section id="main" className={navOpen ? "menuIsOpen" : ""}>
-          <Nav className={`customNav scrollbar ${navOpen ? "open" : ""}`} links={navigation} />
+          <Menu className={`custom scrollbar ${navOpen ? "open" : ""}`} links={navigation} />
 
           <div>
             <Routes>
