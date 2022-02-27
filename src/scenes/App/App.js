@@ -59,7 +59,10 @@ const MyApp = props => {
         </header>
 
         <section id="main" className={navOpen ? "menuIsOpen" : ""}>
-          <Menu className={`custom scrollbar ${navOpen ? "open" : ""}`} links={navigation} />
+          <Menu
+            className={`custom scrollbar ${navOpen ? "open" : ""}`}
+            links={navigation}
+          />
 
           <div>
             <Routes>
