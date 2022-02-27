@@ -22,7 +22,7 @@ const SectionConfirm = props => {
         styling: <br />
         {codeSnippet(".yourClassName .title {}")}<br />
         {codeSnippet(".yourClassName .message {}")}<br />
-        {codeSnippet(".yourClassName .okay button {}")}<br />
+        {codeSnippet(".yourClassName .confirm button {}")}<br />
         {codeSnippet(".yourClassName .cancel button {}")}<br />
 
         <p>
@@ -39,7 +39,7 @@ const SectionConfirm = props => {
 
         {visible && (
           <Confirm
-            className="test"
+            className="custom"
             title="Confirm Title..."
             message="You have asked the user to respond."
             onConfirm={() => null}

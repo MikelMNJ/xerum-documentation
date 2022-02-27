@@ -105,6 +105,12 @@ $topPos: 1rem;
 @media only screen and (max-width: 414px) {
   .modal {
     min-width: 21rem;
+
+    .header {
+      h3 {
+        font-size: 1rem;
+      }
+    }
   }
 }
 
