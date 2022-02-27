@@ -39,8 +39,10 @@ $rightPos: 0.95rem;
       margin: 0 !important;
       padding: 0;
 
-      &:hover {
-        color: $blue;
+      @media (hover: hover) {
+        &:hover {
+          color: $blue;
+        }
       }
     }
   }

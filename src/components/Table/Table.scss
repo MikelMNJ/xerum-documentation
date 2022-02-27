@@ -79,8 +79,10 @@ ul.table {
       background-color: #ececec;
     }
 
-    &.hover:hover {
-      background-color: #00000020;
+    @media (hover: hover) {
+      &.hover:hover {
+        background-color: #00000020;
+      }
     }
 
     &.header {

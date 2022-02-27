@@ -33,8 +33,10 @@
     border-radius: 0 0.35rem 0.35rem 0;
     cursor: pointer;
 
-    &:hover {
-      background-color: #00000015;
+    @media (hover: hover) {
+      &:hover {
+        background-color: #00000015;
+      }
     }
 
     &.subItem {

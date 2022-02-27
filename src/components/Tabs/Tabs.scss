@@ -41,8 +41,10 @@
         background-color: $blue;
       }
 
-      &:hover {
-        filter: brightness(1.15);
+      @media (hover: hover) {
+        &:hover {
+          filter: brightness(1.15);
+        }
       }
 
       &:first-of-type {

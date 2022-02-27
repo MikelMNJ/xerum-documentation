@@ -36,8 +36,10 @@
   transition: background-color 0.2s ease;
   margin: 0 0.5rem !important;
 
-  &:hover {
-    background-color: $darkBlue;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $darkBlue;
+    }
   }
 
   i {
