@@ -15,7 +15,7 @@ export const menuTable = {
         <Fragment>
           Fontawesome i.e. "<strong>fa-solid fa-caret-right</strong>".
         </Fragment>,
-      tData3: null
+      tData3: <i className="fa-solid fa-caret-right" />
     },
     {
       tData1: "closeIcon",
@@ -23,7 +23,7 @@ export const menuTable = {
         <Fragment>
           Fontawesome i.e. "<strong>fa-solid fa-caret-down</strong>".
         </Fragment>,
-      tData3: null
+      tData3: <i className="fa-solid fa-caret-down" />
     },
   ],
 };

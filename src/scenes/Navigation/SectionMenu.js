@@ -72,8 +72,8 @@ const SectionMenu = props => {
         <div style={sampleMenuStyle}>
           <Menu
             links={links}
-            openIcon="fa-solid fa-plus"
-            closeIcon="fa-solid fa-minus"
+            openIcon
+            closeIcon
           />
         </div>
       </SampleBox>
