@@ -32,16 +32,15 @@ const SectionSocial = props => {
           <strong>noText</strong> prop.
         </p>
 
-        Additionally, when passing a custom <i>className</i> to the {codeSnippet("<Social />")}&nbsp;
-        component, you are directly targeting it's {codeSnippet("<a />")} tags &mdash; you can use
-        CSS chaining and psuedo-selectors if you need finer control over {codeSnippet(":hover")} style
-        or targetting the child {codeSnippet("<i />")} tags &mdash; otherwise generic changes from the parent&nbsp;
-        {codeSnippet("<a />")} level, like <i>color</i> and <i>font-size</i>, will affect both icons
-        and text.
+        <strong>Tip</strong>: You can target the following CSS heirarchy for custom
+        styling: <br />
+        {codeSnippet(".yourClassName i {}")}<br />
 
-        <p>
-          Finally, icon colors and hover states will be your default link styling.
-        </p>
+        <p />
+
+        Your custom <i>className</i> will apply to the {codeSnippet("<a />")} element by default.
+
+        <p />
       </div>
 
       <SampleBox name="Social" code={socialCode}>

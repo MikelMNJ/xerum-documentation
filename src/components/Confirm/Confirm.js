@@ -40,17 +40,19 @@ const Confirm = props => {
       />
 
       <div ref={ref} className={buildClasses()} {...rest}>
-        {title && (
-          <h3 className="title" style={titleStyle}>
-            {title}
-          </h3>
-        )}
+        <div className="messageContainer">
+          {title && (
+            <h3 className="title" style={titleStyle}>
+              {title}
+            </h3>
+          )}
 
-        {message && (
-          <div className="message">
-            {message}
-          </div>
-        )}
+          {message && (
+            <div className="message">
+              {message}
+            </div>
+          )}
+        </div>
 
         <div className="buttons">
           <div className="confirm">

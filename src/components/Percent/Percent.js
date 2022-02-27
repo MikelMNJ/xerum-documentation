@@ -1,9 +1,31 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { truncate } from 'helpers/utilityHelpers';
+import { hexValid } from 'helpers/validators';
 import './Percent.scss';
 
 const Percent = props => {
-  const { current, total, limit, usePlus, ...rest } = props;
+  const {
+    current,
+    total,
+    limit,
+    usePlus,
+    positiveColor,
+    negativeColor,
+    className,
+    ...rest
+  } = props;
+
+  const style = () => {
+    const val = (+(current) / +(total) * 100);
+    const positive = !isNaN(val) && val >= 0;
+    const style = hexValid(negativeColor) && !positive ? { color: negativeColor } : {};
+
+    if (hexValid(positiveColor) && positive) {
+      return { color: positiveColor };
+    }
+
+    return style;
+  };
 
   const buildPercent = () => {
     const is = +(current);
@@ -17,7 +39,7 @@ const Percent = props => {
   };
 
   return (
-    <div ref={rest.ref} {...rest}>
+    <div style={style()} {...rest}>
       {buildPercent()} %
     </div>
   );

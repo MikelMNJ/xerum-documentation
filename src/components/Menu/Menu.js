@@ -9,7 +9,6 @@ const Menu = props => {
     links,
     openIcon,
     closeIcon,
-    horizontal,
     className,
     ...rest
   } = props;
@@ -49,13 +48,11 @@ const Menu = props => {
   const buildClasses = () => {
     let classList = "menu";
     if (className) classList += ` ${className}`;
-    if (horizontal) classList +=  " horizontal";
     return classList;
   };
 
   const buildTopLevelClasses = (isActive, isSubItem) => {
     let classList = "topLevel";
-    if (horizontal) classList += " horizontal";
     if (isActive) classList += " active";
     if (isSubItem) classList += " subItem";
     return classList;

@@ -32,8 +32,10 @@ a:active {
   text-decoration: none;
 }
 
-a:hover {
-  color: $blue;
+@media (hover: hover) {
+  a:hover {
+    color: $blue;
+  }
 }
 
 /* ========== Media Queries ========== */

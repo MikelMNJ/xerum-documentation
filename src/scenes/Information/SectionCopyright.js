@@ -9,7 +9,6 @@ import Copyright from 'components/Copyright/Copyright';
 import colors from 'theme/colors.scss';
 
 const customStyle = {
-  color: colors.blue,
   marginBottom: "1rem"
 };
 

@@ -73,6 +73,22 @@ export const priceTable = {
       </Fragment>,
       tData3: null
     },
+    {
+      tData1: "positiveColor",
+      tData2:
+        <Fragment>
+          Sets the positive color of <strong>value</strong> using hex format, i.e. #000 or #000000.",
+        </Fragment>,
+      tData3: null
+    },
+     {
+      tData1: "negativeColor",
+      tData2:
+        <Fragment>
+          Sets the negative color of <strong>value</strong> using hex format, i.e. #000 or #000000.",
+        </Fragment>,
+      tData3: null
+    },
   ],
 };
 
@@ -102,6 +118,16 @@ export const percentTable = {
           Enables the "+" symbol preceding positive percent values.
         </Fragment>,
       tData3: "false"
-    }
+    },
+    {
+      tData1: "positiveColor",
+      tData2: "Sets the color of a positive result using hex format, i.e. #000 or #000000.",
+      tData3: null
+    },
+     {
+      tData1: "negativeColor",
+      tData2: "Sets the color of a negative result using hex format, i.e. #000 or #000000.",
+      tData3: null
+    },
   ],
 };

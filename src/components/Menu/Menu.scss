@@ -6,20 +6,6 @@
   overflow-y: auto;
   user-select: none;
 
-
-  &.horizontal {
-    display: inline-flex;
-    justify-content: center;
-    width: 100%;
-    min-width: unset;
-    overflow-y: unset;
-
-    .active {
-      border-left: unset;
-      border-bottom: 0.35rem solid $blue;
-    }
-  }
-
   .topLevel {
     display: flex;
     align-items: center;
@@ -33,8 +19,10 @@
     border-radius: 0 0.35rem 0.35rem 0;
     cursor: pointer;
 
-    &:hover {
-      background-color: #00000015;
+    @media (hover: hover) {
+      &:hover {
+        background-color: #00000015;
+      }
     }
 
     &.subItem {
@@ -45,21 +33,6 @@
 
     &.active {
       border-left: 0.35rem solid $blue;
-    }
-
-    &.horizontal {
-      display: inline-flex;
-      justify-content: center;
-      border-left: unset;
-      border-radius: unset;
-
-      &:first-of-type {
-        border-radius: 0.35rem 0 0 0.35rem;
-      }
-
-      &:last-of-type {
-        border-radius: 0 0.35rem 0.35rem 0;
-      }
     }
 
     .subMenuIcon,

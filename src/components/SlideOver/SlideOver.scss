@@ -39,8 +39,10 @@ $rightPos: 0.95rem;
       margin: 0 !important;
       padding: 0;
 
-      &:hover {
-        color: $blue;
+      @media (hover: hover) {
+        &:hover {
+          color: $blue;
+        }
       }
     }
   }
@@ -70,6 +72,12 @@ $rightPos: 0.95rem;
   .slideOver {
     min-width: 21rem;
     max-width: 21rem;
+
+    .header {
+      h3 {
+        font-size: 1rem;
+      }
+    }
   }
 }
 

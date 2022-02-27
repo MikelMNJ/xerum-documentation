@@ -14,8 +14,10 @@
   .pageNum,
   .pageNum.active,
   i {
-    &:hover {
-      color: $slate;
+    @media (hover: hover) {
+      &:hover {
+        color: $slate;
+      }
     }
   }
 

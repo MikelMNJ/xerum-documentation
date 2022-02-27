@@ -19,8 +19,10 @@ button {
     background-color: $blue;
     color: white;
 
-    &:hover {
-      background-color: $darkBlue;
+    @media (hover: hover) {
+      &:hover {
+        background-color: $darkBlue;
+      }
     }
 
     &:disabled {
@@ -34,9 +36,11 @@ button {
     color: $blue;
     background-color: transparent;
 
-    &:hover {
-      background-color: $blue;
-      color: white;
+    @media (hover: hover) {
+      &:hover {
+        background-color: $blue;
+        color: white;
+      }
     }
 
     &:disabled {
@@ -51,8 +55,10 @@ button {
     background-color: transparent;
     color: $blue;
 
-    &:hover {
-      background-color: rgba(133, 133, 133, 0.1);
+    @media (hover: hover) {
+      &:hover {
+        background-color: rgba(133, 133, 133, 0.1);
+      }
     }
 
     &:disabled {
@@ -62,8 +68,10 @@ button {
     }
   }
 
-  &:hover {
-    cursor: pointer;
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &:disabled {
@@ -74,8 +82,10 @@ button {
 button.test {
   background-color: $green;
 
-  &:hover {
-    background-color: $purple;
+  @media (hover: hover) {
+    &:hover {
+      background-color: $purple;
+    }
   }
 }
 

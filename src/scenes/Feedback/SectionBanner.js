@@ -17,15 +17,13 @@ const SectionBanner = props => {
 
         <strong>Note</strong>: The {codeSnippet("<Banner />")} component will take up
         all of the available width in its parent container by default.
+
+        <p />
       </div>
 
       <SampleBox name="Banner" code={bannerCode}>
         <span>
-          <Banner text="The floggings will continue until morale improves..." />
-        </span>
-
-        <span>
-          <Banner noIcon center className="customBanner">
+          <Banner center className="customBanner">
             <i className="fa-solid fa-exclamation" />&nbsp;&nbsp;
             <strong>Reminder</strong>: Servers will be down.
           </Banner>

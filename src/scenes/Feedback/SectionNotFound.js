@@ -15,22 +15,18 @@ const SectionNotFound = props => {
 
         <Table content={notFoundTable} className="xTable" />
 
-        <strong>Note</strong>: You can target the {codeSnippet("<h2>")} title and&nbsp;
-        {codeSnippet("<p>")} message tags, with a custom <i>className</i> and CSS
-        chaining.
+        <strong>Tip</strong>: You can target the following CSS heirarchy for custom
+        styling: <br />
+        {codeSnippet(".yourClassName h2 {}")}<br />
+        {codeSnippet(".yourClassName p {}")}<br />
 
-        <p />
+        <p>
+          Your custom <i>className</i> will apply to the not found container by default.
+        </p>
       </div>
 
       <SampleBox name="Not Found" code={notFoundCode}>
         <NotFound />
-
-        <NotFound
-          className="customNotFound"
-          icon="fa-solid fa-face-frown-open"
-          title="Well, shucks!"
-          message="Something's missing."
-        />
       </SampleBox>
     </Fragment>
   );
