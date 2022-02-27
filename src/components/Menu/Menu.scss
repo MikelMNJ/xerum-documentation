@@ -10,13 +10,11 @@
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
-    border-radius: 0.35rem;
     min-width: 9rem;
     min-height: 2rem;
     font-weight: bold;
     color: $deepBlue;
     border-left: 0.35rem solid transparent;
-    border-radius: 0 0.35rem 0.35rem 0;
     cursor: pointer;
 
     @media (hover: hover) {

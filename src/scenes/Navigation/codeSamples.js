@@ -1,4 +1,30 @@
-export const menuCode = `<Menu />`;
+export const menuCode = `const links = [
+  {
+    name: "Home",
+    path: "#home",
+    icon: "fa-solid fa-home"
+  },
+  {
+    name: "Settings",
+    path: "#settings",
+    icon: "fa-solid fa-gears"
+  },
+  {
+    name: "My account",
+    path: "#account",
+    icon: "fa-solid fa-user",
+    subMenu: [
+      { name: "Info", path: "#Info" },
+      { name: "Billing", path: "#billing" },
+    ],
+  },
+];
+
+<Menu
+  links={links}
+  openIcon="fa-solid fa-plus"
+  closeIcon="fa-solid fa-minus"
+/>`;
 
 export const paginationCode = `const res = {
   total_pages: 5,

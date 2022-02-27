@@ -7,6 +7,39 @@ import SampleBox from 'components/SampleBox/SampleBox';
 import Menu from 'components/Menu/Menu';
 import colors from 'theme/colors.scss';
 
+const objectTemplate = `{
+  name, // Friendly name to display on menu.
+  path, // i.e. "/link-path" or "#link-path".
+  icon, // Font Awesome string.
+  subMenu: [] // Optional array of objects.
+}`;
+
+const sampleMenuStyle = {
+  boxShadow: `0 0.1rem 0.25rem ${colors.warmGrey}`
+};
+
+const links = [
+  {
+    name: "Home",
+    path: "#home",
+    icon: "fa-solid fa-home"
+  },
+  {
+    name: "Settings",
+    path: "#settings",
+    icon: "fa-solid fa-gears"
+  },
+  {
+    name: "My account",
+    path: "#account",
+    icon: "fa-solid fa-user",
+    subMenu: [
+      { name: "Info", path: "#Info" },
+      { name: "Billing", path: "#billing" },
+    ],
+  },
+];
+
 const SectionMenu = props => {
   return (
     <Fragment>
@@ -16,11 +49,19 @@ const SectionMenu = props => {
 
         <Table content={menuTable} className="xTable" />
 
+        <strong>Note</strong>: Your <strong>links</strong> array must contain objects with the
+        following keys: {codeSnippet(objectTemplate, true)}
+
+        <p>
+          Any <i>subMenu</i> array objects should follow the same object key format above.  You can
+          nest more sub-menus this way, if needed.
+        </p>
+
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
         {codeSnippet(".yourClassName .topLevel {}")}<br />
-        {codeSnippet(".yourClassName .topLevel .subMenuIcon {}")}<br />
         {codeSnippet(".yourClassName .topLevel .icon {}")}<br />
+        {codeSnippet(".yourClassName .topLevel .subMenuIcon {}")}<br />
 
         <p>
           Your custom <i>className</i> will apply to the menu container by default.
@@ -28,7 +69,13 @@ const SectionMenu = props => {
       </div>
 
       <SampleBox name="Menu" code={menuCode}>
-        <Menu />
+        <div style={sampleMenuStyle}>
+          <Menu
+            links={links}
+            openIcon="fa-solid fa-plus"
+            closeIcon="fa-solid fa-minus"
+          />
+        </div>
       </SampleBox>
     </Fragment>
   );

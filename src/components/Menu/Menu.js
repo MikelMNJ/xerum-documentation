@@ -73,15 +73,15 @@ const Menu = props => {
               onClick={e => handleClick(e, name, path, subMenu)}
             >
               {!isEmpty(subMenu) && (
-                <span className="subMenuIcon">
+                <div className="subMenuIcon">
                   {subMenuIcon(name)}
-                </span>
+                </div>
               )}
 
               {iconValid(icon) && (
-                <span className="icon">
+                <div className="icon">
                   <i className={icon} />
-                </span>
+                </div>
               )}
 
               {name}
