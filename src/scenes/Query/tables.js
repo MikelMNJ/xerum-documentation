@@ -14,7 +14,12 @@ export const searchTable = {
     },
     {
       tData1: "noIcon",
-      tData2: "Disables the search field icon.",
+      tData2: "Removes the search field icon.",
+      tData3: null
+    },
+    {
+      tData1: "noButton",
+      tData2: 'Removes the search field submit button. Submit can be triggered with the "Enter" key.',
       tData3: null
     },
     {
@@ -48,7 +53,7 @@ export const filterTable = {
     },
     {
       tData1: "noIcon",
-      tData2: "Disables the filter field icon.",
+      tData2: "Removes the filter field icon.",
       tData3: null
     },
     {

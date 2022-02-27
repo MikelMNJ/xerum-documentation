@@ -1,7 +1,7 @@
 @import 'theme/colors';
 
 .tabContainer {
-  $offset: 1.55rem;
+  $offset: 1.25rem;
 
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
     justify-content: center;
     margin-top: -$offset;
     width: 100%;
-    min-height: 2.901875rem;
+    min-height: 2.25rem;
     text-align: center;
 
     .name {

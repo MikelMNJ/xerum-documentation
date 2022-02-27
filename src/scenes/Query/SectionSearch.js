@@ -28,7 +28,8 @@ const SectionSearch = props => {
         <Search
           btnText="Find it"
           placeholder="Find something..."
-          callback={val => console.log(val)} />
+          callback={val => console.log(val)}
+        />
       </SampleBox>
     </Fragment>
   );
