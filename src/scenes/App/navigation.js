@@ -7,7 +7,7 @@ const navigation = [
 
   {
     name: "Buttons",
-    path: "#buttons",
+    path: "#button",
     icon: "",
   },
 

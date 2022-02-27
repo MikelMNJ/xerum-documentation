@@ -44,8 +44,10 @@ select {
   -moz-appearance: none;
 }
 
-select:hover {
-  cursor: pointer;
+@media (hover: hover) {
+  select:hover {
+    cursor: pointer;
+  }
 }
 
 select > option {
@@ -103,8 +105,11 @@ input[type=radio] {
   cursor: pointer;
 }
 
-input[type=checkbox]:hover {
-  cursor: pointer;
+
+@media (hover: hover) {
+  input[type=checkbox]:hover {
+    cursor: pointer;
+  }
 }
 
 .actionConfirmed {

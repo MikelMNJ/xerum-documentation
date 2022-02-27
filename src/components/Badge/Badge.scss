@@ -8,12 +8,12 @@
 
   color: $offWhite;
   border-radius: 50%;
-  padding: 0.35rem;
+  padding: 0.15rem;
   font-size: 0.8rem;
   font-weight: bold;
-  height: 1.75rem;
+  height: 1.15rem;
   width: fit-content;
-  min-width: 1.75rem;
+  min-width: 1.15rem;
   background-color: $red;
 
   &.square {
@@ -22,26 +22,31 @@
 }
 
 .pos {
-  top: -3.35rem;
-  right: -2.35rem;
+  top: -2.55rem;
+  right: -1.55rem;
 }
 
 .badgeBtn {
-  width: 3rem;
-  height: 3rem;
-  color: $offWhite;
-  background-color: $blue;
+  all: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
   border: none;
-  border-radius: 0.35rem;
+  border-radius: 50%;
   transition: background-color 0.2s ease;
   margin: 0 0.5rem !important;
 
-  &:hover {
-    background-color: $darkBlue;
+  @media (hover: hover) {
+    &:hover {
+      color: $blue;
+    }
   }
 
   i {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
+    width: 1.5rem;
   }
 }
 

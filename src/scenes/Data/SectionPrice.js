@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { priceCode } from './codeSamples';
 import { priceTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -20,7 +19,7 @@ const SectionPrice = props => {
       </div>
 
       <SampleBox name="Price" code={priceCode}>
-        <strong style={{ color: colors.blue }}>
+        <strong>
           <Price
             value={1024.76623496782}
             symbol={
@@ -30,6 +29,7 @@ const SectionPrice = props => {
             }
             currency="ETH"
             limit={8}
+            positiveColor={colors.blue}
           />
         </strong>
       </SampleBox>

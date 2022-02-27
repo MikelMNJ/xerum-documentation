@@ -2,7 +2,6 @@
 
 .searchContainer {
   width: 100%;
-  max-width: 70rem;
 
   form {
     display: inline-flex;
@@ -23,10 +22,15 @@
       input {
         padding-left: 3rem;
         margin: 0;
+        background-color: white;
 
         &.noIcon {
           padding-left: 0.75rem;
         }
+      }
+
+      &.noButton {
+        padding-right: 0;
       }
     }
 

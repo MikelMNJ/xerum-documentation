@@ -5,7 +5,9 @@ export const progressCode = `<Progress
   pctColor="#ffffff"
 />`;
 
-export const priceCode = `<Price
+export const priceCode = `const blue = "#0d97ff";
+
+<Price
   value={1024.76623496782}
   symbol={
     <Fragment>
@@ -14,10 +16,14 @@ export const priceCode = `<Price
   }
   currency="ETH"
   limit={8}
+  positiveColor={blue}
 />`;
 
-export const percentCode = `<Percent
+export const percentCode = `const blue = "#0d97ff";
+
+<Percent
   current={3483.432}
   total={60}
+  positiveColor={blue}
   usePlus
 />`;

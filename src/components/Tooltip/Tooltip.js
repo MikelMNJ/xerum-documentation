@@ -1,11 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { iconValid } from 'helpers/validators';
-import { addEvent, removeEvent } from 'helpers/utilityHelpers';
 import colors from 'theme/colors.scss';
 import './Tooltip.scss';
-
-const eName = "mousemove";
-const defaultBG = "rgba(32, 35, 42, 0.9)";
 
 const Tooltip = props => {
   const {
@@ -24,16 +20,8 @@ const Tooltip = props => {
   const updatePos = e => {
     const x = e.clientX;
     const y = e.clientY;
-
-    if (showTip) {
-      setCoords({ x, y });
-    }
+    if (showTip) setCoords({ x, y });
   };
-
-  useEffect(() => {
-    showTip ? addEvent(eName, updatePos) : removeEvent(eName, updatePos);
-    return () => removeEvent(eName, updatePos);
-  }, [showTip]);
 
   const tipStyle = () => {
     const target = tipRef.current;
@@ -98,6 +86,7 @@ const Tooltip = props => {
       className={buildClasses()}
       onMouseOver={() => setShowTip(true)}
       onMouseOut={() => setShowTip(false)}
+      onMouseMove={e => updatePos(e)}
       {...rest}
     >
       <i className={iconValid(icon) || "fa-solid fa-info-circle"} />

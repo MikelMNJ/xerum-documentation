@@ -5,9 +5,25 @@ export const menuTable = {
   headers,
   rows: [
     {
-      tData1: "",
-      tData2: "",
+      tData1: "links",
+      tData2: "Array of objects that describes links, sub-menu's etc.",
       tData3: null
+    },
+    {
+      tData1: "openIcon",
+      tData2:
+        <Fragment>
+          Fontawesome i.e. "<strong>fa-solid fa-caret-right</strong>".
+        </Fragment>,
+      tData3: <i className="fa-solid fa-caret-right" />
+    },
+    {
+      tData1: "closeIcon",
+      tData2:
+        <Fragment>
+          Fontawesome i.e. "<strong>fa-solid fa-caret-down</strong>".
+        </Fragment>,
+      tData3: <i className="fa-solid fa-caret-down" />
     },
   ],
 };

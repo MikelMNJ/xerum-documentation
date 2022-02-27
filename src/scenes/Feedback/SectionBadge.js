@@ -9,8 +9,8 @@ import Button from 'components/Button/Button';
 import Badge from 'components/Badge/Badge';
 
 const cssSnippet = `.pos {
-  top: -3.35rem;
-  right: -2.35rem;
+  top: -2.55rem;
+  right: -1.55rem;
 }`;
 
 const SectionBadge = props => {
@@ -32,11 +32,11 @@ const SectionBadge = props => {
       </div>
 
       <SampleBox name="Badge" code={badgeCode}>
-          <Button className="badgeBtn" icon="fa-solid fa-bell">
+          <Button className="badgeBtn" icon="fa-solid fa-bell" btnType="transparent">
             <Badge className="pos" count={4} />
           </Button>
 
-          <Button className="badgeBtn" icon="fa-solid fa-envelope">
+          <Button className="badgeBtn" icon="fa-solid fa-envelope" btnType="transparent">
             <Badge className="pos" count={1296} square />
           </Button>
       </SampleBox>

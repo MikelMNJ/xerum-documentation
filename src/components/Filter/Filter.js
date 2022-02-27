@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import { stringToArray, lowercaseArray } from 'helpers/utilityHelpers';
 import { iconValid } from 'helpers/validators';
-import { every, isArray, isObject } from 'lodash';
+import { every, isArray, isObject, isString } from 'lodash';
 import colors from 'theme/colors.scss';
 import './Filter.scss';
 
@@ -26,12 +26,23 @@ const Filter = props => {
     let workingVal = value;
 
     // Gets final value from nested keys.
-    for (let i = 1; i < path.length; i++) {
+    nestedCheck: for (let i = 0; i < path.length; i++) {
       const currentPath = path[i];
       const currentData = workingVal[currentPath];
 
-      if (currentData) {
+      if (currentData && !isArray(currentData)) {
         workingVal = currentData;
+        continue nestedCheck;
+      }
+
+      if (isArray(currentData)) {
+        const workingArr = currentData.map(item => {
+          const subPath = path.slice(1);
+          return digDeep(subPath, item);
+        });
+
+        workingVal = workingArr.length > 1 ? workingArr : workingArr[0];
+        continue nestedCheck;
       }
     };
 
@@ -40,18 +51,27 @@ const Filter = props => {
 
   const getValues = objPath => {
     const firstKey = objPath[0];
-    const originalVal = { ...data[firstKey] };
-    const finalArr = digDeep(objPath, originalVal);
-    const isComplex = every(finalArr, isObject);
+    const originalVal = data[firstKey];
+    let finalArr = digDeep(objPath, { ...originalVal });
+    const isComplex = arr => every(arr, isObject);
 
-    if (isComplex && isArray(finalArr)) {
+    if (isArray(originalVal) && isComplex(originalVal)) {
+      const simplifiedArr = originalVal.map(item => {
+        const subPath = objPath.slice(1);
+        return digDeep(subPath, item);
+      });
+
+      finalArr = simplifiedArr.flat();
+    }
+
+    if (isComplex(finalArr) && isArray(finalArr)) {
       // From array of objects...
       const simplifiedArr = finalArr?.map(obj => {
         const subPath = objPath.slice(1);
         return digDeep(subPath, obj);
       });
 
-      return simplifiedArr;
+      return simplifiedArr.flat();
     }
 
     // From simple object...
@@ -85,7 +105,7 @@ const Filter = props => {
           const isObject = typeof item === "object";
           const workingItem = typeof item === "number" ? item.toString() : item;
 
-          if (!isObject && workingItem?.toLowerCase().includes(userValues[i])) {
+          if (!isObject && workingItem?.toLowerCase?.().includes(userValues[i])) {
             return item;
           }
         }
@@ -96,16 +116,13 @@ const Filter = props => {
   }, [filterValue]);
 
   const buildClasses = () => {
-    let classList = "";
-
+    let classList = "filter";
     if (className) classList += ` ${className}`;
-    if (noIcon) classList += " noIcon";
-
     return classList;
   };
 
   return (
-    <div className="filter">
+    <div className={buildClasses()} {...rest}>
       {!noIcon && (
         <i className={iconValid(icon) || "fa-solid fa-filter"} />
       )}
@@ -114,10 +131,9 @@ const Filter = props => {
         <input
           type="text"
           name="userFilter"
-          className={buildClasses()}
+          className={`${noIcon ? "noIcon" : ""}`}
           placeholder={placeholder || "Filter"}
           onChange={e => setFilterValue(e.currentTarget.value)}
-          {...rest}
         />
       </label>
     </div>

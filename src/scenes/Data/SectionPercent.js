@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { percentCode } from './codeSamples';
 import { percentTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -21,8 +20,13 @@ const SectionPercent = props => {
       </div>
 
       <SampleBox name="Percent" code={percentCode}>
-        <strong style={{ color: colors.blue }}>
-          <Percent current={3483.432} total={60} usePlus />
+        <strong>
+          <Percent
+            current={3483.432}
+            total={60}
+            positiveColor={colors.blue}
+            usePlus
+          />
         </strong>
       </SampleBox>
     </Fragment>
