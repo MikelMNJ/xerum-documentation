@@ -24,11 +24,14 @@ const SectionTabs = props => {
 
         <p>*Required prop.</p>
 
-        <strong>Tip</strong>: You can target the following CSS heirarchy
-        for custom styling: {codeSnippet(".yourClassName .tabNames .name {}")}.
-        Your custom <i>className</i> will apply to the tabs container by default.
+        <strong>Tip</strong>: You can target the following CSS heirarchy for custom
+        styling: <br />
+        {codeSnippet(".yourClassName .tabNames {}")}<br />
+        {codeSnippet(".yourClassName .tabNames .name {}")}<br />
 
-        <p />
+        <p>
+          Your custom <i>className</i> will apply to the tabs container by default.
+        </p>
       </div>
 
       <SampleBox name="Tabs" code={tabsCode}>
