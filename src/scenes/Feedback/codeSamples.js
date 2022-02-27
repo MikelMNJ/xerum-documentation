@@ -58,13 +58,6 @@ export const badgeCode = `// Default
 </Button>`;
 
 export const bannerCode = `<Banner
-  text="The floggings will continue until
-    morale improves..."
-  callback={handleClose}
-/>
-
-<Banner
-  noIcon
   center
   className="customBanner"
   callback={handleClose}
