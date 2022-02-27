@@ -1,5 +1,5 @@
 export const hexValid = val => {
-  const isValid = val?.startsWith("#") && (
+  const isValid = val?.startsWith?.("#") && (
     val?.length === 4
     || val?.length === 7
     || val?.length === 9
@@ -28,19 +28,19 @@ export const btnValid = val => {
 
 export const urlValid = val => {
   const regex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/g;
-  const hasProtocol = val?.includes("https://");
+  const hasProtocol = val?.includes?.("https://");
   const isValid = regex.test(val);
 
   if (isValid) {
     return hasProtocol ? val : `https://${val}`;
   };
 
-  return val?.includes("localhost") ? val : "";
+  return val?.includes?.("localhost") ? val : "";
 };
 
 export const timeframeValid = val => {
   const validTimeframes = [ "seconds", "minutes", "hours", "days", "weeks", "months", "years" ];
-  const isValid = validTimeframes.find(time => val?.toLowerCase() === time);
+  const isValid = validTimeframes.find(time => val?.toLowerCase?.() === time);
 
-  if (isValid) return val.toLowerCase();
+  if (isValid) return val.toLowerCase?.();
 };

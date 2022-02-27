@@ -1,12 +1,33 @@
 import React, { Fragment } from 'react';
-import { formatNum, truncate } from 'helpers/utilityHelpers';
+import { truncate } from 'helpers/utilityHelpers';
+import { hexValid } from 'helpers/validators';
 import './Price.scss';
 
 const Price = props => {
-  const { value, symbol, currency, limit, ...rest } = props;
+  const {
+    value,
+    symbol,
+    currency,
+    limit,
+    positiveColor,
+    negativeColor,
+    className,
+    ...rest
+  } = props;
+
+  const style = () => {
+    const positive = value >= 0;
+    const style = hexValid(negativeColor) && !positive ? { color: negativeColor } : {};
+
+    if (hexValid(positiveColor) && positive) {
+      return { color: positiveColor };
+    }
+
+    return style;
+  };
 
   const buildPrice = () => {
-    const val = truncate(value, limit);
+    const val = isNaN(value) ? truncate(0, limit) : truncate(value, limit);
     const price = (
       <Fragment>
         {symbol || "$"} {val} {currency}
@@ -17,7 +38,7 @@ const Price = props => {
   };
 
   return (
-    <div {...rest}>
+    <div style={style()} {...rest}>
       {buildPrice()}
     </div>
   );
