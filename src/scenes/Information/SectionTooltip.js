@@ -8,17 +8,6 @@ import SampleBox from 'components/SampleBox/SampleBox';
 import Tooltip from 'components/Tooltip/Tooltip';
 import colors from 'theme/colors.scss';
 
-const css = `.customTooltip .tip {
-  font-weight: bold;
-  text-align: center;
-  color: white;
-  background-color: #0d97ff;
-}
-
-.customTooltip i {
-  color: #0d97ff;
-}`;
-
 const SectionTooltip = props => {
   return (
     <Fragment>
@@ -27,11 +16,14 @@ const SectionTooltip = props => {
 
         <Table content={tooltipTable} className="xTable" />
 
-        <strong>Note</strong>: When passing a custom <i>className</i> to the&nbsp;
-        {codeSnippet("<Tooltip />")} component, you will need to target the&nbsp;
-        {codeSnippet(".tip")} and {codeSnippet("i")} selectors with CSS chaining:
+        <strong>Tip</strong>: You can target the following CSS heirarchy for custom
+        styling: <br />
+        {codeSnippet(".yourClassName .tip {}")}<br />
+        {codeSnippet(".yourClassName i {}")}<br />
 
-        {codeSnippet(css, true)}
+        <p>
+          Your custom <i>className</i> will apply to the tool tip container by default.
+        </p>
       </div>
 
       <SampleBox name="Tooltip" code={tooltipCode}>
@@ -47,16 +39,6 @@ const SectionTooltip = props => {
               <i className="fa-solid fa-smile" />&nbsp;
               Tool tip rendering children.
             </Tooltip>
-          </div>
-
-          <div className="inline">
-            Custom&nbsp;
-            <Tooltip
-              icon="fa-solid fa-question-circle"
-              text="Customized tool tip."
-              position="top"
-              className="customTooltip"
-            />
           </div>
         </div>
       </SampleBox>
