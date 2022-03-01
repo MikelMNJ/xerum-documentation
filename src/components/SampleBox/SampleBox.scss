@@ -26,19 +26,14 @@
         text-align: center;
       }
 
-      button {
-        margin: 0.25rem;
+      .buttonSamples {
+        display: grid;
+        gap: 0.25rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
       }
     }
 
-    .multiline {
-      display: flex;
-      flex-direction: column;
-
-      div {
-        display: inline-flex;
-      }
-    }
   }
 }
 
@@ -53,10 +48,6 @@
 @media only screen and (max-width: 390px) {
   #content .sampleBox .samples {
     max-width: 19.875rem;
-
-    button {
-      margin: 0.15rem;
-    }
 
     .copyright {
       font-size: 0.85rem;

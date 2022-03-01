@@ -28,6 +28,8 @@ const SectionTabs = props => {
         styling: <br />
         {codeSnippet(".yourClassName .tabNames {}")}<br />
         {codeSnippet(".yourClassName .tabNames .name {}")}<br />
+        {codeSnippet(".yourClassName .tabNames .name.active {}")}<br />
+        {codeSnippet(".yourClassName .tabSlider {}")}<br />
 
         <p>
           Your custom <i>className</i> will apply to the tabs container by default.

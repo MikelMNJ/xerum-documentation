@@ -11,13 +11,13 @@ const Tabs = props => {
     content,
     activeColor,
     inactiveColor,
-    separatorColor,
     className,
     ...rest
   } = props;
 
   const [ activeTab, setActiveTab ] = useState(content?.[0]?.name);
   const [ sliderStyle, setSliderStyle ] = useState({
+    backgroundColor: activeColor,
     width: `calc(100% / ${content.length} - ${buffer}rem)`,
     transform: `translateX(${calcX() || margin}rem)`
   });
@@ -48,13 +48,6 @@ const Tabs = props => {
     }
   };
 
-  const tabStyle = tabName => ({
-    backgroundColor: activeTab === tabName
-      ? hexValid(activeColor)
-      : hexValid(inactiveColor),
-    borderRight: separatorColor && `0.0625rem solid ${separatorColor}`,
-  });
-
   const buildClasses = tabName => {
     let classList = "name";
     if (activeTab === tabName) classList += " active";
@@ -63,13 +56,12 @@ const Tabs = props => {
 
   const buildTabs = () => (
     <div>
-      <div className="tabNames">
+      <div className="tabNames" style={{ backgroundColor: inactiveColor }}>
         {content?.map((tab, index) => {
           return (
             <div
               key={index}
               className={buildClasses(tab.name ?? "")}
-              style={tabStyle(tab.name)}
               onClick={() => {
                 if (activeTab !== tab.name) setActiveTab(tab.name);
               }}

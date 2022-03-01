@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { iconValid } from 'helpers/validators';
+import { iconValid, hexValid } from 'helpers/validators';
 import { addEvent, removeEvent, resetPage } from 'helpers/utilityHelpers';
 import './ToTop.scss';
 
 const eName = "scroll";
 
 const ToTop = props => {
-  const { icon, circle, sharp, className, ...rest } = props;
+  const { icon, bgColor, iconColor, className, ...rest } = props;
   const toTop = useRef();
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -38,19 +38,21 @@ const ToTop = props => {
   const buildClasses = () => {
     let classList = "toTop";
     if (className) classList += ` ${className}`;
-    if (sharp) classList += " sharp";
-    if (circle) classList += " circle";
     return classList;
   };
 
   return (
     <div
+      {...rest}
       ref={toTop}
       className={buildClasses()}
       onClick={() => resetPage(navigate, pathname)}
-      {...rest}
+      style={{ ...rest.style, backgroundColor: hexValid(bgColor) }}
     >
-      <i className={iconValid(icon) || "fa-solid fa-angle-up"} />
+      <i
+        style={{ color: hexValid(iconColor) }}
+        className={iconValid(icon) || "fa-solid fa-angle-up"}
+      />
     </div>
   );
 };

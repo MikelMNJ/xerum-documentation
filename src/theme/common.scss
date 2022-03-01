@@ -109,3 +109,9 @@ code {
     font-size: 0.6rem;
   }
 }
+
+@media only screen and (max-width: 414px) {
+  code {
+    white-space: pre-wrap;
+  }
+}

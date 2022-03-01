@@ -6,6 +6,7 @@ import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import ToTop from 'components/ToTop/ToTop';
+import colors from 'theme/colors.scss';
 
 const sampleTop = {
   position: "relative",
@@ -21,6 +22,7 @@ const SectionToTop = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
+        {codeSnippet(".yourClassName {}")}<br />
         {codeSnippet(".yourClassName i {}")}<br />
 
         <p />
