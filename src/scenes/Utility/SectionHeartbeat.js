@@ -74,7 +74,9 @@ const SectionHeartbeat = props => {
             callback={() => setOutage(!outage)}
           />
 
-          ... or disable your N.I.C. for the real deal.
+          <p>
+            ... or disable your N.I.C. for the real deal.
+          </p>
         </div>
       </SampleBox>
     </Fragment>
