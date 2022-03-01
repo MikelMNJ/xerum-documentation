@@ -12,11 +12,11 @@
 
   .tabSlider {
     position: relative;
-    top: -2.15rem;
-    height: 101%;
+    top: -2.1rem;
+    height: 103%;
     background-color: $blue;
     border-radius: 0.35rem;
-    box-shadow: 0 0.1rem 0.15rem black;
+    box-shadow: 0 0.1rem 0.15rem #00000080;
     transition: transform 0.2s ease;
   }
 

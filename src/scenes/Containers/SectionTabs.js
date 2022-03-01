@@ -37,7 +37,7 @@ const SectionTabs = props => {
       </div>
 
       <SampleBox name="Tabs" code={tabsCode}>
-        <Tabs content={content} activeColor={colors.deepBlue} />
+        <Tabs content={content} />
       </SampleBox>
     </Fragment>
   );
