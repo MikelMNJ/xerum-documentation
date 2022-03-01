@@ -91,18 +91,6 @@
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 1600px) {
-  #headerBar input {
-    max-width: 60rem !important;
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-  #headerBar input {
-    max-width: 50rem !important;
-  }
-}
-
 @media only screen and (max-width: 1280px) {
   #app #main {
     margin: 13.011875rem 0 0 16rem;
@@ -111,10 +99,6 @@
   #headerBar {
     grid-template-columns: 1fr !important;
     grid-template-rows: repeat(2, auto);
-
-    input {
-      max-width: unset !important;
-    }
   }
 }
 
