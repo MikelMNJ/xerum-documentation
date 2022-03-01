@@ -67,37 +67,39 @@ const SectionLoading = props => {
       </div>
 
       <SampleBox name="Loading" code={loadingCode}>
-        <div style={styles}>
-          {!data && !successLoading
-            ? <div className="loader">
-                <p>Load ready</p>
-              </div>
-            : <Loading isLoading={successLoading} hasData={data}>
-                <i className="fa-solid fa-thumbs-up successIcon" />&nbsp;
-                All good.
-              </Loading>
-          }
+        <div className="loadingSamples">
+          <div style={styles}>
+            {!data && !successLoading
+              ? <div className="loader">
+                  <p>Load ready</p>
+                </div>
+              : <Loading isLoading={successLoading} hasData={data}>
+                  <i className="fa-solid fa-thumbs-up successIcon" />&nbsp;
+                  All good.
+                </Loading>
+            }
 
-          <Button
-            disabled={successLoading}
-            text="Simulate Load"
-            callback={() => sim("load")}
-          />
-        </div>
+            <Button
+              disabled={successLoading}
+              text="Simulate Load"
+              callback={() => sim("load")}
+            />
+          </div>
 
-        <div style={styles}>
-          {failData === null && !failLoading
-            ? <div className="loader">
-                <p>Fail ready</p>
-              </div>
-            : <Loading isLoading={failLoading} hasData={failData} />
-          }
+          <div style={styles}>
+            {failData === null && !failLoading
+              ? <div className="loader">
+                  <p>Fail ready</p>
+                </div>
+              : <Loading isLoading={failLoading} hasData={failData} />
+            }
 
-          <Button
-            disabled={failLoading}
-            text="Simulate Fail"
-            callback={() => sim("fail")}
-          />
+            <Button
+              disabled={failLoading}
+              text="Simulate Fail"
+              callback={() => sim("fail")}
+            />
+          </div>
         </div>
       </SampleBox>
     </Fragment>
