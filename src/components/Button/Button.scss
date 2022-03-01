@@ -79,17 +79,7 @@ button {
   }
 }
 
-button.test {
-  background-color: $green;
-
-  @media (hover: hover) {
-    &:hover {
-      background-color: $purple;
-    }
-  }
-}
-
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 414) {
 
 }
