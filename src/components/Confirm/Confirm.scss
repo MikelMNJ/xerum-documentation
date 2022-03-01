@@ -45,7 +45,7 @@ $topPos: 0;
   width: max-content;
   height: max-content;
   border-radius: 0.35rem;
-  filter: drop-shadow(0 0rem 0.1rem $deepBlue);
+  box-shadow: 0 0.1rem 0.15rem #00000080;
   overflow-y: auto;
 
   .messageContainer {
