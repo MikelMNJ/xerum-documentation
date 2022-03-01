@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { iconValid, hexValid } from 'helpers/validators';
-import { dismiss, slideIn } from 'helpers/animations';
+import { dismiss, slideIn } from 'helpers/animationHelpers';
 import Button from 'components/Button/Button';
 import './SlideOver.scss';
 

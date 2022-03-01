@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { iconValid } from 'helpers/validators';
-import { addEvent, removeEvent } from 'helpers/utilityHelpers';
+import { addEvent, removeEvent, resetPage } from 'helpers/utilityHelpers';
 import './ToTop.scss';
 
 const eName = "scroll";
@@ -9,8 +9,8 @@ const eName = "scroll";
 const ToTop = props => {
   const { icon, circle, sharp, className, ...rest } = props;
   const toTop = useRef();
-  const navigate = useNavigate();
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const scrollAction = () => {
     const target = toTop.current;
@@ -19,7 +19,7 @@ const ToTop = props => {
       const { style } = target;
 
       if (window.pageYOffset >= 145) {
-        style.setProperty('opacity', 0.5);
+        style.setProperty('opacity', 1);
         style.setProperty('transform', 'translateY(0)');
       }
 
@@ -35,11 +35,6 @@ const ToTop = props => {
     return () => removeEvent(eName, scrollAction);
   }, []);
 
-  const resetPage = () => {
-    navigate(pathname);
-    window.scrollTo(0, 0);
-  };
-
   const buildClasses = () => {
     let classList = "toTop";
     if (className) classList += ` ${className}`;
@@ -52,7 +47,7 @@ const ToTop = props => {
     <div
       ref={toTop}
       className={buildClasses()}
-      onClick={resetPage}
+      onClick={() => resetPage(navigate, pathname)}
       {...rest}
     >
       <i className={iconValid(icon) || "fa-solid fa-angle-up"} />

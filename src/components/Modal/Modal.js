@@ -1,6 +1,6 @@
 import React, { Fragment, useRef } from 'react';
 import { iconValid, hexValid } from 'helpers/validators';
-import { dismiss, slideIn, fadeIn } from 'helpers/animations';
+import { dismiss, slideIn, fadeIn } from 'helpers/animationHelpers';
 import Button from 'components/Button/Button';
 import './Modal.scss';
 

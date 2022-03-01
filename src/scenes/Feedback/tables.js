@@ -121,9 +121,9 @@ export const loadingTable = {
       tData1: "failIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-exclamation</strong>".
+          Fontawesome i.e. "<strong>fa-solid fa-exclamation-circle</strong>".
         </Fragment>,
-      tData3: <i className="fa-solid fa-exclamation" />
+      tData3: <i className="fa-solid fa-exclamation-circle" />
     },
     {
       tData1: "failText",

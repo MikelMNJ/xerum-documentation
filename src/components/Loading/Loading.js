@@ -35,7 +35,7 @@ const Loading = props => {
         <Fragment>
           {!noIcon && (
             <Fragment>
-              <i className={iconValid(failIcon) || "fa-solid fa-exclamation"} /> &nbsp;
+              <i className={iconValid(failIcon) || "fa-solid fa-exclamation-circle"} /> &nbsp;
             </Fragment>
           )}
 

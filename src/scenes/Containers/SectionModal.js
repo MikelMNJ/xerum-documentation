@@ -3,7 +3,7 @@ import { modalCode } from './codeSamples';
 import { modalTable } from './tables';
 import { buildRows } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
-import { dismiss } from 'helpers/animations';
+import { dismiss } from 'helpers/animationHelpers';
 import Button from 'components/Button/Button';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Modal from 'components/Modal/Modal';

@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { badgeCode } from './codeSamples';
 import { badgeTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';

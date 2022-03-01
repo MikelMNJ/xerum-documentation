@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import { iconValid } from 'helpers/validators';
-import { dismiss, slideIn } from 'helpers/animations';
+import { dismiss, slideIn } from 'helpers/animationHelpers';
 import './Notification.scss';
 
 const defaultIcon = "fa-solid fa-info-circle";
