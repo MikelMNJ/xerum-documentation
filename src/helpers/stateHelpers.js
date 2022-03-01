@@ -3,7 +3,7 @@ import { isArray, isEmpty, isObject } from 'lodash';
 import { objectTypeError, objectKeyError, targetError } from 'errors/stateErrors';
 
 export const actionCreator = (type, payload) => {
-  return { type, payload }
+  return { type, payload };
 };
 
 export const useSelector = selector => {
@@ -15,6 +15,13 @@ export const useDispatch = () => {
   const { dispatch } = useStore();
   return dispatch;
 };
+
+export const makeInitialState = reducers => (
+  Object.keys(reducers).reduce((prev, current) => ({
+    ...prev,
+    [current]: reducers[current]()
+  }), {})
+);
 
 export const combineReducers = slices => (state, action) => (
   Object.keys(slices).reduce((prev, current) => ({
