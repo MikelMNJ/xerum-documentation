@@ -64,6 +64,16 @@ export const toTopTable = {
         </Fragment>,
       tData3: <i className="fa-solid fa-angle-up" />
     },
+    {
+      tData1: "iconColor",
+      tData2: "Sets the color of the icon using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#f5f5f5" text="#f5f5f5" />
+    },
+    {
+      tData1: "bgColor",
+      tData2: "Sets the color of the background using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#20232a" text="#20232a" />
+    },
   ],
 };
 
