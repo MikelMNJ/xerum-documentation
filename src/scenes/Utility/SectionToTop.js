@@ -17,14 +17,23 @@ const SectionToTop = props => {
       <div>
         <h3 id="to-top">{`<ToTop />`}</h3>
 
-      <Table content={toTopTable} className="xTable" />
+        <Table content={toTopTable} className="xTable" />
+
+        <strong>Tip</strong>: You can target the following CSS heirarchy for custom
+        styling: <br />
+        {codeSnippet(".yourClassName i {}")}<br />
+
+        <p />
+
+        Your custom <i>className</i> will apply to the&nbsp;
+        {codeSnippet("<ToTop />")} container by default.
+
+        <p />
       </div>
 
       <SampleBox name="To-Top" code={toTopCode}>
         <div className="inline">
-          <ToTop style={sampleTop} />
-          <ToTop style={sampleTop} sharp />
-          <ToTop style={sampleTop} circle />
+          <ToTop style={sampleTop} icon="fa-solid fa-angles-up" />
         </div>
       </SampleBox>
     </Fragment>

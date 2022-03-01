@@ -57,14 +57,12 @@ export const toTopTable = {
   headers,
   rows: [
     {
-      tData1: "sharp",
-      tData2: "Overrides default rounded corner styling with sharp corners.",
-      tData3: null
-    },
-    {
-      tData1: "circle",
-      tData2: "Changes default rounded square styling with circle styling.",
-      tData3: null
+      tData1: "icon",
+      tData2:
+        <Fragment>
+          Fontawesome i.e. "<strong>fa-solid fa-angle-up</strong>".
+        </Fragment>,
+      tData3: <i className="fa-solid fa-angle-up" />
     },
   ],
 };

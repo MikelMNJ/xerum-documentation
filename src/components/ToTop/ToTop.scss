@@ -8,7 +8,6 @@
   bottom: 0;
   right: 0;
   margin: 1.25rem;
-  padding: 1rem;
   border-radius: 0.35rem;
   background-color: black;
   width: 3rem;
@@ -20,18 +19,6 @@
 
   i {
     color: $offWhite;
-    font-size: 2.25rem;
-  }
-
-  &.myTop {
-    bottom: 3rem;
-  }
-
-  &.sharp {
-    border-radius: unset;
-  }
-
-  &.circle {
-    border-radius: 50%;
+    font-size: 2rem;
   }
 }

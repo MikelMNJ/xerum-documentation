@@ -14,9 +14,9 @@ export const authRouteCode = `<Routes>
   </Route>
 </Routes>`;
 
-export const toTopCode = `<ToTop />
-<ToTop sharp />
-<ToTop circle />`;
+export const toTopCode = `<ToTop
+  icon="fa-solid fa-angles-up"
+/>`;
 
 export const aggTimerCode = `<AggTimer timeframe="months" aggregate={3} />`;
 
