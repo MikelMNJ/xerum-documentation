@@ -12,11 +12,11 @@
 
   .tabSlider {
     position: relative;
-    top: -2.17rem;
-    height: 100%;
+    top: -2.15rem;
+    height: 101%;
     background-color: $blue;
     border-radius: 0.35rem;
-    filter: drop-shadow(0 0.1rem 0.05rem black);
+    box-shadow: 0 0.1rem 0.15rem black;
     transition: transform 0.2s ease;
   }
 
@@ -44,14 +44,14 @@
       background-color: transparent;
       color: $offWhite;
       width: 100%;
-      height: 2.4rem;
+      height: 2.25rem;
       font-weight: 600;
       cursor: pointer;
       transition: filter ease 0.2s;
       user-select: none;
 
       &.active {
-        color: $offWhite;
+
       }
 
       @media (hover: hover) {

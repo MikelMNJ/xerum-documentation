@@ -262,10 +262,5 @@ export const tabsTable = {
       tData2: "Sets the color of the inactive tab background using hex format, i.e. #000 or #000000.",
       tData3: <Status color="#4d5153" text="#4d5153" />
     },
-    {
-      tData1: "separatorColor",
-      tData2: "Sets the color of the spacing between tabs using hex format, i.e. #000 or #000000.",
-      tData3: <Status color="#20232a" text="#20232a" />
-    },
   ],
 };
