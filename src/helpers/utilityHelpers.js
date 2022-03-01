@@ -2,6 +2,11 @@ import React from 'react';
 
 export const swatchStyle = color => ({ color, fontSize: "0.6rem" });
 
+export const resetPage = (navigate, pathname) => {
+  navigate(pathname || '/');
+  window.scrollTo(0, 0);
+};
+
 export const codeSnippet = (code, block) => (
   <pre className={block ? "block" : "inline"}>
     <code lang="javascript">

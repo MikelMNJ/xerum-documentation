@@ -47,12 +47,15 @@ export const badgeCode = `// Default
   <Badge className="pos" count={1296} square />
 </Button>`;
 
-export const bannerCode = `<Banner
+export const bannerCode = `const icon = "fa-solid fa-triangle-exclamation";
+
+<Banner
   center
+  noIcon
   className="customBanner"
   callback={handleClose}
 >
-  <i className="fa-solid fa-exclamation" />
+  <i className={icon} />
   <strong>Reminder</strong>:
   Servers will be down.
 </Banner>`;

@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
-import { Routes, Navigate, Route, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { resetPage } from 'helpers/utilityHelpers';
 import Content from 'scenes/Content/Content';
 import navigation from "./navigation";
 import ToTop from "components/ToTop/ToTop";
@@ -11,7 +12,6 @@ import AuthRoute from 'components/AuthRoute/AuthRoute';
 import Filter from 'components/Filter/Filter';
 import "./App.scss";
 
-const startPage = '/';
 const socialNetworks = [
   { path: "https://npmjs.org", icon: "fa-brands fa-npm" },
   { path: "https://github.com/mikelmnj/xerum", icon: "fa-brands fa-github" },
@@ -21,19 +21,15 @@ const data = { components: navigation };
 const MyApp = props => {
   const [ navOpen, setNavOpen ] = useState(false);
   const [ filtered, setFiltered ] = useState([]);
-  const navigate = useNavigate();
-  const mobileNavClasses = `fa-solid fa-${navOpen ? "times" : "bars"}`;
 
-  const resetPage = () => {
-    navigate(startPage);
-    window.scrollTo(0, 0);
-  };
+  const mobileNavClasses = `fa-solid fa-${navOpen ? "times" : "bars"}`;
+  const navigate = useNavigate();
 
   const renderApp = () => {
     return (
       <Fragment>
         <header>
-          <h1 onClick={resetPage}>
+          <h1 onClick={() => resetPage(navigate)}>
             Xerum
             <Social networks={socialNetworks} />
           </h1>
@@ -69,7 +65,7 @@ const MyApp = props => {
               <Route path="/login" element={<p>Log in</p>} />
 
               <Route element={<AuthRoute auth={true} />}>
-                <Route path={startPage} element={<Content />} />
+                <Route path={'/'} element={<Content />} />
               </Route>
 
               {/* 404 -- Unknown Routes */}
@@ -80,7 +76,7 @@ const MyApp = props => {
 
         <footer>
           <Copyright name="Mikel Jagan" />
-          <ToTop className="myTop" />
+          <ToTop />
         </footer>
       </Fragment>
     );
