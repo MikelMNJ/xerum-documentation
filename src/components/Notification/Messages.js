@@ -1,5 +1,5 @@
 import React, { createRef, useEffect, useRef } from 'react';
-import { dismiss } from 'helpers/animations';
+import { dismiss } from 'helpers/animationHelpers';
 import Notification from './Notification';
 import './Notification.scss';
 

@@ -1,5 +1,5 @@
 import React, { Fragment, useRef } from 'react';
-import { dismiss, slideIn, fadeIn } from 'helpers/animations';
+import { dismiss, slideIn, fadeIn } from 'helpers/animationHelpers';
 import { hexValid } from 'helpers/validators';
 import Button from 'components/Button/Button';
 import './Confirm.scss';
