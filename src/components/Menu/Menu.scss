@@ -44,7 +44,7 @@
 .menu.custom {
   position: fixed;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   height: calc(100% - 12.9rem);
   min-width: 16rem;
   transition: all 0.2s ease;
