@@ -7,44 +7,43 @@ const buffer = 0.5;
 const margin = buffer / 2;
 
 const Tabs = props => {
-  const {
-    content,
-    activeColor,
-    inactiveColor,
-    className,
-    ...rest
-  } = props;
+  const { content, activeColor, inactiveColor, className, ...rest } = props;
+
+  const slider = useRef();
+  const tabNames = useRef();
 
   const [ activeTab, setActiveTab ] = useState(content?.[0]?.name);
   const [ sliderStyle, setSliderStyle ] = useState({
+    opacity: 0,
     backgroundColor: activeColor,
+    height: `calc(100% - ${buffer}rem)`,
     width: `calc(100% / ${content.length} - ${buffer}rem)`,
-    transform: `translateX(${calcX() || margin}rem)`
+    transform: `translateX(${posX() || margin}rem)`
   });
 
-  const slider = useRef();
-  const tabContainer = useRef();
-
   useEffect(() => {
-    if (slider.current && tabContainer.current) {
-      const resizeObserver = new ResizeObserver(calcX);
+    if (slider.current && tabNames.current) {
+      const resizeObserver = new ResizeObserver(posX);
       resizeObserver.observe(slider.current)
     }
   }, [activeTab]);
 
-  function calcX() {
-    if (slider?.current && tabContainer?.current) {
+  function posX() {
+    if (slider?.current && tabNames?.current) {
       const index = content.findIndex(tab => activeTab === tab.name);
-      const sliderWidth = slider.current.clientWidth / 16;
+      const sliderWidth = slider.current?.clientWidth / 16;
+      const tabNamesHeight = tabNames.current?.clientHeight / 16;
       const posX = sliderWidth * index;
       const posXMargin = buffer * index;
       const updatedPosX = posX + posXMargin + margin;
       const newStyle = {
         ...sliderStyle,
+        opacity: 1,
+        top: `-${tabNamesHeight - margin}rem`,
         transform: `translateX(${index === -1 ? margin : updatedPosX}rem)`
       };
 
-      setSliderStyle(newStyle);
+      setSliderStyle?.(newStyle);
     }
   };
 
@@ -56,7 +55,7 @@ const Tabs = props => {
 
   const buildTabs = () => (
     <div>
-      <div className="tabNames" style={{ backgroundColor: inactiveColor }}>
+      <div ref={tabNames} className="tabNames" style={{ backgroundColor: inactiveColor }}>
         {content?.map((tab, index) => {
           return (
             <div
@@ -77,7 +76,7 @@ const Tabs = props => {
   );
 
   const buildContent = () => (
-    <div ref={tabContainer} className="tabContent">
+    <div className="tabContent">
       {content?.map((tab, index) => {
         if (tab && activeTab === tab.name) {
           return (
@@ -91,7 +90,7 @@ const Tabs = props => {
   )
 
   return (
-    <div className={`tabContainer ${className}`} {...rest}>
+    <div className={`tabContainer ${className || ""}`} {...rest}>
       {buildTabs()}
       {buildContent()}
     </div>
