@@ -25,11 +25,13 @@
     font-weight: 600;
     width: max-content;
     padding: 0 0.5rem;
-    animation: fadeIn ease 0.5s;
+    user-select: none;
+    transition: transform ease 0.2s;
+    animation: pctIn ease 2s;
   }
 }
 
-@keyframes fadeIn {
+@keyframes pctIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }

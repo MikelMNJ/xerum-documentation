@@ -31,7 +31,7 @@ export const messagesTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-check</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-check</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-info-circle" />
     },
@@ -50,7 +50,7 @@ export const notFoundTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-bug</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-bug</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-bug" />
     },
@@ -108,7 +108,7 @@ export const loadingTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-spinner</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-spinner</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-spinner fa-spin" />
     },
@@ -121,7 +121,7 @@ export const loadingTable = {
       tData1: "failIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-exclamation-circle</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-exclamation-circle</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-exclamation-circle" />
     },
@@ -171,7 +171,7 @@ export const bannerTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-times</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-times</strong>".
         </Fragment>,
       tData3:
         <Fragment>

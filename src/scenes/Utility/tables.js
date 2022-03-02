@@ -14,7 +14,7 @@ export const heartbeatTable = {
       tData1: "icon",
       tData2:
       <Fragment>
-        Fontawesome i.e. "<strong>fa-solid fa-ethernet</strong>".
+        Font Awesome i.e. "<strong>fa-solid fa-ethernet</strong>".
       </Fragment>,
       tData3: <i className="fa-solid fa-ethernet" />
     },
@@ -60,7 +60,7 @@ export const toTopTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-angle-up</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-angle-up</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-angle-up" />
     },

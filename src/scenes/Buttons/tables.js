@@ -16,7 +16,7 @@ export const buttonTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-check</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-check</strong>".
         </Fragment>,
       tData3: null
     },

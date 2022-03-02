@@ -5,6 +5,8 @@ import Percent from 'components/Percent/Percent';
 import colors from 'theme/colors.scss';
 import './Progress.scss';
 
+const buffer = 4;
+
 const Progress = props => {
   const {
     color,
@@ -38,7 +40,7 @@ const Progress = props => {
   };
 
   const pctBarPos = e => {
-    const posX = barWidth >= pctWidth + 4 ? barWidth - pctWidth - 4 : 0;
+    const posX = barWidth >= pctWidth + buffer ? barWidth - pctWidth - buffer : 0;
 
     setPctStyle({
       ...pctStyle,
