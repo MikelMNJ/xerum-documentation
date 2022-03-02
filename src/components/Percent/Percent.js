@@ -11,7 +11,6 @@ const Percent = props => {
     usePlus,
     positiveColor,
     negativeColor,
-    className,
     ...rest
   } = props;
 
