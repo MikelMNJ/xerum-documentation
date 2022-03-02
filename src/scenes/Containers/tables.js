@@ -124,7 +124,7 @@ export const modalTable = {
       tData1: "closeIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-xmark</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-xmark</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-xmark" />
     },
@@ -166,7 +166,7 @@ export const slideOverTable = {
       tData1: "closeIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-arrow-right-long</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-arrow-right-long</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-arrow-right-long" />
     },
@@ -221,7 +221,7 @@ export const tableTable = {
       tData1: "dragIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-grip-vertical</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-grip-vertical</strong>".
         </Fragment>,
       tDAta3: <i className="fa-solid fa-grip-vertical" />
     },

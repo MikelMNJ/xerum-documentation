@@ -8,7 +8,7 @@ export const searchTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-magnifying-glass</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-magnifying-glass</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-magnifying-glass" />
     },
@@ -47,7 +47,7 @@ export const filterTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-filter</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-filter</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-filter" />
     },

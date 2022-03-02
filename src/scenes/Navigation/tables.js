@@ -13,7 +13,7 @@ export const menuTable = {
       tData1: "openIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-caret-right</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-caret-right</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-caret-right" />
     },
@@ -21,7 +21,7 @@ export const menuTable = {
       tData1: "closeIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-caret-down</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-caret-down</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-caret-down" />
     },
@@ -54,7 +54,7 @@ export const paginationTable = {
       tData1: "prevIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-angles-left</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-angles-left</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-angles-left" />
     },
@@ -62,7 +62,7 @@ export const paginationTable = {
       tData1: "pageIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-circle</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-circle</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-circle" />
     },
@@ -70,7 +70,7 @@ export const paginationTable = {
       tData1: "nextIcon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-angles-right</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-angles-right</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-angles-right" />
     },

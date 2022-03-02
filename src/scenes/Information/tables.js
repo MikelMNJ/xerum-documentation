@@ -57,7 +57,7 @@ export const tooltipTable = {
       tData1: "icon",
       tData2:
         <Fragment>
-          Fontawesome i.e. "<strong>fa-solid fa-info-circle</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-info-circle</strong>".
         </Fragment>,
       tData3: <i className="fa-solid fa-info-circle" />
     },
