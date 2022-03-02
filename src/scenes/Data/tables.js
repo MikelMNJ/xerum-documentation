@@ -32,7 +32,7 @@ export const progressTable = {
     },
     {
       tData1: "bgColor",
-      tData2: "Sets the color of the indicator using hex format, i.e. #000 or #000000.",
+      tData2: "Sets the color of the progress track using hex format, i.e. #000 or #000000.",
       tData3: <Status color="#4d5153" text="#4d5153" />
     },
     {
