@@ -36,6 +36,11 @@ class StateManager {
     this.action = action;
   };
 
+  get(stateKey) {
+    const target = this.initialState[stateKey];
+    return target;
+  }
+
   add(stateKey) {
     const workingState = { ...this.initialState };
     let target = workingState[stateKey];
