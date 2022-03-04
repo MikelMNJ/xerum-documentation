@@ -16,7 +16,6 @@ const Tabs = props => {
   const [ sliderStyle, setSliderStyle ] = useState({
     opacity: 0,
     backgroundColor: activeColor,
-    height: `calc(100% - ${buffer}rem)`,
     width: `calc(100% / ${content.length} - ${buffer}rem)`,
     transform: `translateX(${posX() || margin}rem)`
   });
@@ -36,10 +35,13 @@ const Tabs = props => {
       const posX = sliderWidth * index;
       const posXMargin = buffer * index;
       const updatedPosX = posX + posXMargin + margin;
+      const offset = `-${tabNamesHeight - margin}rem`;
       const newStyle = {
         ...sliderStyle,
         opacity: 1,
-        top: `-${tabNamesHeight - margin}rem`,
+        height: `calc(${tabNamesHeight}rem - ${buffer}rem)`,
+        top: offset,
+        marginBottom: offset,
         transform: `translateX(${index === -1 ? margin : updatedPosX}rem)`
       };
 
@@ -87,7 +89,7 @@ const Tabs = props => {
         }
       })}
     </div>
-  )
+  );
 
   return (
     <div className={`tabContainer ${className || ""}`} {...rest}>
