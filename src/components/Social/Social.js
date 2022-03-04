@@ -5,22 +5,13 @@ import './Social.scss';
 const Social = props => {
   const { networks, className, noText, column, ...rest } = props;
 
-  const buildClasses = () => {
-    let classList = "";
-
-    if (className) classList += ` ${className}`;
-    if (column) classList += "column";
-
-    return classList;
-  };
-
   const buildSocial = () => {
     return networks?.map((network, index) => (
       <a
         key={index}
         href={network.path || "" }
         target="_blank"
-        className={buildClasses()}
+        className={column || ""}
         {...rest}
       >
         <i className={iconValid(network.icon)
@@ -32,8 +23,14 @@ const Social = props => {
     ));
   };
 
+  const buildClasses = () => {
+    let classList = "social";
+    if (className) classList += ` ${className}`;
+    return classList;
+  }
+
   return (
-    <div className="social">
+    <div className={buildClasses()}>
       {buildSocial()}
     </div>
   );

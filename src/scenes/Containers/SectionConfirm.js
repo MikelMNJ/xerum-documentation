@@ -20,14 +20,16 @@ const SectionConfirm = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
+        {codeSnippet(".yourClassName {}")}<br />
         {codeSnippet(".yourClassName .title {}")}<br />
         {codeSnippet(".yourClassName .message {}")}<br />
         {codeSnippet(".yourClassName .confirm button {}")}<br />
         {codeSnippet(".yourClassName .cancel button {}")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the confirm container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Confirm />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Confirm" code={confirmCode}>

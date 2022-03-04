@@ -32,9 +32,10 @@ const SectionPagination = props => {
         {codeSnippet(".yourClassName .pageNum {}")}<br />
         {codeSnippet(".yourClassName .next {}")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the pagination container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Pagination />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Pagination" code={paginationCode}>

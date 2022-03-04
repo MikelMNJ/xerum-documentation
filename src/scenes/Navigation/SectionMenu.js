@@ -55,13 +55,15 @@ const SectionMenu = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
+        {codeSnippet(".yourClassName {}")}<br />
         {codeSnippet(".yourClassName .topLevel {}")}<br />
         {codeSnippet(".yourClassName .topLevel .icon {}")}<br />
         {codeSnippet(".yourClassName .topLevel .subMenuIcon {}")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the menu container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Menu />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Menu" code={menuCode}>

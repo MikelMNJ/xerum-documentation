@@ -34,20 +34,21 @@ const SectionSocial = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName i {}")}<br />
+        {codeSnippet(".yourClassName {}")}<br />
+        {codeSnippet(".yourClassName a {}")}<br />
+        {codeSnippet(".yourClassName a i {}")}<br />
 
         <p />
-
-        Your custom <i>className</i> will apply to the {codeSnippet("<a />")} element by default.
-
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Social />")} container by default.
         <p />
       </div>
 
       <SampleBox name="Social" code={socialCode}>
         <div className="column center">
-          <Social networks={socialNetworks} noText />
+          <Social networks={socialNetworks} className="test" noText />
           <br />
-          <Social networks={socialNetworks} />
+          <Social networks={socialNetworks} className="test" />
         </div>
       </SampleBox>
     </Fragment>

@@ -23,13 +23,15 @@ const SectionCard = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
+        {codeSnippet(".yourClassName {}")}<br />
         {codeSnippet(".yourClassName .image {}")}<br />
         {codeSnippet(".yourClassName .text .title {}")}<br />
         {codeSnippet(".yourClassName .footer {}")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the card container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Card />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Card" code={cardCode}>
