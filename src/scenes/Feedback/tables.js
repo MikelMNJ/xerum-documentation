@@ -6,7 +6,15 @@ export const notificationsTable = {
   rows: [
     {
       tData1: "notifications*",
-      tData2: "Array of notifications from app state.",
+      tData2:
+        <Fragment>
+          Array of notifications. Array values must be a
+          string or an object with the following keys:&nbsp;
+          &#123; <strong>message</strong>,&nbsp; <strong>type</strong> &#125;&nbsp;
+          where the value of <strong>message</strong> and <strong>type</strong>&nbsp;
+          are both strings &mdash; <strong>type</strong> must be&nbsp;
+          <strong>success</strong>, <strong>warning</strong> or <strong>error</strong>.
+        </Fragment>,
       tData3: null
     },
     {
@@ -33,7 +41,13 @@ export const notificationsTable = {
         <Fragment>
           Font Awesome i.e. "<strong>fa-solid fa-check</strong>".
         </Fragment>,
-      tData3: <i className="fa-solid fa-info-circle" />
+      tData3:
+        <Fragment>
+          <i className="fa-solid fa-info-circle" />&nbsp;
+          <i className="fa-solid fa-circle-check" />&nbsp;
+          <i className="fa-solid fa-triangle-exclamation" />&nbsp;
+          <i className="fa-solid fa-circle-exclamation" />
+        </Fragment>
     },
     {
       tData1: "noIcon",

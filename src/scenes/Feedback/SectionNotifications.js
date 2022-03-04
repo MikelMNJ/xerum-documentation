@@ -7,7 +7,6 @@ import Notifications from 'components/Notification/Notifications';
 import SampleBox from 'components/SampleBox/SampleBox';
 import { codeSnippet } from 'helpers/utilityHelpers';
 
-
 const SectionNotifications = props => {
   const [ notifications, setNotifications ] = useState([]);
   const length = notifications.length;

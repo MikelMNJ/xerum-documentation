@@ -32,6 +32,18 @@
       grid-template-columns: 1fr 1rem;
     }
 
+    &.success {
+      border-left: 0.5rem solid $green;
+    }
+
+    &.warning {
+      border-left: 0.5rem solid $yellow;
+    }
+
+    &.error {
+      border-left: 0.5rem solid $red;
+    }
+
     .icon {
       display: flex;
       align-items: center;

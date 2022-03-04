@@ -3,7 +3,6 @@ import { dismiss } from 'helpers/animationHelpers';
 import Message from './Message';
 import './Notification.scss';
 
-
 const Notifications = props => {
   const { icon, noIcon, noTime, time, notifications, setNotifications, ...rest } = props;
   const targets = useRef([]);
