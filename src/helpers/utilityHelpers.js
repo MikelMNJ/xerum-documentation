@@ -9,7 +9,7 @@ export const resetPage = (navigate, pathname) => {
 
 export const codeSnippet = (code, block) => (
   <pre className={block ? "block" : "inline"}>
-    <code lang="javascript">
+    <code lang="jsx">
       {code}
     </code>
   </pre>
