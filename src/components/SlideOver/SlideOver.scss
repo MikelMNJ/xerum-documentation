@@ -1,17 +1,16 @@
 @import 'theme/colors';
 
-$rightPos: 0.95rem;
+$rightPos: 0;
 
 .slideOver {
   position: fixed;
-  top: 1rem;
+  top: 0;
   right: $rightPos;
-  z-index: 10;
-  height: calc(100% - 2rem);
+  z-index: 100;
+  height: 100%;
   min-width: 23rem;
   max-width: 23rem;
   padding: 1rem;
-  border-radius: 0.35rem;
   background-color: $offWhite;
   box-shadow: 0 0.1rem 0.15rem #00000080;
   overflow-y: auto;
@@ -52,7 +51,7 @@ $rightPos: 0.95rem;
   }
 
   &.slideOut {
-    animation: slideOverOut cubic-bezier(.75,-0.5,0,1.75) 0.35s;
+    animation: slideOverOut ease 0.35s;
   }
 
   @keyframes slideOverIn {
