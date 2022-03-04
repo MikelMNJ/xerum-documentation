@@ -1,19 +1,27 @@
 import React, { Fragment } from 'react';
 import { headers } from 'helpers/tableHelpers';
 
-export const messagesTable = {
+export const notificationsTable = {
   headers,
   rows: [
     {
-      tData1: "messages*",
-      tData2: "Array of messages from app state.",
+      tData1: "notifications*",
+      tData2:
+        <Fragment>
+          Array of notifications. Array values must be a
+          string or an object with the following keys:&nbsp;
+          &#123; <strong>message</strong>,&nbsp; <strong>type</strong> &#125;&nbsp;
+          where the value of <strong>message</strong> and <strong>type</strong>&nbsp;
+          are both strings &mdash; <strong>type</strong> must be&nbsp;
+          <strong>success</strong>, <strong>warning</strong> or <strong>error</strong>.
+        </Fragment>,
       tData3: null
     },
     {
-      tData1: "setMessages*",
+      tData1: "setNotifications*",
       tData2:
         <Fragment>
-          Action from app state responsible for altering your <strong>messages</strong> selector.
+          Action from app state responsible for altering your <strong>notifications</strong> selector.
         </Fragment>,
       tData3: null
     },
@@ -33,7 +41,13 @@ export const messagesTable = {
         <Fragment>
           Font Awesome i.e. "<strong>fa-solid fa-check</strong>".
         </Fragment>,
-      tData3: <i className="fa-solid fa-info-circle" />
+      tData3:
+        <Fragment>
+          <i className="fa-solid fa-info-circle" />&nbsp;
+          <i className="fa-solid fa-circle-check" />&nbsp;
+          <i className="fa-solid fa-triangle-exclamation" />&nbsp;
+          <i className="fa-solid fa-circle-exclamation" />
+        </Fragment>
     },
     {
       tData1: "noIcon",
@@ -168,7 +182,7 @@ export const bannerTable = {
       tData3: null
     },
     {
-      tData1: "icon",
+      tData1: "closeIcon",
       tData2:
         <Fragment>
           Font Awesome i.e. "<strong>fa-solid fa-times</strong>".
@@ -179,8 +193,8 @@ export const bannerTable = {
         </Fragment>
     },
     {
-      tData1: "noIcon",
-      tData2: "Disables banner callback icon.",
+      tData1: "noClose",
+      tData2: "Disables banner close icon.",
       tData3: null
     },
     {

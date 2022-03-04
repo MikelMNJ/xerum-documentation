@@ -14,10 +14,6 @@ const objectTemplate = `{
   subMenu: [] // Optional array of objects.
 }`;
 
-const sampleMenuStyle = {
-  boxShadow: `0 0.1rem 0.25rem ${colors.warmGrey}`
-};
-
 const links = [
   {
     name: "Home",
@@ -59,17 +55,19 @@ const SectionMenu = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName .topLevel {}")}<br />
-        {codeSnippet(".yourClassName .topLevel .icon {}")}<br />
-        {codeSnippet(".yourClassName .topLevel .subMenuIcon {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .topLevel {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .topLevel .icon {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .topLevel .subMenuIcon {}", false, "css")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the menu container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Menu />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Menu" code={menuCode}>
-        <div style={sampleMenuStyle}>
+        <div className="menu">
           <Menu
             links={links}
             openIcon

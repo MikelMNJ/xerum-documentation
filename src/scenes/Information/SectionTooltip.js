@@ -18,12 +18,14 @@ const SectionTooltip = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName .tip {}")}<br />
-        {codeSnippet(".yourClassName i {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .tip {}", false, "css")}<br />
+        {codeSnippet(".yourClassName i {}", false, "css")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the tool tip container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Tooltip />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Tooltip" code={tooltipCode}>

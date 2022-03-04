@@ -27,14 +27,15 @@ const SectionPagination = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName {}")}<br />
-        {codeSnippet(".yourClassName .prev {}")}<br />
-        {codeSnippet(".yourClassName .pageNum {}")}<br />
-        {codeSnippet(".yourClassName .next {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .prev {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .pageNum {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .next {}", false, "css")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the pagination container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Pagination />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Pagination" code={paginationCode}>

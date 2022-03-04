@@ -15,6 +15,10 @@
       margin: 0.25rem;
     }
 
+    pre.block {
+      width: unset;
+    }
+
     .samples {
       display: flex;
       justify-content: center;
@@ -32,8 +36,39 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, auto);
       }
+
+      .banner {
+        i {
+          color: $yellow;
+        }
+      }
+
+      .menu {
+        border-left: 0.0625rem solid $warmGrey;
+        width: inherit;
+      }
+
+      .headerInstructions,
+      .dragInstructions {
+        margin: 0 !important;
+      }
+
+      .dragInstructions {
+        display: none;
+      }
+
+      .loadingSamples {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
+    &.unset {
+      .samples {
+        display: unset;
+      }
+    }
   }
 }
 
@@ -42,6 +77,18 @@
   #content .sampleBox {
     box-shadow: unset;
     padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #content .sampleBox .samples {
+    .headerInstructions {
+      display: none;
+    }
+
+    .dragInstructions {
+      display: block;
+    }
   }
 }
 

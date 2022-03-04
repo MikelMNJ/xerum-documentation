@@ -5,8 +5,8 @@ import './Banner.scss';
 const Banner = props => {
   const {
     text,
-    noIcon,
-    icon,
+    noClose,
+    closeIcon,
     className,
     callback,
     center,
@@ -19,7 +19,7 @@ const Banner = props => {
     let classList = "banner";
 
     if (className) classList += ` ${className}`;
-    if (noIcon) classList += " noClose";
+    if (noClose) classList += " noClose";
     if (sharp) classList += " sharp";
 
     return classList;
@@ -31,9 +31,9 @@ const Banner = props => {
         {text || children}
       </div>
 
-      {!noIcon && (
+      {!noClose && (
         <div className="close">
-          <i className={iconValid(icon) || "fa-solid fa-times"} onClick={callback} />
+          <i className={iconValid(closeIcon) || "fa-solid fa-times"} onClick={callback} />
         </div>
       )}
     </div>

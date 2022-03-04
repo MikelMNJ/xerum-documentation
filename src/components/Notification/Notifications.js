@@ -1,15 +1,14 @@
 import React, { createRef, useEffect, useRef } from 'react';
 import { dismiss } from 'helpers/animationHelpers';
-import Notification from './Notification';
+import Message from './Message';
 import './Notification.scss';
 
-
-const Messages = props => {
-  const { icon, noIcon, noTime, time, messages, setMessages, ...rest } = props;
+const Notifications = props => {
+  const { icon, noIcon, noTime, time, notifications, setNotifications, ...rest } = props;
   const targets = useRef([]);
 
   useEffect(() => {
-    if (!noTime && messages?.length >= 1) {
+    if (!noTime && notifications?.length >= 1) {
       const timer = setTimeout(() => {
         dismiss({ targets: [ targets.current[0] ], onClose: removeMessage });
         clearTimeout(timer);
@@ -17,21 +16,21 @@ const Messages = props => {
 
       return () => clearTimeout(timer);
     }
-  }, [messages]);
+  }, [notifications]);
 
   function removeMessage(i) {
-    const updatedMsgs = [ ...messages ];
+    const updatedMsgs = [ ...notifications ];
     updatedMsgs.splice(i || 0, 1);
-    if (setMessages) setMessages(updatedMsgs);
+    if (setNotifications) setNotifications(updatedMsgs);
   };
 
-  const buildMessages = () => {
-    const refs = messages?.map((msg, i) => targets.current[i] ?? createRef());
+  const buildNotifications = () => {
+    const refs = notifications?.map((msg, i) => targets.current[i] ?? createRef());
     targets.current = [ ...refs ];
 
-    return messages?.map((msg, i) => {
+    return notifications?.map((msg, i) => {
       return (
-        <Notification
+        <Message
           key={i}
           ref={targets.current[i]}
           message={msg}
@@ -43,10 +42,10 @@ const Messages = props => {
   };
 
   return (
-    <div className="messages">
-      {buildMessages()}
+    <div className="notifications">
+      {buildNotifications()}
     </div>
   );
 };
 
-export default Messages;
+export default Notifications;

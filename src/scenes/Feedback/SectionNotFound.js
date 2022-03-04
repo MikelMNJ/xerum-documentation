@@ -17,12 +17,14 @@ const SectionNotFound = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName h2 {}")}<br />
-        {codeSnippet(".yourClassName p {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName h2 {}", false, "css")}<br />
+        {codeSnippet(".yourClassName p {}", false, "css")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the not found container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<NotFound />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Not Found" code={notFoundCode}>

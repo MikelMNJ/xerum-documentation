@@ -26,14 +26,16 @@ const SectionTabs = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName .tabNames {}")}<br />
-        {codeSnippet(".yourClassName .tabNames .name {}")}<br />
-        {codeSnippet(".yourClassName .tabNames .name.active {}")}<br />
-        {codeSnippet(".yourClassName .tabSlider {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .tabNames {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .tabNames .name {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .tabNames .name.active {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .tabSlider {}", false, "css")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the tabs container by default.
-        </p>
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Tabs />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Tabs" code={tabsCode}>

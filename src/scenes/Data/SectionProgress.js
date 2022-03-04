@@ -18,19 +18,21 @@ const SectionProgress = props => {
 
         <strong>Note</strong>: Use the <strong>color</strong>, <strong>bgColor</strong>&nbsp;
         and <strong>pctColor</strong> props if you need custom colors. A custom <i>className</i>&nbsp;
-        can still be used if desired, but {codeSnippet("!important")} tags may be required
-        to override some styles. Use the following CSS heirarchy for custom styling: <br />
-        {codeSnippet(".yourClassName .progress .pct {}")}
+        can still be used if desired, but {codeSnippet("!important", false, "css")} tags may be required
+        to override some styles.
 
-        <p>
-          A custom <i>className</i> will apply to the
-          the progress container by default.
-        </p>
+        <p />
+        Use the following CSS heirarchy for custom styling: <br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .progress .pct {}", false, "css")}<br />
 
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Progress />")} container by default.
         <p />
       </div>
 
-      <SampleBox name="Progress" code={progressCode}>
+      <SampleBox name="Progress" className="unset" code={progressCode}>
         <Progress
           current={4354.432}
           total={7200}

@@ -11,7 +11,6 @@ const Search = props => {
     btnText,
     noIcon,
     className,
-    btnClassName,
     noButton,
     ...rest
   } = props;
@@ -28,14 +27,13 @@ const Search = props => {
   };
 
   const buildClasses = () => {
-    let classList = "";
+    let classList = "searchContainer";
     if (className) classList += ` ${className}`;
-    if (noIcon) classList += " noIcon";
     return classList;
   };
 
   return (
-    <div className="searchContainer">
+    <div className={buildClasses()}>
       <form
         onSubmit={handleSubmit}
         onKeyDown={e => e.key === 'Enter' && handleSubmit(e)}
@@ -47,7 +45,7 @@ const Search = props => {
 
           <input
             type="text"
-            className={buildClasses()}
+            className={noIcon ? "noIcon" : ""}
             placeholder={placeholder || "Search"}
             value={inputVal}
             onChange={e => setInputVal(e.currentTarget.value)}
@@ -56,8 +54,7 @@ const Search = props => {
         </label>
 
         {!noButton && cloneElement(
-          <Button type="submit" text={btnText || "Search"} />,
-          btnClassName ? { className: btnClassName } : {}
+          <Button type="submit" text={btnText || "Search"} />
         )}
       </form>
     </div>

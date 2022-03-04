@@ -17,10 +17,20 @@ const SectionSearch = props => {
         <Table content={searchTable} className="xTable" />
 
         <strong>Note</strong>: Passing a standard <i>className</i> prop
-        will affect the input field by default.  Use <i>btnClassName</i>&nbsp;
-        to style the button element within the {codeSnippet("<Search />")}&nbsp;
-        component.
+        will affect the input field by default.
 
+        <strong>Tip</strong>: You can target the following CSS heirarchy for custom
+        styling: <br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form label {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form label i {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form label input {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form button {}", false, "css")}<br />
+
+        <p/>
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Search />")} container by default.
         <p />
       </div>
 

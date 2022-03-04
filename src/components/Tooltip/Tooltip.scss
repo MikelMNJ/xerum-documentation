@@ -20,21 +20,6 @@
   }
 }
 
-
-.customTooltip {
-  .tip {
-    font-weight: bold;
-    text-align: center;
-    color: $white;
-    background-color: $blue;
-  }
-
-  i {
-    color: $blue;
-  }
-}
-
-
 /* ========== Media Queries ========== */
 @media only screen and (max-width: 414px) {
 

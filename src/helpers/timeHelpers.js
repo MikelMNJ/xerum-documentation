@@ -250,7 +250,7 @@ export const aggTime = args => {
             <p><strong>Aggregate</strong>: Every {agg} {timeframe} ({totalTimes} total)</p>
             <p><strong>From</strong>: {prev.format(format)}</p>
             <p><strong>To</strong>: {next.format(format)}</p>
-            <p><strong>Local</strong>: {local ? "true" : "false"}</p>
+            <p><strong>UTC</strong>: {!local ? "true" : "false"}</p>
           </div>
 
           <h4>Aggregate Range ({aggCount}/{totalTimes})</h4>
