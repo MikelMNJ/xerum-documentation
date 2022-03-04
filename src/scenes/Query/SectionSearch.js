@@ -36,7 +36,6 @@ const SectionSearch = props => {
 
       <SampleBox name="Search" code={searchCode}>
         <Search
-          className="search"
           btnText="Find it"
           placeholder="Find something..."
           callback={val => console.log(val)}

@@ -43,14 +43,6 @@
         }
       }
 
-      .search {
-        form {
-          button {
-            height: 3rem;
-          }
-        }
-      }
-
       .menu {
         border-left: 0.0625rem solid $warmGrey;
         width: inherit;
@@ -72,6 +64,11 @@
       }
     }
 
+    &.unset {
+      .samples {
+        display: unset;
+      }
+    }
   }
 }
 
