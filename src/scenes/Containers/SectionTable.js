@@ -86,10 +86,10 @@ const SectionTable = props => {
         {codeSnippet(".yourClassName .header {}")}<br />
         {codeSnippet(".yourClassName li {}")}<br />
 
-        <p>
-          Your custom <i>className</i> will apply to the&nbsp;
-          {codeSnippet("<Table />")} container by default.
-        </p>
+        <p />
+        Your custom <i>className</i> will apply to the&nbsp;
+        {codeSnippet("<Table />")} container by default.
+        <p />
       </div>
 
       <SampleBox name="Table" code={tableCode}>
