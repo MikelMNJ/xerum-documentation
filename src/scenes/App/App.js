@@ -10,6 +10,8 @@ import Menu from "components/Menu/Menu";
 import Social from 'components/Social/Social';
 import AuthRoute from 'components/AuthRoute/AuthRoute';
 import Filter from 'components/Filter/Filter';
+import 'theme/prism';
+import 'theme/prism.scss';
 import "./App.scss";
 
 const socialNetworks = [

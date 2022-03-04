@@ -34,9 +34,9 @@ const SectionSocial = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName {}")}<br />
-        {codeSnippet(".yourClassName a {}")}<br />
-        {codeSnippet(".yourClassName a i {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName a {}", false, "css")}<br />
+        {codeSnippet(".yourClassName a i {}", false, "css")}<br />
 
         <p />
           Your custom <i>className</i> will apply to the&nbsp;

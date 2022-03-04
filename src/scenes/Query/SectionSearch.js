@@ -21,12 +21,12 @@ const SectionSearch = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName {}")}<br />
-        {codeSnippet(".yourClassName form {}")}<br />
-        {codeSnippet(".yourClassName form label {}")}<br />
-        {codeSnippet(".yourClassName form label i {}")}<br />
-        {codeSnippet(".yourClassName form label input {}")}<br />
-        {codeSnippet(".yourClassName form button {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form label {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form label i {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form label input {}", false, "css")}<br />
+        {codeSnippet(".yourClassName form button {}", false, "css")}<br />
 
         <p/>
           Your custom <i>className</i> will apply to the&nbsp;

@@ -18,13 +18,13 @@ const SectionProgress = props => {
 
         <strong>Note</strong>: Use the <strong>color</strong>, <strong>bgColor</strong>&nbsp;
         and <strong>pctColor</strong> props if you need custom colors. A custom <i>className</i>&nbsp;
-        can still be used if desired, but {codeSnippet("!important")} tags may be required
+        can still be used if desired, but {codeSnippet("!important", false, "css")} tags may be required
         to override some styles.
 
         <p />
         Use the following CSS heirarchy for custom styling: <br />
-        {codeSnippet(".yourClassName {}")}<br />
-        {codeSnippet(".yourClassName .progress .pct {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .progress .pct {}", false, "css")}<br />
 
         <p />
           Your custom <i>className</i> will apply to the&nbsp;

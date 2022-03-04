@@ -27,7 +27,7 @@ const SectionBadge = props => {
         or <i>style</i> prop with position data should be passed to get proper placement.
         The associated examples use the following CSS:
 
-        {codeSnippet(cssSnippet, true)}
+        {codeSnippet(cssSnippet, true, "css")}
       </div>
 
       <SampleBox name="Badge" code={badgeCode}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 export const swatchStyle = color => ({ color, fontSize: "0.6rem" });
 
@@ -7,13 +7,17 @@ export const resetPage = (navigate, pathname) => {
   window.scrollTo(0, 0);
 };
 
-export const codeSnippet = (code, block) => (
-  <pre className={block ? "block" : "inline"}>
-    <code lang="jsx">
-      {code}
-    </code>
-  </pre>
-);
+export const codeSnippet = (code, block, language) => {
+  const wrappedCode = (
+    <pre className={block ? "block" : "inline"}>
+      <code className={`language-${language || "jsx"}`}>
+        {code}
+      </code>
+    </pre>
+  );
+
+  return wrappedCode;
+};
 
 export const addEvent = (name, func) => {
   window.addEventListener(name, e => func(e));

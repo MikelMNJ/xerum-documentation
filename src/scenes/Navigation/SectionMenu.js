@@ -55,10 +55,10 @@ const SectionMenu = props => {
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
-        {codeSnippet(".yourClassName {}")}<br />
-        {codeSnippet(".yourClassName .topLevel {}")}<br />
-        {codeSnippet(".yourClassName .topLevel .icon {}")}<br />
-        {codeSnippet(".yourClassName .topLevel .subMenuIcon {}")}<br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .topLevel {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .topLevel .icon {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .topLevel .subMenuIcon {}", false, "css")}<br />
 
         <p />
           Your custom <i>className</i> will apply to the&nbsp;
