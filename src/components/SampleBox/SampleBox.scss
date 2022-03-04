@@ -67,6 +67,11 @@
           }
         }
       }
+
+      .menu {
+        border-left: 0.0625rem solid $warmGrey;
+        width: inherit;
+      }
     }
 
   }

@@ -14,10 +14,6 @@ const objectTemplate = `{
   subMenu: [] // Optional array of objects.
 }`;
 
-const sampleMenuStyle = {
-  boxShadow: `0 0.1rem 0.25rem ${colors.warmGrey}`
-};
-
 const links = [
   {
     name: "Home",
@@ -69,7 +65,7 @@ const SectionMenu = props => {
       </div>
 
       <SampleBox name="Menu" code={menuCode}>
-        <div style={sampleMenuStyle}>
+        <div className="menu">
           <Menu
             links={links}
             openIcon
