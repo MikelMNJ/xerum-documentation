@@ -32,7 +32,7 @@ const SectionProgress = props => {
         <p />
       </div>
 
-      <SampleBox name="Progress" code={progressCode}>
+      <SampleBox name="Progress" className="unset" code={progressCode}>
         <Progress
           current={4354.432}
           total={7200}
