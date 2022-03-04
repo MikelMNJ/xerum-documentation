@@ -168,7 +168,7 @@ export const bannerTable = {
       tData3: null
     },
     {
-      tData1: "icon",
+      tData1: "closeIcon",
       tData2:
         <Fragment>
           Font Awesome i.e. "<strong>fa-solid fa-times</strong>".
@@ -179,8 +179,8 @@ export const bannerTable = {
         </Fragment>
     },
     {
-      tData1: "noIcon",
-      tData2: "Disables banner callback icon.",
+      tData1: "noClose",
+      tData2: "Disables banner close icon.",
       tData3: null
     },
     {

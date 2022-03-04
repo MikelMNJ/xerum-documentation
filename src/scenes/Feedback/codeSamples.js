@@ -51,7 +51,7 @@ export const bannerCode = `const icon = "fa-solid fa-triangle-exclamation";
 
 <Banner
   center
-  noIcon
+  noClose
   className="customBanner"
   callback={handleClose}
 >

@@ -32,6 +32,21 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, auto);
       }
+
+      .banner {
+        background-color: $slate;
+
+        i {
+          color: $yellow;
+        }
+
+        .close {
+          i {
+            color: $offWhite;
+          }
+        }
+      }
+
     }
 
   }

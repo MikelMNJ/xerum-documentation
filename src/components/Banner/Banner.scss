@@ -39,20 +39,6 @@
       font-size: 1.25rem;
     }
   }
-
-  &.customBanner {
-    background-color: $slate;
-
-    i {
-      color: $yellow;
-    }
-
-    .close {
-      i {
-        color: $offWhite;
-      }
-    }
-  }
 }
 
 /* ========== Media Queries ========== */
