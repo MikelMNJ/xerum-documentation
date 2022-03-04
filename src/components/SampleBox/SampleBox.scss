@@ -1,6 +1,19 @@
 @import 'theme/colors';
 
 #content {
+  .xTable {
+    .tdContainer {
+      &:first-of-type {
+        font-weight: bold;
+        color: $deepBlue;
+      }
+    }
+
+    li {
+      grid-template-columns: 10rem 1fr 7rem !important;
+    }
+  }
+
   .sampleBox {
     width: 100%;
     padding: 0 0 2rem 1rem;
@@ -60,6 +73,22 @@
 }
 
 /* ========== Media Queries ========== */
+@media only screen and (max-width: 640px) {
+  #content {
+    .xTable {
+      li {
+        grid-template-columns: 1fr !important;
+
+        .inline:first-of-type {
+          .respHeader {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1280px) {
   #content .sampleBox {
     box-shadow: unset;
