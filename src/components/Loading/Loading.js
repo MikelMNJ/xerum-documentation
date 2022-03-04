@@ -39,7 +39,7 @@ const Loading = props => {
             </Fragment>
           )}
 
-          {!noText && (failText || "Load failed.")}
+          {!noText && (failText || "Load fail.")}
         </Fragment>
       );
     }

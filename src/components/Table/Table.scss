@@ -82,15 +82,6 @@ ul.table {
   }
 }
 
-.headerInstructions,
-.dragInstructions {
-  margin: 0 !important;
-}
-
-.dragInstructions {
-  display: none;
-}
-
 /* ========== Media Queries ========== */
 @media only screen and (max-width: 640px) {
   ul.table {
@@ -110,13 +101,5 @@ ul.table {
         border-radius: 0.35rem 0.35rem 0 0;
       }
     }
-  }
-
-  .headerInstructions {
-    display: none;
-  }
-
-  .dragInstructions {
-    display: block;
   }
 }

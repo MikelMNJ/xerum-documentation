@@ -46,9 +46,9 @@ const SectionSocial = props => {
 
       <SampleBox name="Social" code={socialCode}>
         <div className="column center">
-          <Social networks={socialNetworks} className="test" noText />
+          <Social networks={socialNetworks} noText />
           <br />
-          <Social networks={socialNetworks} className="test" />
+          <Social networks={socialNetworks} />
         </div>
       </SampleBox>
     </Fragment>

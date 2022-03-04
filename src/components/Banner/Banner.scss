@@ -8,7 +8,7 @@
   width: 100%;
   min-height: 2rem;
   color: $offWhite;
-  background-color: $blue;
+  background-color: $slate;
   padding: 1rem;
   border-radius: 0.35rem;
 
@@ -29,6 +29,10 @@
     }
   }
 
+  i {
+    color: $offWhite;
+  }
+
   .close {
     display: flex;
     align-items: center;
@@ -37,6 +41,7 @@
     i {
       cursor: pointer;
       font-size: 1.25rem;
+      color: $white;
     }
   }
 }

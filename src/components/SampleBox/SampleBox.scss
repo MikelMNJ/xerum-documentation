@@ -1,19 +1,6 @@
 @import 'theme/colors';
 
 #content {
-  .xTable {
-    .tdContainer {
-      &:first-of-type {
-        font-weight: bold;
-        color: $deepBlue;
-      }
-    }
-
-    li {
-      grid-template-columns: 10rem 1fr 7rem !important;
-    }
-  }
-
   .sampleBox {
     width: 100%;
     padding: 0 0 2rem 1rem;
@@ -26,6 +13,10 @@
     span {
       width: 100%;
       margin: 0.25rem;
+    }
+
+    pre.block {
+      width: unset;
     }
 
     .samples {
@@ -47,16 +38,8 @@
       }
 
       .banner {
-        background-color: $slate;
-
         i {
           color: $yellow;
-        }
-
-        .close {
-          i {
-            color: $offWhite;
-          }
         }
       }
 
@@ -72,32 +55,43 @@
         border-left: 0.0625rem solid $warmGrey;
         width: inherit;
       }
+
+      .headerInstructions,
+      .dragInstructions {
+        margin: 0 !important;
+      }
+
+      .dragInstructions {
+        display: none;
+      }
+
+      .loadingSamples {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
   }
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 640px) {
-  #content {
-    .xTable {
-      li {
-        grid-template-columns: 1fr !important;
-
-        .inline:first-of-type {
-          .respHeader {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media only screen and (max-width: 1280px) {
   #content .sampleBox {
     box-shadow: unset;
     padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #content .sampleBox .samples {
+    .headerInstructions {
+      display: none;
+    }
+
+    .dragInstructions {
+      display: block;
+    }
   }
 }
 

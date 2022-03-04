@@ -11,7 +11,7 @@ const Social = props => {
         key={index}
         href={network.path || "" }
         target="_blank"
-        className={column || ""}
+        className={column ? "column" : ""}
         {...rest}
       >
         <i className={iconValid(network.icon)
