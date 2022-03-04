@@ -61,8 +61,8 @@ const navigation = [
       { name: "Field Error", path: "#field-error", icon: "" },
       { name: "Field Reqs", path: "#field-reqs", icon: "" },
       { name: "Loading", path: "#loading", icon: "" },
-      { name: "Messages", path: "#messages", icon: "" },
       { name: "NotFound", path: "#not-found", icon: "" },
+      { name: "Notifications", path: "#notifications", icon: "" },
     ]
   },
 

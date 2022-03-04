@@ -5,7 +5,7 @@ import './Notification.scss';
 
 const defaultIcon = "fa-solid fa-info-circle";
 
-const Notification = forwardRef((props, ref) => {
+const Message = forwardRef((props, ref) => {
   const { message, icon, noIcon, className, args, ...rest } = props;
   const useIcon = noIcon ? "noIcon" : "";
 
@@ -35,4 +35,4 @@ const Notification = forwardRef((props, ref) => {
   );
 });
 
-export default Notification;
+export default Message;

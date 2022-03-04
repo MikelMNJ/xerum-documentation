@@ -1,22 +1,29 @@
-export const messagesCode = `const newMessage = "You've been notified!";
+export const notificationsCode = `const newNotification = "You've been notified!";
 
 // 1. Ready action/selector array in app state.
-const [ messages, setMessages ] = useState([]);
+const [
+  notifications,
+  setNotifications
+] = useState([]);
 
-// 2. Place Messages component in root component
-// and pass the messages array action/selector.
-<Messages
+// 2. Place Notifications component
+// in root component and pass the
+// notifications array action/selector.
+<Notifications
   time={3000}
-  messages={messages}
-  setMessages={setMessages}
+  notifications={notifications}
+  setNotifications={setNotifications}
 />
 
-// 3. Trigger message action from any
+// 3. Trigger notification action from any
 // component event or API callback.
 <Button
   text="Click to Notify"
   callback={() => (
-    setMessages([ ...messages, newMessage ])
+    setNotifications([
+      ...notifications,
+      newNotification
+    ])
   )}
 />`;
 

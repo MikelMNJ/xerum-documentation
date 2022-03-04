@@ -1,19 +1,19 @@
 import React, { Fragment } from 'react';
 import { headers } from 'helpers/tableHelpers';
 
-export const messagesTable = {
+export const notificationsTable = {
   headers,
   rows: [
     {
-      tData1: "messages*",
-      tData2: "Array of messages from app state.",
+      tData1: "notifications*",
+      tData2: "Array of notifications from app state.",
       tData3: null
     },
     {
-      tData1: "setMessages*",
+      tData1: "setNotifications*",
       tData2:
         <Fragment>
-          Action from app state responsible for altering your <strong>messages</strong> selector.
+          Action from app state responsible for altering your <strong>notifications</strong> selector.
         </Fragment>,
       tData3: null
     },

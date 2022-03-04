@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Messages from './SectionMessages';
+import Notifications from './SectionNotifications';
 import NotFound from './SectionNotFound';
 import Loading from './SectionLoading';
 import Badge from './SectionBadge';
@@ -15,8 +15,8 @@ const Feedback = props => {
       <SectionFieldError />
       <SectionFieldReqs />
       <Loading />
-      <Messages />
       <NotFound />
+      <Notifications />
     </section>
   );
 };
