@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import 'theme/prism';
-import 'theme/prism-onedark.scss';
+import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export const swatchStyle = color => ({ color, fontSize: "0.6rem" });
 
@@ -10,15 +10,15 @@ export const resetPage = (navigate, pathname) => {
 };
 
 export const codeSnippet = (code, block, language) => {
-  const wrappedCode = (
-    <pre className={block ? "block" : "inline"}>
-      <code className={`language-${language || "jsx"}`}>
-        {code}
-      </code>
-    </pre>
+  return (
+    <SyntaxHighlighter
+      className={block ? "block" : "inline"}
+      language={language || "jsx"}
+      style={nord}
+    >
+      {code}
+    </SyntaxHighlighter>
   );
-
-  return wrappedCode;
 };
 
 export const addEvent = (name, func) => {
