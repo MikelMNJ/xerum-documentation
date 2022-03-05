@@ -6,8 +6,7 @@ const reducer = (initialState = {}, action = {}) => {
 
   switch(action.type) {
     case constants.SET_FILTER_RESULTS:
-      const filterResults = constants.STATE_KEY_FILTER_RESULTS;
-      return state.update(filterResults);
+      return state.update(constants.STATE_KEY_FILTER_RESULTS);
 
     default:
       return initialState;
