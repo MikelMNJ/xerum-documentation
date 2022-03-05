@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { filtered } from 'helpers/stateHelpers';
 import SectionHeartbeat from './SectionHeartbeat';
 import SectionAuthRoute from './SectionAuthRoute';
 import SectionToTop from './SectionToTop';
@@ -8,11 +9,11 @@ import SectionStatus from './SectionStatus';
 const Information = props => {
   return (
     <section id="utility">
-      <SectionAggTimer />
-      <SectionAuthRoute />
-      <SectionHeartbeat />
-      <SectionStatus />
-      <SectionToTop />
+      {filtered("AggTimer") && <SectionAggTimer />}
+      {filtered("AuthRoute") && <SectionAuthRoute />}
+      {filtered("Heartbeat") && <SectionHeartbeat />}
+      {filtered("Status") && <SectionStatus />}
+      {filtered("ToTop") && <SectionToTop />}
     </section>
   );
 };

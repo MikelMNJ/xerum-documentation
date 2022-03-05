@@ -13,7 +13,7 @@ import constants from './appConstants';
 */
 
 const appActions = {
-  sampleAction: payload => actionCreator(constants.SAMPLE_ACTION, payload),
+  setFilterResults: payload => actionCreator(constants.SET_FILTER_RESULTS, payload),
 };
 
 export default appActions;

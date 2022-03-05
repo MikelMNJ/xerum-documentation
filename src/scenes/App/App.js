@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { resetPage } from 'helpers/utilityHelpers';
+import { useDispatch } from 'helpers/stateHelpers';
+import appActions from 'modules/app/appActions';
 import Content from 'scenes/Content/Content';
 import navigation from "./navigation";
 import ToTop from "components/ToTop/ToTop";
@@ -22,7 +24,9 @@ const data = { components: navigation };
 
 const MyApp = props => {
   const [ navOpen, setNavOpen ] = useState(false);
+  const dispatch = useDispatch();
 
+  const setFilterResults = payload => dispatch(appActions.setFilterResults(payload));
   const mobileNavClasses = `fa-solid fa-${navOpen ? "times" : "bars"}`;
   const navigate = useNavigate();
 
@@ -50,7 +54,7 @@ const MyApp = props => {
               data={data}
               placeholder="Filter components..."
               include={[ "components.name", "components.subMenu.name" ]}
-              callback={newData => console.log(newData)}
+              callback={newData => setFilterResults(newData)}
             />
           </div>
         </header>

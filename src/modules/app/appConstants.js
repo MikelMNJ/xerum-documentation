@@ -1,10 +1,10 @@
 
 const constants = {
   // Actions
-  SAMPLE_ACTION: "modules/app/SAMPLE_ACTION",
+  SET_FILTER_RESULTS: "modules/app/SET_FILTER_RESULTS",
 
   // Selectors
-  STATE_KEY_SAMPLE_VALUE: "sampleValue",
+  STATE_KEY_FILTER_RESULTS: "filterResults",
 };
 
 export default constants;

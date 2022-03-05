@@ -1,4 +1,5 @@
 import React from 'react';
+import { filtered } from 'helpers/stateHelpers';
 import GettingStarted from 'scenes/GettingStarted/GettingStarted';
 import Buttons from 'scenes/Buttons/Buttons';
 import Feedback from 'scenes/Feedback/Feedback';
@@ -13,7 +14,7 @@ import './Content.scss';
 const Content = props => {
   return (
     <div id="content">
-      <GettingStarted />
+      {filtered("Getting Started") && <GettingStarted />}
       <Buttons />
       <Containers />
       <Data />
