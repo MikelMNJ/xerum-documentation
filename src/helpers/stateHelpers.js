@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useStore } from '../../store';
 import { isArray, isEmpty, isObject } from 'lodash';
 import { objectTypeError, objectKeyError, targetError } from 'errors/stateErrors';
@@ -12,8 +13,11 @@ export const useSelector = selector => {
   if (selector) return selector(state);
 };
 
-const filterResults = () => useSelector(state => appSelectors.filterResults(state));
-export const filtered = name => filterResults()?.includes(name);
+export const filtered = name => {
+  const filterResults = () => useSelector(state => appSelectors.filterResults(state));
+  const filtered = filterResults()?.includes(name);
+  return filtered;
+};
 
 export const useDispatch = () => {
   const { dispatch } = useStore();
