@@ -24,6 +24,7 @@ pre {
   background-color: $deepBlue !important;
   width: fit-content;
   margin: 1rem 0 !important;
+  font-size: 0.9rem !important;
 
   code {
     white-space: pre-wrap !important;
@@ -107,8 +108,14 @@ pre {
 }
 
 /* ========== Media Queries ========== */
-@media only screen and (max-width: 390px) {
-  code {
-    font-size: 0.85rem !important;
+@media only screen and (max-width: 414px) {
+  pre {
+    code {
+      font-size: 0.75rem !important;
+    }
+
+    &.inline {
+      padding: 0.1rem 0.5rem;
+    }
   }
 }

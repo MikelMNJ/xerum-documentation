@@ -1,4 +1,5 @@
 import React from 'react';
+import { filtered } from 'helpers/stateHelpers';
 import SectionCard from './SectionCard';
 import SectionConfirm from './SectionConfirm';
 import SectionModal from './SectionModal';
@@ -9,12 +10,12 @@ import SectionTabs from './SectionTabs';
 const Containers = props => {
   return (
     <section id="containers">
-      <SectionCard />
-      <SectionConfirm />
-      <SectionModal />
-      <SectionSlideOver />
-      <SectionTable />
-      <SectionTabs />
+      {filtered("Card") && <SectionCard />}
+      {filtered("Confirm") && <SectionConfirm />}
+      {filtered("Modal") && <SectionModal />}
+      {filtered("Slide-Over") && <SectionSlideOver />}
+      {filtered("Table") && <SectionTable />}
+      {filtered("Tabs") && <SectionTabs />}
     </section>
   );
 };

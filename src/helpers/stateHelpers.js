@@ -1,6 +1,7 @@
 import { useStore } from '../../store';
 import { isArray, isEmpty, isObject } from 'lodash';
 import { objectTypeError, objectKeyError, targetError } from 'errors/stateErrors';
+import appSelectors from 'modules/app/appSelectors';
 
 export const actionCreator = (type, payload) => {
   return { type, payload };
@@ -10,6 +11,9 @@ export const useSelector = selector => {
   const { state } = useStore();
   if (selector) return selector(state);
 };
+
+const filterResults = () => useSelector(state => appSelectors.filterResults(state));
+export const filtered = name => filterResults()?.includes(name);
 
 export const useDispatch = () => {
   const { dispatch } = useStore();
@@ -35,6 +39,11 @@ class StateManager {
     this.initialState = initialState;
     this.action = action;
   };
+
+  get(stateKey) {
+    const target = this.initialState[stateKey];
+    return target;
+  }
 
   add(stateKey) {
     const workingState = { ...this.initialState };

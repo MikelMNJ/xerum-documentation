@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { filtered } from 'helpers/stateHelpers';
 import Notifications from './SectionNotifications';
 import NotFound from './SectionNotFound';
 import Loading from './SectionLoading';
@@ -10,13 +11,13 @@ import SectionFieldError from './SectionFieldError';
 const Feedback = props => {
   return (
     <section id="feedback">
-      <Badge />
-      <Banner />
-      <SectionFieldError />
-      <SectionFieldReqs />
-      <Loading />
-      <NotFound />
-      <Notifications />
+      {filtered("Badge") && <Badge />}
+      {filtered("Banner") && <Banner />}
+      {filtered("Field Error") && <SectionFieldError />}
+      {filtered("Field Reqs") && <SectionFieldReqs />}
+      {filtered("Loading") && <Loading />}
+      {filtered("NotFound") && <NotFound />}
+      {filtered("Notifications") && <Notifications />}
     </section>
   );
 };

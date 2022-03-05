@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from "react";
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { resetPage } from 'helpers/utilityHelpers';
+import { useDispatch } from 'helpers/stateHelpers';
+import appActions from 'modules/app/appActions';
 import Content from 'scenes/Content/Content';
 import navigation from "./navigation";
 import ToTop from "components/ToTop/ToTop";
@@ -11,7 +13,7 @@ import Social from 'components/Social/Social';
 import AuthRoute from 'components/AuthRoute/AuthRoute';
 import Filter from 'components/Filter/Filter';
 import 'theme/prism';
-import 'theme/prism.scss';
+import 'theme/prism-onedark.scss';
 import "./App.scss";
 
 const socialNetworks = [
@@ -22,8 +24,9 @@ const data = { components: navigation };
 
 const MyApp = props => {
   const [ navOpen, setNavOpen ] = useState(false);
-  const [ filtered, setFiltered ] = useState([]);
+  const dispatch = useDispatch();
 
+  const setFilterResults = payload => dispatch(appActions.setFilterResults(payload));
   const mobileNavClasses = `fa-solid fa-${navOpen ? "times" : "bars"}`;
   const navigate = useNavigate();
 
@@ -42,7 +45,7 @@ const MyApp = props => {
 
               <div>
                 <p className="subTitle">React component library</p>
-                <p>For React v17+</p>
+                <p>For React v16.8+</p>
               </div>
             </div>
 
@@ -51,7 +54,7 @@ const MyApp = props => {
               data={data}
               placeholder="Filter components..."
               include={[ "components.name", "components.subMenu.name" ]}
-              callback={newData => setFiltered(newData)}
+              callback={newData => setFilterResults(newData)}
             />
           </div>
         </header>
