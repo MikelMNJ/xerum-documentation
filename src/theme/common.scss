@@ -24,10 +24,11 @@ pre {
   background-color: $deepBlue !important;
   width: fit-content;
   margin: 1rem 0 !important;
-  font-size: 0.9rem !important;
+  font-size: 0.81rem !important;
 
   code {
-    white-space: pre-wrap !important;
+    font-family: monospace !important;
+    font-weight: 600 !important;
 
     span {
       margin: 0 !important;
@@ -35,12 +36,12 @@ pre {
   }
 
   &.inline {
-    padding: 0.2rem 0.5rem;
-    display: inline;
+    padding: 0.2rem 0.5rem !important;
+    margin: 0.1rem 0 !important;
   }
 
   &.block {
-    padding: 0.75rem;
+    padding: 0.75rem !important;
   }
 }
 
