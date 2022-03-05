@@ -16,5 +16,9 @@ export const objectKeyError = (isArr, key, target) => {
 };
 
 export const targetError = mode => (
-  console.warn(`Unable to find target to ${mode}. Please check key name in state.`)
+  console.warn(`Unable to find target to ${mode}.${mode === 'update'
+      ? " It has been added to state as a new key."
+      : "Please check key name in state."
+    }`
+  )
 );

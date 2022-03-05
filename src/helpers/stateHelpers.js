@@ -108,6 +108,7 @@ class StateManager {
     const indexValid = stringOrIndex >= 0 && stringOrIndex <= target?.length;
 
     if (!target) {
+      targetError('update');
       return this.add(stateKey, stringOrIndex);
     }
 
