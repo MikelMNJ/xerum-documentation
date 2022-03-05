@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react';
+import 'theme/prism';
+import 'theme/prism-onedark.scss';
 
 export const swatchStyle = color => ({ color, fontSize: "0.6rem" });
 
