@@ -14,9 +14,13 @@ export const useSelector = selector => {
 };
 
 export const filtered = name => {
-  const filterResults = () => useSelector(state => appSelectors.filterResults(state));
-  const filtered = filterResults()?.includes(name);
-  return filtered;
+  if (name) {
+    const filterResults = useSelector(state => appSelectors.filterResults(state));
+    const filtered = filterResults?.includes?.(name);
+    return filtered;
+  }
+
+  return true;
 };
 
 export const useDispatch = () => {
