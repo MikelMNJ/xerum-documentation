@@ -19,6 +19,8 @@ const SectionSearch = props => {
         <strong>Note</strong>: Passing a standard <i>className</i> prop
         will affect the input field by default.
 
+        <p />
+
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
         {codeSnippet(".yourClassName {}", false, "css")}<br />

@@ -2,8 +2,7 @@ export const notificationsCode = `const newNotification = "You've been notified!
 
 // 1. Ready action/selector array in app state.
 const [
-  notifications,
-  setNotifications
+  notifications, setNotifications
 ] = useState([]);
 
 // 2. Place Notifications component
@@ -21,8 +20,7 @@ const [
   text="Click to Notify"
   callback={() => (
     setNotifications([
-      ...notifications,
-      newNotification
+      ...notifications, newNotification
     ])
   )}
 />`;
