@@ -51,7 +51,7 @@ class StateManager {
   get(stateKey) {
     const target = this.initialState[stateKey];
     return target;
-  }
+  };
 
   add(stateKey) {
     const workingState = { ...this.initialState };
@@ -62,28 +62,41 @@ class StateManager {
 
     if (payload || payload === "" || payload === null) {
       if (isArr) {
-        const updatedArr = [ ...target ];
+        const updatedArr = [ ...target, payload ];
 
-        updatedArr.push(payload);
-        workingState[stateKey] = updatedArr;
-
-        return workingState;
+        return {
+          ...this.initialState,
+          [stateKey]: updatedArr,
+        };
       }
 
       if (isObj) {
         if (isObject(payload) && !isArray(payload)) {
-          const updatedObj = { ...workingState[stateKey], ...payload };
-          workingState[stateKey] = updatedObj;
-          if (isEmpty(payload)) console.warn("Empty object, state unchanged.")
-          return workingState;
+          if (isEmpty(payload)) {
+            console.warn("Empty object, state unchanged.");
+            return { ...this.initialState };
+          }
+
+          return {
+            ...this.initialState,
+            [stateKey]: {
+              ...this.initialState[stateKey],
+              ...payload,
+            }
+          };
         }
 
-        return objectTypeError(payload, target);
+        objectTypeError(payload, target);
+        return { ...this.initialState };
       }
 
-      workingState[stateKey] = payload;
-      return workingState;
+      return {
+        ...this.initialState,
+        [stateKey]: payload,
+      };
     }
+
+    return { ...this.initialState };
   };
 
   update(stateKey, stringOrIndex) {
@@ -94,17 +107,23 @@ class StateManager {
     const payload = this.action.payload;
     const indexValid = stringOrIndex >= 0 && stringOrIndex <= target?.length;
 
-    if (!target) return targetError('update');
+    if (!target) {
+      targetError('update');
+      return this.add(stateKey, stringOrIndex);
+    }
 
     if (payload || payload === "" || payload === null) {
       if (isArr && indexValid) {
         const index = stringOrIndex;
-        const updatedArr = [ ...target ];
+        const updatedArr = target.map((item, i) => {
+          if (i === index) return payload;
+          return item;
+        });
 
-        updatedArr.splice(index, 1, payload);
-        workingState[stateKey] = updatedArr;
-
-        return workingState;
+        return {
+          ...this.initialState,
+          [stateKey]: updatedArr,
+        };
       }
 
       if (isObj) {
@@ -112,18 +131,27 @@ class StateManager {
         const validKey = typeof stringOrIndex === "string" && target[key];
 
         if (validKey) {
-          target[key] = payload;
-          return workingState;
+          return {
+            ...this.initialState,
+            [stateKey]: {
+              ...this.initialState[stateKey],
+              [key]: payload
+            }
+          };
         }
 
         if (!key) {
-          workingState[stateKey] = payload;
-          return workingState;
+          return {
+            ...this.initialState,
+            [stateKey]: payload
+          };
         }
 
-        return objectKeyError(isArr, key, target);
+        objectKeyError(isArr, key, target);
       }
     }
+
+    return { ...this.initialState };
   };
 
   remove(stateKey, stringOrIndex) {
@@ -133,17 +161,16 @@ class StateManager {
     const isObj = isObject(target);
     const indexValid = stringOrIndex >= 0 && stringOrIndex <= target?.length;
 
-    if (!target) return targetError('remove');
+    if (!target) targetError('remove');
 
     if (isArr && indexValid) {
       const index = stringOrIndex;
-      const updatedArr = [ ...target ];
+      const updatedArr = target.filter((item, i) => i !== index);
 
-      updatedArr.splice(index, 1);
-      workingState[stateKey] = updatedArr;
-      console.log(workingState);
-
-      return workingState;
+      return {
+        ...this.initialState,
+        [stateKey]: updatedArr,
+      };
     }
 
     if (isObj) {
@@ -151,19 +178,23 @@ class StateManager {
       const validKey = typeof stringOrIndex === "string" && target[key];
 
       if (validKey) {
-        delete target[key];
-        console.log(workingState);
-        return workingState;
+        const { [key]: value, ...rest } = target;
+
+        return {
+          ...this.initialState,
+          [stateKey]: { ...rest },
+        };
       }
 
       if (!key) {
-        delete workingState[stateKey];
-        console.log(workingState)
-        return workingState;
+        const { [stateKey]: value, ...rest } = this.initialState;
+        return { ...rest };
       }
 
-      return objectKeyError(isArr, key, target);
+      objectKeyError(isArr, key, target);
     }
+
+    return { ...this.initialState };
   };
 };
 
