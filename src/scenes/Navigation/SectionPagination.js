@@ -40,7 +40,6 @@ const SectionPagination = props => {
 
       <SampleBox name="Pagination" code={paginationCode}>
         <Pagination
-          className="test"
           totalPages={res.total_pages}
           currentPage={res.current_page}
           onPageChange={page => req({ ...defaultRes, current_page: page })}

@@ -41,7 +41,6 @@ const SectionConfirm = props => {
 
         {visible && (
           <Confirm
-            className="custom"
             title="Confirm Title..."
             message="You have asked the user to respond."
             onConfirm={() => null}
