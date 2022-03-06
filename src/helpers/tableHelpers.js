@@ -6,6 +6,7 @@ import TRow from 'components/Table/TRow';
 import TData from 'components/Table/TData';
 
 export const headers = [ "NAME", "DESCRIPTION", "DEFAULT" ];
+export const columnLayout = "10rem 1fr 7rem";
 
 const sort = (rows, headerIndex, ascending) => {
   const sorted = rows?.sort((a, b) => {

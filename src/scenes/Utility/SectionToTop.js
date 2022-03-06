@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { toTopCode } from './codeSamples';
 import { toTopTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -18,7 +18,7 @@ const SectionToTop = props => {
       <div>
         <h3 id="to-top">{`<ToTop />`}</h3>
 
-        <Table content={toTopTable} className="xTable" />
+        <Table content={toTopTable} className="xTable" columnLayout={columnLayout} />
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />

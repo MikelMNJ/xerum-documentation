@@ -1,13 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { loadingCode } from './codeSamples';
 import { loadingTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Loading from 'components/Loading/Loading';
 import Button from 'components/Button/Button';
-import colors from 'theme/colors.scss';
 
 const styles = {
   display: "flex",
@@ -52,7 +51,7 @@ const SectionLoading = props => {
       <div>
         <h3 id="loading">{`<Loading />`}</h3>
 
-        <Table content={loadingTable} className="xTable" />
+        <Table content={loadingTable} className="xTable" columnLayout={columnLayout} />
 
         <p>
           *Required prop.

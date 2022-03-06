@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { confirmCode } from './codeSamples';
 import { confirmTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Confirm from 'components/Confirm/Confirm';
@@ -16,7 +16,7 @@ const SectionConfirm = props => {
       <div>
         <h3 id="confirm">{`<Confirm />`}</h3>
 
-        <Table content={confirmTable} className="xTable" />
+        <Table content={confirmTable} className="xTable" columnLayout={columnLayout} />
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />

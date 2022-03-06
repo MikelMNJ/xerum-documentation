@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { bannerCode } from './codeSamples';
 import { bannerTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -13,7 +13,7 @@ const SectionBanner = props => {
       <div>
         <h3 id="banner">{`<Banner />`}</h3>
 
-        <Table content={bannerTable} className="xTable" />
+        <Table content={bannerTable} className="xTable" columnLayout={columnLayout} />
 
         <strong>Note</strong>: The {codeSnippet("<Banner />")} component will take up
         all of the available width in its parent container by default.

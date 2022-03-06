@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { percentCode } from './codeSamples';
 import { percentTable } from './tables';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -14,7 +15,7 @@ const SectionPercent = props => {
         <h2 id="percent">Data</h2>
         <h3>{`<Percent />`}</h3>
 
-        <Table content={percentTable} className="xTable" />
+        <Table content={percentTable} className="xTable" columnLayout={columnLayout} />
 
         <p />
       </div>

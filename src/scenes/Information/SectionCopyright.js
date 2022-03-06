@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { copyrightCode } from './codeSamples';
 import { copyrightTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -19,7 +19,7 @@ const SectionCopyright = props => {
         <h2 id="copyright">Information</h2>
         <h3>{`<Copyright />`}</h3>
 
-        <Table content={copyrightTable} className="xTable" />
+        <Table content={copyrightTable} className="xTable" columnLayout={columnLayout} />
 
         * Required prop.
       </div>

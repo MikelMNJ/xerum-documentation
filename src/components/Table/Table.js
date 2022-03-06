@@ -29,14 +29,15 @@ const Table = props => {
     labelColor,
     labelBG,
     dragIcon,
-    rest
+    columnLayout,
+    ...rest
   } = props;
 
   const [ ascending, setAscending ] = useState(sortable ? false : null);
   const [ sortedColumn, setSortedColumn ] = useState(sortable && defaultSort || null);
 
   const borderStyle = { borderLeft: labelPresent(content?.rows, hexValid(labelBG)) };
-  const columnStyle = { gridTemplateColumns: `repeat(${columns()}, 1fr)`, ...style };
+  const columnStyle = { gridTemplateColumns: columnLayout || `repeat(${columns()}, 1fr)`, ...style };
   const labelStyle = { color: hexValid(labelColor) };
   const args = {
     headers: content?.headers,

@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import { notificationsCode } from './codeSamples';
 import { notificationsTable } from './tables';
+import { codeSnippet } from 'helpers/utilityHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import Table from 'components/Table/Table';
 import Button from 'components/Button/Button';
 import Notifications from 'components/Notification/Notifications';
 import SampleBox from 'components/SampleBox/SampleBox';
-import { codeSnippet } from 'helpers/utilityHelpers';
 
 const SectionNotifications = props => {
   const [ notifications, setNotifications ] = useState([]);
@@ -22,7 +23,7 @@ const SectionNotifications = props => {
       <div>
         <h3 id="notifications">{`<Notifications />`}</h3>
 
-        <Table content={notificationsTable} className="xTable" />
+        <Table content={notificationsTable} className="xTable" columnLayout={columnLayout} />
 
         <p>
           *Required prop.

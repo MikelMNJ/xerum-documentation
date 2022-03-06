@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { slideOverCode } from './codeSamples';
 import { slideOverTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import { dismiss } from 'helpers/animationHelpers';
 import Button from 'components/Button/Button';
@@ -28,7 +28,7 @@ const SectionSlideOver = props => {
       <div>
         <h3 id="slide-over">{`<SlideOver />`}</h3>
 
-        <Table content={slideOverTable} className="xTable" />
+        <Table content={slideOverTable} className="xTable" columnLayout={columnLayout} />
       </div>
 
       <SampleBox name="Slide-Over" code={slideOverCode}>

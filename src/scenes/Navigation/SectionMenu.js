@@ -2,10 +2,10 @@ import React, { Fragment } from "react";
 import { menuCode } from './codeSamples';
 import { menuTable } from './tables';
 import { codeSnippet } from 'helpers/utilityHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Menu from 'components/Menu/Menu';
-import colors from 'theme/colors.scss';
 
 const objectTemplate = `{
   name, // Friendly name to display on menu.
@@ -43,7 +43,7 @@ const SectionMenu = props => {
         <h2 id="menu">Navigation</h2>
         <h3>{`<Menu />`}</h3>
 
-        <Table content={menuTable} className="xTable" />
+        <Table content={menuTable} className="xTable" columnLayout={columnLayout} />
 
         <strong>Note</strong>: Your <strong>links</strong> array must contain objects with the
         following keys: {codeSnippet(objectTemplate, true)}

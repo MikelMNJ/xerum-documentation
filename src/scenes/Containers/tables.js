@@ -235,6 +235,15 @@ export const tableTable = {
       tData2: "Sets the color of the label background using hex format, i.e. #000 or #000000.",
       tData3: <Status color="#20232a" text="#20232a" />
     },
+    {
+      tData1: "columnLayout",
+      tData2:
+        <Fragment>
+          Overrides dynamically created, evenly spaced, columns with grid-based formatting
+          i.e. "10rem 1fr 7rem" or "repeat(3, 1fr)".
+        </Fragment>,
+      tData3: "-"
+    }
   ],
 };
 

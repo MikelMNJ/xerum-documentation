@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import { heartbeatCode } from './codeSamples';
 import { heartbeatTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -45,7 +45,7 @@ const SectionHeartbeat = props => {
       <div>
         <h3 id="heartbeat">{`<Heartbeat />`}</h3>
 
-        <Table content={heartbeatTable} className="xTable" />
+        <Table content={heartbeatTable} className="xTable" columnLayout={columnLayout} />
 
         <p>
           <strong>Tip</strong>: It is recommended to pass your <i>NODE_ENV</i>&nbsp;

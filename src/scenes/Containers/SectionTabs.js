@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
 import { tabsCode } from './codeSamples';
 import { tabsTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Tabs from 'components/Tabs/Tabs';
 import Table from 'components/Table/Table';
-import colors from 'theme/colors.scss';
 
 const content = [
   { name: "Tab 1", content: "Content 1" },
@@ -20,7 +19,7 @@ const SectionTabs = props => {
       <div>
         <h3 id="tabs">{`<Tabs />`}</h3>
 
-        <Table content={tabsTable} className="xTable" />
+        <Table content={tabsTable} className="xTable" columnLayout={columnLayout} />
 
         <p>*Required prop.</p>
 
