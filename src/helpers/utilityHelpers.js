@@ -9,6 +9,17 @@ export const resetPage = (navigate, pathname) => {
   window.scrollTo(0, 0);
 };
 
+export const buildClasses = (classes, defaultClass) => {
+  let classList = defaultClass || "";
+
+  classes?.forEach(item => {
+    const { condition, name } = item;
+    if (condition) classList += ` ${name}`;
+  });
+
+  return classList;
+};
+
 export const codeSnippet = (code, block, language) => {
   return (
     <SyntaxHighlighter
