@@ -10,8 +10,12 @@ import { codeSnippet } from 'helpers/utilityHelpers';
 const SectionNotifications = props => {
   const [ notifications, setNotifications ] = useState([]);
   const length = notifications.length;
-  const newNotification = `You've been notified${length === 0 ? "!" : ", "}`;
   const again = `again! (${length})`;
+
+  const newNotification = type => ({
+    message: `You've been notified${length === 0 ? "!" : ", "}${length > 0 ? again : ""}`,
+    type
+  });
 
   return (
     <Fragment>
@@ -37,12 +41,35 @@ const SectionNotifications = props => {
       </div>
 
       <SampleBox name="Notifications" code={notificationsCode}>
-        <Button text="Click to Notify"
-          callback={() => setNotifications([
-            ...notifications,
-            `${newNotification}${length > 0 ? again : ""}`
-          ])}
-        />
+        <div className="notificationSamples">
+          <Button text="Standard notify"
+            callback={() => setNotifications([
+              ...notifications,
+              newNotification()
+            ])}
+          />
+
+          <Button text="Success notify"
+            callback={() => setNotifications([
+              ...notifications,
+              newNotification("success")
+            ])}
+          />
+
+          <Button text="Warning notify"
+            callback={() => setNotifications([
+              ...notifications,
+              newNotification("warning")
+            ])}
+          />
+
+          <Button text="Error notify"
+            callback={() => setNotifications([
+              ...notifications,
+              newNotification("error")
+            ])}
+          />
+        </div>
 
         <Notifications
           time={3000}

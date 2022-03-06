@@ -10,9 +10,9 @@ export const notificationsTable = {
         <Fragment>
           Array of notifications. Array values must be a
           string or an object with the following keys:&nbsp;
-          &#123; <strong>message</strong>,&nbsp; <strong>type</strong> &#125;&nbsp;
-          where the value of <strong>message</strong> and <strong>type</strong>&nbsp;
-          are both strings &mdash; <strong>type</strong> must be&nbsp;
+          &#123; <strong>message</strong>,&nbsp; <strong>type</strong>, &nbsp;
+          <strong>icon</strong> &#125; all string values, with <strong>icon</strong>&nbsp;
+          being Font Awesome &mdash; <strong>type</strong> must be&nbsp;
           <strong>success</strong>, <strong>warning</strong> or <strong>error</strong>.
         </Fragment>,
       tData3: null
@@ -36,22 +36,8 @@ export const notificationsTable = {
       tData3: null
     },
     {
-      tData1: "icon",
-      tData2:
-        <Fragment>
-          Font Awesome i.e. "<strong>fa-solid fa-check</strong>".
-        </Fragment>,
-      tData3:
-        <Fragment>
-          <i className="fa-solid fa-info-circle" />&nbsp;
-          <i className="fa-solid fa-circle-check" />&nbsp;
-          <i className="fa-solid fa-triangle-exclamation" />&nbsp;
-          <i className="fa-solid fa-circle-exclamation" />
-        </Fragment>
-    },
-    {
-      tData1: "noIcon",
-      tData2: "Disables notification icon.",
+      tData1: "noIcons",
+      tData2: "Disables notification icons.",
       tData3: null
     },
   ],
