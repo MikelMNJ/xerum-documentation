@@ -1,6 +1,6 @@
 @import 'theme/colors';
 
-$topPos: 1rem;
+$topPos: 0;
 
 .modalBG {
   position: fixed;
@@ -35,8 +35,8 @@ $topPos: 1rem;
   top: $topPos;
   right: 0;
   left: 0;
-  margin-left: auto;
-  margin-right: auto;
+  bottom: 0;
+  margin: auto;
   z-index: 200;
   max-height: calc(100% - 2rem);
   max-width: calc(100% - 2rem);
@@ -90,13 +90,13 @@ $topPos: 1rem;
   }
 
   @keyframes modalIn {
-    0% { top: -5rem; opacity: 0 }
-    100% { top: $topPos; opacity: 1 }
+    0% { top: -5rem; opacity: 0; }
+    100% { top: $topPos; opacity: 1; }
   }
 
   @keyframes modalOut {
-    0% { top: $topPos; opacity: 1 }
-    100% { top: -5rem; opacity: 0 }
+    0% { top: $topPos; opacity: 1; }
+    100% { top: -5rem; opacity: 0; }
   }
 }
 
