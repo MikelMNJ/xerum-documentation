@@ -1,22 +1,18 @@
 import React from 'react';
 import { Field, getIn } from 'formik';
+import { buildClasses } from 'helpers/utilityHelpers';
 import { isEmpty } from 'lodash';
 import './FieldError.scss';
 
 const FieldError = props => {
   const { name, className, ...rest } = props;
 
+  const classes = [
+    { condition: className, name: className },
+  ];
+
   const buildFieldError = () => {
     if (name) {
-
-      const buildClasses = () => {
-        let classList = "fieldError";
-
-        if (className) classList += ` ${className}`;
-
-        return classList;
-      };
-
       return (
         <Field name={name}>
           {({ form }) => {
@@ -27,7 +23,7 @@ const FieldError = props => {
 
             if (showError) {
               return (
-                <div className={buildClasses()} {...rest}>
+                <div className={buildClasses(classes, "fieldError")} {...rest}>
                   {msg}
                 </div>
               );

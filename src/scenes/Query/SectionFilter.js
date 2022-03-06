@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { filterCode } from './codeSamples';
 import { filterTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import { isEmpty } from 'lodash';
 import Table from 'components/Table/Table';
@@ -65,7 +65,7 @@ const SectionFilter = props => {
         <h2 id="filter">Query</h2>
         <h3>{`<Filter />`}</h3>
 
-        <Table content={filterTable} className="xTable" />
+        <Table content={filterTable} className="xTable" columnLayout={columnLayout} />
 
         <strong>Note</strong>: Unlike the {codeSnippet("<Search />")}&nbsp;
         component, the {codeSnippet("<Filter />")} component filters

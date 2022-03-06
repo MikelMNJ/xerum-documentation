@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { statusCode } from './codeSamples';
 import { statusTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -14,7 +14,7 @@ const SectionStatus = props => {
       <div>
         <h3 id="status">{`<Status />`}</h3>
 
-        <Table content={statusTable} className="xTable" />
+        <Table content={statusTable} className="xTable" columnLayout={columnLayout} />
 
         <p>
           <strong>Note</strong>: The examples provided are hard-coded for clarity,

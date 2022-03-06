@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import React, { useState, useEffect } from 'react';
-import { stringToArray, lowercaseArray } from 'helpers/utilityHelpers';
+import { stringToArray, lowercaseArray, buildClasses } from 'helpers/utilityHelpers';
 import { iconValid } from 'helpers/validators';
 import { every, isArray, isObject, isString } from 'lodash';
 import colors from 'theme/colors.scss';
@@ -21,6 +21,10 @@ const Filter = props => {
   } = props;
 
   const [ filterValue, setFilterValue ] = useState("");
+
+  const classes = [
+    { condition: className, name: className },
+  ];
 
   const digDeep = (path, value) => {
     let workingVal = value;
@@ -115,14 +119,8 @@ const Filter = props => {
     };
   }, [filterValue]);
 
-  const buildClasses = () => {
-    let classList = "filter";
-    if (className) classList += ` ${className}`;
-    return classList;
-  };
-
   return (
-    <div className={buildClasses()} {...rest}>
+    <div className={buildClasses(classes, "filter")} {...rest}>
       {!noIcon && (
         <i className={iconValid(icon) || "fa-solid fa-filter"} />
       )}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { iconValid } from 'helpers/validators';
+import { buildClasses } from 'helpers/utilityHelpers';
 import './Pagination.scss';
 
 const Pagination = props => {
@@ -20,6 +21,10 @@ const Pagination = props => {
   const onLast = page === total;
   const prev = !onFirst && page - 1;
   const next = !onLast && page + 1;
+
+  const classes = [
+    { condition: className, name: className },
+  ];
 
   const changePage = num => {
     const isDifferent = page !== num;
@@ -54,14 +59,8 @@ const Pagination = props => {
     return renderContent;
   };
 
-  const buildClasses = () => {
-    let classList = "pagination";
-    if (className) classList += ` ${className}`;
-    return classList;
-  }
-
   return (
-    <div className={buildClasses()} {...rest}>
+    <div className={buildClasses(classes, "pagination")} {...rest}>
       <i
         className={`prev ${icon(prevIcon, "angles-left")}`}
         onClick={() => changePage(prev)}

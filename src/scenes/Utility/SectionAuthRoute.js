@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { authRouteCode } from './codeSamples';
 import { authRouteTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -47,7 +47,7 @@ const SectionAuthRoute = props => {
       <div>
         <h3 id="auth-route">{`<AuthRoute />`}</h3>
 
-        <Table content={authRouteTable} className="xTable" />
+        <Table content={authRouteTable} className="xTable" columnLayout={columnLayout} />
 
         {codeSnippet("<AuthRoute />")} should be placed in React Router's&nbsp;
         <em>element</em> prop, with the actual {codeSnippet("<Route />")} you

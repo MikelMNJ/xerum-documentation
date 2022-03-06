@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { fieldErrorCode } from './codeSamples';
 import { fieldErrorTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
@@ -32,7 +32,7 @@ const SectionFieldError = props => {
       <div>
         <h3 id="field-error">{`<FieldError />`}</h3>
 
-        <Table content={fieldErrorTable} className="xTable" />
+        <Table content={fieldErrorTable} className="xTable" columnLayout={columnLayout} />
 
         <p>*Required Prop.</p>
 

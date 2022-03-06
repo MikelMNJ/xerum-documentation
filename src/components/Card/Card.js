@@ -1,6 +1,6 @@
 import React from 'react';
 import { urlValid } from 'helpers/validators';
-import { trimText } from 'helpers/utilityHelpers';
+import { trimText, buildClasses } from 'helpers/utilityHelpers';
 import './Card.scss';
 
 const Card = props => {
@@ -19,23 +19,20 @@ const Card = props => {
 
   const imgStyle = { backgroundImage: `url("${urlValid(image)}")` };
   const titleStyle = { color: titleColor };
+  const classes = [
+    { condition: className, name: className },
+    { condition: vertical, name: "vertical" },
+  ];
 
   const handleClick = e => {
     const validUrl = urlValid(url);
     if (validUrl) window.open(validUrl, rest.target || "_blank");
   };
 
-  const buildClasses = () => {
-    let classList = "cardContainer";
-    if (className) classList += ` ${className}`;
-    if (vertical) classList += " vertical";
-    return classList;
-  };
-
   const isolated = condition => condition ? "noVertical" : "";
 
   return (
-    <div className={buildClasses()} {...rest}>
+    <div className={buildClasses(classes, "cardContainer")} {...rest}>
       {image && (
         <div
           className={`image ${isolated(!footer && !vertical)}`}

@@ -1,24 +1,29 @@
 import React, { Fragment, useState } from 'react';
 import { notificationsCode } from './codeSamples';
 import { notificationsTable } from './tables';
+import { codeSnippet } from 'helpers/utilityHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import Table from 'components/Table/Table';
 import Button from 'components/Button/Button';
 import Notifications from 'components/Notification/Notifications';
 import SampleBox from 'components/SampleBox/SampleBox';
-import { codeSnippet } from 'helpers/utilityHelpers';
 
 const SectionNotifications = props => {
   const [ notifications, setNotifications ] = useState([]);
   const length = notifications.length;
-  const newNotification = `You've been notified${length === 0 ? "!" : ", "}`;
   const again = `again! (${length})`;
+
+  const newNotification = type => ({
+    message: `You've been notified${length === 0 ? "!" : ", "}${length > 0 ? again : ""}`,
+    type
+  });
 
   return (
     <Fragment>
       <div>
         <h3 id="notifications">{`<Notifications />`}</h3>
 
-        <Table content={notificationsTable} className="xTable" />
+        <Table content={notificationsTable} className="xTable" columnLayout={columnLayout} />
 
         <p>
           *Required prop.
@@ -37,12 +42,35 @@ const SectionNotifications = props => {
       </div>
 
       <SampleBox name="Notifications" code={notificationsCode}>
-        <Button text="Click to Notify"
-          callback={() => setNotifications([
-            ...notifications,
-            `${newNotification}${length > 0 ? again : ""}`
-          ])}
-        />
+        <div className="notificationSamples">
+          <Button text="Standard notify"
+            callback={() => setNotifications([
+              ...notifications,
+              newNotification()
+            ])}
+          />
+
+          <Button text="Success notify"
+            callback={() => setNotifications([
+              ...notifications,
+              newNotification("success")
+            ])}
+          />
+
+          <Button text="Warning notify"
+            callback={() => setNotifications([
+              ...notifications,
+              newNotification("warning")
+            ])}
+          />
+
+          <Button text="Error notify"
+            callback={() => setNotifications([
+              ...notifications,
+              newNotification("error")
+            ])}
+          />
+        </div>
 
         <Notifications
           time={3000}

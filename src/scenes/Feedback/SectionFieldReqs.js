@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { fieldReqsCode } from './codeSamples';
 import { fieldReqsTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -16,7 +16,7 @@ const SectionFieldReqs = props => {
       <div>
         <h3 id="field-reqs">{`<FieldReqs />`}</h3>
 
-        <Table content={fieldReqsTable} className="xTable" />
+        <Table content={fieldReqsTable} className="xTable" columnLayout={columnLayout} />
 
         <p>*Required Prop.</p>
 

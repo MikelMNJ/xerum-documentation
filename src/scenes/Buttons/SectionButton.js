@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { buttonCode } from './codeSamples';
 import { buttonTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Button from 'components/Button/Button';
@@ -14,7 +14,7 @@ const SectionButton = props => {
         <h2 id="button">Buttons</h2>
         <h3>{`<Button />`}</h3>
 
-        <Table content={buttonTable} className="xTable" />
+        <Table content={buttonTable} className="xTable" columnLayout={columnLayout} />
 
         <strong>Tip</strong>: The <strong>passthrough</strong> prop is handy if your&nbsp;
         {codeSnippet("<Button />")} component is a child of an element that already has a click

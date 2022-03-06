@@ -1,6 +1,7 @@
 import React, { Fragment, useRef } from 'react';
 import { dismiss, slideIn, fadeIn } from 'helpers/animationHelpers';
 import { hexValid } from 'helpers/validators';
+import { buildClasses } from 'helpers/utilityHelpers';
 import Button from 'components/Button/Button';
 import './Confirm.scss';
 
@@ -22,12 +23,9 @@ const Confirm = props => {
   const ref = useRef();
   const bgRef = useRef();
   const args = { onClose: onCancel, targets: [ ref, bgRef ], time: 200 };
-
-  const buildClasses = () => {
-    let classList = `confirmContainer ${slideIn}`;
-    if (className) classList += ` ${className}`;
-    return classList;
-  };
+  const classes = [
+    { condition: className, name: className },
+  ];
 
   return (
     <Fragment>
@@ -39,7 +37,7 @@ const Confirm = props => {
         }}
       />
 
-      <div ref={ref} className={buildClasses()} {...rest}>
+      <div ref={ref} className={buildClasses(classes, `confirmContainer ${slideIn}`)} {...rest}>
         <div className="messageContainer">
           {title && (
             <h3 className="title" style={titleStyle}>

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { tooltipCode } from './codeSamples';
 import { tooltipTable } from './tables';
-import { buildRows } from 'helpers/tableHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
@@ -14,7 +14,7 @@ const SectionTooltip = props => {
       <div>
         <h3 id="tooltip">{`<Tooltip />`}</h3>
 
-        <Table content={tooltipTable} className="xTable" />
+        <Table content={tooltipTable} className="xTable" columnLayout={columnLayout} />
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />

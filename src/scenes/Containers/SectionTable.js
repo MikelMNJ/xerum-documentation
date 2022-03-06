@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { tableCode } from './codeSamples';
 import { tableTable } from './tables';
+import { columnLayout } from 'helpers/tableHelpers';
 import { codeSnippet } from 'helpers/utilityHelpers';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Table from 'components/Table/Table';
@@ -69,7 +70,7 @@ const SectionTable = props => {
       <div>
         <h3 id="table">{`<Table />`}</h3>
 
-        <Table content={tableTable} className="xTable" />
+        <Table content={tableTable} className="xTable" columnLayout={columnLayout} />
 
         <p>*Required Prop.</p>
 

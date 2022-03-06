@@ -2,10 +2,10 @@ import React, { Fragment, useState } from "react";
 import { paginationCode } from './codeSamples';
 import { paginationTable } from './tables';
 import { codeSnippet } from 'helpers/utilityHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Pagination from 'components/Pagination/Pagination';
-import colors from 'theme/colors.scss';
 
 const defaultRes = {
   total_pages: 5,
@@ -23,7 +23,7 @@ const SectionPagination = props => {
       <div>
         <h3 id="pagination">{`<Pagination />`}</h3>
 
-        <Table content={paginationTable} className="xTable" />
+        <Table content={paginationTable} className="xTable" columnLayout={columnLayout} />
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
         styling: <br />
@@ -40,7 +40,6 @@ const SectionPagination = props => {
 
       <SampleBox name="Pagination" code={paginationCode}>
         <Pagination
-          className="test"
           totalPages={res.total_pages}
           currentPage={res.current_page}
           onPageChange={page => req({ ...defaultRes, current_page: page })}

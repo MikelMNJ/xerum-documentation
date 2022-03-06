@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { badgeCode } from './codeSamples';
 import { badgeTable } from './tables';
 import { codeSnippet } from 'helpers/utilityHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Button from 'components/Button/Button';
@@ -19,7 +20,7 @@ const SectionBadge = props => {
         <h2 id="badge">Feedback</h2>
         <h3>{`<Badge />`}</h3>
 
-        <Table content={badgeTable} className="xTable" />
+        <Table content={badgeTable} className="xTable" columnLayout={columnLayout} />
 
         The {codeSnippet("<Badge />")} component works well when placed as a child
         insde the {codeSnippet("<Button />")} component.  You are also free to place

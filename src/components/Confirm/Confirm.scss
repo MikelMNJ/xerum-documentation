@@ -45,7 +45,7 @@ $topPos: 0;
   width: max-content;
   height: max-content;
   border-radius: 0.35rem;
-  box-shadow: 0 0.1rem 0.15rem #00000080;
+  filter: drop-shadow(0 0.1rem 0.15rem #00000080);
   overflow-y: auto;
 
   .messageContainer {
@@ -69,7 +69,6 @@ $topPos: 0;
     display: inline-grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.0625rem;
-    margin-top: 0.09375rem;
     transition: all 0.2s ease;
 
     .confirm button,
@@ -130,7 +129,6 @@ $topPos: 0;
       grid-template-columns: unset;
       grid-template-rows: repeat(2, 1fr);
       gap: 0.5rem;
-      margin-top: unset;
 
       .confirm button {
         border-radius: 0 0 0.35rem 0.35rem;

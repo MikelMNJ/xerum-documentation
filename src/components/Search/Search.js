@@ -1,5 +1,6 @@
 import React, { cloneElement, useState } from 'react';
 import { iconValid } from 'helpers/validators';
+import { buildClasses } from 'helpers/utilityHelpers';
 import Button from 'components/Button/Button';
 import './Search.scss';
 
@@ -17,6 +18,10 @@ const Search = props => {
 
   const [ inputVal, setInputVal ] = useState("");
 
+  const classes = [
+    { condition: className, name: className },
+  ];
+
   const handleSubmit = e => {
     e.preventDefault();
 
@@ -26,14 +31,8 @@ const Search = props => {
     }
   };
 
-  const buildClasses = () => {
-    let classList = "searchContainer";
-    if (className) classList += ` ${className}`;
-    return classList;
-  };
-
   return (
-    <div className={buildClasses()}>
+    <div className={buildClasses(classes, "searchContainer")}>
       <form
         onSubmit={handleSubmit}
         onKeyDown={e => e.key === 'Enter' && handleSubmit(e)}

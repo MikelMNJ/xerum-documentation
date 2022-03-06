@@ -10,11 +10,6 @@
       margin-top: 2.625rem;
     }
 
-    span {
-      width: 100%;
-      margin: 0.25rem;
-    }
-
     pre.block {
       width: unset;
     }
@@ -61,6 +56,13 @@
         display: grid;
         gap: 0.5rem;
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .notificationSamples {
+        display: grid;
+        gap: 0.25rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
       }
     }
 

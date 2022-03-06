@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { priceCode } from './codeSamples';
 import { priceTable } from './tables';
 import { codeSnippet } from 'helpers/utilityHelpers';
+import { columnLayout } from 'helpers/tableHelpers';
 import Table from 'components/Table/Table';
 import SampleBox from 'components/SampleBox/SampleBox';
 import Price from 'components/Price/Price';
@@ -13,7 +14,7 @@ const SectionPrice = props => {
       <div>
         <h3 id="price">{`<Price />`}</h3>
 
-        <Table content={priceTable} className="xTable" />
+        <Table content={priceTable} className="xTable" columnLayout={columnLayout} />
 
         <p />
       </div>
