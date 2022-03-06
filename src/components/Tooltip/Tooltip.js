@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { iconValid } from 'helpers/validators';
-import colors from 'theme/colors.scss';
+import { buildClasses } from 'helpers/utilityHelpers';
 import './Tooltip.scss';
 
 const Tooltip = props => {
@@ -16,6 +16,10 @@ const Tooltip = props => {
   const [ showTip, setShowTip ] = useState(false);
   const [ coords, setCoords ] = useState(null);
   const tipRef = useRef();
+
+  const classes = [
+    { condition: className, name: className },
+  ];
 
   const updatePos = e => {
     const x = e.clientX;
@@ -65,12 +69,6 @@ const Tooltip = props => {
     }
   };
 
-  const buildClasses = () => {
-    let classList = "tooltip";
-    if (className) classList += ` ${className}`;
-    return classList;
-  };
-
   const renderTip = () => {
     if (showTip) {
       return (
@@ -83,7 +81,7 @@ const Tooltip = props => {
 
   return (
     <div
-      className={buildClasses()}
+      className={buildClasses(classes, "tooltip")}
       onMouseOver={() => setShowTip(true)}
       onMouseOut={() => setShowTip(false)}
       onMouseMove={e => updatePos(e)}

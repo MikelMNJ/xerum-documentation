@@ -1,6 +1,6 @@
 import React, { Fragment, useRef, useEffect, useState } from 'react';
 import { hexValid } from 'helpers/validators';
-import { addEvent, removeEvent } from 'helpers/utilityHelpers';
+import { buildClasses } from 'helpers/utilityHelpers';
 import Percent from 'components/Percent/Percent';
 import colors from 'theme/colors.scss';
 import './Progress.scss';
@@ -39,6 +39,11 @@ const Progress = props => {
     backgroundColor: validColor,
   };
 
+  const classes = [
+    { condition: className, name: className },
+    { condition: noPct, name: "noPct" },
+  ];
+
   const pctBarPos = e => {
     const posX = barWidth >= pctWidth + buffer ? barWidth - pctWidth - buffer : 0;
 
@@ -54,19 +59,9 @@ const Progress = props => {
     elements.forEach(element => resizeObserver.observe(element));
   }, [barWidth, pctWidth]);
 
-
-  const buildClasses = () => {
-    let classList = "progressBar";
-
-    if (className) classList += ` ${className}`;
-    if (noPct) classList += ` noPct`;
-
-    return classList;
-  };
-
   return (
     <Fragment>
-      <div className={buildClasses()} style={barStyle} {...rest}>
+      <div className={buildClasses(classes, "progressBar")} style={barStyle} {...rest}>
         <div ref={widthRef} className="progress" style={progressStyle}>
           {!noPct && (
             <div ref={pctRef}>

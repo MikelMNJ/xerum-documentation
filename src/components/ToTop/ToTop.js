@@ -1,16 +1,20 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { iconValid, hexValid } from 'helpers/validators';
-import { addEvent, removeEvent, resetPage } from 'helpers/utilityHelpers';
+import { addEvent, removeEvent, resetPage, buildClasses } from 'helpers/utilityHelpers';
 import './ToTop.scss';
 
 const eName = "scroll";
 
 const ToTop = props => {
-  const { icon, bgColor, iconColor, className, ...rest } = props;
+  const { icon, bgColor, iconColor, className, fixed, ...rest } = props;
   const toTop = useRef();
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
+  const classes = [
+    { condition: className, name: className },
+  ];
 
   const scrollAction = () => {
     const target = toTop.current;
@@ -18,12 +22,12 @@ const ToTop = props => {
     if (target) {
       const { style } = target;
 
-      if (window.pageYOffset >= 145) {
+      if (window.pageYOffset >= 145 || fixed) {
         style.setProperty('opacity', 1);
         style.setProperty('transform', 'translateY(0)');
       }
 
-      if (window.pageYOffset < 145) {
+      if (window.pageYOffset < 145 && !fixed) {
         style.setProperty('opacity', 0);
         style.setProperty('transform', 'translateY(4.25rem)');
       }
@@ -35,17 +39,11 @@ const ToTop = props => {
     return () => removeEvent(eName, scrollAction);
   }, []);
 
-  const buildClasses = () => {
-    let classList = "toTop";
-    if (className) classList += ` ${className}`;
-    return classList;
-  };
-
   return (
     <div
       {...rest}
       ref={toTop}
-      className={buildClasses()}
+      className={buildClasses(classes, "toTop")}
       onClick={() => resetPage(navigate, pathname)}
       style={{ ...rest.style, backgroundColor: hexValid(bgColor) }}
     >

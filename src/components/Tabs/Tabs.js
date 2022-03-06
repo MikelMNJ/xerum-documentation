@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { hexValid } from 'helpers/validators';
-import colors from 'theme/colors.scss';
+import { buildClasses } from 'helpers/utilityHelpers';
 import './Tabs.scss';
 
 const buffer = 0.5;
@@ -49,20 +48,18 @@ const Tabs = props => {
     }
   };
 
-  const buildClasses = tabName => {
-    let classList = "name";
-    if (activeTab === tabName) classList += " active";
-    return classList;
-  };
-
   const buildTabs = () => (
     <div>
       <div ref={tabNames} className="tabNames" style={{ backgroundColor: inactiveColor }}>
         {content?.map((tab, index) => {
+          const classes = [
+            { condition: activeTab === (tab.name ?? ""), name: "active" },
+          ];
+
           return (
             <div
               key={index}
-              className={buildClasses(tab.name ?? "")}
+              className={buildClasses(classes, "name")}
               onClick={() => {
                 if (activeTab !== tab.name) setActiveTab(tab.name);
               }}

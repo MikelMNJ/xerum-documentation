@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from 'react-router-dom';
 import { iconValid } from 'helpers/validators';
 import { buildClasses } from 'helpers/utilityHelpers';
-import { isEmpty, isEqual } from "lodash";
 import './Nav.scss';
 
 const Nav = props => {
@@ -24,30 +23,22 @@ const Nav = props => {
     setActiveMenus(workingArr);
   };
 
-  const buildClasses = (path, isSubMenu, hasSubMenu, menuActive) => {
-    let classList = "";
-    const isActive = path && (location.hash === path);
-
-    if (isActive) classList += " active";
-    isSubMenu ? classList += " subMenuItem" : classList += " topLevel";
-
-    if (hasSubMenu) {
-      menuActive ? classList += " open" : classList += " closed";
-      return classList;
-    }
-
-    classList += " noSubMenu";
-    return classList;
-  };
-
   const buildNav = (links, isSubMenu) => {
     if (links) {
       return links.map(link => {
         const { name, path, icon, subMenu } = link;
         const menuOpen = expand || activeMenus.find(item => item === name);
+        const isActive = path && (location.hash === path);
+        const classes = [
+          { condition: isActive, name: "active" },
+          { condition: isSubMenu, name: "subMenuItem" },
+          { condition: !isSubMenu, name: "topLevel" },
+          { condition: subMenu, name: menuOpen ? "open" : "closed" },
+          { condition: !subMenu, name: "noSubMenu" },
+        ];
 
         return (
-          <div key={name} className={buildClasses(path, isSubMenu, subMenu, menuOpen)}>
+          <div key={name} className={buildClasses(classes)}>
             <a href={path} onClick={e => handleClick(e, subMenu, isSubMenu, name)}>
               {iconValid(icon) && <i className={icon} />}&nbsp;
               {name}

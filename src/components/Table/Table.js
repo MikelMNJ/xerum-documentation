@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { hexValid } from 'helpers/validators';
 import { buildRows, buildHeaders } from 'helpers/tableHelpers';
+import { buildClasses } from 'helpers/utilityHelpers';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import colors from 'theme/colors.scss';
 import './Table.scss';
@@ -52,6 +53,10 @@ const Table = props => {
     dragIcon,
   };
 
+  const classes = [
+    { condition: className, name: className },
+  ];
+
   function columns() {
     const ignoredKeys = [ "onClick", "label" ];
     const rowKeys = Object.keys(content?.rows?.[0] || {});
@@ -65,12 +70,6 @@ const Table = props => {
     });
 
     return rowKeys.length || content?.headers?.length || 1;
-  };
-
-  const buildClasses = () => {
-    let classList = "table";
-    if (className) classList += ` ${className}`;
-    return classList;
   };
 
   const handleDragEnd = result => {
@@ -93,7 +92,7 @@ const Table = props => {
       <Droppable droppableId="rows">
         {provided => (
           <ul
-            className={buildClasses()}
+            className={buildClasses(classes, "table")}
             ref={provided.innerRef}
             {...provided.droppableProps}
             {...rest}

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { iconValid, hexValid } from 'helpers/validators';
 import { dismiss, slideIn } from 'helpers/animationHelpers';
+import { buildClasses } from 'helpers/utilityHelpers';
 import Button from 'components/Button/Button';
 import './SlideOver.scss';
 
@@ -9,15 +10,12 @@ const SlideOver = props => {
   const titleStyle = { color: hexValid(titleColor) };
   const ref = useRef();
   const args = { onClose, targets: [ ref ] };
-
-  const buildClasses = () => {
-    let classList = `slideOver ${slideIn}`;
-    if (className) classList += ` ${className}`;
-    return classList;
-  };
+  const classes = [
+    { condition: className, name: className },
+  ];
 
   return (
-    <div ref={ref} className={buildClasses()} {...rest}>
+    <div ref={ref} className={buildClasses(classes, `slideOver ${slideIn}`)} {...rest}>
       <div className="header">
         <h3 style={titleStyle}>{title}</h3>
 

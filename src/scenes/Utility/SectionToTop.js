@@ -35,7 +35,7 @@ const SectionToTop = props => {
 
       <SampleBox name="To-Top" code={toTopCode}>
         <div className="inline">
-          <ToTop style={sampleTop} icon="fa-solid fa-angles-up" />
+          <ToTop style={sampleTop} icon="fa-solid fa-angles-up" fixed />
         </div>
       </SampleBox>
     </Fragment>
