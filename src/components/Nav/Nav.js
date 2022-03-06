@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from 'react-router-dom';
 import { iconValid } from 'helpers/validators';
+import { buildClasses } from 'helpers/utilityHelpers';
 import { isEmpty, isEqual } from "lodash";
 import './Nav.scss';
 

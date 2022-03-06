@@ -1,9 +1,14 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { iconValid } from 'helpers/validators';
+import { buildClasses } from 'helpers/utilityHelpers';
 
 const Heartbeat = props => {
   const { time, icon, text, disabled, children, className, ...rest } = props;
   const [ offline, setOffline ] = useState(false);
+
+  const classes = [
+    { condition: className, name: className },
+  ];
 
   useEffect(() => {
     const heartbeat = setInterval(async () => {
@@ -23,15 +28,9 @@ const Heartbeat = props => {
     return () => clearInterval(heartbeat);
   }, [offline]);
 
-  const buildClasses = () => {
-    let classList = "flatline";
-    if (className) classList += ` ${className}`;
-    return classList;
-  };
-
   const offlineContent = () => {
     return (
-      <div className={buildClasses()} {...rest}>
+      <div className={buildClasses(classes, "flatline")} {...rest}>
         <i className={iconValid(icon) || "fa-solid fa-ethernet"} />
         <p>{text || "No connection detected."}</p>
       </div>

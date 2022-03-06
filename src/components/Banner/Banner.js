@@ -1,5 +1,6 @@
 import React from 'react';
 import { iconValid } from 'helpers/validators';
+import { buildClasses } from 'helpers/utilityHelpers';
 import './Banner.scss';
 
 const Banner = props => {
@@ -15,18 +16,14 @@ const Banner = props => {
     ...rest
   } = props;
 
-  const buildClasses = () => {
-    let classList = "banner";
-
-    if (className) classList += ` ${className}`;
-    if (noClose) classList += " noClose";
-    if (sharp) classList += " sharp";
-
-    return classList;
-  };
+  const classes = [
+    { condition: className, name: className },
+    { condition: noClose, name: "noClose" },
+    { condition: sharp, name: "sharp" },
+  ];
 
   return (
-    <div className={buildClasses()} {...rest}>
+    <div className={buildClasses(classes, "banner")} {...rest}>
       <div className={`message ${center ? "center" : ""}`}>
         {text || children}
       </div>

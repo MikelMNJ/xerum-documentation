@@ -1,6 +1,7 @@
 import React, { Fragment, useRef } from 'react';
 import { iconValid, hexValid } from 'helpers/validators';
 import { dismiss, slideIn, fadeIn } from 'helpers/animationHelpers';
+import { buildClasses } from 'helpers/utilityHelpers';
 import Button from 'components/Button/Button';
 import './Modal.scss';
 
@@ -20,12 +21,9 @@ const Modal = props => {
   const ref = useRef();
   const bgRef = useRef();
   const args = { onClose, targets: [ ref, bgRef ], time: 200 };
-
-  const buildClasses = () => {
-    let classList = `modal ${slideIn}`;
-    if (className) classList += ` ${className}`;
-    return classList;
-  };
+  const classes = [
+    { condition: className, name: className },
+  ];
 
   return (
     <Fragment>
@@ -37,7 +35,7 @@ const Modal = props => {
         }}
       />
 
-      <div ref={ref} className={buildClasses()} {...rest}>
+      <div ref={ref} className={buildClasses(classes, `modal ${slideIn}`)} {...rest}>
         <div className="header">
           <h3 style={titleStyle}>{title}</h3>
 

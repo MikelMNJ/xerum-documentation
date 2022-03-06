@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { iconValid } from 'helpers/validators';
+import { buildClasses } from 'helpers/utilityHelpers';
 import { isEmpty } from 'lodash';
 import './Menu.scss';
 

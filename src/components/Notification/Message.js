@@ -1,7 +1,8 @@
 import React, { forwardRef } from "react";
 import { iconValid } from 'helpers/validators';
 import { dismiss, slideIn } from 'helpers/animationHelpers';
-import { isObject, isArray } from 'lodash';
+import { buildClasses } from 'helpers/utilityHelpers';
+import { isObject, isArray, lowerCase } from 'lodash';
 import './Notification.scss';
 
 const defaultIcon = "fa-solid fa-info-circle";
@@ -10,18 +11,15 @@ const defaultWarning = "fa-solid fa-triangle-exclamation";
 const defaultError = "fa-solid fa-circle-exclamation";
 
 const Message = forwardRef((props, ref) => {
-  const { message, icon, noIcon, className, args, ...rest } = props;
-  const useIcon = noIcon ? "noIcon" : "";
+  const { message, noIcons, className, args, ...rest } = props;
 
-  const buildClasses = () => {
-    let classList = `notification ${slideIn}`;
-    if (className) classList += ` ${className}`;
-    if (useIcon) classList += ` ${useIcon}`;
-    if (message.type === "success") classList += " success";
-    if (message.type === "warning") classList += " warning";
-    if (message.type === "error") classList += " error";
-    return classList;
-  };
+  const classes = [
+    { condition: className, name: className },
+    { condition: noIcons, name: "noIcons" },
+    { condition: lowerCase(message.type) === "success", name: "success" },
+    { condition: lowerCase(message.type) === "warning", name: "warning" },
+    { condition: lowerCase(message.type) === "error", name: "error" },
+  ];
 
   const buildMessage = () => {
     if (isObject(message) && !isArray(message)) {
@@ -34,19 +32,23 @@ const Message = forwardRef((props, ref) => {
   const getDefaultIcon = () => {
     if (message.type) {
       const { type } = message;
-      if (type === "success") return defaultSuccess;
-      if (type === "warning") return defaultWarning;
-      if (type === "error") return defaultError;
+      if (lowerCase(type) === "success") return defaultSuccess;
+      if (lowerCase(type) === "warning") return defaultWarning;
+      if (lowerCase(type) === "error") return defaultError;
     }
 
     return defaultIcon;
   };
 
   return (
-    <div ref={ref} className={buildClasses()} {...rest}>
-      {!noIcon && (
+    <div
+      ref={ref}
+      className={buildClasses(classes, `notification ${slideIn}`)}
+      {...rest}
+    >
+      {!noIcons && (
         <div className="icon">
-          <i className={iconValid(icon) || getDefaultIcon()} />
+          <i className={iconValid(message.icon) || getDefaultIcon()} />
         </div>
       )}
 
