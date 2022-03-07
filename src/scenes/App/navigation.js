@@ -67,6 +67,17 @@ const navigation = [
   },
 
   {
+    name: "Form Extras",
+    path: "",
+    icon: "",
+    subMenu: [
+      { name: "Checkbox", path: "#checkbox", icon: "" },
+      { name: "Field Slider", path: "#field-slider", icon: "" },
+      { name: "Toggle", path: "#toggle", icon: "" },
+    ]
+  },
+
+  {
     name: "Information",
     path: "",
     icon: "",
