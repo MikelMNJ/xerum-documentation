@@ -16,6 +16,14 @@ export const checkboxTable = {
       tData3: null
     },
     {
+      tData1: "icon",
+      tData2:
+        <Fragment>
+          Font Awesome i.e. "<strong>fa-solid fa-check</strong>".
+        </Fragment>,
+      tData3: <i className="fa-solid fa-check" />
+    },
+    {
       tData1: "boxColor",
       tData2: "Sets the color of the check box using hex format, i.e. #000 or #000000.",
       tData3: <Status color="#7e8489" text="#7e8489" />

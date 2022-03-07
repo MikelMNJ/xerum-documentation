@@ -17,33 +17,31 @@
     height: 0;
     width: 0;
 
-    &:checked ~ .markContainer {
+    &:checked ~ .box {
       .check {
         display: block;
       }
     }
   }
 
-  .markContainer {
-    .box {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 1.5rem;
-      width: 1.5rem;
-      border: 0.0625rem solid $grey;
-      border-radius: 0.25rem;
-    }
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 0.0625rem solid $grey;
+    border-radius: 0.25rem;
 
     .check {
       display: none;
-      position: absolute;
-      top: 0.05rem;
-      left: 0;
+      position: relative;
       color: $blue;
       border-radius: 0.25rem;
-      font-size: 1.25rem;
-      padding: 0.1rem;
+      font-size: 1.4rem;
     }
   }
 }
