@@ -24,7 +24,7 @@ pre {
   background-color: $deepBlue !important;
   width: fit-content;
   margin: 1rem 0 !important;
-  font-size: 0.78rem !important;
+  font-size: 0.75rem !important;
 
   code {
     font-family: monospace !important;
@@ -111,10 +111,14 @@ pre {
 /* ========== Media Queries ========== */
 @media only screen and (max-width: 414px) {
   pre {
-    font-size: 0.7rem !important;
-
     &.inline {
       padding: 0.1rem 0.5rem;
     }
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  pre {
+    font-size: 0.7rem !important;
   }
 }

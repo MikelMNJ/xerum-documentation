@@ -52,6 +52,15 @@
         display: none;
       }
 
+      .checkboxContainer {
+        margin: 0 auto;
+      }
+
+      .checkboxError {
+        width: fit-content;
+        margin: 1rem auto;
+      }
+
       .loadingSamples {
         display: grid;
         gap: 0.5rem;
