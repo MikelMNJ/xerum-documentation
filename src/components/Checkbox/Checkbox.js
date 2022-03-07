@@ -1,18 +1,29 @@
 import React from 'react';
+import { Field } from 'formik';
 import { buildClasses } from 'helpers/utilityHelpers';
+import colors from 'theme/colors.scss';
 import './Checkbox.scss';
 
 const Checkbox = props => {
-  const { className, ...rest } = props;
+  const { name, label, className, boxColor, checkColor, disabled, ...rest } = props;
+
+  const boxStyle = { borderColor: disabled ? colors.warmGrey : boxColor };
+  const checkStyle = { color: disabled ? colors.warmGrey : checkColor };
 
   const classes = [
     { condition: className, name: className },
   ];
 
   return (
-    <div className={buildClasses(classes, "checkbox")} {...rest}>
-      Checkbox
-    </div>
+    <label className={buildClasses(classes, "checkboxContainer")} {...rest}>
+      {label}
+      <Field type="checkbox" name={name} disabled={disabled} />
+
+      <div className="markContainer">
+        <span className="box" style={boxStyle} />
+        <i className="check fa-solid fa-check" style={checkStyle} />
+      </div>
+    </label>
   );
 };
 

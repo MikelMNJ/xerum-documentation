@@ -1,7 +1,51 @@
 @import 'theme/colors';
 
-.checkbox {
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 2.1875rem;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
 
+  input {
+    // Hide default checkbox
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .markContainer {
+      .check {
+        display: block;
+      }
+    }
+  }
+
+  .markContainer {
+    .box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.5rem;
+      width: 1.5rem;
+      border: 0.0625rem solid $grey;
+      border-radius: 0.25rem;
+    }
+
+    .check {
+      display: none;
+      position: absolute;
+      top: 0.05rem;
+      left: 0;
+      color: $blue;
+      border-radius: 0.25rem;
+      font-size: 1.25rem;
+      padding: 0.1rem;
+    }
+  }
 }
 
 /* ========== Media Queries ========== */
