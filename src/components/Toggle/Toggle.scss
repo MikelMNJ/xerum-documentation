@@ -1,7 +1,61 @@
 @import 'theme/colors';
 
 .toggle {
+  display: inline-block;
+  position: relative;
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 1.5rem;
 
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:focus + .toggleTrack {
+      box-shadow: 0 0 0.0625rem $offWhite;
+    }
+
+    &:checked + .toggleTrack {
+      background-color: $blue;
+
+      i {
+        color: $offWhite;
+        transform: translateX(1.25rem);
+      }
+    }
+
+    &:disabled + .toggleTrack {
+      background-color: $grey;
+      cursor: not-allowed;
+
+      i {
+        color: $warmGrey;
+      }
+    }
+  }
+
+  .toggleTrack {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $darkGrey;
+    border-radius: 2.125rem;
+    transition: background-color 0.1s linear;
+
+    i {
+      position: absolute;
+      left: 0.125rem;
+      color: $offWhite;
+      font-size: 1.25rem;
+      transition: transform 0.1s linear;
+    }
+  }
 }
 
 /* ========== Media Queries ========== */

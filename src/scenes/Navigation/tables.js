@@ -13,17 +13,17 @@ export const menuTable = {
       tData1: "openIcon",
       tData2:
         <Fragment>
-          Font Awesome i.e. "<strong>fa-solid fa-caret-right</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-caret-down</strong>".
         </Fragment>,
-      tData3: <i className="fa-solid fa-caret-right" />
+      tData3: <i className="fa-solid fa-caret-down" />
     },
     {
       tData1: "closeIcon",
       tData2:
         <Fragment>
-          Font Awesome i.e. "<strong>fa-solid fa-caret-down</strong>".
+          Font Awesome i.e. "<strong>fa-solid fa-caret-right</strong>".
         </Fragment>,
-      tData3: <i className="fa-solid fa-caret-down" />
+      tData3: <i className="fa-solid fa-caret-right" />
     },
   ],
 };

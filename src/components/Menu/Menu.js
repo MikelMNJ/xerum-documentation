@@ -44,9 +44,9 @@ const Menu = props => {
     );
 
     return (
-      !isOpen
-        ? makeIcon(openIcon, "caret-right")
-        : makeIcon(closeIcon, "caret-down")
+      isOpen
+        ? makeIcon(openIcon, "caret-down")
+        : makeIcon(closeIcon, "caret-right")
     );
   };
 
