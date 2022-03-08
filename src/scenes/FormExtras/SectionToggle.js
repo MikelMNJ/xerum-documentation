@@ -16,6 +16,16 @@ const SectionToggle = props => {
 
         <Table content={toggleTable} className="xTable" columnLayout={columnLayout} />
 
+        <strong>Tip</strong>: You can target the following CSS heirarchy for custom
+        styling: <br />
+        {codeSnippet(".yourClassName {}", false, "css")}<br />
+        {codeSnippet(".yourClassName input {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .toggleTrack {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .toggleTrack i {}", false, "css")}<br />
+
+        <p />
+          Your custom <i>className</i> will apply to the&nbsp;
+          {codeSnippet("<Toggle />")} container by default.
         <p />
       </div>
 
