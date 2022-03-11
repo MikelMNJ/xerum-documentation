@@ -1,7 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { iconValid } from 'helpers/validators';
 import { buildClasses } from 'helpers/utilityHelpers';
 import './Tooltip.scss';
+
+const offset = 12;
 
 const Tooltip = props => {
   const {
@@ -15,25 +17,31 @@ const Tooltip = props => {
 
   const [ showTip, setShowTip ] = useState(false);
   const [ coords, setCoords ] = useState(null);
+  const [ tipStyle, setTipStyle ] = useState({});
+
   const tipRef = useRef();
 
   const classes = [
     { condition: className, name: className },
   ];
 
+  useEffect(() => {
+    if (coords) setTipStyle(getStyle());
+    /* eslint-disable-next-line */
+  }, [coords]);
+
   const updatePos = e => {
     const x = e.clientX;
     const y = e.clientY;
-    if (showTip) setCoords({ x, y });
+    setCoords({ x, y });
   };
 
-  const tipStyle = () => {
+  const getStyle = () => {
     const target = tipRef.current;
 
     if (target && coords) {
       const width = target.clientWidth;
       const height = target.clientHeight;
-      const offset = 12;
 
       switch(position) {
         case "top":
@@ -70,9 +78,9 @@ const Tooltip = props => {
   };
 
   const renderTip = () => {
-    if (showTip) {
+    if (showTip && coords) {
       return (
-        <div ref={tipRef} className="tip" style={tipStyle()}>
+        <div ref={tipRef} className="tip" style={tipStyle}>
           {text || children || "Missing tip text."}
         </div>
       )
@@ -82,9 +90,12 @@ const Tooltip = props => {
   return (
     <div
       className={buildClasses(classes, "tooltip")}
-      onMouseOver={() => setShowTip(true)}
-      onMouseOut={() => setShowTip(false)}
+      onMouseOut={e => setShowTip(false)}
       onMouseMove={e => updatePos(e)}
+      onMouseOver={e => {
+        updatePos(e);
+        setShowTip(true);
+      }}
       {...rest}
     >
       <i className={iconValid(icon) || "fa-solid fa-info-circle"} />
