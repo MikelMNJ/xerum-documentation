@@ -8,7 +8,7 @@ const Data = props => {
   return (
     <section id="form-extras">
       {filtered("Checkbox") && <SectionCheckbox />}
-      {filtered("Field Slider") && <SectionFieldSlider />}
+      {/* {filtered("Field Slider") && <SectionFieldSlider />} */}
       {filtered("Toggle") && <SectionToggle />}
     </section>
   );

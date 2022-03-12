@@ -72,7 +72,7 @@ const navigation = [
     icon: "",
     subMenu: [
       { name: "Checkbox", path: "#checkbox", icon: "" },
-      { name: "Field Slider", path: "#field-slider", icon: "" },
+      // { name: "Field Slider", path: "#field-slider", icon: "" },
       { name: "Toggle", path: "#toggle", icon: "" },
     ]
   },
