@@ -1,6 +1,5 @@
 import React, { createRef, useEffect, useRef } from 'react';
 import { dismiss } from 'helpers/animationHelpers';
-import { iconValid } from 'helpers/validators';
 import Message from './Message';
 import './Notification.scss';
 
@@ -17,7 +16,7 @@ const Notifications = props => {
 
       return () => clearTimeout(timer);
     }
-  }, [notifications]);
+  }, [notifications, noTime, removeMessage, time]);
 
   function removeMessage(i) {
     const updatedMsgs = [ ...notifications ];
