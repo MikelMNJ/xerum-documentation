@@ -16,7 +16,7 @@ const Notifications = props => {
 
       return () => clearTimeout(timer);
     }
-  }, [notifications, noTime, removeMessage, time]);
+  }, [notifications]);
 
   function removeMessage(i) {
     const updatedMsgs = [ ...notifications ];
