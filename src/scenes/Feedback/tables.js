@@ -18,10 +18,11 @@ export const notificationsTable = {
       tData3: null
     },
     {
-      tData1: "setNotifications*",
+      tData1: "removeNotification*",
       tData2:
         <Fragment>
-          Action from app state responsible for altering your <strong>notifications</strong> selector.
+          Action from app state responsible for removing a notification from state &mdash;
+          receives the index to remove.
         </Fragment>,
       tData3: null
     },

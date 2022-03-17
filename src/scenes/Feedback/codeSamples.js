@@ -1,9 +1,19 @@
 export const notificationsCode = `const newNotification = "You've been notified!";
 
 // 1. Ready action/selector array in app state.
-const [
-  notifications, setNotifications
-] = useState([]);
+const [ notifications, setNotifications ] = useState([]);
+
+const addNotification = notification => {
+  setNotifications([ ...notifications, notification ]);
+};
+
+const removeNotification = index => {
+  const updatedArray = notifications.filter((item, i) => {
+    if (index !== i) return item;
+  };
+
+  setNotifications(updatedArray);
+};
 
 // 2. Place Notifications component
 // in root component and pass the
@@ -11,18 +21,14 @@ const [
 <Notifications
   time={3000}
   notifications={notifications}
-  setNotifications={setNotifications}
+  removeNotification={removeNotification}
 />
 
 // 3. Trigger notification action from any
 // component event or API callback.
 <Button
   text="Click to Notify"
-  callback={() => (
-    setNotifications([
-      ...notifications, newNotification
-    ])
-  )}
+  callback={() => addNotification(newNotification)}
 />`;
 
 export const notFoundCode = `<NotFound />`;

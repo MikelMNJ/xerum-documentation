@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { notificationsCode } from './codeSamples';
 import { notificationsTable } from './tables';
 import { codeSnippet } from 'helpers/utilityHelpers';
@@ -18,6 +18,19 @@ const SectionNotifications = props => {
     type
   });
 
+  const addNotification = notification => {
+    setNotifications([ ...notifications, notification ]);
+  };
+
+  const removeNotification = index => {
+    const updatedArray = notifications.filter((item, i) => index !== i);
+    setNotifications(updatedArray);
+  };
+
+  useEffect(() => {
+    console.log(notifications);
+  }, [notifications]);
+
   return (
     <Fragment>
       <div>
@@ -30,13 +43,13 @@ const SectionNotifications = props => {
         </p>
 
         <strong>Note</strong>: You will first need to have an existing&nbsp;
-        <strong>notifications</strong> array selector and corresponding <strong>setNotifications</strong>&nbsp;
+        <strong>notifications</strong> array selector and corresponding <strong>addNotification</strong>&nbsp;
         action set up in app state. Then, at the root of your app, place&nbsp;
         {codeSnippet("<Notifications />")} with that action/selector pair passed in the props.
 
         <p>
           Now any component event or API callback that triggers your&nbsp;
-          <strong>setNotifications</strong> action will trigger notifications.
+          <strong>addNotification</strong> action will trigger notifications.
         </p>
 
       </div>
@@ -44,38 +57,26 @@ const SectionNotifications = props => {
       <SampleBox name="Notifications" code={notificationsCode}>
         <div className="notificationSamples">
           <Button text="Standard notify"
-            callback={() => setNotifications([
-              ...notifications,
-              newNotification()
-            ])}
+            callback={() => addNotification(newNotification())}
           />
 
           <Button text="Success notify"
-            callback={() => setNotifications([
-              ...notifications,
-              newNotification("success")
-            ])}
+            callback={() => addNotification(newNotification("success"))}
           />
 
           <Button text="Warning notify"
-            callback={() => setNotifications([
-              ...notifications,
-              newNotification("warning")
-            ])}
+            callback={() => addNotification(newNotification("warning"))}
           />
 
           <Button text="Error notify"
-            callback={() => setNotifications([
-              ...notifications,
-              newNotification("error")
-            ])}
+            callback={() => addNotification(newNotification("error"))}
           />
         </div>
 
         <Notifications
           time={3000}
           notifications={notifications}
-          setNotifications={setNotifications}
+          removeNotification={removeNotification}
         />
       </SampleBox>
     </Fragment>
