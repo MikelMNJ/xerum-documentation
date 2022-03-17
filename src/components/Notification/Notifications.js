@@ -27,7 +27,6 @@ const Notifications = props => {
     if (removeNotification) removeNotification(i);
   };
 
-
   const buildNotifications = () => {
     const refs = notifications?.map((msg, i) => (
       targets.current[i] ?? createRef()
@@ -35,14 +34,20 @@ const Notifications = props => {
 
     targets.current = [ ...refs ];
 
+
     return notifications?.map((msg, i) => {
+      const args = {
+        targets: [ targets.current[i] ],
+        onClose: () => removeMessage(i),
+      };
+
       return (
         <Message
           key={i}
           ref={targets.current[i]}
           message={msg}
           noIcons={noIcons}
-          args={{ targets: [ targets.current[i] ], onClose: () => removeMessage(i) }}
+          args={args}
           {...rest}
         />
       );

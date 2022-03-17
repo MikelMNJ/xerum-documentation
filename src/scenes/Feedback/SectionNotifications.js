@@ -27,10 +27,6 @@ const SectionNotifications = props => {
     setNotifications(updatedArray);
   };
 
-  useEffect(() => {
-    console.log(notifications);
-  }, [notifications]);
-
   return (
     <Fragment>
       <div>
