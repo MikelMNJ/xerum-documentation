@@ -103,6 +103,12 @@
   }
 }
 
+@media only screen and (max-width: 414px) {
+  #content .sampleBox pre.block {
+    max-width: calc(100vw - 2rem);
+  }
+}
+
 @media only screen and (max-width: 390px) {
   #content .sampleBox .samples {
     max-width: 19.875rem;
