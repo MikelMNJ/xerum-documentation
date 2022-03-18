@@ -16,7 +16,7 @@ const Tabs = props => {
     opacity: 0,
     backgroundColor: activeColor,
     width: `calc(100% / ${content.length} - ${buffer}rem)`,
-    transform: `translateX(${posX() || margin}rem)`
+    transform: `translateX(${margin}rem)`
   });
 
   useEffect(() => {
