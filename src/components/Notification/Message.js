@@ -6,7 +6,7 @@ import { isObject, isArray, lowerCase } from 'lodash';
 import './Notification.scss';
 
 const defaultIcon = "fa-solid fa-info-circle";
-const defaultSuccess = "fa-solid fa-circle-check";
+const defaultSuccess = "fa-solid fa-check";
 const defaultWarning = "fa-solid fa-triangle-exclamation";
 const defaultError = "fa-solid fa-circle-exclamation";
 
