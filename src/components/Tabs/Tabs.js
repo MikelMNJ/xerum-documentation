@@ -16,7 +16,7 @@ const Tabs = props => {
     opacity: 0,
     backgroundColor: activeColor,
     width: `calc(100% / ${content.length} - ${buffer}rem)`,
-    transform: `translateX(${posX() || margin}rem)`
+    transform: `translateX(${margin}rem)`
   });
 
   useEffect(() => {
@@ -24,6 +24,7 @@ const Tabs = props => {
       const resizeObserver = new ResizeObserver(posX);
       resizeObserver.observe(slider.current)
     }
+    /* eslint-disable-next-line */
   }, [activeTab]);
 
   function posX() {

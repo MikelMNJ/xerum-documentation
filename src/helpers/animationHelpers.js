@@ -10,19 +10,18 @@ export const dismiss = args => {
   const { targets, onClose, time } = args;
 
   targets?.forEach(target => {
-    manageClass(target, slideIn, slideOut);
-    manageClass(target, fadeIn, fadeOut);
-    manageClass(target, popIn, popOut);
+    transitionOut(target, slideOut);
+    transitionOut(target, fadeOut);
+    transitionOut(target, popOut);
   });
 
   if (onClose) {
-    setTimeout(() => onClose(), time || 350);
+    setTimeout(() => onClose(), time || 200);
   }
 };
 
-function manageClass(target, classIn, classOut) {
+function transitionOut(target, classOut) {
   const element = target?.current || target;
   const classes = element?.classList || [];
-  classes.remove?.(classIn);
   classes.add?.(classOut);
 };

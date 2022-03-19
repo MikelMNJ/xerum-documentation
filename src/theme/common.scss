@@ -23,8 +23,36 @@ pre {
   border-radius: 0.35rem !important;
   background-color: $deepBlue !important;
   width: fit-content;
+  max-width: calc(100vw - 2rem);
   margin: 1rem 0 !important;
-  font-size: 0.75rem !important;
+  font-size: 0.8rem !important;
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0.35rem;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    border-radius: 0.35rem;
+    height: 0.625rem;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    border-radius: 0.35rem;
+    height: 0.625rem;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0.35rem;
+    background-color: $slate;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    border-radius: 0.35rem;
+    background-color: $grey;
+  }
 
   code {
     font-family: monospace !important;
@@ -70,8 +98,7 @@ pre {
 
 .scrollbar::-webkit-scrollbar {
   min-height: 18.75rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: scroll;
   width: 0.625rem;
 }
 
@@ -114,11 +141,5 @@ pre {
     &.inline {
       padding: 0.1rem 0.5rem;
     }
-  }
-}
-
-@media only screen and (max-width: 370px) {
-  pre {
-    font-size: 0.7rem !important;
   }
 }

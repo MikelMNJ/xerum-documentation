@@ -3,7 +3,9 @@
 @import 'theme/forms.scss';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|PT+Sans:400,700&display=swap');
 
-* {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 

@@ -25,7 +25,6 @@ export const codeSnippet = (code, block, language) => {
     <SyntaxHighlighter
       className={block ? "block" : "inline"}
       language={language || "jsx"}
-      wrapLongLines
       style={nord}
     >
       {code}
