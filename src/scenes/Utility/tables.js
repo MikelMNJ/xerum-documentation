@@ -8,7 +8,7 @@ export const heartbeatTable = {
     {
       tData1: "time",
       tData2: "Time (milleseconds) between connection tests.",
-      tData3: "10 seconds"
+      tData3: "60 seconds"
     },
     {
       tData1: "icon",
