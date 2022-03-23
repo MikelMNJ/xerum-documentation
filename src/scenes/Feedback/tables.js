@@ -195,8 +195,8 @@ export const bannerTable = {
       tData3: null
     },
     {
-      tData1: "sharp",
-      tData2: "Overrides default rounded corner styling with sharp corners.",
+      tData1: "round",
+      tData2: "Overrides default corner styling with round corners.",
       tData3: null
     },
   ],

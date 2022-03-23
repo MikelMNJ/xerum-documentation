@@ -11,7 +11,7 @@ const Banner = props => {
     className,
     callback,
     center,
-    sharp,
+    round,
     children,
     ...rest
   } = props;
@@ -19,7 +19,7 @@ const Banner = props => {
   const classes = [
     { condition: className, name: className },
     { condition: noClose, name: "noClose" },
-    { condition: sharp, name: "sharp" },
+    { condition: round, name: "round" },
   ];
 
   return (

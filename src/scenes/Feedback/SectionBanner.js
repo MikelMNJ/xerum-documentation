@@ -22,7 +22,7 @@ const SectionBanner = props => {
       </div>
 
       <SampleBox name="Banner" code={bannerCode}>
-        <Banner center noClose>
+        <Banner center round noClose>
           <i className="fa-solid fa-triangle-exclamation" />&nbsp;&nbsp;
           <strong>Reminder</strong>: Servers will be down.
         </Banner>

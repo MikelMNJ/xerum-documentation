@@ -10,14 +10,13 @@
   color: $offWhite;
   background-color: $slate;
   padding: 1rem;
-  border-radius: 0.35rem;
 
   &.noClose {
     grid-template-columns: 1fr;
   }
 
-  &.sharp {
-    border-radius: 0;
+  &.round {
+    border-radius: 0.35rem;
   }
 
   .message {
