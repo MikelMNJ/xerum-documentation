@@ -47,6 +47,20 @@ export const socialTable = {
       tData2: "Stacks network icon and name.",
       tData3: null
     },
+    {
+      tData1: "asTooltip",
+      tData2: "Displays network name as a tooltip on icon hover.",
+      tData3: null
+    },
+    {
+      tData1: "tipPosition",
+      tData2:
+        <Fragment>
+          <strong>top</strong>, <strong>right</strong>,&nbsp;
+          <strong>bottom</strong> or <strong>left</strong>.
+        </Fragment>,
+      tData3: "Lower-right of cursor."
+    },
   ],
 };
 

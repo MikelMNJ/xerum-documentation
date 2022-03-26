@@ -37,6 +37,7 @@ const SectionSocial = props => {
         {codeSnippet(".yourClassName {}", false, "css")}<br />
         {codeSnippet(".yourClassName a {}", false, "css")}<br />
         {codeSnippet(".yourClassName a i {}", false, "css")}<br />
+        {codeSnippet(".yourClassName .tooltip {}", false, "css")}<br />
 
         <p />
           Your custom <i>className</i> will apply to the&nbsp;
@@ -49,6 +50,14 @@ const SectionSocial = props => {
           <Social networks={socialNetworks} noText />
           <br />
           <Social networks={socialNetworks} />
+          <br />
+          <Social networks={socialNetworks} column />
+          <br />
+          <Social
+            asTooltip
+            tipPosition="top"
+            networks={socialNetworks}
+          />
         </div>
       </SampleBox>
     </Fragment>
