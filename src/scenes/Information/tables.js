@@ -49,7 +49,7 @@ export const socialTable = {
     },
     {
       tData1: "asTooltip",
-      tData2: "Displays network name as a tooltip on icon hover.",
+      tData2: "Displays network name as a tool tip on icon hover.",
       tData3: null
     },
     {

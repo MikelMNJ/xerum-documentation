@@ -23,15 +23,14 @@ export const socialCode = `const socialNetworks = [
   },
 ];
 
-<Social networks={socialNetworks} noText />
-<Social networks={socialNetworks} />
-<Social networks={socialNetworks} column />
-
 <Social
   asTooltip
   tipPosition="top"
   networks={socialNetworks}
-/>`;
+/>
+
+<Social networks={socialNetworks} />
+<Social networks={socialNetworks} column />`;
 
 export const tooltipCode = `// Standard
 <Tooltip text="Standard tool tip." />

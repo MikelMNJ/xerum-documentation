@@ -29,7 +29,8 @@ const SectionSocial = props => {
         <p>
           <strong>Note</strong>: Not including or leaving an empty <i>name</i> key in your
           networks array object will also have the same effect as passing the&nbsp;
-          <strong>noText</strong> prop.
+          <strong>noText</strong> prop. Though <strong>asTooltip</strong> and <strong>noText</strong>&nbsp;
+          may look the same, <strong>noText</strong> will not render the name of the network on hover.
         </p>
 
         <strong>Tip</strong>: You can target the following CSS heirarchy for custom
@@ -47,17 +48,15 @@ const SectionSocial = props => {
 
       <SampleBox name="Social" code={socialCode}>
         <div className="column center">
-          <Social networks={socialNetworks} noText />
-          <br />
-          <Social networks={socialNetworks} />
-          <br />
-          <Social networks={socialNetworks} column />
-          <br />
           <Social
             asTooltip
             tipPosition="top"
             networks={socialNetworks}
           />
+          <br />
+          <Social networks={socialNetworks} />
+          <br />
+          <Social networks={socialNetworks} column />
         </div>
       </SampleBox>
     </Fragment>
