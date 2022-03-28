@@ -1,15 +1,20 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { codeSnippet } from 'helpers/utilityHelpers';
+import Banner from 'components/Banner/Banner';
+import colors from 'theme/colors.scss';
 
 const GettingStarted = props => {
   return (
     <section id="getting-started">
-      <h2>Getting Started</h2>
-
       <p>
-        <i className="fa-solid fa-exclamation-triangle" />&nbsp;
-        Package is still a work in progress and has not yet been published.
+        <Banner center noClose round>
+          <i className="fa-solid fa-exclamation-triangle" style={{ color: colors.yellow }} />&nbsp;
+          <strong>Package not published yet...</strong><br />
+          Undergoing production tests and refinements. Please check back soon.
+        </Banner>
       </p>
+
+      <h2>Getting Started</h2>
 
       <h3>Installation and Use</h3>
 
@@ -37,6 +42,9 @@ const GettingStarted = props => {
         </li>
         <li>
           <strong>formik (v2+)</strong>
+        </li>
+        <li>
+          <strong>GSAP (v3+)</strong>
         </li>
         <li>
           <strong>lodash (v4+)</strong>
