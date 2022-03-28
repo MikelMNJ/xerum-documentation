@@ -3586,6 +3586,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gsap@npm:^3.9.1":
+  version: 3.9.1
+  resolution: "gsap@npm:3.9.1"
+  checksum: 4ea20b134bb00419286842f6e57ea7cb132b5b738d2aca2eecd6f423804ca3a4ac531c76aee63aad9d8b40a0f16e6a50b78bc201fd53f5fa3ca18be51b89f6bb
+  languageName: node
+  linkType: hard
+
 "handle-thing@npm:^2.0.0":
   version: 2.0.1
   resolution: "handle-thing@npm:2.0.1"
@@ -6763,6 +6770,7 @@ __metadata:
     css-loader: ^6.2.0
     file-loader: ^6.2.0
     formik: ^2.2.9
+    gsap: ^3.9.1
     html-webpack-plugin: ^5.3.2
     lodash: ^4.17.21
     moment: ^2.29.1
