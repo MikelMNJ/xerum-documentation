@@ -2,6 +2,54 @@ import React, { Fragment } from 'react';
 import { headers } from 'helpers/tableHelpers';
 import Status from 'components/Status/Status';
 
+export const accordionTable = {
+  headers,
+  rows: [
+    {
+      tData1: "sections",
+      tData2:
+        <Fragment>
+          Array of objects that describes each section. Objects must include&nbsp;
+          &#123; <strong>title</strong>, <strong>content</strong> &#125;&nbsp;
+          keys. An optional <strong>color</strong> key with valid hex formatting
+          can be included to quickly color the entire section.
+        </Fragment>,
+      tData3: null
+    },
+    {
+      tData1: "openDefault",
+      tData2: "Deafult section to expand on load.",
+      tData3: null
+    },
+    {
+      tData1: "openIcon",
+      tData2:
+        <Fragment>
+          Font Awesome i.e. "<strong>fa-solid fa-minus</strong>".
+        </Fragment>,
+      tData3: <i className="fa-solid fa-minus" />
+    },
+    {
+      tData1: "closeIcon",
+      tData2:
+        <Fragment>
+          Font Awesome i.e. "<strong>fa-solid fa-plus</strong>".
+        </Fragment>,
+      tData3: <i className="fa-solid fa-plus" />
+    },
+    {
+      tData1: "noIcon",
+      tData2: "Removes the open and close section icons.",
+      tData3: null
+    },
+    {
+      tData1: "callback",
+      tData2: "Generic function to run when the active section changes. Receives new section.",
+      tData3: null
+    },
+  ]
+}
+
 export const cardTable = {
   headers,
   rows: [

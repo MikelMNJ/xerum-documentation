@@ -1,0 +1,54 @@
+@import 'theme/colors.scss';
+
+.accordion {
+  width: 100%;
+
+  .section {
+    height: 3rem;
+
+    .title {
+      display: flex;
+      align-items: center;
+      min-height: 3rem;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+      cursor: pointer;
+      user-select: none;
+      border-bottom: 0.0625rem solid #90909050;
+
+      &.active {
+        background-color: #7f7f7f25;
+        border: none;
+
+        @media (hover: hover) {
+          &:hover {
+            background-color: #7f7f7f35;
+          }
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: #7f7f7f25;
+        }
+      }
+
+      i {
+        font-size: 0.75rem;
+      }
+    }
+
+    .content {
+      pointer-events: none;
+      opacity: 0;
+      margin: 0;
+      padding: 1rem;
+    }
+  }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-width: 414px) {
+
+}
