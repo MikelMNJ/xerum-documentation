@@ -31,6 +31,7 @@ const navigation = [
     path: "",
     icon: "",
     subMenu: [
+      { name: "Accordion", path: "#accordion", icon: "" },
       { name: "Card", path: "#card", icon: "" },
       { name: "Confirm", path: "#confirm", icon: "" },
       { name: "Modal", path: "#modal", icon: "" },

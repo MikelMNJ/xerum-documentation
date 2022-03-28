@@ -1,3 +1,23 @@
+export const accordionCode = `const sections = [
+  {
+    title: "First section",
+    content: "Section 1 content",
+  },
+  {
+    title: "Second section",
+    content: "Section 2 content",
+  },
+  {
+    title: "Third section",
+    content: "Section 3 content",
+  },
+];
+
+<Accordion
+  sections={sections}
+  openDefault={sections[0]}
+/>`;
+
 export const cardCode = `<Card
   image="your-thumb-url.[ext]"
   title="Card Title..."

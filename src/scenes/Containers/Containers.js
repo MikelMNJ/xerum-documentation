@@ -1,5 +1,6 @@
 import React from 'react';
 import { filtered } from 'helpers/stateHelpers';
+import SectionAccordion from './SectionAccordion';
 import SectionCard from './SectionCard';
 import SectionConfirm from './SectionConfirm';
 import SectionModal from './SectionModal';
@@ -10,6 +11,7 @@ import SectionTabs from './SectionTabs';
 const Containers = props => {
   return (
     <section id="containers">
+      {filtered("Accordion") && <SectionAccordion />}
       {filtered("Card") && <SectionCard />}
       {filtered("Confirm") && <SectionConfirm />}
       {filtered("Modal") && <SectionModal />}
