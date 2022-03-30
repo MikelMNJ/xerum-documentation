@@ -6,13 +6,11 @@ import colors from 'theme/colors.scss';
 const GettingStarted = props => {
   return (
     <section id="getting-started">
-      <p>
-        <Banner center noClose round>
-          <i className="fa-solid fa-exclamation-triangle" style={{ color: colors.yellow }} />&nbsp;
-          <strong>Package not published yet...</strong><br />
-          Undergoing production tests and refinements. Please check back soon.
-        </Banner>
-      </p>
+      <Banner center noClose round>
+        <i className="fa-solid fa-exclamation-triangle" style={{ color: colors.yellow }} />&nbsp;
+        <strong>Package not published yet...</strong><br />
+        Undergoing production tests and refinements. Please check back soon.
+      </Banner>
 
       <h2>Getting Started</h2>
 

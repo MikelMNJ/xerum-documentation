@@ -55,7 +55,8 @@ const SectionHeartbeat = props => {
         <strong>Note</strong>:
         This component will not render to the DOM until the internet connection
         goes out &mdash; your main {codeSnippet("<App />")} is rendered
-        by default.
+        by default. You may need to wait, at most, 60 seconds before the change happens
+        since that is the default interval.
       </div>
 
       <SampleBox name="Heartbeat" code={heartbeatCode}>
