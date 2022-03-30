@@ -4,7 +4,8 @@
   display: inline-flex;
   align-items: center;
   border-radius: 0.35rem;
-  background-color: $darkerGrey2;
+  background-color: $deepBlue;
+  color: $offWhite;
   font-size: 0.85rem;
   font-weight: bold;
   padding: 0.25rem 0.5rem;
@@ -15,9 +16,12 @@
     display: flex;
     align-items: center;
     height: 100%;
-    margin-left: 0.5rem;
     font-size: 1rem;
     cursor: pointer;
+
+    &.labelClose {
+      margin-left: 0.5rem;
+    }
 
     &::before {
       display: flex;

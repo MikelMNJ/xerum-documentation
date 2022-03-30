@@ -1,4 +1,24 @@
 
+export const labelCode = `const white = #ffffff;
+const blue = #0d97ff;
+
+<Label>
+  <i className="fa-solid fa-child" />&nbsp;
+  child...
+</Label>
+
+<Label text="Removable"
+  useClose
+  callback={() => console.log("Closed")}
+/>
+
+<Label text="Custom"
+  useClose
+  closeIcon="fa-solid fa-xmark"
+  color={white}
+  bgColor={blue}
+/>`;
+
 export const progressCode = `<Progress
   current={4354.432}
   total={7200}

@@ -46,6 +46,7 @@ const navigation = [
     path: "",
     icon: "",
     subMenu: [
+      { name: "Label", path: "#label", icon: "" },
       { name: "Percent", path: "#percent", icon: "" },
       { name: "Price", path: "#price", icon: "" },
       { name: "Progress", path: "#progress", icon: "" },

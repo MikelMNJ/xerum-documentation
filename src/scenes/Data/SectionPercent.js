@@ -12,8 +12,7 @@ const SectionPercent = props => {
   return (
     <Fragment>
       <div>
-        <h2 id="percent">Data</h2>
-        <h3>{`<Percent />`}</h3>
+        <h3 id="percent">{`<Percent />`}</h3>
 
         <Table content={percentTable} className="xTable" columnLayout={columnLayout} />
 

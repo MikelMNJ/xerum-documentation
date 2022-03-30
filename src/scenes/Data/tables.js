@@ -2,6 +2,52 @@ import React, { Fragment } from 'react';
 import { headers } from 'helpers/tableHelpers';
 import Status from 'components/Status/Status';
 
+export const labelTable = {
+  headers,
+  rows: [
+    {
+      tData1: "text",
+      tData2: "Text to show on label — overrides children.",
+      tData3: null,
+    },
+    {
+      tData1: "color",
+      tData2: "Sets the color of the label text using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#f5f5f5" text="#f5f5f5" />
+    },
+    {
+      tData1: "bgColor",
+      tData2: "Sets the background color of the label using hex format, i.e. #000 or #000000.",
+      tData3: <Status color="#20232a" text="#20232a" />
+    },
+    {
+      tData1: "useClose",
+      tData2: "Enabled label close icon.",
+      tData3: null,
+    },
+    {
+      tData1: "closeIcon",
+      tData2:
+        <Fragment>
+          Font Awesome i.e. "<strong>fa-solid fa-circle-xmark</strong>".
+        </Fragment>,
+      tData3:
+        <Fragment>
+          <i className="fa-solid fa-circle-xmark" />
+        </Fragment>
+    },
+    {
+      tData1: "callback",
+      tData2:
+        <Fragment>
+          Generic click handler for controlling label removal when&nbsp;
+          <strong>useClose</strong> is true.
+        </Fragment>,
+      tData3: null,
+    },
+  ]
+};
+
 export const progressTable = {
   headers,
   rows: [

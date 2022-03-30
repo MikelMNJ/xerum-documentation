@@ -73,6 +73,14 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, auto);
       }
+
+      .labelSamples {
+        display: inline-flex;
+
+        .label {
+          margin: 0 0.2rem;
+        }
+      }
     }
 
     &.unset {

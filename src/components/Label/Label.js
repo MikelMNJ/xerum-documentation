@@ -40,7 +40,7 @@ const Footer = props => {
 
       {useClose && (
         <i
-          className={`${iconValid(closeIcon) || "fa-solid fa-circle-xmark"}`}
+          className={`${iconValid(closeIcon || "fa-solid fa-circle-xmark")} labelClose`}
           onClick={handleClose} />
       )}
     </div>
