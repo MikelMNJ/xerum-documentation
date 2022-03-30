@@ -1,0 +1,32 @@
+@import 'theme/colors.scss';
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.35rem;
+  background-color: $darkerGrey2;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  user-select: none;
+  width: auto;
+
+  i {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &::before {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+/* ========== Media Queries ========== */
+@media only screen and (max-height: 414px) {
+
+}
