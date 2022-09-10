@@ -1,4 +1,4 @@
-@import 'theme/colors.scss';
+@use 'theme/colors' as *;
 
 .toTop {
   display: flex;

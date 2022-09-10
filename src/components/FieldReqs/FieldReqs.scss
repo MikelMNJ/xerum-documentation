@@ -1,4 +1,4 @@
-@import 'theme/colors.scss';
+@use 'theme/colors' as *;
 
 ul.reqs {
   display: inline-flex;
