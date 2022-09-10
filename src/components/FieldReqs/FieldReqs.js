@@ -20,23 +20,23 @@ const FieldReqs = props => {
 
   const length = Number.isInteger(min) ? min : 8;
   const specialChars = typeof special === "string" ? special : "@#$%^&+=!";
-  const test = testVal => new RegExp(`^(?=.*[${testVal}]).*$`).test(value);
+  const test = testVal => new RegExp(`^(?=.*[${testVal}]).*$`).test(value ?? "");
 
   const loadIcon = (type, localVal) => {
     const local = localVal?.toLowerCase();
-    const workingVal = value.toLowerCase();
+    const workingVal = value?.toLowerCase();
     const exclusion = type === 'exclude';
     let valid = false;
     let style;
     let exStyle;
 
     if (
-      type === 'number' && test("0-9") ||
-      type === 'min' && value.length >= length ||
-      type === 'uppercase' && test("A-Z") ||
-      type === 'lowercase' && test("a-z") ||
-      type === 'special' && test(specialChars) ||
-      exclusion && !workingVal.includes(local)
+      (type === 'number' && test("0-9")) ||
+      (type === 'min' && value?.length >= length) ||
+      (type === 'uppercase' && test("A-Z")) ||
+      (type === 'lowercase' && test("a-z")) ||
+      (type === 'special' && test(specialChars)) ||
+      (exclusion && !workingVal.includes(local))
     ) valid = true;
 
     style = {

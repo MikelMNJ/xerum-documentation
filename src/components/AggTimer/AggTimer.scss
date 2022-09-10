@@ -1,4 +1,4 @@
-@import 'theme/colors';
+@use 'theme/colors' as *;
 
 .aggTimer {
   font-weight: bold;
