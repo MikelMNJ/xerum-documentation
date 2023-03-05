@@ -8,8 +8,9 @@ const GettingStarted = props => {
     <section id="getting-started">
       <Banner center noClose round>
         <i className="fa-solid fa-exclamation-triangle" style={{ color: colors.yellow }} />&nbsp;
-        <strong>Package not published yet...</strong><br />
-        Undergoing production tests and refinements. Please check back soon.
+        Documentation is being updated to reflect the latest changes from the release version.<br />
+        Properties may not be accurate until this process is complete, please reference the component
+        source code for the most up-to-date information.
       </Banner>
 
       <h2>Getting Started</h2>

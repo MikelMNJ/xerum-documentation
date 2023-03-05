@@ -15,7 +15,7 @@ import Filter from 'components/Filter/Filter';
 import "./App.scss";
 
 const socialNetworks = [
-  { path: "https://npmjs.org", icon: "fa-brands fa-npm" },
+  { path: "https://npmjs.com/package/xerum", icon: "fa-brands fa-npm" },
   { path: "https://github.com/mikelmnj/xerum", icon: "fa-brands fa-github" },
 ];
 const data = { components: navigation };
